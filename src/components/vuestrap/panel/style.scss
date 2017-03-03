@@ -1,0 +1,12 @@
+.accordion-toggle {
+  cursor: pointer;
+}
+.collapse-enter-active,
+.collapse-leave-active {
+  transition: all .5s ease;
+  overflow: hidden;
+}
+.collapse-enter,
+.collapse-leave-active {
+
+}

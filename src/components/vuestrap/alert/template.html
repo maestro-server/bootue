@@ -1,0 +1,8 @@
+<transition name="fade">
+  <div v-show="val" :class="['alert', 'alert-'+type, placement]" :style="{width:width}" role="alert">
+    <button v-show="dismissable" type="button" class="close" @click="val = false">
+      <span>&times;</span>
+    </button>
+    <slot></slot>
+  </div>
+</transition>

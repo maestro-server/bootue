@@ -1,0 +1,13 @@
+<transition :name="'slide' + placement">
+  <div class="aside" v-if="show" :style="{width:width+'px'}" :class="placement">
+    <div class="aside-dialog">
+      <div class="aside-content">
+        <div class="aside-header">
+          <button type="button" class="close" @click='trigger_close'><span>&times;</span></button>
+          <h4 class="aside-title"><slot name="header">{{ header }}</slot></h4>
+        </div>
+        <div class="aside-body"><slot></slot></div>
+      </div>
+    </div>
+  </div>
+</transition>

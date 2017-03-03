@@ -1,0 +1,5 @@
+<a :class="['btn', type, {readonly:boolReadonly}]" href="javascript:void(0)" @click="toggle" :disabled="boolDisabled">
+  <span :class="['glyphicon','glyphicon-'+(value?'ok':'remove')]"></span>
+  <slot></slot>
+  <input v-if="name" type="hidden" :name="name" :value="active?1:0" />
+</a>

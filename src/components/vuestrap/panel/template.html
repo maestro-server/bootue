@@ -1,0 +1,17 @@
+<div :class="['panel',panelType]">
+  <div :class="['panel-heading',{'accordion-toggle':inAccordion}]" @click.prevent="inAccordion&&toggle()">
+    <slot name="header"><h4 class="panel-title">{{ header }}</h4></slot>
+  </div>
+  <transition
+    name="collapse"
+    @enter="enter"
+    @after-enter="afterEnter"
+    @before-leave="beforeLeave"
+  >
+    <div class="panel-collapse" v-if="open">
+      <div class="panel-body">
+        <slot></slot>
+      </div>
+    </div>
+  </transition>
+</div>
