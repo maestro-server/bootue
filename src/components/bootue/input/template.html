@@ -1,5 +1,9 @@
-<div class="form-group" :class="{validate:canValidate,'has-feedback':icon,'has-error':canValidate&&valid===false,'has-success':canValidate&&valid}">
-  <slot name="label"><label v-if="label" class="control-label" @click="focus">{{label}}</label></slot>
+<div class="form-group"
+     :class="{validate:canValidate,'has-feedback':icon,'has-error':canValidate&&valid===false,'has-success':canValidate&&valid}">
+  <slot name="label">
+    <label v-if="label" class="control-label" @click="focus">{{label}}</label>
+  </slot>
+
   <div v-if="$slots.before||$slots.after" class="input-group">
     <slot name="before"></slot>
     <textarea :is="type=='textarea'?type:'input'" class="form-control" ref="input"
@@ -25,11 +29,13 @@
       <span class="close" @click="value = ''">&times;</span>
     </div>
     <div v-if="icon" class="icon">
-      <span v-if="icon&&valid!==null" :class="['form-control-feedback glyphicon','glyphicon-'+(valid?'ok':'remove')]" aria-hidden="true"></span>
+      <span v-if="icon&&valid!==null" :class="['form-control-feedback fa','fa-'+(valid?'check':'times')]"
+            aria-hidden="true"></span>
     </div>
     <slot name="after"></slot>
   </div>
   <template v-else>
+    <div class="positionRelative">
       <textarea :is="type=='textarea'?type:'input'" class="form-control" ref="input"
                 :cols="cols"
                 :disabled="disabled"
@@ -49,8 +55,10 @@
                 @blur="emit" @focus="emit" @input="emit"
                 @keyup.enter="type!='textarea'&&enterSubmit&&submit()"
       ></textarea>
-    <span v-if="clearButton && val" class="close" @click="val = ''">&times;</span>
-    <span v-if="icon&&valid!==null" :class="['form-control-feedback glyphicon','glyphicon-'+(valid?'ok':'remove')]" aria-hidden="true"></span>
+      <span v-if="clearButton && val" class="close" @click="val = ''">&times;</span>
+      <span v-if="icon&&valid!==null" :class="['form-control-feedback fa','fa-'+(valid?'check':'times')]"
+            aria-hidden="true"></span>
+    </div>
   </template>
   <datalist v-if="id_datalist" :id="id_datalist">
     <option v-for="opc in options" :value="opc"></option>

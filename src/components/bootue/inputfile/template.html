@@ -1,0 +1,21 @@
+<div class="form-group">
+  <div class="infile">
+    <slot name="label">
+      <label class="control-label">{{label}}</label>
+    </slot>
+
+    <div class="btn-group form-control">
+
+      <button type="button" class="btn btn-default btn-base">{{ defaultLabel }}</button>
+      <input type="file" id="file-input" @change="changeUploadImage(this.files)" class="input-file">
+
+      <dropdown class="dropdownInfile">
+        <u slot="dropdown-menu" class="dropdown-menu">
+          <li>
+            <a href="#" @click="removeFile">Remove</a>
+          </li>
+        </u>
+      </dropdown>
+    </div>
+  </div>
+</div>

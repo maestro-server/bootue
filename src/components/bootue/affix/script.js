@@ -7,7 +7,7 @@ export default {
   props: {
     offset: {
       type: Number,
-      default: 0
+      default: 1
     }
   },
   data () {

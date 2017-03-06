@@ -4,8 +4,8 @@ import alert from './alert/Alert.vue'
 import bsaside from './aside/Aside.vue'
 import buttonGroup from './buttongroup/ButtonGroup.vue'
 import carousel from './carousel/Carousel.vue'
-import bscheckbox from './checkbox/Checkbox.vue'
-import datepicker from './datapicker/Datepicker.vue'
+import checkbox from './checkbox/Checkbox.vue'
+import datepicker from './datepicker/Datepicker.vue'
 import dropdown from './dropdown/Dropdown.vue'
 import formGroup from './formgroup/FormGroup.vue'
 import formValidator from './formvalidator/FormValidator.vue'
@@ -16,7 +16,7 @@ import bsoption from './option/Option.vue'
 import panel from './panel/Panel.vue'
 import popover from './popover/Popover.vue'
 import progressbar from './progressbar/Progressbar.vue'
-import bsradio from './radio/Radio.vue'
+import radio from './radio/Radio.vue'
 import bsselect from './select/Select.vue'
 import slider from './slider/Slider.vue'
 import spinner from './spinner/Spinner.vue'
@@ -34,7 +34,7 @@ export default {
   bsaside,
   buttonGroup,
   carousel,
-  bscheckbox,
+  checkbox,
   datepicker,
   dropdown,
   formGroup,
@@ -46,7 +46,7 @@ export default {
   panel,
   popover,
   progressbar,
-  bsradio,
+  radio,
   bsselect,
   slider,
   spinner,

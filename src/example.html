@@ -1,21 +1,15 @@
 <div id="app" class="container">
-  <img src="./resources/imgs/logo.png">
 
   <div id="wrapper">
       <div class="bs-docs-header">
           <h1>Maestro - Bootue</h1>
           <p>Bootstrap components built with <a target="_blank" href="http://vuejs.org/">Vue.js</a>.</p>
           <p>No jQuery, bootstrap.js, or any 3rd party plugins required.</p>
-          <br>
-          <p><a class="btn btn-outline-inverse btn-lg" href="https://github.com/wffranco/vue-strap">Code on GitHub</a></p>
+
       </div>
       <div class="bs-docs-container">
         <div class="row">
           <div class="col-md-9">
-            <div class="well-white" id="getting">
-                <h3>Getting starter</h3>
-                
-            </div>
 
             <div class="well-white" id="Accordion">
                 <h3>Accordion</h3>
@@ -66,104 +60,661 @@
 
             <div class="well-white" id="Alert">
                 <h3>Alert</h3>
-                
+                <div class="bs-example">
+                 <button class="btn btn-danger btn-lg"
+                  @click="showTop = !showTop">
+                  Click to toggle alert on top
+                </button>
+                <alert v-model="showTop" placement="top" :duration="3000"
+                  type="danger" width="400px" dismissable
+                >
+                  <span class="icon-info-circled alert-icon-float-left"></span>
+                  <strong>Heads up!</strong>
+                  <p>This alert needs your attention.</p>
+                </alert>
+                <button class="btn btn-success btn-lg"
+                  @click="showRight = !showRight">
+                  Click to toggle alert on right
+                </button>
+                <alert v-model="showRight" placement="top-right" :duration="3000"
+                  type="success" width="400px" dismissable
+                >
+                  <span class="icon-ok-circled alert-icon-float-left"></span>
+                  <strong>Well Done!</strong>
+                  <p>You successfully read this important alert message.</p>
+                </alert>
+                <hr>
+                <alert type="success">
+                  <strong>Well Done!</strong>
+                  You successfully read this important alert message.
+                </alert>
+                <alert type="info">
+                  <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                </alert>
+                <alert type="danger" dismissable>
+                  <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                </alert>
+                <alert type="warning" dismissable>
+                  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                </alert>
+                </div>
             </div>
 
             <div class="well-white" id="Aside">
                 <h3>Aside</h3>
+
+                 <button class="btn btn-danger btn-lg" @click="showLeft = true">Show Aside on left</button>
+                  <button class="btn btn-success btn-lg" @click="showRightA = true">Show Aside on right</button>
+
+                  <bsaside :show="showLeft" @close="showLeft = false" placement="left" header="Title" :width="350">
+                    <h4>Text in aside</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p> Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.</p>
+              
+                    <div class="aside-footer">
+                      <button type="button" class="btn btn-default" @click="showLeft=false">Close</button>
+                    </div>
+                  </bsaside>
+
+                  <bsaside :show="showRightA" @close='showRightA = false' placement="right" header="Title" :width="350">
+                    <h4>Text in aside</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p> Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.</p>
+             
+                    <div class="aside-footer">
+                      <button type="button" class="btn btn-default" @click="showRightA=false">Close</button>
+                    </div>
+                  </bsaside>
                 
             </div>
 
             <div class="well-white" id="Button">
                 <h3>Button group</h3>
+                <div class="bs-example">
+      <h4>Checkbox</h4>
+      <button-group v-model="checkboxValue">
+        <checkbox true-value="left">Left</checkbox>
+        <checkbox true-value="middle">Middle</checkbox>
+        <checkbox true-value="right">Right</checkbox>
+      </button-group>
+      <p>
+        <pre>Checkbox value: {{ checkboxValue }}</pre>
+      </p>
+      <hr>
+      <h4>Radio</h4>
+      <p>
+        <button-group v-model="radioValue" type="primary">
+          <radio true-value="left">Left</radio>
+          <radio true-value="middle">Middle</radio>
+          <radio true-value="right">Right</radio>
+        </button-group>
+      </p>
+      <p>
+        <button-group v-model="radioValue" type="success">
+          <radio true-value="left">Left</radio>
+          <radio true-value="middle">Middle</radio>
+          <radio true-value="right">Right</radio>
+        </button-group>
+      </p>
+      <p>
+        <label>Not buttons:</label>
+        <button-group v-model="radioValue" type="info" buttons="false">
+          <radio true-value="left">Left</radio>
+          <radio true-value="middle">Middle</radio>
+          <radio true-value="right">Right</radio>
+        </button-group>
+      </p>
+      <p>
+        <pre>Radio value: {{ radioValue }}</pre>
+      </p>
+    </div>
                 
             </div>
 
             <div class="well-white" id="Carrousel">
                 <h3>Carrousel</h3>
+
+                 <carousel>
+        <slider>
+          <img src="https://placehold.it/1200x500?text=one">
+          <div class="carousel-caption">
+           <h3>Slide #1</h3>
+           <p>sunt in culpa qui officia deserunt mollit a.</p>
+         </div>
+        </slider>
+        <slider>
+          <img src="https://placehold.it/1200x500?text=two">
+          <div class="carousel-caption">
+           <h3>Slide #2</h3>
+           <p>sunt in culpa qui officia deserunt mollit a.</p>
+         </div>
+        </slider>
+        <slider>
+          <img src="https://placehold.it/1200x500?text=three">
+          <div class="carousel-caption">
+           <h3>Slide #3</h3>
+           <p>sunt in culpa qui officia deserunt mollit a.</p>
+         </div>
+        </slider>
+      </carousel>
                 
             </div>
 
             <div class="well-white" id="Checkbox">
                 <h3>Checkbox</h3>
-                
+                <checkbox v-model="checkboxValueC.one" true-value="1">One</checkbox>
+                <checkbox v-model="checkboxValueC.two" true-value="two" type="danger" disabled>Two (disabled)</checkbox>
+                <checkbox v-model="checkboxValueC.two" true-value="two" type="warning" readonly>Two (readonly)</checkbox>
+                <checkbox v-model="checkboxValueC.two" true-value="two" type="success">Two</checkbox>
+                <hr>
+                <h4>Checkbox Button (Single button)</h4>
+                <checkbox button v-model="checkboxValueC.three" :true-value="2+1" type="primary">Three</checkbox>
+                <checkbox button v-model="checkboxValueC.four" type="info" disabled>Four (disabled)</checkbox>
+                <checkbox button v-model="checkboxValueC.four" type="info" readonly>Four (readonly)</checkbox>
+                <checkbox button v-model="checkboxValueC.four" type="info">Four</checkbox>
+                <br/><br/>
+                <p>
+                  <pre>Checkbox values: {{ checkboxValueC }}</pre>
+                </p>
             </div>
 
             <div class="well-white" id="Datapicker">
                 <h3>Datapicker</h3>
-                
+
+  <div class="bs-example">
+      <p>
+        <pre>Selected date is: {{dateString}}</pre>
+      </p>
+      <datepicker ref="dp" v-model="date" :disabled-days-of-week="disabled" :format="format" :clear-button="clear" :placeholder="placeholder" width="370px"></datepicker>
+      <h4>Disabled days of week</h4>
+
+      <bsselect multiple v-model="disabled" :options="[0,1,2,3,4,5,6]"></bsselect>
+
+      <h4>Format</h4>
+      <bsselect v-model="format" :options="formats"></bsselect>
+
+      <h4>Reset button</h4>
+      <checkbox :value="clear" @checked="clear = arguments[0]" type="primary">toggle clear button</checkbox>
+    </div>  
             </div>
 
             <div class="well-white" id="DropDown">
                 <h3>DropDown</h3>
+
+                 <div class="bs-example">
+      <dropdown>
+        <strong slot="button">Action (bold)</strong>
+        <ul slot="dropdown-menu" class="dropdown-menu">
+          <li><a href="#dropdown">Action</a></li>
+          <li><a href="#dropdown">Another action</a></li>
+          <li><a href="#dropdown">Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#dropdown">Separated link</a></li>
+        </ul>
+      </dropdown>
+      <dropdown text="Action" type="primary">
+        <li><a href="#dropdown">Action</a></li>
+        <li><a href="#dropdown">Another action</a></li>
+        <li><a href="#dropdown">Something else here</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#dropdown">Separated link</a></li>
+      </dropdown>
+      <dropdown>
+        <i slot="button">Action (italic)</i>
+        <ul slot="dropdown-menu" class="dropdown-menu">
+          <li><a href="#dropdown">Action</a></li>
+          <li><a href="#dropdown">Another action</a></li>
+          <li><a href="#dropdown">Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#dropdown">Separated link</a></li>
+        </ul>
+      </dropdown>
+      <dropdown text="Disabled" type="warning" disabled>
+        <li><a href="#dropdown">Action</a></li>
+      </dropdown>
+      <dropdown type="info">
+        <button slot="before" type="button" class="btn btn-info">Segmented</button>
+        <li><a href="#dropdown">Action</a></li>
+      </dropdown>
+      <br/><br/>
+      <div class="btn-group btn-group-justified">
+        <a href="#dropdown" class="btn btn-default" role="button">Left</a>
+        <dropdown>
+          <u slot="button">Dropdown (underlined)</u>
+          <ul slot="dropdown-menu" class="dropdown-menu">
+            <li><a href="#dropdown">Action</a></li>
+            <li><a href="#dropdown">Another action</a></li>
+            <li><a href="#dropdown">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#dropdown">Separated link</a></li>
+          </ul>
+        </dropdown>
+        <a href="#dropdown" class="btn btn-default" role="button">Right</a>
+      </div>
+    </div>
                 
             </div>
 
             <div class="well-white" id="FormValidator">
                 <h3>FormValidator</h3>
-                
+                <form-validator v-model="valid.all">
+                  <div>
+                    <tabs v-model="activeF">
+                      <tab header="User">
+                        <form-validator @valid="valid.user = true" @invalid="valid.user = false">
+                          <bsinput label="User Name" required></bsinput>
+                          <bsinput label="Email" type="email" required></bsinput>
+                        </form-validator>
+                        <button type="button" class="btn btn-primary" :disabled="!valid.user" @click="activeF = 1">Continue</button>
+                      </tab>
+                      <tab header="Direction" :disabled="!valid.user">
+                        <form-validator @isvalid="valid.direction = arguments[0]">
+                          <div class="form-validator">
+                            <label class="control-label">Continent</label>
+                            <bsselect required justified :options="['America','Europe']" clear-button></bsselect>
+                          </div>
+                          <bsinput label="City" type="text" required></bsinput>
+                        </form-validator>
+                        <button type="button" class="btn btn-primary" :disabled="!valid.all">Done!!</button>
+                      </tab>
+                    </tabs>
+                  </div>
+                </form-validator>
+                                
             </div>
 
             <div class="well-white" id="Input">
                 <h3>Input</h3>
-                
+
+                <bsinput v-model="input"
+                  label="Username"
+                  help="Only allows lowercase letters and numbers."
+                  error="Insert username"
+                  placeholder="Username can't start with a number."
+                  pattern="^[a-z][a-z0-9]+$"
+                  :minlength="5"
+                  readonly
+                  required
+                  icon
+                ></bsinput>
+                <bsinput required label="Match value" type="password"
+                  :match="input"
+                ></bsinput>
+                <bsinput label="Textarea" type="textarea"
+                  @focus="event = 'focused'"
+                  @blur="event = 'blured'"
+                ></bsinput>
+                                
             </div>
 
             <div class="well-white" id="Modal">
                 <h3>Modal</h3>
                 
+                 <div class="bs-example">
+      <button class="btn btn-default" @click="showModal = true">Show modal</button>
+      <modal title="Modal title" v-model="showModal" @ok="showModal = false">
+        <div slot="modal-header" class="modal-header">
+          <h4 class="modal-title">Modal <b>Title</b></h4>
+        </div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </modal>
+      <button class="btn btn-success" @click="fadeModal = true">Fade modal</button>
+      <modal title="Fade Modal" effect="fade" width="800" v-model="fadeModal" @ok="fadeModal = ok()">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </modal>
+      <button class="btn btn-default" @click="showCustomModal = true">Show custom modal</button>
+      <modal effect="fade" width="50%" v-model="showCustomModal" @ok="showCustomModal = ok()">
+        <div slot="modal-header" class="modal-header">
+          <h4 class="modal-title"><i>Custom</i> <code>Modal</code> <b>Title</b></h4>
+        </div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <div slot="modal-footer" class="modal-footer">
+          <button type="button" class="btn btn-default" @click="showCustomModal = false">Exit</button>
+          <button type="button" class="btn btn-success" @click="showCustomModal = ok()">Custom Save</button>
+          <button type="button" class="btn btn-success" @click="alert">Another Action</button>
+        </div>
+      </modal>
+      <button class="btn btn-primary" @click="zoomModal = true">Zoom modal</button>
+      <modal title="Zoom Modal" effect="zoom" width="400" v-model="zoomModal" @ok="zoomModal = ok()">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </modal>
+      <button class="btn btn-warning" @click="largeModal = true">Large modal</button>
+      <modal title="Large Modal" large v-model="largeModal" @ok="largeModal = ok()">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </modal>
+      <button class="btn btn-danger" @click="smallModal = true">Small modal</button>
+      <modal title="Small Modal" small v-model="smallModal" @ok="smallModal = ok()">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
+      </modal>
+    </div>
             </div>
 
-            <div class="well-white" id="Navbar">
-                <h3>Navbar</h3>
-                
-            </div>
             
             <div class="well-white" id="Popover">
                 <h3>Popover</h3>
+                <div class="bs-example">
+      <popover v-for="place in placements" effect="fade" :content="text" :placement="place" :key="place.id">
+        <button class="btn btn-default">Popover on {{place}}</button>
+      </popover>
+      <hr>
+      <h4>Title</h4>
+      <popover v-for="place in placements" :key="place.id" effect="fade" header title="Title" :content="text" :placement="place">
+        <button class="btn btn-default">Popover on {{place}}</button>
+      </popover>
+      <hr>
+      <h4>Trigger</h4>
+      <p>
+        <popover effect="scale" title="Title" :content="content" placement="top" trigger="hover">
+          <button class="btn btn-default">Mouseenter</button>
+        </popover>
+        <popover effect="scale" title="Title" :content="text" placement="top" trigger="contextmenu">
+          <button class="btn btn-default">Contextmenu (right click)</button>
+        </popover>
+      </p>
+      <popover effect="scale" title="Title" :content="text" placement="bottom" trigger="focus">
+        <bsinput type="text" placeholder="Focus"></bsinput>
+      </popover>
+    </div>
                 
             </div>
 
             <div class="well-white" id="Progressbar">
                 <h3>Progressbar</h3>
-                
+                <div class="bs-example">
+      <h4>Static</h4>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="progress">
+            <progressbar now="20" type="success"></progressbar>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="progress">
+            <progressbar now="40" type="info"></progressbar>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="progress">
+            <progressbar now="60" type="primary"></progressbar>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <h4>Dynamic <button type="button" class="btn btn-default" @click="dynamicClick">Randomize</button></h4>
+      <div class="progress">
+        <progressbar :now="dynamicData[0]" type="info"></progressbar>
+      </div>
+      <div class="progress">
+        <progressbar :now="dynamicData[1]" type="warning"></progressbar>
+      </div>
+      <div class="progress">
+        <progressbar :now="dynamicData[2]" type="danger"></progressbar>
+      </div>
+      <div class="progress">
+        <progressbar :now="dynamicData[3]" type="success" striped></progressbar>
+      </div>
+      <div class="progress">
+        <progressbar :now="dynamicData[4]" type="success" striped animated></progressbar>
+      </div>
+      <hr/>
+      <h4>Stacked <button type="button" class="btn btn-default" @click="stackedClick">Randomize</button></h4>
+      <div class="progress">
+        <progressbar :now="stackedData[0]" label type="warning" striped></progressbar>
+        <progressbar :now="stackedData[1]" label type="success" ></progressbar>
+        <progressbar :now="stackedData[2]" label type="danger"></progressbar>
+        <progressbar :now="stackedData[3]" label type="primary" striped animated></progressbar>
+      </div>
+
+    </div>
             </div>
 
             <div class="well-white" id="Radio">
-                <h3></h3>
-                
+                <h3>Radio</h3>
+                <div class="bs-example">
+      <h4>Radio</h4>
+      <radio v-model="radioValue" checked-value="one">One</radio>
+      <radio v-model="radioValue" checked-value="two" type="danger" disabled>Two (disabled)</radio>
+      <radio v-model="radioValue" checked-value="two" type="warning" readonly>Two (readonly)</radio>
+      <radio v-model="radioValue" checked-value="two" type="success">Two</radio>
+      <hr>
+      <h4>Radio Button (Single buttons)</h4>
+      <radio button v-model="radioValue" checked-value="three" type="primary">Three</radio>
+      <radio button v-model="radioValue" checked-value="four" type="info" disabled>Four (disabled)</radio>
+      <radio button v-model="radioValue" checked-value="four" type="info" readonly>Four (readonly)</radio>
+      <radio button v-model="radioValue" checked-value="four" type="info">Four</radio>
+      <br/><br/>
+      <p><pre>Radio value: {{ radioValue }}</pre></p>
+    </div>
             </div>
 
             <div class="well-white" id="Select">
                 <h3>Select</h3>
-                
+                <div class="bs-example">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <p><pre>Normal select data: {{select.normal}}</pre></p>
+          <form action="./#select" method="get">
+            <bsselect :options="select.options" options-value="val" v-model="select.normal" name="animal" :search="select.search"
+              :required="select.required" :clear-button="select.clearButton" :disabled="select.disabled"
+              :placeholder="select.placeholder?'Using placeholder':null"
+            ></bsselect>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <br/>
+          <p><pre>Multiple select data : {{select.multiple.join(',')}}</pre></p>
+          <form action="./#select" method="get">
+            <bsselect :options="select.options" options-value="val" v-model="select.multiple" name="animals[]" :search="select.search"
+              multiple :required="select.required" :clear-button="select.clearButton"
+              :placeholder="select.placeholder?'Using placeholder':null"
+              :close-on-select="select.closeOnSelect" :limit="select.limit?3:1024" :disabled="select.disabled"
+            ></bsselect>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div>
+      </div>
+      <br/>
+      <button-group type="primary" :buttons="false">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <p><checkbox v-model="select.disabled">Disabled</checkbox></p>
+            <p><checkbox v-model="select.placeholder">Placeholder</checkbox></p>
+            <p><checkbox v-model="select.search">Search</checkbox></p>
+            <p><checkbox v-model="select.clearButton">Clear Button</checkbox></p>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <p><checkbox v-model="select.required">Required (empty value if noting selected)</checkbox></p>
+            <p>
+              Multiple:
+              <checkbox v-if="select.multiple" v-model="select.limit">Limit (e.g. 3)</checkbox>
+              <checkbox v-if="select.multiple" v-model="select.closeOnSelect">Close on Select</checkbox>
+            </p>
+          </div>
+        </div>
+      </button-group>
+</div>
             </div>
 
             <div class="well-white" id="Tabs">
                 <h3>Tabs docs</h3>
-                
+                    <div class="bs-example">
+      <p>Style: <bsselect v-model="navStyle" :options="['tabs','pills','stacked']"></bsselect></p>
+      <p v-if="navStyle!='stacked'">Justified: <bsselect v-model="justified" :options="[true,false]"></bsselect></p>
+      <!-- <checkbox v-model="justified">Justified</checkbox> -->
+      <tabs :nav-style="navStyle" :justified="justified">
+        <tab header="zero">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </tab>
+        <tab header="one">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </tab>
+        <tab header="two" disabled>
+          ...
+        </tab>
+        <tab-group header="group1">
+          <tab header="three">
+           <p>
+              Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+           </p>
+          </tab>
+          <tab header="four" disabled>
+            ...
+          </tab>
+        </tab-group>
+        <tab-group header="group2" disabled>
+          <tab header="five">
+            ...
+          </tab>
+        </tab-group>
+      </tabs>
+    </div>
             </div>
 
             <div class="well-white" id="Toggle">
                 <h3>Toggle button</h3>
-                
+                <div class="bs-example form-group">
+      <h4>ToggleButton</h4>
+      <p>A 2 states button (single true/false) but with a better looking.</p>
+      <div class="form-group">
+        <toggle-button v-model="toogle.one">One</toggle-button>
+        <toggle-button v-model="toogle.two">Two</toggle-button>
+        <toggle-button v-model="toogle.two" true-type="info" disabled>Two (disabled)</toggle-button>
+        <toggle-button v-model="toogle.two" false-type="warning" readonly>Two (readonly)</toggle-button>
+        <toggle-button v-model="toogle.three" true-type="success" false-type="danger">Three</toggle-button>
+      </div>
+      <div class="form-group">
+        <bsinput v-model="toogle.content" :disabled="!input" placeholder="Will be cleaned when is disabled.">
+          <span slot="before" class="input-group-btn">
+            <toggle-button v-model="toogle.input" @disabled="toogle.content=''">Toggle Input:</toggle-button>
+          </span>
+        </bsinput>
+      </div>
+      <p>
+        <pre>Toggle values: {{ $data.toogle }}</pre>
+      </p>
+    </div>
             </div>
 
             <div class="well-white" id="Tooltip">
                 <h3>Tooltip</h3>
+                <div class="bs-example">
+      <tooltip v-for="place in ['top','left','right','bottom']" :key="place.id" header content="Lorem ipsum dolor sit amet" :placement="place">
+        <button class="btn btn-default">Popover on {{place}}</button>
+      </tooltip>
+      <hr>
+      <h4>Trigger</h4>
+      <p>
+        <tooltip effect="scale" content="Lorem ipsum dolor sit amet" placement="top" trigger="click">
+          <button class="btn btn-default">Click</button>
+        </tooltip>
+        <tooltip effect="scale" content="Lorem ipsum dolor sit amet" placement="top" trigger="contextmenu">
+          <button class="btn btn-default">Contextmenu (right click)</button>
+        </tooltip>
+      </p>
+      <tooltip effect="scale" content="Lorem ipsum dolor sit amet" placement="bottom" trigger="focus">
+        <bsinput type="text" placeholder="Focus"></bsinput>
+      </tooltip>
+    </div>
                 
             </div>
 
             <div class="well-white" id="Typeahead">
                 <h3>Typeahead</h3>
-                
+                <div class="bs-example">
+      <h4>Static arrays</h4>
+      <typeahead :data="USstate" placeholder="USA states"></typeahead>
+      <hr>
+      <h4>
+        Asynchronous results
+        <tooltip trigger="click" content="The suggestions via a Google Map API, are you behind a FireWall?" placement="top">
+          <small style="cursor:pointer">(not working?)</small>
+        </tooltip>
+      </h4>
+      <typeahead
+        placeholder="CCCAddress, async via maps.googleapis.com"
+        async-key="results"
+        async="https://maps.googleapis.com/maps/api/geocode/json?address="
+        :template="asyncTemplate"
+        :on-hit="googleCallback"
+      ></typeahead>
+      <hr>
+      <h4>Custom templates for results</h4>
+      <typeahead
+        placeholder="Github users, async via api.github.com"
+        async-key="items"
+        async="https://api.github.com/search/users?q="
+        :template="githubTemplate"
+        :on-hit="githubCallback"
+      ></typeahead>
+    </div>
             </div>
 
           </div>
 
           <div class="col-md-3">
-            <affix offset="1">
-              <ul class="nav nav-pills nav-stacked" id="sidenav">
+            <affix :offset="1">
+              <ul class="list-unstyled" id="sidenav">
                 <li><a href="#getting">Getting Stater</a></li>
                 <li><a href="#Accordion">Accordion</a></li>
                 <li><a href="#Affix">Affix</a></li>
@@ -177,7 +728,6 @@
                 <li><a href="#FormValidator">FormValidator</a></li>
                 <li><a href="#Input">Input</a></li>
                 <li><a href="#Modal">Modal</a></li>
-                <li><a href="#Navbar">Navbar</a></li>
                 <li><a href="#Popover">Popover</a></li>
                 <li><a href="#Progressbar">Progressbar</a></li>
                 <li><a href="#Radio">Radio</a></li>
@@ -194,6 +744,8 @@
     </div>
     <footer class="bs-docs-footer">
       <div class="container">
+        
+        <h4>Vue 2 Component full version built by <a href="https://github.com/maestro-server">Signorini</a>.</h4>
         <p>Designed and built by <a href="https://github.com/yuche/">yuche</a>.</p>
         <p>Vue 2 version built by <a href="https://github.com/wffranco/">wffranco</a>.</p>
         <p>
@@ -208,9 +760,5 @@
       </div>
     </footer>
   </div>
-
-
-  
-
 
 </div>

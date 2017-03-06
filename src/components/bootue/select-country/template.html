@@ -1,0 +1,27 @@
+<div>
+  <div :class="baseclass">
+    <div class="form-group">
+      <label>Country</label><br/>
+      <bsselect :options="options.country"
+                placeholder="Select your Country"
+                search
+                class="wd100"
+                v-model="vcountry"
+                @change="selectCountryChange"
+      ></bsselect>
+      </div>
+  </div>
+
+  <div :class="baseclass">
+    <div class="form-group">
+      <label>State/Province</label><br/>
+      <bsselect :options="options.state"
+                placeholder="Select your state"
+                search
+                v-model="vstates"
+                class="wd100"
+                @change="selectStateChange"
+      ></bsselect>
+    </div>
+  </div>
+</div>
