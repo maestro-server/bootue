@@ -1,6 +1,6 @@
-# bootue
+# Bootue
 
-> Bootstrap + Vue 2 - 100% Components
+> Bootstrap 3 + Vue 2 - 100% Components
 
 ## Build Setup
 
