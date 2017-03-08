@@ -67,7 +67,7 @@ import docCode from './utils/docCode.js'
 import Dropdown from '../../src/components/bootue/dropdown/Dropdown.vue'
 import Navbar from '../../src/components/bootue/navbar/Navbar.vue'
 import Tooltip from '../../src/components/bootue/tooltip/Tooltip.vue'
-import vSelect from '../../src/components/bootue/select/Select.vue'
+import vSelect from '../../src/components/bootue/forms/select/Select.vue'
 
 export default {
   components: {

@@ -59,7 +59,7 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import radio from '../../src/components/bootue/radio/Radio.vue'
+import radio from '../../src/components/bootue/forms/radio/Radio.vue'
 
 export default {
   components: {

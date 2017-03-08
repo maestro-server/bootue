@@ -57,8 +57,8 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import checkbox from '../../src/components/bootue/checkbox/Checkbox.vue'
-import vSelect from '../../src/components/bootue/select/Select.vue'
+import checkbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
+import vSelect from '../../src/components/bootue/forms/select/Select.vue'
 import spinner from '../../src/components/bootue/spinner/Spinner.vue'
 
 export default {

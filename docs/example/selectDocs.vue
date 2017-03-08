@@ -189,10 +189,10 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import ButtonGroup from '../../src/components/bootue/buttongroup/ButtonGroup.vue'
-import checkbox from '../../src/components/bootue/checkbox/Checkbox.vue'
-import vSelect from '../../src/components/bootue/select/Select.vue'
-import vOption from '../../src/components/bootue/option/Option.vue'
+import ButtonGroup from '../../src/components/bootue/buttons/buttongroup/ButtonGroup.vue'
+import checkbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
+import vSelect from '../../src/components/bootue/forms/select/Select.vue'
+import vOption from '../../src/components/bootue/forms/option/Option.vue'
 
 export default {
   components: {

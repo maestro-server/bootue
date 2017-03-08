@@ -78,7 +78,7 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import sidebar from '../../src/components/bootue/aside/Aside.vue'
+import sidebar from '../../src/components/bootue/sidebar/Sidebar.vue'
 
 export default {
   components: {

@@ -122,5 +122,3 @@ export default {
   }
 }
 </script>
-
-<style src="../src/resources/_bootstrap.scss" lang="scss"></style>

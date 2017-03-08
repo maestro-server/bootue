@@ -67,7 +67,7 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import checkbox from '../../src/components/bootue/checkbox/Checkbox.vue'
+import checkbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
 
 export default {
   components: {

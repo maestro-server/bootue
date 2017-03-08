@@ -284,9 +284,9 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import bsInput from '../../src/components/bootue/input/Input.vue'
-import ButtonGroup from '../../src/components/bootue/buttongroup/ButtonGroup.vue'
-import Checkbox from '../../src/components/bootue/checkbox/Checkbox.vue'
+import bsInput from '../../src/components/bootue/forms/input/Input.vue'
+import ButtonGroup from '../../src/components/bootue/buttons/buttongroup/ButtonGroup.vue'
+import Checkbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
 import Dropdown from '../../src/components/bootue/dropdown/Dropdown.vue'
 
 export default {

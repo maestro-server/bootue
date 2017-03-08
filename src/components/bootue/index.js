@@ -1,23 +1,20 @@
 import accordion from './accordion/Accordion.vue'
 import affix from './affix/Affix.vue'
 import alert from './alert/Alert.vue'
-import bsaside from './aside/Aside.vue'
-import buttonGroup from './buttongroup/ButtonGroup.vue'
+import badge from './badges/Badges.vue'
+import breadcrumps from './breadcrumps/Breadcrumps.vue'
+import SpreadButtons from './buttons/'
 import carousel from './carousel/Carousel.vue'
-import checkbox from './checkbox/Checkbox.vue'
-import datepicker from './datepicker/Datepicker.vue'
+import bsCode from './code/Code.vue'
 import dropdown from './dropdown/Dropdown.vue'
-import formGroup from './formgroup/FormGroup.vue'
-import formValidator from './formvalidator/FormValidator.vue'
-import bsinput from './input/Input.vue'
+import SpreadForms from './forms/'
+
 import modal from './modal/Modal.vue'
 import navbar from './navbar/Navbar.vue'
-import bsoption from './option/Option.vue'
 import panel from './panel/Panel.vue'
 import popover from './popover/Popover.vue'
 import progressbar from './progressbar/Progressbar.vue'
-import radio from './radio/Radio.vue'
-import bsselect from './select/Select.vue'
+import sidebar from './sidebar/Sidebar.vue'
 import slider from './slider/Slider.vue'
 import spinner from './spinner/Spinner.vue'
 import tab from './tab/Tab.vue'
@@ -27,33 +24,36 @@ import toggleButton from './togglebutton/ToggleButton.vue'
 import tooltip from './tooltip/Tooltip.vue'
 import typeahead from './typeahead/Typeahead.vue'
 
+import pagination from './pagination/Pagination.vue'
+import bslabel from './label/Label.vue'
+import badges from './badges/Badges.vue'
+
+
 export default {
   accordion,
   affix,
   alert,
-  bsaside,
-  buttonGroup,
+  badge,
+  breadcrumps,
+  bsCode,
   carousel,
-  checkbox,
-  datepicker,
   dropdown,
-  formGroup,
-  formValidator,
-  bsinput,
   modal,
   navbar,
-  bsoption,
   panel,
   popover,
   progressbar,
-  radio,
-  bsselect,
   slider,
+  sidebar,
   spinner,
   tab,
   tabGroup,
   tabs,
   toggleButton,
   tooltip,
-  typeahead
+  typeahead,
+  bslabel,
+  pagination,
+  ...SpreadButtons,
+  ...SpreadForms
 }

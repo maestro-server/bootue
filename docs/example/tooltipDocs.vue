@@ -64,7 +64,7 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import bsInput from '../../src/components/bootue/input/Input.vue'
+import bsInput from '../../src/components/bootue/forms/input/Input.vue'
 import tooltip from '../../src/components/bootue/tooltip/Tooltip.vue'
 
 export default {

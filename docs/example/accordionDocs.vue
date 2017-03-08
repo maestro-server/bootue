@@ -100,9 +100,9 @@ import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
 import Accordion from '../../src/components/bootue/accordion/Accordion.vue'
-import Checkbox from '../../src/components/bootue/checkbox/Checkbox.vue'
+import Checkbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
 import Panel from '../../src/components/bootue/panel/Panel.vue'
-import vSelect from '../../src/components/bootue/select/Select.vue'
+import vSelect from '../../src/components/bootue/forms/select/Select.vue'
 
 export default {
   components: {

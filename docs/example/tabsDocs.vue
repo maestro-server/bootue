@@ -119,11 +119,11 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import checkbox from '../../src/components/bootue/checkbox/Checkbox.vue'
+import checkbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
 import tabs from '../../src/components/bootue/tabs/Tabs.vue'
 import tabGroup from '../../src/components/bootue/tabgroup/TabGroup.vue'
 import tab from '../../src/components/bootue/tab/Tab.vue'
-import vSelect from '../../src/components/bootue/select/Select.vue'
+import vSelect from '../../src/components/bootue/forms/select/Select.vue'
 
 export default {
   components: {
