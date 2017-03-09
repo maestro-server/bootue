@@ -1,16 +1,21 @@
+import core from './_core/Core.vue'
+
 import accordion from './accordion/Accordion.vue'
 import affix from './affix/Affix.vue'
 import alert from './alert/Alert.vue'
 import badge from './badges/Badges.vue'
 import breadcrumps from './breadcrumps/Breadcrumps.vue'
-import SpreadButtons from './buttons/'
 import carousel from './carousel/Carousel.vue'
 import bsCode from './code/Code.vue'
+import bsLabel from './label/Label.vue'
 import dropdown from './dropdown/Dropdown.vue'
-import SpreadForms from './forms/'
-
+import grid from './grid/Grid.vue'
+import jumbotron from './jumbotron/Jumbotron.vue'
+import lists from './lists/Lists.vue'
+import media from './media/Media.vue'
 import modal from './modal/Modal.vue'
 import navbar from './navbar/Navbar.vue'
+import pagination from './pagination/Pagination.vue'
 import panel from './panel/Panel.vue'
 import popover from './popover/Popover.vue'
 import progressbar from './progressbar/Progressbar.vue'
@@ -19,41 +24,50 @@ import slider from './slider/Slider.vue'
 import spinner from './spinner/Spinner.vue'
 import tab from './tab/Tab.vue'
 import tabGroup from './tabgroup/TabGroup.vue'
+import tables from './tables/Tables.vue'
 import tabs from './tabs/Tabs.vue'
 import toggleButton from './togglebutton/ToggleButton.vue'
 import tooltip from './tooltip/Tooltip.vue'
 import typeahead from './typeahead/Typeahead.vue'
+import type from './typography/Type.vue'
+import fontAwesome from './typography/font-awesome/FontAwesome.vue'
 
-import pagination from './pagination/Pagination.vue'
-import bslabel from './label/Label.vue'
-import badges from './badges/Badges.vue'
-
+import SpreadButtons from './buttons/'
+import SpreadForms from './forms/'
 
 export default {
+  core,
   accordion,
   affix,
   alert,
   badge,
   breadcrumps,
   bsCode,
+  bsLabel,
   carousel,
   dropdown,
+  grid,
+  jumbotron,
+  lists,
+  media,
   modal,
   navbar,
+  pagination,
   panel,
   popover,
   progressbar,
-  slider,
   sidebar,
+  slider,
   spinner,
   tab,
   tabGroup,
+  tables,
   tabs,
   toggleButton,
   tooltip,
   typeahead,
-  bslabel,
-  pagination,
+  type,
+  fontAwesome,
   ...SpreadButtons,
   ...SpreadForms
 }
