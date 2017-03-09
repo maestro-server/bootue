@@ -1,5 +1,6 @@
 import {translations} from '../../../utils/utils.js'
 import ClickOutside from '../../../directives/ClickOutside.js'
+import core from '../Forms.vue'
 
 var timeout = {}
 export default {

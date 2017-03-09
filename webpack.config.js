@@ -25,7 +25,7 @@ module.exports = {
             //'scss': 'vue-style-loader!css-loader!sass-loader',
             'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
             'scss': ExtractTextPlugin.extract({
-              loader: ['css-loader', 'sass-loader'],
+              use: ['css-loader', 'sass-loader'],
               fallback: 'vue-style-loader' // <- this is a dep of vue-loader, so no need to explicitly install if using npm3
             })
           }

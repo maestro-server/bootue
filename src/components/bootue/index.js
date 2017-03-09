@@ -6,6 +6,7 @@ import alert from './alert/Alert.vue'
 import badge from './badges/Badges.vue'
 import breadcrumps from './breadcrumps/Breadcrumps.vue'
 import carousel from './carousel/Carousel.vue'
+import close from './close/Close.vue'
 import bsCode from './code/Code.vue'
 import bsLabel from './label/Label.vue'
 import dropdown from './dropdown/Dropdown.vue'
@@ -36,7 +37,7 @@ import fontAwesome from './typography/font-awesome/FontAwesome.vue'
 import SpreadButtons from './buttons/'
 import SpreadForms from './forms/'
 
-export default {
+let components = {
   accordion,
   affix,
   alert,
@@ -61,7 +62,9 @@ export default {
   tabs,
   toggleButton,
   tooltip,
-  typeahead,
-  ...SpreadButtons,
-  ...SpreadForms
+  typeahead
 }
+
+components = Object.assign({SpreadButtons, SpreadForms}, components)
+
+export default components

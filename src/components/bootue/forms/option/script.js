@@ -1,3 +1,5 @@
+import core from '../Forms.vue'
+
 export default {
   props: {value: null},
   data () { return {loading: true} },

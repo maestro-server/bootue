@@ -1,5 +1,6 @@
 import {coerce, delayer, translations} from '../../../utils/utils.js'
 import $ from '../../../utils/NodeList.js'
+import core from '../Forms.vue'
 
 let DELAY = 300
 

@@ -1,8 +1,5 @@
 import $ from '../../../utils/NodeList.js'
-// let coerce = {
-//     enterSubmit: 'boolean',
-//     icon: 'boolean'
-// }
+import core from '../Forms.vue'
 
 export default {
   props: {

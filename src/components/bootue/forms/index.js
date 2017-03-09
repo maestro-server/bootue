@@ -1,8 +1,7 @@
-import core from './Forms.vue'
-
 import bsOption from './option/Option.vue'
 import bsSelect from './select/Select.vue'
 import bsInput from './input/Input.vue'
+import bsInputGroup from './inputgroups/InputGroup.vue'
 
 import bsFormGroup from './formgroup/FormGroup.vue'
 import bsFormValidator from './formvalidator/FormValidator.vue'

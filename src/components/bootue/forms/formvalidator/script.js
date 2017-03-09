@@ -1,4 +1,5 @@
 import $ from '../../../utils/NodeList.js'
+import core from '../Forms.vue'
 
 export default {
   props: {

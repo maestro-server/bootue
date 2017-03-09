@@ -1,3 +1,5 @@
+import core from '../Forms.vue'
+
 export default {
   props: {
     button: {type: Boolean, default: false},
