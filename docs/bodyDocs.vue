@@ -93,6 +93,7 @@ import core from '../src/components/bootue/_core/Core.vue'
 import grid from '../src/components/bootue/grid/Grid.vue'
 import type from '../src/components/bootue/typography/Type.vue'
 
+
 export default {
   components: {
     accordionDocs,

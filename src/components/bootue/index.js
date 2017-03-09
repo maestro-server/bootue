@@ -65,6 +65,6 @@ let components = {
   typeahead
 }
 
-components = Object.assign({SpreadButtons, SpreadForms}, components)
+components = Object.assign(components, SpreadButtons, SpreadForms)
 
 export default components
