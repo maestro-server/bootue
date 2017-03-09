@@ -7,8 +7,8 @@ var Prism = require('prismjs')
 require('./js/showLanguage')
 
 Vue.use(require('vue-resource'));
-require('../dist/vue-strap-lang.js')
-require('../dist/isMobileBrowser.js')
+require('./js/vue-strap-lang.js')
+require('./js/isMobileBrowser.js')
 
 import bodyDocs from './bodyDocs.vue'
 

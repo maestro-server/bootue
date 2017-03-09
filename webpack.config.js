@@ -1,19 +1,11 @@
 var path = require('path')
 var webpack = require('webpack')
-
-/*
-entry: './src/main.js',
-  output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js'
-  },
-  */
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
   entry: {
       docs: "./docs/index.js",
-      ex: "./src/main.js"
+      guide: "./src/main.js"
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -30,8 +22,12 @@ module.exports = {
             // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
             // the "scss" and "sass" values for the lang attribute to the right configs here.
             // other preprocessors should work out of the box, no loader config like this necessary.
-            'scss': 'vue-style-loader!css-loader!sass-loader',
-            'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+            //'scss': 'vue-style-loader!css-loader!sass-loader',
+            'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
+            'scss': ExtractTextPlugin.extract({
+              loader: ['css-loader', 'sass-loader'],
+              fallback: 'vue-style-loader' // <- this is a dep of vue-loader, so no need to explicitly install if using npm3
+            })
           }
           // other vue-loader options go here
         }
@@ -45,22 +41,26 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]'
+          name: 'imgs/[name].[ext]?[hash]'
         }
       },
-      { 
-        test: /\.css$/, 
-        loader: "vue-style-loader!css-loader?root=./docs/" 
+      {
+        test: /\.css$/,
+        loader: "vue-style-loader!css-loader?root=./docs/"
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         query: {
-          limit: 10000
+          limit: 10000,
+          name: 'fonts/[name].[ext]'
         }
       }
     ]
   },
+  plugins: [
+    new ExtractTextPlugin("build.css")
+  ],
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
