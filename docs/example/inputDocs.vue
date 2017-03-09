@@ -31,20 +31,20 @@
         <div class="row">
           <button-group type="primary" :buttons="false">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-              <p><checkbox v-model="check.label">Label</checkbox></p>
-              <p><checkbox v-model="check.placeholder">placeholder</checkbox></p>
-              <p><checkbox v-model="check.hideHelp">hide help</checkbox></p>
-              <p><checkbox v-model="check.disabled">disabled</checkbox></p>
-              <p><checkbox v-model="check.error">error</checkbox></p>
-              <p><checkbox v-model="check.icon">icon</checkbox></p>
+              <p><bs-checkbox v-model="check.label">Label</bs-checkbox></p>
+              <p><bs-checkbox v-model="check.placeholder">placeholder</bs-checkbox></p>
+              <p><bs-checkbox v-model="check.hideHelp">hide help</bs-checkbox></p>
+              <p><bs-checkbox v-model="check.disabled">disabled</bs-checkbox></p>
+              <p><bs-checkbox v-model="check.error">error</bs-checkbox></p>
+              <p><bs-checkbox v-model="check.icon">icon</bs-checkbox></p>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-              <p><checkbox v-model="check.mask">mask</checkbox></p>
-              <p><checkbox v-model="check.minlength">minlength=5</checkbox></p>
-              <p><checkbox v-model="check.readonly">readonly</checkbox></p>
-              <p><checkbox v-model="check.required">required</checkbox></p>
-              <p><checkbox v-model="check.clearButton">clear button</checkbox></p>
-              <p><checkbox v-model="check.enterSubmit">enter submit</checkbox></p>
+              <p><bs-checkbox v-model="check.mask">mask</bs-checkbox></p>
+              <p><bs-checkbox v-model="check.minlength">minlength=5</bs-checkbox></p>
+              <p><bs-checkbox v-model="check.readonly">readonly</bs-checkbox></p>
+              <p><bs-checkbox v-model="check.required">required</bs-checkbox></p>
+              <p><bs-checkbox v-model="check.clearButton">clear button</bs-checkbox></p>
+              <p><bs-checkbox v-model="check.enterSubmit">enter submit</bs-checkbox></p>
             </div>
           </button-group>
         </div>
@@ -286,7 +286,7 @@ import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
 import bsInput from '../../src/components/bootue/forms/input/Input.vue'
 import ButtonGroup from '../../src/components/bootue/buttons/buttongroup/ButtonGroup.vue'
-import Checkbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
+import bsCheckbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
 import Dropdown from '../../src/components/bootue/dropdown/Dropdown.vue'
 
 export default {
@@ -296,7 +296,7 @@ export default {
     docCode,
     bsInput,
     ButtonGroup,
-    Checkbox,
+    bsCheckbox,
     Dropdown
   },
   data () {

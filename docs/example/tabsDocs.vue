@@ -1,9 +1,9 @@
 <template>
   <doc-section id="tabs" name="Tabs">
     <div class="bs-example">
-      <p>Style: <v-select v-model="navStyle" :options="['tabs','pills','stacked']"></v-select></p>
-      <p v-if="navStyle!='stacked'">Justified: <v-select v-model="justified" :options="[true,false]"></v-select></p>
-      <!-- <checkbox v-model="justified">Justified</checkbox> -->
+      <p>Style: <bs-select v-model="navStyle" :options="['tabs','pills','stacked']"></bs-select></p>
+      <p v-if="navStyle!='stacked'">Justified: <bs-select v-model="justified" :options="[true,false]"></bs-select></p>
+      <!-- <bs-checkbox v-model="justified">Justified</bs-checkbox> -->
       <tabs :nav-style="navStyle" :justified="justified">
         <tab header="zero">
           <p>
@@ -119,22 +119,22 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import checkbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
+import bsCheckbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
 import tabs from '../../src/components/bootue/tabs/Tabs.vue'
 import tabGroup from '../../src/components/bootue/tabgroup/TabGroup.vue'
 import tab from '../../src/components/bootue/tab/Tab.vue'
-import vSelect from '../../src/components/bootue/forms/select/Select.vue'
+import bsSelect from '../../src/components/bootue/forms/select/Select.vue'
 
 export default {
   components: {
     docSection,
     docTable,
     docCode,
-    checkbox,
+    bsCheckbox,
     tabGroup,
     tabs,
     tab,
-    vSelect
+    bsSelect
   },
   data () {
     return {

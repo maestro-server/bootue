@@ -35,29 +35,29 @@
         </div>
       </div>
       <div class="row">
-        <form-validator v-model="valid.all">
+        <bs-form-validator v-model="valid.all">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <tabs v-model="active">
               <tab header="User">
-                <form-validator v-model="valid.user">
+                <bs-form-validator v-model="valid.user">
                   <bs-input label="User Name" required></bs-input>
                   <bs-input label="Email" type="email" required></bs-input>
-                </form-validator>
+                </bs-form-validator>
                 <button type="button" class="btn btn-primary" :disabled="!valid.user" @click="active = 1">Continue</button>
               </tab>
               <tab header="Direction" :disabled="!valid.user">
-                <form-validator v-model="valid.direction">
+                <bs-form-validator v-model="valid.direction">
                   <div class="form-validator">
                     <label class="control-label">Continent</label>
                     <v-select required justified :options="['America','Europe']" clear-button></v-select>
                   </div>
                   <bs-input label="City" type="text" required></bs-input>
-                </form-validator>
+                </bs-form-validator>
                 <button type="button" class="btn btn-primary" :disabled="!valid.all">Done!!</button>
               </tab>
             </tabs>
           </div>
-        </form-validator>
+        </bs-form-validator>
       </div>
     </div>
     <doc-code language="markup">
@@ -100,7 +100,7 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import formValidator from '../../src/components/bootue/forms/formvalidator/FormValidator.vue'
+import bsFormValidator from '../../src/components/bootue/forms/formvalidator/FormValidator.vue'
 import bsInput from '../../src/components/bootue/forms/input/Input.vue'
 import tab from '../../src/components/bootue/tab/Tab.vue'
 import tabs from '../../src/components/bootue/tabs/Tabs.vue'
@@ -111,7 +111,7 @@ export default {
     docSection,
     docTable,
     docCode,
-    formValidator,
+    bsFormValidator,
     bsInput,
     tab,
     tabs,

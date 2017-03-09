@@ -6,21 +6,21 @@
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <p><pre>Normal select data: {{select.normal}}</pre></p>
           <form action="./#select" method="get">
-            <v-select :options="select.options" options-value="val" v-model="select.normal" name="animal" :search="select.search"
+            <bs-select :options="select.options" options-value="val" v-model="select.normal" name="animal" :search="select.search"
               :required="select.required" :clear-button="select.clearButton" :disabled="select.disabled"
               :placeholder="select.placeholder?'Using placeholder':null"
-            ></v-select>
+            ></bs-select>
             <button type="submit" class="btn btn-default">Submit</button>
           </form>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <p><pre>Multiple select data : {{select.multiple.join(',')}}</pre></p>
           <form action="./#select" method="get">
-            <v-select :options="select.options" options-value="val" v-model="select.multiple" name="animals[]" :search="select.search"
+            <bs-select :options="select.options" options-value="val" v-model="select.multiple" name="animals[]" :search="select.search"
               multiple :required="select.required" :clear-button="select.clearButton"
               :placeholder="select.placeholder?'Using placeholder':null"
               :close-on-select="select.closeOnSelect" :limit="select.limit?3:1024" :disabled="select.disabled"
-            ></v-select>
+            ></bs-select>
             <button type="submit" class="btn btn-default">Submit</button>
           </form>
         </div>
@@ -29,29 +29,29 @@
       <button-group type="primary" :buttons="false">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <p><checkbox v-model="select.disabled">Disabled</checkbox></p>
-            <p><checkbox v-model="select.placeholder">Placeholder</checkbox></p>
-            <p><checkbox v-model="select.search">Search</checkbox></p>
-            <p><checkbox v-model="select.clearButton">Clear Button</checkbox></p>
+            <p><bs-checkbox v-model="select.disabled">Disabled</bs-checkbox></p>
+            <p><bs-checkbox v-model="select.placeholder">Placeholder</bs-checkbox></p>
+            <p><bs-checkbox v-model="select.search">Search</bs-checkbox></p>
+            <p><bs-checkbox v-model="select.clearButton">Clear Button</bs-checkbox></p>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <p><checkbox v-model="select.required">Required (empty value if noting selected)</checkbox></p>
+            <p><bs-checkbox v-model="select.required">Required (empty value if noting selected)</bs-checkbox></p>
             <p>
               Multiple:
-              <checkbox v-if="select.multiple" v-model="select.limit">Limit (e.g. 3)</checkbox>
-              <checkbox v-if="select.multiple" v-model="select.closeOnSelect">Close on Select</checkbox>
+              <bs-checkbox v-if="select.multiple" v-model="select.limit">Limit (e.g. 3)</bs-checkbox>
+              <bs-checkbox v-if="select.multiple" v-model="select.closeOnSelect">Close on Select</bs-checkbox>
             </p>
           </div>
         </div>
       </button-group>
       <doc-code>
         &lt;form action="./#select" method="get">
-          &lt;v-select v-model="select.value" :options="select.options" options-value="val"
+          &lt;bs-select v-model="select.value" :options="select.options" options-value="val"
             multiple name="animals[]" limit="3"
             placeholder="Using placeholder"
             search justified required disabled
             clear-button close-on-select
-          >&lt;/v-select>
+          >&lt;/bs-select>
           &lt;button type="submit" class="btn btn-default">Submit form&lt;/button>
         &lt;/form>
       </doc-code>
@@ -69,45 +69,45 @@
       </doc-code>
       <h4>Select with option component:</h4>
       <p><pre>Selected data : {{single}}</pre></p>
-      <v-select v-model="single">
-        <v-option value="apple">Apple</v-option>
-        <v-option value="banana">Banana</v-option>
-        <v-option value="cherry">Cherry</v-option>
-        <v-option value="orange">Orange</v-option>
-        <v-option value="grape">Grape</v-option>
-      </v-select>
+      <bs-select v-model="single">
+        <bs-option value="apple">Apple</bs-option>
+        <bs-option value="banana">Banana</bs-option>
+        <bs-option value="cherry">Cherry</bs-option>
+        <bs-option value="orange">Orange</bs-option>
+        <bs-option value="grape">Grape</bs-option>
+      </bs-select>
       <doc-code>
-        &lt;v-select>
-          &lt;v-option value="apple">Apple&lt;/v-option>
-          &lt;v-option value="banana">Banana&lt;/v-option>
-          &lt;v-option value="cherry">Cherry&lt;/v-option>
-          &lt;v-option value="orange">Orange&lt;/v-option>
-          &lt;v-option value="grape">Grape&lt;/v-option>
-        &lt;/v-select>
+        &lt;bs-select>
+          &lt;bs-option value="apple">Apple&lt;/bs-option>
+          &lt;bs-option value="banana">Banana&lt;/bs-option>
+          &lt;bs-option value="cherry">Cherry&lt;/bs-option>
+          &lt;bs-option value="orange">Orange&lt;/bs-option>
+          &lt;bs-option value="grape">Grape&lt;/bs-option>
+        &lt;/bs-select>
       </doc-code>
       <hr/>
       <h4>Use button-group (component or <a href="http://getbootstrap.com/components/#btn-groups-justified">bootstrap element</a>) if you want to justify.</h4>
       <button-group justified>
-        <v-select multiple clear-button>
-          <v-option value="apple">Apple</v-option>
-          <v-option value="banana">Banana</v-option>
-          <v-option value="cherry">Cherry</v-option>
-          <v-option value="cranberry">Cranberry</v-option>
-          <v-option value="grape">Grape</v-option>
-          <v-option value="orange">Orange</v-option>
-          <v-option value="passionfruit">Passionfruit</v-option>
-          <v-option value="pineapple">Pineapple</v-option>
-          <v-option value="strawberry">Strawberry</v-option>
-          <v-option value="a">Apple</v-option>
-          <v-option value="b">Banana</v-option>
-          <v-option value="c">Cherry</v-option>
-          <v-option value="c">Cranberry</v-option>
-          <v-option value="g">Grape</v-option>
-          <v-option value="o">Orange</v-option>
-          <v-option value="p">Passionfruit</v-option>
-          <v-option value="p">Pineapple</v-option>
-          <v-option value="s">Strawberry</v-option>
-        </v-select>
+        <bs-select multiple clear-button>
+          <bs-option value="apple">Apple</bs-option>
+          <bs-option value="banana">Banana</bs-option>
+          <bs-option value="cherry">Cherry</bs-option>
+          <bs-option value="cranberry">Cranberry</bs-option>
+          <bs-option value="grape">Grape</bs-option>
+          <bs-option value="orange">Orange</bs-option>
+          <bs-option value="passionfruit">Passionfruit</bs-option>
+          <bs-option value="pineapple">Pineapple</bs-option>
+          <bs-option value="strawberry">Strawberry</bs-option>
+          <bs-option value="a">Apple</bs-option>
+          <bs-option value="b">Banana</bs-option>
+          <bs-option value="c">Cherry</bs-option>
+          <bs-option value="c">Cranberry</bs-option>
+          <bs-option value="g">Grape</bs-option>
+          <bs-option value="o">Orange</bs-option>
+          <bs-option value="p">Passionfruit</bs-option>
+          <bs-option value="p">Pineapple</bs-option>
+          <bs-option value="s">Strawberry</bs-option>
+        </bs-select>
       </button-group>
       <doc-code>
         &lt;button-group justified>&lt;select>...&lt;/select>&lt;/button-group>
@@ -118,11 +118,11 @@
       <h4>Ajax data and parent dependency:</h4>
       <p>Depend on <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">vue-resource</a>. Disabled if not present.</p>
       <p>The second select has inheritance, is enabled when the first get some value and the ajax return values.</p>
-      <v-select url="docs/data.json" options-label="text" v-model="ajax.value" clear-button @options="ajax.options = arguments[0]"></v-select>
-      <v-select url="docs/data.json" options-label="text" multiple :parent="ajax.value"></v-select>
+      <bs-select url="docs/data.json" options-label="text" v-model="ajax.value" clear-button @options="ajax.options = arguments[0]"></bs-select>
+      <bs-select url="docs/data.json" options-label="text" multiple :parent="ajax.value"></bs-select>
       <doc-code>
-        &lt;v-select url="docs/data.json" options-label="text" v-model="ajax.value" clear-button @options="ajax.options = arguments[0]">&lt;/v-select>
-        &lt;v-select url="docs/data.json" options-label="text" multiple :parent="ajax.value">&lt;/v-select>
+        &lt;bs-select url="docs/data.json" options-label="text" v-model="ajax.value" clear-button @options="ajax.options = arguments[0]">&lt;/bs-select>
+        &lt;bs-select url="docs/data.json" options-label="text" multiple :parent="ajax.value">&lt;/bs-select>
       </doc-code>
       <p>Ajax response:</p>
       <pre v-html="ajax.options"></pre>
@@ -190,9 +190,9 @@ import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
 import ButtonGroup from '../../src/components/bootue/buttons/buttongroup/ButtonGroup.vue'
-import checkbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
-import vSelect from '../../src/components/bootue/forms/select/Select.vue'
-import vOption from '../../src/components/bootue/forms/option/Option.vue'
+import bsCheckbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
+import bsSelect from '../../src/components/bootue/forms/select/Select.vue'
+import bsOption from '../../src/components/bootue/forms/option/Option.vue'
 
 export default {
   components: {
@@ -200,9 +200,9 @@ export default {
     docTable,
     docCode,
     ButtonGroup,
-    checkbox,
-    vSelect,
-    vOption
+    bsCheckbox,
+    bsSelect,
+    bsOption
   },
   data () {
     return {

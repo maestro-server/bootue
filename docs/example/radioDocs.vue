@@ -2,16 +2,16 @@
   <doc-section id="radio" name="Radio">
     <div class="bs-example">
       <h4>Radio</h4>
-      <radio v-model="radioValue" checked-value="one">One</radio>
-      <radio v-model="radioValue" checked-value="two" type="danger" disabled>Two (disabled)</radio>
-      <radio v-model="radioValue" checked-value="two" type="warning" readonly>Two (readonly)</radio>
-      <radio v-model="radioValue" checked-value="two" type="success">Two</radio>
+      <bs-radio v-model="radioValue" checked-value="one">One</bs-radio>
+      <bs-radio v-model="radioValue" checked-value="two" type="danger" disabled>Two (disabled)</bs-radio>
+      <bs-radio v-model="radioValue" checked-value="two" type="warning" readonly>Two (readonly)</bs-radio>
+      <bs-radio v-model="radioValue" checked-value="two" type="success">Two</bs-radio>
       <hr>
       <h4>Radio Button (Single buttons)</h4>
-      <radio button v-model="radioValue" checked-value="three" type="primary">Three</radio>
-      <radio button v-model="radioValue" checked-value="four" type="info" disabled>Four (disabled)</radio>
-      <radio button v-model="radioValue" checked-value="four" type="info" readonly>Four (readonly)</radio>
-      <radio button v-model="radioValue" checked-value="four" type="info">Four</radio>
+      <bs-radio button v-model="radioValue" checked-value="three" type="primary">Three</bs-radio>
+      <bs-radio button v-model="radioValue" checked-value="four" type="info" disabled>Four (disabled)</bs-radio>
+      <bs-radio button v-model="radioValue" checked-value="four" type="info" readonly>Four (readonly)</bs-radio>
+      <bs-radio button v-model="radioValue" checked-value="four" type="info">Four</bs-radio>
       <p><pre>Radio value: {{ radioValue }}</pre></p>
     </div>
     <doc-code language="markup">
@@ -59,14 +59,14 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import radio from '../../src/components/bootue/forms/radio/Radio.vue'
+import bsRadio from '../../src/components/bootue/forms/radio/Radio.vue'
 
 export default {
   components: {
     docSection,
     docTable,
     docCode,
-    radio
+    bsRadio
   },
   data () {
     return {

@@ -16,29 +16,29 @@
         </div>
       </div>
       <div class="row">
-        <form-group @valid="valid.all = true" @invalid="valid.all = false">
+        <bs-form-group @valid="valid.all = true" @invalid="valid.all = false">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <tabs :active="active">
               <tab header="User">
-                <form-group @valid="valid.user = true" @invalid="valid.user = false">
+                <bs-form-group @valid="valid.user = true" @invalid="valid.user = false">
                   <bs-input label="User Name" required></bs-input>
                   <bs-input label="Email" type="email" required></bs-input>
-                </form-group>
+                </bs-form-group>
                 <button type="button" class="btn btn-primary" :disabled="!valid.user" @click="active = 1">Continue</button>
               </tab>
               <tab header="Direction" :disabled="!valid.user">
-                <form-group @valid="valid.direction = true" @invalid="valid.direction = false">
+                <bs-form-group @valid="valid.direction = true" @invalid="valid.direction = false">
                   <div class="form-group">
                     <label class="control-label">Continent</label>
                     <v-select required justified :options="['America','Europe']" clear-button></v-select>
                   </div>
                   <bs-input label="City" type="text" required></bs-input>
-                </form-group>
+                </bs-form-group>
                 <button type="button" class="btn btn-primary" :disabled="!valid.all">Done!!</button>
               </tab>
             </tabs>
           </div>
-        </form-group>
+        </bs-form-group>
       </div>
     </div>
     <doc-code language="markup">

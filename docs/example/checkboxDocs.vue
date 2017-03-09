@@ -2,16 +2,16 @@
   <doc-section id="checkbox" name="Checkbox">
     <div class="bs-example">
       <h4>Checkbox</h4>
-      <checkbox v-model="checkboxValue.one" true-value="1">One</checkbox>
-      <checkbox v-model="checkboxValue.two" true-value="two" type="danger" disabled>Two (disabled)</checkbox>
-      <checkbox v-model="checkboxValue.two" true-value="two" type="warning" readonly>Two (readonly)</checkbox>
-      <checkbox v-model="checkboxValue.two" true-value="two" type="success">Two</checkbox>
+      <bs-checkbox v-model="checkboxValue.one" true-value="1">One</bs-checkbox>
+      <bs-checkbox v-model="checkboxValue.two" true-value="two" type="danger" disabled>Two (disabled)</bs-checkbox>
+      <bs-checkbox v-model="checkboxValue.two" true-value="two" type="warning" readonly>Two (readonly)</bs-checkbox>
+      <bs-checkbox v-model="checkboxValue.two" true-value="two" type="success">Two</bs-checkbox>
       <hr>
       <h4>Checkbox Button (Single button)</h4>
-      <checkbox button v-model="checkboxValue.three" :true-value="2+1" type="primary">Three</checkbox>
-      <checkbox button v-model="checkboxValue.four" type="info" disabled>Four (disabled)</checkbox>
-      <checkbox button v-model="checkboxValue.four" type="info" readonly>Four (readonly)</checkbox>
-      <checkbox button v-model="checkboxValue.four" type="info">Four</checkbox>
+      <bs-checkbox button v-model="checkboxValue.three" :true-value="2+1" type="primary">Three</bs-checkbox>
+      <bs-checkbox button v-model="checkboxValue.four" type="info" disabled>Four (disabled)</bs-checkbox>
+      <bs-checkbox button v-model="checkboxValue.four" type="info" readonly>Four (readonly)</bs-checkbox>
+      <bs-checkbox button v-model="checkboxValue.four" type="info">Four</bs-checkbox>
       <p>
         <pre>Checkbox values: {{ checkboxValue }}</pre>
       </p>
@@ -67,14 +67,14 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import checkbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
+import bsCheckbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
 
 export default {
   components: {
     docSection,
     docTable,
     docCode,
-    checkbox
+    bsCheckbox
   },
   data () {
     return {

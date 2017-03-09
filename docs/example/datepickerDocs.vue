@@ -4,16 +4,16 @@
       <p>
         <pre>Selected date is: {{dateString}}</pre>
       </p>
-      <datepicker ref="dp" v-model="date" :disabled-days-of-week="disabled" :format="format" :clear-button="clear" :placeholder="placeholder" width="370px"></datepicker>
+      <bs-datepicker ref="dp" v-model="date" :disabled-days-of-week="disabled" :format="format" :clear-button="clear" :placeholder="placeholder" width="370px"></bs-datepicker>
       <h4>Disabled days of week</h4>
 
-      <v-select multiple v-model="disabled" :options="[0,1,2,3,4,5,6]"></v-select>
+      <bs-select multiple v-model="disabled" :options="[0,1,2,3,4,5,6]"></bs-select>
 
       <h4>Format</h4>
-      <v-select v-model="format" :options="formats"></v-select>
+      <bs-select v-model="format" :options="formats"></bs-select>
 
       <h4>Reset button</h4>
-      <checkbox :value="clear" @checked="clear = arguments[0]" type="primary">toggle clear button</checkbox>
+      <bs-checkbox :value="clear" @checked="clear = arguments[0]" type="primary">toggle clear button</bs-checkbox>
     </div>
     <doc-code language="markup">
       &lt;datepicker v-model="value" :disabled-days-of-Week="disabled" :format="format" :clear-button="clear" :placeholder="placeholder">&lt;/datepicker>
@@ -78,20 +78,20 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import Checkbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
-import Datepicker from '../../src/components/bootue/forms/datepicker/Datepicker.vue'
-import vSelect from '../../src/components/bootue/forms/select/Select.vue'
-import vOption from '../../src/components/bootue/forms/option/Option.vue'
+import bsCheckbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
+import bsDatepicker from '../../src/components/bootue/forms/datepicker/Datepicker.vue'
+import bsSelect from '../../src/components/bootue/forms/select/Select.vue'
+import bsOption from '../../src/components/bootue/forms/option/Option.vue'
 
 export default {
   components: {
     docSection,
     docTable,
     docCode,
-    Checkbox,
-    Datepicker,
-    vSelect,
-    vOption
+    bsCheckbox,
+    bsDatepicker,
+    bsSelect,
+    bsOption
   },
   data () {
     return {

@@ -114,7 +114,7 @@
                     <p> Ut enim ad minim veniam,
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat.</p>
-              
+
                     <div class="aside-footer">
                       <button type="button" class="btn btn-default" @click="showLeft=false">Close</button>
                     </div>
@@ -127,12 +127,12 @@
                     <p> Ut enim ad minim veniam,
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat.</p>
-             
+
                     <div class="aside-footer">
                       <button type="button" class="btn btn-default" @click="showRightA=false">Close</button>
                     </div>
                   </sidebar>
-                
+
             </div>
 
             <div class="well-white" id="Buttons">
@@ -169,9 +169,9 @@
                 <div class="bs-example">
       <h4>Checkbox</h4>
       <button-group v-model="checkboxValue">
-        <checkbox true-value="left">Left</checkbox>
-        <checkbox true-value="middle">Middle</checkbox>
-        <checkbox true-value="right">Right</checkbox>
+        <bs-checkbox true-value="left">Left</bs-checkbox>
+        <bs-checkbox true-value="middle">Middle</bs-checkbox>
+        <bs-checkbox true-value="right">Right</bs-checkbox>
       </button-group>
       <p>
         <pre>Checkbox value: {{ checkboxValue }}</pre>
@@ -180,31 +180,31 @@
       <h4>Radio</h4>
       <p>
         <button-group v-model="radioValue" type="primary">
-          <radio true-value="left">Left</radio>
-          <radio true-value="middle">Middle</radio>
-          <radio true-value="right">Right</radio>
+          <bs-radio true-value="left">Left</bs-radio>
+          <bs-radio true-value="middle">Middle</bs-radio>
+          <bs-radio true-value="right">Right</bs-radio>
         </button-group>
       </p>
       <p>
         <button-group v-model="radioValue" type="success">
-          <radio true-value="left">Left</radio>
-          <radio true-value="middle">Middle</radio>
-          <radio true-value="right">Right</radio>
+          <bs-radio true-value="left">Left</bs-radio>
+          <bs-radio true-value="middle">Middle</bs-radio>
+          <bs-radio true-value="right">Right</bs-radio>
         </button-group>
       </p>
       <p>
         <label>Not buttons:</label>
         <button-group v-model="radioValue" type="info" buttons="false">
-          <radio true-value="left">Left</radio>
-          <radio true-value="middle">Middle</radio>
-          <radio true-value="right">Right</radio>
+          <bs-radio true-value="left">Left</bs-radio>
+          <bs-radio true-value="middle">Middle</bs-radio>
+          <bs-radio true-value="right">Right</bs-radio>
         </button-group>
       </p>
       <p>
         <pre>Radio value: {{ radioValue }}</pre>
       </p>
     </div>
-                
+
             </div>
 
             <div class="well-white" id="Carrousel">
@@ -233,21 +233,21 @@
          </div>
         </slider>
       </carousel>
-                
+
             </div>
 
             <div class="well-white" id="Checkbox">
                 <h3>Checkbox</h3>
-                <checkbox v-model="checkboxValueC.one" true-value="1">One</checkbox>
-                <checkbox v-model="checkboxValueC.two" true-value="two" type="danger" disabled>Two (disabled)</checkbox>
-                <checkbox v-model="checkboxValueC.two" true-value="two" type="warning" readonly>Two (readonly)</checkbox>
-                <checkbox v-model="checkboxValueC.two" true-value="two" type="success">Two</checkbox>
+                <bs-checkbox v-model="checkboxValueC.one" true-value="1">One</bs-checkbox>
+                <bs-checkbox v-model="checkboxValueC.two" true-value="two" type="danger" disabled>Two (disabled)</bs-checkbox>
+                <bs-checkbox v-model="checkboxValueC.two" true-value="two" type="warning" readonly>Two (readonly)</bs-checkbox>
+                <bs-checkbox v-model="checkboxValueC.two" true-value="two" type="success">Two</bs-checkbox>
                 <hr>
                 <h4>Checkbox Button (Single button)</h4>
-                <checkbox button v-model="checkboxValueC.three" :true-value="2+1" type="primary">Three</checkbox>
-                <checkbox button v-model="checkboxValueC.four" type="info" disabled>Four (disabled)</checkbox>
-                <checkbox button v-model="checkboxValueC.four" type="info" readonly>Four (readonly)</checkbox>
-                <checkbox button v-model="checkboxValueC.four" type="info">Four</checkbox>
+                <bs-checkbox button v-model="checkboxValueC.three" :true-value="2+1" type="primary">Three</bs-checkbox>
+                <bs-checkbox button v-model="checkboxValueC.four" type="info" disabled>Four (disabled)</bs-checkbox>
+                <bs-checkbox button v-model="checkboxValueC.four" type="info" readonly>Four (readonly)</bs-checkbox>
+                <bs-checkbox button v-model="checkboxValueC.four" type="info">Four</bs-checkbox>
                 <br/><br/>
                 <p>
                   <pre>Checkbox values: {{ checkboxValueC }}</pre>
@@ -261,7 +261,7 @@
       <p>
         <pre>Selected date is: {{dateString}}</pre>
       </p>
-      <datepicker ref="dp" v-model="date" :disabled-days-of-week="disabled" :format="format" :clear-button="clear" :placeholder="placeholder" width="370px"></datepicker>
+      <bs-datepicker ref="dp" v-model="date" :disabled-days-of-week="disabled" :format="format" :clear-button="clear" :placeholder="placeholder" width="370px"></bs-datepicker>
       <h4>Disabled days of week</h4>
 
       <bs-select multiple v-model="disabled" :options="[0,1,2,3,4,5,6]"></bs-select>
@@ -270,8 +270,8 @@
       <bs-select v-model="format" :options="formats"></bs-select>
 
       <h4>Reset button</h4>
-      <checkbox :value="clear" @checked="clear = arguments[0]" type="primary">toggle clear button</checkbox>
-    </div>  
+      <bs-checkbox :value="clear" @checked="clear = arguments[0]" type="primary">toggle clear button</bs-checkbox>
+    </div>
             </div>
 
             <div class="well-white" id="DropDown">
@@ -328,35 +328,35 @@
         <a href="#dropdown" class="btn btn-default" role="button">Right</a>
       </div>
     </div>
-                
+
             </div>
 
             <div class="well-white" id="FormValidator">
                 <h3>FormValidator</h3>
-                <form-validator v-model="valid.all">
+                <bs-form-validator v-model="valid.all">
                   <div>
                     <tabs v-model="activeF">
                       <tab header="User">
-                        <form-validator @valid="valid.user = true" @invalid="valid.user = false">
+                        <bs-form-validator @valid="valid.user = true" @invalid="valid.user = false">
                           <bs-input label="User Name" required></bs-input>
                           <bs-input label="Email" type="email" required></bs-input>
-                        </form-validator>
+                        </bs-form-validator>
                         <button type="button" class="btn btn-primary" :disabled="!valid.user" @click="activeF = 1">Continue</button>
                       </tab>
                       <tab header="Direction" :disabled="!valid.user">
-                        <form-validator @isvalid="valid.direction = arguments[0]">
+                        <bs-form-validator @isvalid="valid.direction = arguments[0]">
                           <div class="form-validator">
                             <label class="control-label">Continent</label>
                             <bs-select required justified :options="['America','Europe']" clear-button></bs-select>
                           </div>
                           <bs-input label="City" type="text" required></bs-input>
-                        </form-validator>
+                        </bs-form-validator>
                         <button type="button" class="btn btn-primary" :disabled="!valid.all">Done!!</button>
                       </tab>
                     </tabs>
                   </div>
-                </form-validator>
-                                
+                </bs-form-validator>
+
             </div>
 
             <div class="well-white" id="Input">
@@ -380,7 +380,7 @@
                   @focus="event = 'focused'"
                   @blur="event = 'blured'"
                 ></bs-input>
-                                
+
             </div>
 
             <div class="well-white" id="Labels">
@@ -401,7 +401,7 @@
 
             <div class="well-white" id="Modal">
                 <h3>Modal</h3>
-                
+
                  <div class="bs-example">
       <button class="btn btn-default" @click="showModal = true">Show modal</button>
       <modal title="Modal title" v-model="showModal" @ok="showModal = false">
@@ -505,7 +505,7 @@
 </div>
 
 
-            
+
             <div class="well-white" id="Popover">
                 <h3>Popover</h3>
                 <div class="bs-example">
@@ -531,7 +531,7 @@
         <bs-input type="text" placeholder="Focus"></bs-input>
       </popover>
     </div>
-                
+
             </div>
 
             <div class="well-white" id="Progressbar">
@@ -588,16 +588,16 @@
                 <h3>Radio</h3>
                 <div class="bs-example">
       <h4>Radio</h4>
-      <radio v-model="radioValue" checked-value="one">One</radio>
-      <radio v-model="radioValue" checked-value="two" type="danger" disabled>Two (disabled)</radio>
-      <radio v-model="radioValue" checked-value="two" type="warning" readonly>Two (readonly)</radio>
-      <radio v-model="radioValue" checked-value="two" type="success">Two</radio>
+      <bs-radio v-model="radioValue" checked-value="one">One</bs-radio>
+      <bs-radio v-model="radioValue" checked-value="two" type="danger" disabled>Two (disabled)</bs-radio>
+      <bs-radio v-model="radioValue" checked-value="two" type="warning" readonly>Two (readonly)</bs-radio>
+      <bs-radio v-model="radioValue" checked-value="two" type="success">Two</bs-radio>
       <hr>
       <h4>Radio Button (Single buttons)</h4>
-      <radio button v-model="radioValue" checked-value="three" type="primary">Three</radio>
-      <radio button v-model="radioValue" checked-value="four" type="info" disabled>Four (disabled)</radio>
-      <radio button v-model="radioValue" checked-value="four" type="info" readonly>Four (readonly)</radio>
-      <radio button v-model="radioValue" checked-value="four" type="info">Four</radio>
+      <bs-radio button v-model="radioValue" checked-value="three" type="primary">Three</bs-radio>
+      <bs-radio button v-model="radioValue" checked-value="four" type="info" disabled>Four (disabled)</bs-radio>
+      <bs-radio button v-model="radioValue" checked-value="four" type="info" readonly>Four (readonly)</bs-radio>
+      <bs-radio button v-model="radioValue" checked-value="four" type="info">Four</bs-radio>
       <br/><br/>
       <p><pre>Radio value: {{ radioValue }}</pre></p>
     </div>
@@ -634,17 +634,17 @@
       <button-group type="primary" :buttons="false">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <p><checkbox v-model="select.disabled">Disabled</checkbox></p>
-            <p><checkbox v-model="select.placeholder">Placeholder</checkbox></p>
-            <p><checkbox v-model="select.search">Search</checkbox></p>
-            <p><checkbox v-model="select.clearButton">Clear Button</checkbox></p>
+            <p><bs-checkbox v-model="select.disabled">Disabled</bs-checkbox></p>
+            <p><bs-checkbox v-model="select.placeholder">Placeholder</bs-checkbox></p>
+            <p><bs-checkbox v-model="select.search">Search</bs-checkbox></p>
+            <p><bs-checkbox v-model="select.clearButton">Clear Button</bs-checkbox></p>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <p><checkbox v-model="select.required">Required (empty value if noting selected)</checkbox></p>
+            <p><bs-checkbox v-model="select.required">Required (empty value if noting selected)</bs-checkbox></p>
             <p>
               Multiple:
-              <checkbox v-if="select.multiple" v-model="select.limit">Limit (e.g. 3)</checkbox>
-              <checkbox v-if="select.multiple" v-model="select.closeOnSelect">Close on Select</checkbox>
+              <bs-checkbox v-if="select.multiple" v-model="select.limit">Limit (e.g. 3)</bs-checkbox>
+              <bs-checkbox v-if="select.multiple" v-model="select.closeOnSelect">Close on Select</bs-checkbox>
             </p>
           </div>
         </div>
@@ -657,7 +657,7 @@
                     <div class="bs-example">
       <p>Style: <bs-select v-model="navStyle" :options="['tabs','pills','stacked']"></bs-select></p>
       <p v-if="navStyle!='stacked'">Justified: <bs-select v-model="justified" :options="[true,false]"></bs-select></p>
-      <!-- <checkbox v-model="justified">Justified</checkbox> -->
+      <!-- <bs-checkbox v-model="justified">Justified</bs-checkbox> -->
       <tabs :nav-style="navStyle" :justified="justified">
         <tab header="zero">
           <p>
@@ -746,7 +746,7 @@
         <bs-input type="text" placeholder="Focus"></bs-input>
       </tooltip>
     </div>
-                
+
             </div>
 
             <div class="well-white" id="Typeahead">
@@ -817,7 +817,7 @@
     </div>
     <footer class="bs-docs-footer">
       <div class="container">
-        
+
         <h4>Vue 2 Component full version built by <a href="https://github.com/maestro-server">Signorini</a>.</h4>
         <p>Designed and built by <a href="https://github.com/yuche/">yuche</a>.</p>
         <p>Vue 2 version built by <a href="https://github.com/wffranco/">wffranco</a>.</p>

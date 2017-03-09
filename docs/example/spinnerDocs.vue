@@ -1,8 +1,8 @@
 <template>
   <doc-section id="spinner" name="Spinner">
     <div class="bs-example">
-      <p><checkbox :checked="fixed" @checked="fixed = arguments[0]" type="info">fixed</checkbox></p>
-      <p><v-select :options="['sm','md','lg','xl']" v-model="size"></v-select></p>
+      <p><bs-checkbox :checked="fixed" @checked="fixed = arguments[0]" type="info">fixed</bs-checkbox></p>
+      <p><bs-select :options="['sm','md','lg','xl']" v-model="size"></bs-select></p>
       <p>
         <button class="btn btn-info" @click="showRef">show spinner (using ref)</button>
         <button class="btn btn-info" @click="showGlobal">show spinner (global)</button>
@@ -57,8 +57,8 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import checkbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
-import vSelect from '../../src/components/bootue/forms/select/Select.vue'
+import bsCheckbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
+import bsSelect from '../../src/components/bootue/forms/select/Select.vue'
 import spinner from '../../src/components/bootue/spinner/Spinner.vue'
 
 export default {
@@ -66,9 +66,9 @@ export default {
     docSection,
     docTable,
     docCode,
-    checkbox,
+    bsCheckbox,
     spinner,
-    vSelect
+    bsSelect
   },
   data () {
     return {

@@ -26,6 +26,7 @@ import tab from './tab/Tab.vue'
 import tabGroup from './tabgroup/TabGroup.vue'
 import tables from './tables/Tables.vue'
 import tabs from './tabs/Tabs.vue'
+import thumbnail from './thumbnail/Thumbnail.vue'
 import toggleButton from './togglebutton/ToggleButton.vue'
 import tooltip from './tooltip/Tooltip.vue'
 import typeahead from './typeahead/Typeahead.vue'
@@ -36,7 +37,6 @@ import SpreadButtons from './buttons/'
 import SpreadForms from './forms/'
 
 export default {
-  core,
   accordion,
   affix,
   alert,
@@ -46,10 +46,7 @@ export default {
   bsLabel,
   carousel,
   dropdown,
-  grid,
-  jumbotron,
   lists,
-  media,
   modal,
   navbar,
   pagination,
@@ -61,13 +58,10 @@ export default {
   spinner,
   tab,
   tabGroup,
-  tables,
   tabs,
   toggleButton,
   tooltip,
   typeahead,
-  type,
-  fontAwesome,
   ...SpreadButtons,
   ...SpreadForms
 }

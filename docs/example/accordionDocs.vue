@@ -1,9 +1,9 @@
 <template>
   <doc-section id="accordion" name="Accordion">
     <div class="bs-example">
-      <checkbox v-model="checked" type="primary">Open only one at a time.</checkbox>
-      <p><v-select :options="types" clear-button v-model="selected" placeholder="Global type"></v-select></p>
-      <p><v-select :options="types" clear-button v-model="first" placeholder="First element type"></v-select></p>
+      <bs-checkbox v-model="checked" type="primary">Open only one at a time.</bs-checkbox>
+      <p><bs-select :options="types" clear-button v-model="selected" placeholder="Global type"></bs-select></p>
+      <p><bs-select :options="types" clear-button v-model="first" placeholder="First element type"></bs-select></p>
       <accordion :one-at-atime="checked" :type="selected">
         <panel is-open :type="first=='panel'?null:first">
           <strong slot="header"><u>Panel #1</u></strong>
@@ -100,9 +100,9 @@ import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
 import Accordion from '../../src/components/bootue/accordion/Accordion.vue'
-import Checkbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
+import bsCheckbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
 import Panel from '../../src/components/bootue/panel/Panel.vue'
-import vSelect from '../../src/components/bootue/forms/select/Select.vue'
+import bsSelect from '../../src/components/bootue/forms/select/Select.vue'
 
 export default {
   components: {
@@ -110,9 +110,9 @@ export default {
     docTable,
     docCode,
     Accordion,
-    Checkbox,
+    bsCheckbox,
     Panel,
-    vSelect
+    bsSelect
   },
   data () {
     return {
