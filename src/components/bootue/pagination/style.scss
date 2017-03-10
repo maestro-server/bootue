@@ -1,7 +1,7 @@
 //
 // Pagination (multiple pages)
 // --------------------------------------------------
-@import "../_core/variables";
+@import "./_variables/variables";
 @import "../_core/mixins";
 
 .pagination {
@@ -90,7 +90,6 @@
 .pagination-sm {
   @include pagination-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
 }
-
 
 //
 // Pager pagination
