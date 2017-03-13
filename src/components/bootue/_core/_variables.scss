@@ -5,9 +5,10 @@ $bootstrap-sass-asset-helper: false !default;
 
 @import "_variables/colors";
 @import "_variables/grid_component";
+@import "_variables/screens";
 @import "_variables/grid";
 @import "_variables/typography";
 @import "_variables/forms";
-@import "_variables/screens";
+
 @import "_variables/states";
 @import "_variables/zindex";
