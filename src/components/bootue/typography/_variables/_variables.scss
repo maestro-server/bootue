@@ -8,7 +8,6 @@ $font-size-h4: ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-h5: $font-size-base !default;
 $font-size-h6: ceil(($font-size-base * 0.85)) !default; // ~
 
-
 //== Type
 //
 //##
@@ -30,3 +29,9 @@ $page-header-border-color: $gray-lighter !default;
 $dl-horizontal-offset: $component-offset-horizontal !default;
 //** Point at which .dl-horizontal becomes horizontal
 $dl-horizontal-breakpoint: $grid-float-breakpoint !default;
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family: inherit !default;
+$headings-font-weight: 500 !default;
+$headings-line-height: 1.1 !default;
+$headings-color: inherit !default;
