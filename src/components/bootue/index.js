@@ -1,4 +1,10 @@
-import core from './_core/Core.vue'
+import normalize from './normalize/Normalize.vue'
+import print from './print/Print.vue'
+import scaffolding from './scaffolding/Scaffolding.vue'
+import utilities from './utilities/Utilities.vue'
+import responsive from './responsive/Responsive.vue'
+import componentAnimations from './component-animations/ComponentAnimations.vue'
+
 
 import accordion from './accordion/Accordion.vue'
 import affix from './affix/Affix.vue'
