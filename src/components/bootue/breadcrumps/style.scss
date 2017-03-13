@@ -1,8 +1,7 @@
 //
 // Breadcrumbs
 // --------------------------------------------------
-@import "../_core/variables";
-@import "../_core/mixins";
+@import "./_variables/variables";
 
 .breadcrumb {
   padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;

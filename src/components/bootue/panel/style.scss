@@ -1,8 +1,8 @@
 //
 // Panels
 // --------------------------------------------------
-@import "../_core/variables";
-@import "../_core/mixins";
+@import "./_variables/variables";
+@import "./_mixins/mixins";
 
 // Base class
 .panel {
@@ -166,7 +166,7 @@
   > .panel-body + .table-responsive,
   > .table + .panel-body,
   > .table-responsive + .panel-body {
-    border-top: 1px solid $table-border-color;
+    border-top: 1px solid $panel-default-border;
   }
   > .table > tbody:first-child > tr:first-child th,
   > .table > tbody:first-child > tr:first-child td {

@@ -33,6 +33,7 @@ import tooltip from './tooltip/Tooltip.vue'
 import typeahead from './typeahead/Typeahead.vue'
 import type from './typography/Type.vue'
 import fontAwesome from './typography/font-awesome/FontAwesome.vue'
+import well from './wells/Wells.vue'
 
 import SpreadButtons from './buttons/'
 import SpreadForms from './forms/'
@@ -62,7 +63,8 @@ let components = {
   tabs,
   toggleButton,
   tooltip,
-  typeahead
+  typeahead,
+  well
 }
 
 components = Object.assign(components, SpreadButtons, SpreadForms)
