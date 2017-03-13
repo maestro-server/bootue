@@ -1,6 +1,14 @@
 
 @import '../../_core/mixins';
 
+/** layout
+**/
+// Creates a wrapper for a series of columns
+@mixin make-row($gutter: $grid-gutter-width) {
+  margin-left:  ceil(($gutter / -2));
+  margin-right: floor(($gutter / -2));
+  @include clearfix;
+}
 
 // Form validation states
 //
