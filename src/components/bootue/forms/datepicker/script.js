@@ -1,6 +1,6 @@
-import {translations} from '../../../utils/utils.js'
+import {translations} from '../../_core/_utils/utils.js'
 import core from '../Forms.vue'
-// import $ from '../../utils/NodeList.js'
+// import $ from '../_core/_utils/NodeList.js'
 
 export default {
   props: {

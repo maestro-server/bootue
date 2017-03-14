@@ -1,4 +1,4 @@
-import {coerce} from '../../utils/utils.js'
+import {coerce} from '../_core/_utils/utils.js'
 
 export default {
   props: {

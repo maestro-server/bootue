@@ -10,7 +10,7 @@
 
 <script>
 import Affix from '../src/components/bootue/affix/Affix.vue'
-import Scroll from '../src/components/directives/Scroll.js'
+import Scroll from '../src/components/bootue/_core/_directives/Scroll.js'
 
 export default {
   directives: {

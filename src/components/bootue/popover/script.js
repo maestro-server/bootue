@@ -1,4 +1,4 @@
-import PopoverMixin from '../../utils/popoverMixins.js'
+import PopoverMixin from '../_core/_utils/popoverMixins.js'
 
 export default {
   mixins: [PopoverMixin],

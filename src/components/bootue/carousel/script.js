@@ -1,4 +1,4 @@
-import $ from '../../utils/NodeList.js'
+import $ from '../_core/_utils/NodeList.js'
 // let coerce = {
 //   interval: 'number'
 // }

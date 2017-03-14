@@ -1,7 +1,7 @@
 <script>
-import normalize from './normalize/Normalize.vue'
-import print from './print/Print.vue'
-import scaffolding from './scaffolding/Scaffolding.vue'
-import responsive from './responsive/Responsive.vue'
-import componentAnimations from './component-animations/ComponentAnimations.vue'
+import normalize from './components/normalize/Normalize.vue'
+import print from './components/print/Print.vue'
+import scaffolding from './components/scaffolding/Scaffolding.vue'
+import responsive from './components/responsive/Responsive.vue'
+import componentAnimations from './components/component-animations/ComponentAnimations.vue'
 </script>

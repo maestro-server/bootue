@@ -1,5 +1,5 @@
-import $ from '../../utils/NodeList.js'
-import ClickOutside from '../../directives/ClickOutside.js'
+import $ from '../_core/_utils/NodeList.js'
+import ClickOutside from '../_core/_directives/ClickOutside.js'
 
 export default {
   directives: {

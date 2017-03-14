@@ -1,8 +1,6 @@
 import core from './_core/Core.vue'
 import utilities from './utilities/Utilities.vue'
 
-
-
 import accordion from './accordion/Accordion.vue'
 import affix from './affix/Affix.vue'
 import alert from './alert/Alert.vue'
