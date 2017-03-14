@@ -89,14 +89,12 @@ import toggleButtonDocs from './example/toggleButtonDocs.vue'
 import tooltipDocs from './example/tooltipDocs.vue'
 import typeaheadDocs from './example/typeaheadDocs.vue'
 
-import normalize from '../src/components/bootue/normalize/Normalize.vue'
-import print from '../src/components/bootue/print/Print.vue'
-import scaffolding from '../src/components/bootue/scaffolding/Scaffolding.vue'
+import core from '../src/components/bootue/_core/Core.vue'
 import utilities from '../src/components/bootue/utilities/Utilities.vue'
-import responsive from '../src/components/bootue/responsive/Responsive.vue'
-import componentAnimations from '../src/components/bootue/component-animations/ComponentAnimations.vue'
+
 import grid from '../src/components/bootue/grid/Grid.vue'
 import type from '../src/components/bootue/typography/Type.vue'
+
 
 
 export default {
