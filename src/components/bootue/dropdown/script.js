@@ -1,10 +1,4 @@
-import $ from '../_core/_utils/NodeList.js'
-import ClickOutside from '../_core/_directives/ClickOutside.js'
-
 export default {
-  directives: {
-    ClickOutside
-  },
   props: {
     disabled: {type: Boolean, default: false},
     size: {type: String, default: null},
@@ -12,14 +6,13 @@ export default {
     type: {type: String, default: 'default'},
     value: {type: Boolean, default: false}
   },
+
   data () {
-    let show = this.value
-    return {show}
+    return {
+      show: this.value
+    }
   },
-  watch: {
-    show (val) { this.$emit('input', val) },
-    value (val) { this.show = val }
-  },
+
   computed: {
     buttonSize () { return ~['lg', 'sm', 'xs'].indexOf(this.size) ? 'btn-' + this.size : '' },
     inInput () { return this.$parent._input },
@@ -28,16 +21,53 @@ export default {
     slots () { return this._slotContents },
     submenu () { return this.$parent && (this.$parent.menu || this.$parent.submenu) }
   },
-  methods: {
-    blur () { this.show = false },
-    toggle () {
-      if (!this.disabled) { this.show = !this.show }
+
+  watch: {
+    show (val) {
+      this.$emit('input', val)
+      this.eventClickOutside(val)
+    },
+    value (val) {
+      this.show = val
     }
   },
-  mounted () {
-    $('ul', this.$el).on('click', 'li>a', e => { this.show = false })
+
+  methods: {
+    toggle () {
+      if (!this.disabled)
+        this.show = !this.show
+    },
+    hiddeMe () {
+      this.show = false
+    },
+    clickOutside (e) {
+      if (!this.$el.contains(e.target))
+      this.hiddeMe()
+    },
+    eventClickOutside(val) {
+      if(val) {
+        document.addEventListener('click', this.clickOutside, false)
+        return
+      }
+
+      document.removeEventListener('click', this.clickOutside, false)
+    }
   },
+
+  mounted () {
+    let links = this.$el.querySelectorAll('li>a')
+    Array.prototype.map.call(links, (el) => {
+      el.addEventListener('click', this.hiddeMe, false)
+    })
+
+  },
+
   beforeDestroy () {
-    $('ul', this.$el).off()
+    let links = this.$el.querySelectorAll('li>a')
+    Array.prototype.map.call(links, (el) => {
+      el.removeEventListener('click', this.hiddeMe, false)
+    })
+
+
   }
 }

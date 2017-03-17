@@ -29,6 +29,7 @@ function removeListener (node, callback) {
 export default {
   bind (el, binding) {
     removeListener(el, binding.value)
+    
     if (typeof binding.value !== 'function') {
       if (process.env.NODE_ENV !== 'production') {
         Vue.util.warn('ClickOutside only work with a function, received: v-' + binding.name + '="' + binding.expression + '"')
