@@ -1,8 +1,3 @@
-import $ from '../_core/_utils/NodeList.js'
-// let coerce = {
-//   interval: 'number'
-// }
-
 export default {
   props: {
     indicators: {
@@ -22,7 +17,9 @@ export default {
     return {
       indicator_list: [],
       index: 0,
-      isAnimating: false
+      isAnimating: false,
+      sliders: [],
+      selected: undefined
     }
   },
   watch: {
@@ -38,27 +35,48 @@ export default {
     },
     slide (direction, next, prev) {
       if (!this.$el) { return }
-      const $slider = $('.item', this.$el)
-      if (!$slider.length) { return }
-      const selected = $slider[next] || $slider[0]
-      $(selected).addClass(direction === 'left' ? 'next' : 'prev')
+      this.sliders = this.$el.querySelectorAll('.item')
+
+      if (!this.sliders.length) { return }
+      this.selected = this.sliders[next] || this.sliders[0]
+
+      let cDirection = direction === 'left' ? 'next' : 'prev'
+      this.selected.classList.add(cDirection)
+
       // request property that requires layout to force a layout
-      let x = selected.clientHeight
-      $([$slider[prev], selected]).addClass(direction).on('transitionend', () => {
-        $slider.off('transitionend').className = 'item'
-        $(selected).addClass('active')
-        this.isAnimating = false
+      let x = this.selected.clientHeight
+      this.selected.classList.add(direction)
+      this.sliders[prev].classList.add(direction)
+
+      this.sliders[prev].addEventListener('transitionend', this.finishTransion, false)
+    },
+    finishTransion (obj) {
+      Array.prototype.map.call(this.sliders, (el) => {
+        obj.target.removeEventListener('transitionend', this.finishTransion, false)
+        el.className = 'item'
       })
+
+      this.selected.classList.add('active')
+      this.isAnimating = false
+    },
+    getElementClassItem () {
+      return this.$el.querySelectorAll('.item')
     },
     next () {
       if (!this.$el || this.isAnimating) { return false }
       this.isAnimating = true
-      this.index + 1 < $('.item', this.$el).length ? this.index += 1 : this.index = 0
+
+      this.index + 1 < this.getElementClassItem().length
+      ? this.index += 1
+      : this.index = 0
     },
     prev () {
       if (!this.$el || this.isAnimating) { return false }
       this.isAnimating = true
-      this.index === 0 ? this.index = $('.item', this.$el).length - 1 : this.index -= 1
+      this.index === 0
+
+      ? this.index = this.getElementClassItem().length - 1
+      : this.index -= 1
     },
     toggleInterval (val) {
       if (val === undefined) { val = this._intervalID }
@@ -73,10 +91,16 @@ export default {
   },
   mounted () {
     this.toggleInterval(true)
-    $(this.$el).on('mouseenter', () => this.toggleInterval(false)).on('mouseleave', () => this.toggleInterval(true))
+
+
+    this.$el.addEventListener('mouseenter', () => this.toggleInterval(false), false)
+    this.$el.addEventListener('mouseleave', () => this.toggleInterval(true), false)
+
   },
   beforeDestroy () {
     this.toggleInterval(false)
-    $(this.$el).off('mouseenter mouseleave')
+
+    this.$el.removeEventListener('mouseenter', () => this.toggleInterval(false), false)
+    this.$el.removeEventListener('mouseleave', () => this.toggleInterval(true), false)
   }
 }

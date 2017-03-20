@@ -1,5 +1,3 @@
-import $ from './NodeList.js'
-
 export default {
   props: {
     content: {type: String},
@@ -63,14 +61,19 @@ export default {
     if (!trigger) return console.error('Could not find trigger v-el in your component that uses popoverMixin.')
 
     if (this.trigger === 'focus' && !~trigger.tabIndex) {
-      trigger = $('a,input,select,textarea,button', trigger)
+      trigger = trigger.querySelectorAll('a,input,select,textarea,button')
+
       if (!trigger.length) { return }
     }
+
     this.events.forEach(event => {
-      $(trigger).on(event, this.toggle)
+      if(trigger.length == undefined) {
+          trigger.addEventListener(event, this.toggle)
+      } else {
+          Array.prototype.map.call(trigger, (el) => {
+            el.addEventListener(event, this.toggle)
+          })
+      }
     })
-  },
-  beforeDestroy () {
-    if (this._trigger) $(this._trigger).off()
   }
 }
