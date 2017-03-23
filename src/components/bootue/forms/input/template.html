@@ -23,7 +23,6 @@
               :type="type=='textarea'?null:type"
               v-model="val"
               @blur="emit" @focus="emit" @input="emit"
-              @keyup.enter="type!='textarea'&&enterSubmit&&submit()"
     ></textarea>
     <div v-if="clearButton && value" :class="{icon:icon}">
       <span class="close" @click="value = ''">&times;</span>
@@ -53,7 +52,6 @@
                 :type="type=='textarea'?null:type"
                 v-model="val"
                 @blur="emit" @focus="emit" @input="emit"
-                @keyup.enter="type!='textarea'&&enterSubmit&&submit()"
       ></textarea>
       <span v-if="clearButton && val" class="close" @click="val = ''">&times;</span>
       <span v-if="icon&&valid!==null" :class="['form-control-feedback fa','fa-'+(valid?'check':'times')]"

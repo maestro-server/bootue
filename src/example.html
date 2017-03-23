@@ -8,6 +8,21 @@
 
     </div>
 
+
+<form>
+  <bs-form-validator @valid="valid.user = true" @invalid="valid.user = false">,
+    <bs-input label="User Name" required  type="email"></bs-input>
+    <bs-input label="User Name" required></bs-input>
+  </bs-form-validator>
+
+  <button type="submit" class="btn btn-primary">
+    Continue
+  </button>
+
+</form>
+
+
+
     <div class="bs-docs-container">
       <div class="row">
         <div class="col-md-9">

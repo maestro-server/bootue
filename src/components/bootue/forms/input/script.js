@@ -1,5 +1,4 @@
 import {coerce, delayer, translations} from '../../_core/_utils/utils.js'
-import $ from '../../_core/_utils/NodeList.js'
 import core from '../Forms.vue'
 
 let DELAY = 300
@@ -10,7 +9,6 @@ export default {
     cols: {type: Number, default: null},
     datalist: {type: Array, default: null},
     disabled: {type: Boolean, default: false},
-    enterSubmit: {type: Boolean, default: false},
     error: {type: String, default: null},
     help: {type: String, default: null},
     hideHelp: {type: Boolean, default: true},
@@ -128,19 +126,6 @@ export default {
       }
     },
     focus () { this.input.focus() },
-    submit () {
-      if (this.$parent._formValidator) {
-        return this.$parent.validate()
-      }
-      if (this.input.form) {
-        const invalids = $('.form-group.validate:not(.has-success)', this.input.form)
-        if (invalids.length) {
-          invalids.find('input,textarea,select')[0].focus()
-        } else {
-          this.input.form.submit()
-        }
-      }
-    },
     validate () {
       if (!this.canValidate) { return true }
       let value = (this.val || '').trim()
@@ -184,14 +169,7 @@ export default {
     }, DELAY)
     if (this.url) this._url()
   },
-  mounted () {
-    // $(this.input).on('focus', e => { this.$emit('focus', e) }).on('blur', e => {
-    //   if (this.canValidate) { this.valid = this.validate() }
-    //   this.$emit('blur', e)
-    // })
-  },
   beforeDestroy () {
-    // $(this.input).off()
     if (this._parent) {
       let index = this._parent.children.indexOf(this)
       this._parent.children.splice(index, 1)

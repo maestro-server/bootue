@@ -1,4 +1,4 @@
-import $ from '../../_core/_utils/NodeList.js'
+
 import core from '../Forms.vue'
 
 export default {
