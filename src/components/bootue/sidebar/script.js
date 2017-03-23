@@ -1,5 +1,4 @@
 import {getScrollBarWidth} from '../_core/_utils/utils.js'
-import $ from '../_core/_utils/NodeList.js'
 
 export default {
   props: {
@@ -27,17 +26,16 @@ export default {
         // request property that requires layout to force a layout
         let x = this._backdrop.clientHeight
         this._backdrop.classList.add('in')
-        $(this._backdrop).on('click', () => this.trigger_close())
+        this._backdrop.addEventListener('click', () => this.trigger_close(), false)
       } else {
-        $(this._backdrop).on('transitionend', () => {
-          $(this._backdrop).off()
+        this._backdrop.addEventListener('transitionend', () => {
           try {
             body.classList.remove('modal-open')
             body.style.paddingRight = '0'
             body.removeChild(this._backdrop)
             this._backdrop = null
           } catch (e) {}
-        })
+        }, false)
         this._backdrop.className = 'aside-backdrop'
       }
     }

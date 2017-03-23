@@ -1,8 +1,15 @@
 <template>
   <doc-section id="navbar" name="Navbar">
     <div class="bs-example">
+
       <navbar :placement="placement" :type="type">
         <a href="/" title="Home" slot="brand" class="navbar-brand">VueStrap</a>
+        <dropdown text="Component List" type="primary">
+          <p>ok</p>
+          <ul slot="dropdown-menu" class="dropdown-menu">
+            <li v-for="s in sections"><a :href="'#'+s.id" v-text="s.name"></a></li>
+          </ul>
+        </dropdown>
         <dropdown text="Component List" type="primary">
           <li v-for="s in sections"><a :href="'#'+s.id" v-text="s.name"></a></li>
         </dropdown>
@@ -82,11 +89,12 @@ export default {
   data () {
     return {
       placement : 'top',
-      type : 'default'
+      type : 'default',
+      sections: [
+        {name: "First menu", id: "menu"},
+        {name: "Second menu", id: "menu"}
+      ]
     }
-  },
-  computed: {
-    sections () { return this.$root.sections }
   }
 }
 </script>

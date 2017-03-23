@@ -9,13 +9,15 @@
     <slot name="button">{{ text }}</slot>
     <span class="caret"></span>
   </a>
-  <button v-else type="button" :class="['btn btn-' + type,buttonSize,'dropdown-toggle']" :disabled="disabled"
+  
+  <button v-else type="button" :class="['btn btn-' + type,buttonSize,'dropdown-toggle']"
           @keyup.esc="hiddeMe"
           @click.prevent="toggle"
   >
     <slot name="button">{{ text }}</slot>
     <span class="caret"></span>
   </button>
+
   <slot name="dropdown-menu">
     <ul class="dropdown-menu"><slot></slot></ul>
   </slot>

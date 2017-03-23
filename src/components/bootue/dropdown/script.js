@@ -26,16 +26,14 @@ export default {
     show (val) {
       this.$emit('input', val)
       this.eventClickOutside(val)
-    },
-    value (val) {
-      this.show = val
     }
   },
 
   methods: {
     toggle () {
-      if (!this.disabled)
+      if (!this.disabled) {
         this.show = !this.show
+      }
     },
     hiddeMe () {
       this.show = false
@@ -55,7 +53,7 @@ export default {
   },
 
   mounted () {
-    let links = this.$el.querySelectorAll('li>a')
+    let links = this.$el.querySelectorAll('.dropdown-menu>li>a')
     Array.prototype.map.call(links, (el) => {
       el.addEventListener('click', this.hiddeMe, false)
     })
