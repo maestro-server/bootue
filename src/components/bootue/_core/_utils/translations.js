@@ -1,5 +1,5 @@
 
-module.exports = function translations (lang = 'en') {
+export default function translations (lang = 'en') {
   let text = {
     daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
     limit: 'Limit reached ({{limit}} items max).',

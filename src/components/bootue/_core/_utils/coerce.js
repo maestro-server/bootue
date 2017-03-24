@@ -1,6 +1,6 @@
 // coerce convert som types of data into another type
 
-module.exports = {
+export default {
   // Convert a string to booleam. Otherwise, return the value without modification, so if is not boolean, Vue throw a warning.
   boolean: val => {
     if (typeof val === 'string') {

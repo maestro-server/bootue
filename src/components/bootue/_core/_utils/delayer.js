@@ -1,5 +1,5 @@
 
-module.exports = function delayer (fn, varTimer, ifNaN = 100) {
+export default function delayer (fn, varTimer, ifNaN = 100) {
   function toInt (el) {
     return /^[0-9]+$/.test(el) ? Number(el) || 1 : null
   }

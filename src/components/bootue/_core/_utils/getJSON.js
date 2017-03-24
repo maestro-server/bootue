@@ -1,5 +1,5 @@
 
-module.exports = function getJSON (url) {
+export default function getJSON (url) {
   let request = new window.XMLHttpRequest()
   let data = {}
   // p (-simulated- promise)

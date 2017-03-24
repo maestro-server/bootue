@@ -1,5 +1,5 @@
 
-module.export = function getScrollBarWidth () {
+export default function getScrollBarWidth () {
   if (document.documentElement.scrollHeight <= document.documentElement.clientHeight) {
     return 0
   }
