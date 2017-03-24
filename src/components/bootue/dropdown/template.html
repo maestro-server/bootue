@@ -2,21 +2,14 @@
      :class="[{open:show,disabled:disabled,dropdown:isLi,'input-group-btn':inInput,'btn-group':!isLi&&!inInput}]"
 >
   <slot name="before"></slot>
-  <a v-if="isLi" role="button" :class="['dropdown-toggle',buttonSize,{disabled:disabled}]"
+
+  <a v-if="isLi?'a':'button'" role="button" :class="makeClasses"
      @keyup.esc="hiddeMe"
      @click.prevent="toggle"
   >
     <slot name="button">{{ text }}</slot>
     <span class="caret"></span>
   </a>
-  
-  <button v-else type="button" :class="['btn btn-' + type,buttonSize,'dropdown-toggle']"
-          @keyup.esc="hiddeMe"
-          @click.prevent="toggle"
-  >
-    <slot name="button">{{ text }}</slot>
-    <span class="caret"></span>
-  </button>
 
   <slot name="dropdown-menu">
     <ul class="dropdown-menu"><slot></slot></ul>

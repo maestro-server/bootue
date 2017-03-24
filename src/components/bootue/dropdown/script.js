@@ -9,7 +9,9 @@ export default {
 
   data () {
     return {
-      show: this.value
+      show: this.value,
+      classLi: ['dropdown-toggle', this.buttonSize],
+      classBtn: ['btn btn-' + this.type, this.buttonSize, 'dropdown-toggle']
     }
   },
 
@@ -19,9 +21,12 @@ export default {
     isLi () { return this.$parent._isTabs || this.$parent._navbar || this.$parent.menu },
     menu () { return !this.$parent || this.$parent.navbar },
     slots () { return this._slotContents },
-    submenu () { return this.$parent && (this.$parent.menu || this.$parent.submenu) }
+    submenu () { return this.$parent && (this.$parent.menu || this.$parent.submenu) },
+    makeClasses () { return this.isLi ? this.classLi : this.classBtn }
   },
 
+
+//['btn btn-' + type,buttonSize,'dropdown-toggle']
   watch: {
     show (val) {
       this.$emit('input', val)
