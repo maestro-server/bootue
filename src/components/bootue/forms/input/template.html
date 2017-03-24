@@ -4,9 +4,9 @@
     <label v-if="label" class="control-label" @click="focus">{{label}}</label>
   </slot>
 
-  <div v-if="$slots.before||$slots.after" class="input-group">
+  <div :class="{ 'input-group': isGroup, 'positionRelative': !isGroup }">
     <slot name="before"></slot>
-    <textarea :is="type=='textarea'?type:'input'" class="form-control" ref="input"
+    <div :is="type=='textarea'?type:'input'" class="form-control" ref="input"
               :cols="cols"
               :disabled="disabled"
               :list="id_datalist"
@@ -23,41 +23,29 @@
               :type="type=='textarea'?null:type"
               v-model="val"
               @blur="emit" @focus="emit" @input="emit"
-    ></textarea>
-    <div v-if="clearButton && value" :class="{icon:icon}">
-      <span class="close" @click="value = ''">&times;</span>
-    </div>
-    <div v-if="icon" class="icon">
-      <span v-if="icon&&valid!==null" :class="['form-control-feedback fa','fa-'+(valid?'check':'times')]"
-            aria-hidden="true"></span>
-    </div>
-    <slot name="after"></slot>
-  </div>
-  <template v-else>
-    <div class="positionRelative">
-      <textarea :is="type=='textarea'?type:'input'" class="form-control" ref="input"
-                :cols="cols"
-                :disabled="disabled"
-                :list="id_datalist"
-                :max="attr(max)"
-                :maxlength="maxlength"
-                :min="attr(min)"
-                :name="name"
-                :placeholder="placeholder"
-                :readonly="readonly"
-                :required="required"
-                :rows="rows"
-                :step="step"
-                :title="attr(title)"
-                :type="type=='textarea'?null:type"
-                v-model="val"
-                @blur="emit" @focus="emit" @input="emit"
-      ></textarea>
+    ></div>
+
+    <template v-if="$slots.before||$slots.after">
+      <div v-if="clearButton && value" :class="{icon:icon}">
+        <span class="close" @click="value = ''">&times;</span>
+      </div>
+      <div v-if="icon" class="icon">
+        <span v-if="icon&&valid!==null" :class="['form-control-feedback fa','fa-'+(valid?'check':'times')]"
+              aria-hidden="true"></span>
+      </div>
+      <slot name="after"></slot>
+    </template>
+
+    <template v-else>
       <span v-if="clearButton && val" class="close" @click="val = ''">&times;</span>
-      <span v-if="icon&&valid!==null" :class="['form-control-feedback fa','fa-'+(valid?'check':'times')]"
-            aria-hidden="true"></span>
-    </div>
-  </template>
+           <span v-if="icon&&valid!==null" :class="['form-control-feedback fa','fa-'+(valid?'check':'times')]"
+                 aria-hidden="true"></span>
+    </template>
+
+  </div>
+
+
+
   <datalist v-if="id_datalist" :id="id_datalist">
     <option v-for="opc in options" :value="opc"></option>
   </datalist>

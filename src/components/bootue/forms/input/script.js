@@ -45,7 +45,8 @@ export default {
       options: this.datalist,
       val,
       valid: null,
-      timeout: null
+      timeout: null,
+      isGroup: false
     }
   },
   computed: {
@@ -153,6 +154,7 @@ export default {
     this._input = true
     this._timeout = {}
     let parent = this.$parent
+
     while (parent && !parent._formValidator) { parent = parent.$parent }
     if (parent && parent._formValidator) {
       parent.children.push(this)
@@ -172,6 +174,9 @@ export default {
       })
     }, DELAY)
     if (this.url) this._url()
+  },
+  mounted () {
+    this.isGroup = typeof this.$slots.before === "object" || typeof this.$slots.after === "object"
   },
   beforeDestroy () {
     if (this._parent) {

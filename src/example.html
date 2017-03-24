@@ -10,7 +10,10 @@
 
 
 <form>
-  <bs-form-validator @valid="valid.user = true" @invalid="valid.user = false">,
+  <bs-form-validator @valid="valid.user = true" @invalid="valid.user = false">
+
+    <bs-input label="User Name" required  type="textarea"></bs-input>
+
     <bs-input label="User Name" required  type="email"></bs-input>
     <bs-input label="User Name" required></bs-input>
   </bs-form-validator>

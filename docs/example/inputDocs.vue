@@ -50,8 +50,8 @@
         </div>
         <hr/>
         <bs-input label="Input with slots" type="text" required icon clear-button>
-          <span slot="before" class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-          <span slot="after" class="input-group-addon"><span class="glyphicon glyphicon-question-sign"></span></span>
+          <span slot="before" class="input-group-addon"><span class="fa fa-user"></span></span>
+          <span slot="after" class="input-group-addon"><span class="fa fa-question"></span></span>
         </bs-input>
         <bs-input name="textarea" label="Textarea" type="textarea" :icon="check.icon" :enter-submit="check.enterSubmit"
           @focus="event = 'focused'"
