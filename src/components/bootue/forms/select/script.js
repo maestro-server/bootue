@@ -1,12 +1,8 @@
 import {translations} from '../../_core/_utils/utils.js'
-import ClickOutside from '../../_core/_directives/ClickOutside.js'
 import core from '../Forms.vue'
 
 var timeout = {}
 export default {
-  directives: {
-    ClickOutside
-  },
   props: {
     clearButton: {type: Boolean, default: false},
     closeOnSelect: {type: Boolean, default: false},
@@ -70,10 +66,8 @@ export default {
     show (val) {
       if (val) {
         this.$refs.search ? this.$refs.search.focus() : this.$refs.btn.focus()
-        // onBlur(this.$refs.select, e => { this.show = false })
-      } else {
-        // offBlur(this.$refs.select)
       }
+      this.eventClickOutside(val)
     },
     url () {
       this.urlChanged()
@@ -181,6 +175,18 @@ export default {
     },
     validate () {
       return !this.required ? true : this.val instanceof Array ? this.val.length > 0 : this.val !== null
+    },
+    clickOutside (e) {
+      if (!this.$el.contains(e.target))
+      this.close()
+    },
+    eventClickOutside(val) {
+      if(val) {
+        document.addEventListener('click', this.clickOutside, false)
+        return
+      }
+
+      document.removeEventListener('click', this.clickOutside, false)
     }
   },
   created () {

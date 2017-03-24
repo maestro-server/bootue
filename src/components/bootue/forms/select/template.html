@@ -1,4 +1,4 @@
-<div ref="select" :class="classes" v-click-outside="close">
+<div ref="select" :class="classes">
   <div ref="btn" class="form-control dropdown-toggle" tabindex="1" :disabled="disabled || !hasParent" :readonly="readonly"
        @blur="canSearch ? null : close()"
        @click="toggle()"

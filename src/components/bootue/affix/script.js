@@ -1,4 +1,4 @@
-import Scroll from '../_core/_directives/Scroll.js'
+import Scroll from './_directives/Scroll.js'
 
 export default {
   directives: {

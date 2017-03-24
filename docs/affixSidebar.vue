@@ -10,7 +10,7 @@
 
 <script>
 import Affix from '../src/components/bootue/affix/Affix.vue'
-import Scroll from '../src/components/bootue/_core/_directives/Scroll.js'
+import Scroll from '../src/components/bootue/affix/_directives/Scroll.js'
 
 export default {
   directives: {
@@ -38,7 +38,7 @@ export default {
       for (let s of this.sections) {
         // 420 = firstSection.getBoundingClientRect().top (when body.scrollTop = 0)
         // = nav.height + header.height + firstSection.margin-top - 6 (for offset)
-        if (s.el.offsetTop + 420 <= scrollPosition) {
+        if (s.el.offsetTop + 420 <= scrollPosition+200) {
           this.active = s.id
         }
       }

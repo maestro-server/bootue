@@ -1,6 +1,6 @@
 import Vue from 'vue'
 /**
- * Click outside directive
+ * Scroll directive
  */
 const HANDLER = '_vue_scroll_handler'
 const events = ['resize', 'scroll']
@@ -11,7 +11,7 @@ function bind (el, binding) {
   let callback = binding.value
   if (typeof callback !== 'function') {
     if (process.env.NODE_ENV !== 'production') {
-      Vue.util.warn('ClickOutside only work with a function value, received: v-' + binding.name + '="' + binding.expression + '"')
+      Vue.util.warn('Scroll only work with a function value, received: v-' + binding.name + '="' + binding.expression + '"')
     }
   } else {
     el[HANDLER] = function (e) { callback(e) }
