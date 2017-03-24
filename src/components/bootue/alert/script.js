@@ -1,4 +1,5 @@
-import {coerce, delayer} from '../_core/_utils/utils.js'
+import coerce from '../_core/_utils/coerce.js'
+import delayer from '../_core/_utils/delayer.js'
 
 let DURATION = 0
 export default {

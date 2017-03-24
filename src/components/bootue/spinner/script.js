@@ -1,4 +1,7 @@
-import {coerce, delayer} from '../_core/_utils/utils.js'
+
+import coerce from '../_core/_utils/coerce.js'
+import delayer from '../_core/_utils/delayer.js'
+
 const MIN_WAIT = 500 // in ms
 
 export default {

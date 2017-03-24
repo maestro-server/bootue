@@ -1,4 +1,5 @@
-import {delayer, getJSON} from '../_core/_utils/utils.js'
+import delayer from '../_core/_utils/delayer.js'
+import getJSON from '../_core/_utils/getJSON.js'
 let DELAY = 300
 
 export default {

@@ -1,4 +1,4 @@
-import {coerce} from '../_core/_utils/utils.js'
+import coerce from '../_core/_utils/coerce.js'
 import dropdown from '../dropdown/Dropdown.vue'
 
 export default {

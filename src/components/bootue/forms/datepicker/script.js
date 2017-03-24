@@ -1,4 +1,4 @@
-import {translations} from '../../_core/_utils/utils.js'
+import translations from '../../_core/_utils/translations.js'
 import core from '../Forms.vue'
 
 export default {
