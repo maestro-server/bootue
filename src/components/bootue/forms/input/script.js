@@ -1,7 +1,7 @@
 
 import coerce from '../../_core/_utils/coerce.js'
 import delayer from '../../_core/_utils/delayer.js'
-import translations from '../../_core/_utils/translations.js'
+import translations from '../_texts/translations.js'
 
 import core from '../Forms.vue'
 
