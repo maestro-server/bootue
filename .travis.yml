@@ -12,4 +12,4 @@ cache:
 before_script:
   - npm install
   - npm install -g webpack
-  - webpack --progress --hide-modules  
+script: webpack --progress --hide-modules
