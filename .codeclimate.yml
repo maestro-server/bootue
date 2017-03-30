@@ -2,13 +2,6 @@
 engines:
   rubocop:
     enabled: true
-  duplication:
-    enabled: true
-    config:
-      languages:
-      - javascript:
-  scss-lint:
-    enabled: true
 ratings:
   paths:
   - src/**.js
