@@ -1,8 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/maestro-server/bootue)
-
-[![Build Status](https://travis-ci.org/maestro-server/bootue.svg?branch=master)](https://travis-ci.org/maestro-server/bootue)
-
-[![Issue Count](https://codeclimate.com/github/codeclimate/codeclimate/badges/issue_count.svg)](https://codeclimate.com/github/maestro-server/bootue)
+[![Code Climate](https://codeclimate.com/github/maestro-server/bootue/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/maestro-server/bootue) [![Build Status](https://travis-ci.org/maestro-server/bootue.svg?branch=master)](https://travis-ci.org/maestro-server/bootue) [![Issue Count](https://codeclimate.com/github/maestro-server/bootue/codeclimate/badges/issue_count.svg)](https://codeclimate.com/github/maestro-server/bootue)
 
 # Bootue
 
