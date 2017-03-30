@@ -1,3 +1,11 @@
+---
+engines:
+  rubocop:
+    enabled: true
+ratings:
+  paths:
+  - src/**.js
+  - src/**.scss
 exclude_paths:
 - "docs/"
 - "tests/"
