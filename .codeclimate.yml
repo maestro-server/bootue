@@ -1,0 +1,4 @@
+exclude_paths:
+- "docs/"
+- "src/example.js"
+- "src/example.html"
