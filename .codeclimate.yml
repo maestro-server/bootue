@@ -4,10 +4,13 @@ engines:
     enabled: true
   eslint:
     enabled: true
-  config:
-    languages:
-    - javascript:
-        mass_threshold: 60
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript:
+          mass_threshold: 60
+          
 ratings:
   paths:
   - src/**.js
