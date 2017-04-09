@@ -1,15 +1,15 @@
 export default {
   render: function (createElement) {
-    var defaultHeaders = {
+    let defaultHeaders = {
       events: ['Name', 'Arguments', 'Description'],
       options: ['Name', 'Type', 'Default', 'Description']
     }
-    var headers = this.headers || defaultHeaders[this.type.toLowerCase()] || []
-    var len = headers.length
+    let headers = this.headers || defaultHeaders[this.type.toLowerCase()] || []
+    let len = headers.length
     headers = [createElement('tr',
       headers.map(name => createElement('th', name))
     )]
-    var options = this.$slots.default.filter(el => el.tag)
+    let options = this.$slots.default.filter(el => el.tag)
     options.forEach(el => {
       el.tag = 'tr'
       el.children = el.children.filter(el => el.tag).filter((el, i) => i < len)

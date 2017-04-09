@@ -118,7 +118,7 @@ export default {
     vSelect
   },
   data () {
-    var valid = {}; ['all', 'direction', 'user'].forEach(el => { valid[el] = null })
+    let valid = {}; ['all', 'direction', 'user'].forEach(el => { valid[el] = null })
     return {
       active: 0,
       valid

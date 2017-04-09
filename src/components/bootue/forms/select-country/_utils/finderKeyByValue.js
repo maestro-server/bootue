@@ -1,5 +1,5 @@
-export default function arr (arr, val) {
-  for (var i = 0; i < arr.length; i++) {
+export default function (arr, val) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i] === val) {
       return i;
     }

@@ -1,4 +1,4 @@
-import core from '../Forms.vue'
+import '../Forms.vue'
 
 export default {
 
@@ -28,7 +28,7 @@ export default {
 
     },
 
-    changeUploadImage (file) {
+    changeUploadImage () {
 
     }
   }

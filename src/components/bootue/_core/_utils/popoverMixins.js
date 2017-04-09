@@ -67,7 +67,7 @@ export default {
     }
 
     this.events.forEach(event => {
-      if(trigger.length == undefined) {
+      if(trigger.length == null) {
           trigger.addEventListener(event, this.toggle)
       } else {
           Array.prototype.map.call(trigger, (el) => {

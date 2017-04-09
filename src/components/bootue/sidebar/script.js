@@ -8,7 +8,7 @@ export default {
     width: {type: Number, default: 320}
   },
   watch: {
-    show (val, old) {
+    show (val) {
       this.$emit('input', val)
       this.$emit(this.show ? 'open' : 'close')
       const body = document.body
@@ -23,8 +23,6 @@ export default {
         if (scrollBarWidth !== 0) {
           body.style.paddingRight = scrollBarWidth + 'px'
         }
-        // request property that requires layout to force a layout
-        let x = this._backdrop.clientHeight
         this._backdrop.classList.add('in')
         this._backdrop.addEventListener('click', () => this.trigger_close(), false)
       } else {
@@ -34,7 +32,9 @@ export default {
             body.style.paddingRight = '0'
             body.removeChild(this._backdrop)
             this._backdrop = null
-          } catch (e) {}
+          } catch (e) {
+            console.log(e);
+          }
         }, false)
         this._backdrop.className = 'aside-backdrop'
       }

@@ -1,4 +1,4 @@
-import core from '../Forms.vue'
+import '../Forms.vue'
 
 export default {
   props: {
@@ -24,7 +24,7 @@ export default {
     typeColor () { return (this.type || (this.$parent && this.$parent.type)) || 'default' }
   },
   watch: {
-    checked (val, old) {
+    checked (val) {
       let value = val ? this.trueValue : this.falseValue
       this.$emit('checked', val)
       this.$emit('input', value)
@@ -36,7 +36,7 @@ export default {
         this.checked = checked
       }
     },
-    value (val, old) {
+    value (val) {
       let checked = val === this.trueValue
       if (this.checked !== checked) {
         this.checked = checked

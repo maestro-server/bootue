@@ -3,7 +3,7 @@ import coerce from '../../_core/_utils/coerce.js'
 import delayer from '../../_core/_utils/delayer.js'
 import translations from '../_texts/translations.js'
 
-import core from '../Forms.vue'
+import '../Forms.vue'
 
 let DELAY = 300
 
@@ -80,11 +80,11 @@ export default {
     datalist (val, old) {
       if (val !== old && val instanceof Array) { this.options = val }
     },
-    match (val) { this.eval() },
+    match () { this.eval() },
     options (val, old) {
       if (val !== old) this.$emit('options', val)
     },
-    url (val) {
+    url () {
       this._url()
     },
     val (val, old) {
@@ -102,7 +102,7 @@ export default {
         this.eval()
       }
     },
-    valid (val, old) {
+    valid (val) {
       this.$emit('isvalid', val)
       this.$emit(!val ? 'invalid' : 'valid')
       if (this._parent) this._parent.validate()
@@ -165,11 +165,13 @@ export default {
       this._loading = true
       this.$http.get(this.url).then(response => {
         let data = response.data instanceof Array ? response.data : []
-        try { data = JSON.parse(data) } catch (e) {}
+        try { data = JSON.parse(data) } catch (e) {
+          console.log(e)
+        }
         if (this.urlMap) { data = data.map(this.urlMap) }
         this.options = data
         this.loading = false
-      }, response => {
+      }, () => {
         this.loading = false
       })
     }, DELAY)

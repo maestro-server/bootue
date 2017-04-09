@@ -19,7 +19,7 @@ export default {
       index: 0,
       isAnimating: false,
       sliders: [],
-      selected: undefined
+      selected: null
     }
   },
   watch: {
@@ -44,7 +44,6 @@ export default {
       this.selected.classList.add(cDirection)
 
       // request property that requires layout to force a layout
-      let x = this.selected.clientHeight
       this.selected.classList.add(direction)
       this.sliders[prev].classList.add(direction)
 

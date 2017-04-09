@@ -22,18 +22,17 @@ export default {
         four: false
       },
 
-		//datepicker
+      //datepicker
       clear: true,
       disabled: [],
       format: 'yyyy-MM-dd',
       formats: ['dd/MM/yyyy', 'dd-MM-yyyy', 'yyyy,MM,dd', 'yyyy-MM-dd', 'yyyy.MM.dd', 'MMM/dd/yyyy', 'MMMM/dd/yyyy', 'MM/dd/yyyy', 'MM-dd-yyyy'],
       placeholder: 'placeholder is displayed when value is null or empty',
       date: '2015-06-10',
-
-	  activeF:0,
+      activeF: 0,
       valid: {user: false, directio: false}, //form validator
 
-		// modals
+      // modals
       showModal: false,
       fadeModal: false,
       zoomModal: false,
@@ -43,16 +42,15 @@ export default {
 
       input: null, //input
 
-		// pophover
+      // pophover
       placements: ['top', 'left', 'right', 'bottom'],
       text: 'Lorem ipsum dolor sit amet',
       content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod',
 
-		// progressive bar
+      // progressive bar
       dynamicData: [10, 30, 50, 70, 90],
       stackedData: [10, 20, 30, 40],
 
-      radioValue: null, // radio
 
       // selects
       select: {
@@ -78,28 +76,18 @@ export default {
       },
       ajax: {
         options: [],
-        value:null
+        value: null
       },
       single: [],
-
-      // nav tabs
       justified: false,
       navStyle: 'tabs',
-
-      // toogle button
       toogle: {
-	      one: false,
-	      two: true,
-	      three: false,
-	      input: false,
-	      content: ''
+        one: false,
+        two: true,
+        three: false,
+        input: false,
+        content: ''
       },
-
-      // tooltip
-      text: 'Lorem ipsum dolor sit amet',
-      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod',
-
-      // type ahed
       USstate: ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'],
       asyncTemplate: '{{ item.formatted_address }}',
       githubTemplate: '<img width="18px" height="18px" :src="item.avatar_url"/> <span>{{item.login}}</span>'
@@ -154,12 +142,14 @@ export default {
       window.open(item.html_url, '_blank')
       return item.login
     }
-  
+
   },
 
   watch: {
     navStyle (val) {
-      if (val === 'stacked') { this.justified = false }
+      if (val === 'stacked') {
+        this.justified = false
+      }
     }
   }
 }

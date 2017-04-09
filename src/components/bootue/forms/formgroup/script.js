@@ -1,5 +1,5 @@
 
-import core from '../Forms.vue'
+import '../Forms.vue'
 
 export default {
   props: {

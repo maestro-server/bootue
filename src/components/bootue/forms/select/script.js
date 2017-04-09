@@ -1,7 +1,7 @@
 import translations from '../_texts/translations.js'
-import core from '../Forms.vue'
+import '../Forms.vue'
 
-var timeout = {}
+let timeout = {}
 export default {
   props: {
     clearButton: {type: Boolean, default: false},
@@ -39,7 +39,7 @@ export default {
     canSearch () { return this.minSearch ? this.list.length >= this.minSearch : this.search },
     classes () { return [{open: this.show, disabled: this.disabled}, this.class, this.isLi ? 'dropdown' : this.inInput ? 'input-group-btn' : 'btn-group'] },
     filteredOptions () {
-      var search = (this.searchValue || '').toLowerCase()
+      let search = (this.searchValue || '').toLowerCase()
       return !search ? this.list : this.list.filter(el => {
         return ~el[this.optionsLabel].toLowerCase().search(search)
       })
@@ -50,7 +50,7 @@ export default {
     limitText () { return this.text.limit.replace('{{limit}}', this.limit) },
     selected () {
       if (this.list.length === 0) { return '' }
-      var sel = this.values.map(val => (this.list.find(o => o[this.optionsValue] === val) || {})[this.optionsLabel]).filter(val => val !== undefined)
+      let sel = this.values.map(val => (this.list.find(o => o[this.optionsValue] === val) || {})[this.optionsLabel]).filter(val => val !== undefined)
       this.$emit('selected', sel)
       return sel.join(', ')
     },
@@ -108,7 +108,7 @@ export default {
         if (!(this.val instanceof Array)) {
           this.val = (this.val === null || this.val === undefined) ? [] : [this.val]
         }
-        var values = this.valOptions
+        let values = this.valOptions
         this.val = this.val.filter(el => ~values.indexOf(el))
         if (this.values.length > this.limit) {
           this.val = this.val.slice(0, this.limit)
@@ -131,7 +131,7 @@ export default {
     },
     select (v) {
       if (this.val instanceof Array) {
-        var newVal = this.val.slice(0)
+        let newVal = this.val.slice(0)
         if (~newVal.indexOf(v)) {
           newVal.splice(newVal.indexOf(v), 1)
         } else {
@@ -164,12 +164,14 @@ export default {
       if (!this.url || !this.$http) { return }
       this.loading = true
       this.$http.get(this.url).then(response => {
-        var data = response.data instanceof Array ? response.data : []
-        try { data = JSON.parse(data) } catch (e) {}
+        let data = response.data instanceof Array ? response.data : []
+        try { data = JSON.parse(data) } catch (e) {
+          console.log(e);
+        }
         this.setOptions(data)
         this.loading = false
         this.checkData()
-      }, response => {
+      }, () => {
         this.loading = false
       })
     },
@@ -214,7 +216,7 @@ export default {
   },
   beforeDestroy () {
     if (this._parent) {
-      var index = this._parent.children.indexOf(this)
+      let index = this._parent.children.indexOf(this)
       this._parent.children.splice(index, 1)
     }
   }

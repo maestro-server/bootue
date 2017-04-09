@@ -2,7 +2,7 @@ import bsSelect from '../select/Select.vue'
 import bsoption from '../option/Option.vue'
 import {country, states} from './countries'
 import finderK from './_utils/finderKeyByValue'
-import core from '../Forms.vue'
+import '../Forms.vue'
 
 export default {
   props: {

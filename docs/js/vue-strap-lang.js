@@ -1,5 +1,5 @@
 window.VueStrapLang = (function(){
-var l = { //languages
+let l = { //languages
 
 en: {
   daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
@@ -92,7 +92,7 @@ ru: {
  * With aliases you can handle a group of similar languages, using a regular expresion.
  * If the language is not found, the default language is english.
  */
-var aliases = {
+let aliases = {
   es: /^es-[A-Z]{2}$/i,
   en: /^en-[A-Z]{2}$/i,
   de: /^de-[A-Z]{2}$/i,
@@ -101,7 +101,7 @@ var aliases = {
 
 return function (lang) {
   lang = lang || 'en';
-  var i, tr = {};
+  let i, tr = {};
   for (i in aliases) {
     if (aliases[i].test(lang)) lang = i;
   }

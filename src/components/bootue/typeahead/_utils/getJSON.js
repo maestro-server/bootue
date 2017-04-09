@@ -30,7 +30,7 @@ export default function getJSON (url) {
           let response = request.responseText
           for (let i in data.done) {
             let value = data.done[i](response)
-            if (value !== undefined) {
+            if (value != null) {
               response = value
             }
           }

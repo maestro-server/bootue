@@ -3,7 +3,7 @@ export default {
     language: {type: String, default: 'html'}
   },
   render: function (createElement) {
-    var content = this.$slots.default && this.$slots.default[0].text
+    let content = this.$slots.default && this.$slots.default[0].text
     if (~['html','markup'].indexOf(this.language)) content = content.replace(/(\w+)=""/g, '$1')
     let matches = content.match(/(\n|\r)[ ]*\S/g)
     if (matches) {

@@ -5,6 +5,12 @@ import Vue from 'vue'
 const HANDLER = '_vue_scroll_handler'
 const events = ['resize', 'scroll']
 
+function unbind (el) {
+  events.forEach(function (e) { window.removeEventListener(e, el[HANDLER], false) })
+  document.removeEventListener('load', el[HANDLER], false)
+  delete el[HANDLER];
+}
+
 function bind (el, binding) {
   unbind(el)
 
@@ -19,12 +25,6 @@ function bind (el, binding) {
     document.addEventListener('load', el[HANDLER], false)
     setTimeout(function () { el[HANDLER]() }, 0)
   }
-}
-
-function unbind (el) {
-  events.forEach(function (e) { window.removeEventListener(e, el[HANDLER], false) })
-  document.removeEventListener('load', el[HANDLER], false)
-  delete el[HANDLER];
 }
 
 export default {

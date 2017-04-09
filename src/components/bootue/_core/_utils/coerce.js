@@ -20,14 +20,14 @@ export default {
       return val
     }
 
-    if (val === undefined || val === null || isNaN(Number(val))) {
+    if (val === null || isNaN(Number(val))) {
       return alt
     }
 
     return Number(val)
   },
   string: val => {
-    if (val === undefined || val === null) {
+    if (val === null) {
       return ''
     }
 

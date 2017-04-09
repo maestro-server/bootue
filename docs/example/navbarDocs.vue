@@ -3,7 +3,7 @@
     <div class="bs-example">
 
       <navbar :placement="placement" :type="type">
-        <a href="/" title="Home" slot="brand" class="navbar-brand">VueStrap</a>
+        <a href="/" title="Home" slot="brand" class="navbar-brand">Maestro Bootue</a>
         <dropdown text="Component List" type="primary">
           <p>ok</p>
           <ul slot="dropdown-menu" class="dropdown-menu">

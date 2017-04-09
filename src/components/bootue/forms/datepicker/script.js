@@ -1,5 +1,5 @@
 import translations from '../_texts/translations.js'
-import core from '../Forms.vue'
+import '../Forms.vue'
 
 export default {
   props: {
@@ -30,7 +30,7 @@ export default {
     format () {
       this.val = this.stringify(this.currDate)
     },
-    val (val, old) {
+    val (val) {
       this.$emit('input', val)
     },
     value (val) {
