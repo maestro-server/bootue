@@ -10,7 +10,7 @@ engines:
       languages:
       - javascript:
           mass_threshold: 60
-          
+
 ratings:
   paths:
   - src/**.js

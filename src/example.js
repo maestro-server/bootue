@@ -93,7 +93,6 @@ export default {
       githubTemplate: '<img width="18px" height="18px" :src="item.avatar_url"/> <span>{{item.login}}</span>'
     }
   },
-
   computed: {
     dateString () {
       let date
