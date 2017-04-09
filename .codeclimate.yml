@@ -6,8 +6,6 @@ engines:
       config: .eslintrc
       extensions:
       - .js
-  nodesecurity:
-      enabled: true
   duplication:
     enabled: true
     config:
