@@ -3,11 +3,11 @@ engines:
   rubocop:
     enabled: true
   eslint:
-      enabled: true
+    enabled: true
   config:
-      	languages:
-        - javascript
-          mass_threshold: 60
+    languages:
+    - javascript
+      mass_threshold: 60
 ratings:
   paths:
   - src/**.js
