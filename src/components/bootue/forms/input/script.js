@@ -1,11 +1,7 @@
 
-import coerce from '../../_core/_utils/coerce.js'
-import delayer from '../../_core/_utils/delayer.js'
-import translations from '../_texts/translations.js'
 
 import '../Forms.vue'
 
-let DELAY = 300
 
 export default {
   props: {
@@ -18,25 +14,12 @@ export default {
     hideHelp: {type: Boolean, default: true},
     icon: {type: Boolean, default: false},
     label: {type: String, default: null},
-    lang: {type: String, default: navigator.language},
-    mask: null,
-    maskDelay: {type: Number, default: 100},
-    match: {type: String, default: null},
-    max: {type: String, default: null},
-    maxlength: {type: Number, default: null},
-    min: {type: String, default: null},
-    minlength: {type: Number, default: 0},
     name: {type: String, default: null},
-    pattern: {default: null},
     placeholder: {type: String, default: null},
     readonly: {type: Boolean, default: false},
-    required: {type: Boolean, default: false},
     rows: {type: Number, default: 3},
     step: {type: Number, default: null},
     type: {type: String, default: 'text'},
-    url: {type: String, default: null},
-    urlMap: {type: Function, default: null},
-    validationDelay: {type: Number, default: 250},
     value: {default: null}
   },
   data () {
@@ -44,13 +27,10 @@ export default {
     return {
       options: this.datalist,
       val,
-      valid: null,
-      timeout: null,
       isGroup: false
     }
   },
   computed: {
-    canValidate () { return !this.disabled && !this.readonly && (this.required || this.regex || this.nativeValidate || this.match !== null) },
     errorText () {
       let value = this.value
       let error = [this.error]
@@ -69,11 +49,9 @@ export default {
       return null
     },
     input () { return this.$refs.input },
-    nativeValidate () { return (this.input || {}).checkValidity && (~['url', 'email'].indexOf(this.type.toLowerCase()) || this.min || this.max) },
-    regex () { return coerce.pattern(this.pattern) },
     showError () { return this.error && this.valid === false },
     showHelp () { return this.help && (!this.showError || !this.hideHelp) },
-    text () { return translations(this.lang) },
+    showIcon () {},
     title () { return this.errorText || this.help || '' }
   },
   watch: {
@@ -87,28 +65,8 @@ export default {
     url () {
       this._url()
     },
-    val (val, old) {
+    val (val) {
       this.$emit('input', val)
-      if (val !== old) {
-        if (this.mask instanceof Function) {
-          val = this.mask(val || '')
-          if (this.val !== val) {
-            if (this._timeout.mask) clearTimeout(this._timeout.mask)
-            this._timeout.mask = setTimeout(() => {
-              this.val = val
-            }, isNaN(this.maskDelay) ? 0 : this.maskDelay)
-          }
-        }
-        this.eval()
-      }
-    },
-    valid (val) {
-      this.$emit('isvalid', val)
-      this.$emit(!val ? 'invalid' : 'valid')
-      if (this._parent) this._parent.validate()
-    },
-    value (val) {
-      if (this.val !== val) { this.val = val }
     }
   },
   methods: {
@@ -117,32 +75,8 @@ export default {
     },
     emit (e) {
       this.$emit(e.type, e.type == 'input' ? e.target.value : e)
-      if (e.type === 'blur' && this.canValidate) { this.valid = this.validate() }
-    },
-    eval () {
-      if (this._timeout.eval) clearTimeout(this._timeout.eval)
-      if (!this.canValidate) {
-        this.valid = true
-      } else {
-        this._timeout.eval = setTimeout(() => {
-          this.valid = this.validate()
-          this._timeout.eval = null
-        }, this.validationDelay)
-      }
     },
     focus () { this.input.focus() },
-    validate () {
-      if (!this.canValidate) { return true }
-      let value = (this.val || '').trim()
-      if (!value) { return !this.required }
-      if (this.match !== null) { return this.match === value }
-      if (value.length < this.minlength) { return false }
-      if (this.nativeValidate && !this.input.checkValidity()) { return false }
-      if (this.regex) {
-        if (!(this.regex instanceof Function ? this.regex(this.value) : this.regex.test(this.value))) { return false }
-      }
-      return true
-    },
     reset() {
       this.value = ''
       this.valid = null
@@ -152,30 +86,6 @@ export default {
   },
   created () {
     this._input = true
-    this._timeout = {}
-    let parent = this.$parent
-
-    while (parent && !parent._formValidator) { parent = parent.$parent }
-    if (parent && parent._formValidator) {
-      parent.children.push(this)
-      this._parent = parent
-    }
-    this._url = delayer(function () {
-      if (!this.url || !this.$http || this._loading) { return }
-      this._loading = true
-      this.$http.get(this.url).then(response => {
-        let data = response.data instanceof Array ? response.data : []
-        try { data = JSON.parse(data) } catch (e) {
-          console.log(e)
-        }
-        if (this.urlMap) { data = data.map(this.urlMap) }
-        this.options = data
-        this.loading = false
-      }, () => {
-        this.loading = false
-      })
-    }, DELAY)
-    if (this.url) this._url()
   },
   mounted () {
     this.isGroup = typeof this.$slots.before === "object" || typeof this.$slots.after === "object"

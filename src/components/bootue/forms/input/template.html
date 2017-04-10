@@ -1,5 +1,5 @@
 <div class="form-group"
-     :class="{validate:canValidate,'has-feedback':icon,'has-error':canValidate&&valid===false,'has-success':canValidate&&valid}">
+     :class="{'has-feedback':icon, 'has-error':showError, 'has-success':showHelp}">
   <slot name="label">
     <label v-if="label" class="control-label" @click="focus">{{label}}</label>
   </slot>
@@ -10,13 +10,9 @@
               :cols="cols"
               :disabled="disabled"
               :list="id_datalist"
-              :max="attr(max)"
-              :maxlength="maxlength"
-              :min="attr(min)"
               :name="name"
               :placeholder="placeholder"
               :readonly="readonly"
-              :required="required"
               :rows="rows"
               :step="step"
               :title="attr(title)"
@@ -30,7 +26,7 @@
         <span class="close" @click="value = ''">&times;</span>
       </div>
       <div v-if="icon" class="icon">
-        <span v-if="icon&&valid!==null" :class="['form-control-feedback fa','fa-'+(valid?'check':'times')]"
+        <span v-if="showIcon" :class="['form-control-feedback fa','fa-'+(showIcon?'check':'times')]"
               aria-hidden="true"></span>
       </div>
       <slot name="after"></slot>
@@ -38,12 +34,11 @@
 
     <template v-else>
       <span v-if="clearButton && val" class="close" @click="val = ''">&times;</span>
-           <span v-if="icon&&valid!==null" :class="['form-control-feedback fa','fa-'+(valid?'check':'times')]"
+           <span v-if="showIcon" :class="['form-control-feedback fa','fa-'+(showIcon?'check':'times')]"
                  aria-hidden="true"></span>
     </template>
 
   </div>
-
 
 
   <datalist v-if="id_datalist" :id="id_datalist">

@@ -10,13 +10,12 @@
 
 
 <form>
-  <bs-form-validator @valid="valid.user = true" @invalid="valid.user = false">
 
     <bs-input label="User Name" required  type="textarea"></bs-input>
 
     <bs-input label="User Name" required  type="email"></bs-input>
     <bs-input label="User Name" required></bs-input>
-  </bs-form-validator>
+
 
   <button type="submit" class="btn btn-primary">
     Continue
@@ -427,31 +426,31 @@
 
           <div class="well-white" id="FormValidator">
             <h3>FormValidator</h3>
-            <bs-form-validator v-model="valid.all">
+
               <div>
                 <tabs v-model="activeF">
                   <tab header="User">
-                    <bs-form-validator @valid="valid.user = true" @invalid="valid.user = false">
+
                       <bs-input label="User Name" required></bs-input>
                       <bs-input label="Email" type="email" required></bs-input>
-                    </bs-form-validator>
+
                     <button type="button" class="btn btn-primary" :disabled="!valid.user" @click="activeF = 1">
                       Continue
                     </button>
                   </tab>
                   <tab header="Direction" :disabled="!valid.user">
-                    <bs-form-validator @isvalid="valid.direction = arguments[0]">
+
                       <div class="form-validator">
                         <label class="control-label">Continent</label>
                         <bs-select required justified :options="['America','Europe']" clear-button></bs-select>
                       </div>
                       <bs-input label="City" type="text" required></bs-input>
-                    </bs-form-validator>
+
                     <button type="button" class="btn btn-primary" :disabled="!valid.all">Done!!</button>
                   </tab>
                 </tabs>
               </div>
-            </bs-form-validator>
+
 
           </div>
 

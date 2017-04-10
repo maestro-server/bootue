@@ -74,7 +74,6 @@ import checkboxDocs from './example/checkboxDocs.vue'
 import datepickerDocs from './example/datepickerDocs.vue'
 import dropdownDocs from './example/dropdownDocs.vue'
 import formGroupDocs from './example/formGroupDocs.vue'
-import formValidatorDocs from './example/formValidatorDocs.vue'
 import gettingStarted from './example/gettingStarted.vue'
 import inputDocs from './example/inputDocs.vue'
 import modalDocs from './example/modalDocs.vue'
@@ -110,7 +109,6 @@ export default {
     datepickerDocs,
     dropdownDocs,
     formGroupDocs,
-    formValidatorDocs,
     gettingStarted,
     inputDocs,
     modalDocs,
