@@ -6,6 +6,7 @@ export default {
       active: null,
       showTop: false, //alerts
       showRight: false, //alerts
+      teste:"sadasd",
 
       showLeft: false, //aside
       showRightA: false, //aside

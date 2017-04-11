@@ -4,10 +4,9 @@
       <div class="bs-docs-header">
         <div class="container">
           <h1>Bootue</h1>
-          <p>Bootstrap components built with <a target="_blank" href="http://vuejs.org/">Vue.js</a>.</p>
-          <p>No jQuery, bootstrap.js, or any 3rd party plugins required.</p>
-          <br>
-          <p><a class="btn btn-outline-inverse btn-lg" href="https://github.com/wffranco/vue-strap">Code on GitHub</a></p>
+          <p><a target="_blank" href="http://vuejs.org/">100% Bootstrap components</a> built with <a target="_blank" href="http://vuejs.org/">Vue 2</a>.</p>
+          <p>No boostrap.css, bootstrap.js, jQuery, or any 3rd party plugins required.</p>
+          <p>Really, its full Stand lone library.</p>
         </div>
       </div>
       <div class="container bs-docs-container">

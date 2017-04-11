@@ -52,9 +52,9 @@ body {
 
 /* Outline button for use within the docs */
 .btn-outline {
-  color: #563d7c;
+  color: #00ADEF;
   background-color: transparent;
-  border-color: #563d7c;
+  border-color: #0098ef;
 }
 .btn-outline:hover,
 .btn-outline:focus,
@@ -245,7 +245,7 @@ body {
   margin: 0 auto 30px;
 }
 .bs-docs-masthead h1 {
-  font-weight: 300;
+  font-weight: 150;
   line-height: 1;
   color: #fff;
 }
@@ -296,7 +296,7 @@ body {
 
 /* Page headers */
 .bs-docs-header {
-  margin-bottom: 40px;
+  margin-bottom: 0;
   font-size: 20px;
 }
 .bs-docs-header h1 {
@@ -314,8 +314,8 @@ body {
 
 @media (min-width: 768px) {
   .bs-docs-header {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 70px;
+    padding-bottom: 30px;
     font-size: 24px;
     text-align: left;
   }

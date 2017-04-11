@@ -4,15 +4,17 @@ require('./assets/docs.css')
 require('./assets/style.css')
 
 const Prism = require('prismjs')
-require('./js/showLanguage')
 
 Vue.use(require('vue-resource'))
-require('./js/vue-strap-lang.js')
 
 import bodyDocs from './bodyDocs.vue'
 
-Vue.config.devtools = true
+Vue.config.devtools = truegit a
 Vue.config.debug = true
+
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
 
 new Vue({
   el: '#app',

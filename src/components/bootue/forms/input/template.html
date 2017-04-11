@@ -1,5 +1,5 @@
 <div class="form-group"
-     :class="{'has-feedback':icon, 'has-error':showError, 'has-success':showHelp}">
+     :class="[showState]">
   <slot name="label">
     <label v-if="label" class="control-label" @click="focus">{{label}}</label>
   </slot>
@@ -14,7 +14,6 @@
               :placeholder="placeholder"
               :readonly="readonly"
               :rows="rows"
-              :step="step"
               :title="attr(title)"
               :type="type=='textarea'?null:type"
               v-model="val"

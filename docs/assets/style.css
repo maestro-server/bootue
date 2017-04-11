@@ -42,11 +42,11 @@ body {
 .bs-docs-header a:hover,
 .btn-outline-inverse:hover, .btn-outline-inverse:focus, .btn-outline-inverse:active,
 .bs-docs-nav .navbar-brand {
-  color: #1D976C;
+  color: #00ADEF;
 }
 
 .bs-docs-masthead, .bs-docs-header {
-  background:         linear-gradient(90deg, #1D976C 10%, #93F9B9 90%); /* W3C */
+  background:         linear-gradient(90deg, #00ADEF 10%, #2bd9ef 90%); /* W3C */
 
   filter: none;
   color: #e9e9e9;
@@ -75,12 +75,12 @@ a.back-to-top {
 }
 
 .bs-docs-sidebar .nav>li>a:hover, .bs-docs-sidebar .nav>li>a:focus {
-  color: #42b983;
-  border-left: 1px solid #42b983;
+  color: #00ADEF;
+  border-left: 1px solid #00ADEF;
 }
 
 .back-to-top:hover {
-  color: #42b983;
+  color: #00ADEF;
 }
 
 

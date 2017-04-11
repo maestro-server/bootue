@@ -11,10 +11,15 @@
 
 <form>
 
-    <bs-input label="User Name" required  type="textarea"></bs-input>
+    <bs-input label="User Name" required  type="textarea" v-model="teste" value="teste"></bs-input>
+  {{teste}}
 
-    <bs-input label="User Name" required  type="email"></bs-input>
-    <bs-input label="User Name" required></bs-input>
+    <bs-input label="User Name" disabled  type="email"></bs-input>
+    <bs-input label="User Name" state="success"></bs-input>
+
+  <bs-input label="User Name" required></bs-input>
+
+
 
 
   <button type="submit" class="btn btn-primary">
