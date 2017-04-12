@@ -9,16 +9,18 @@ require('./assets/style.css')
 import navbar from './pages/navbar.vue'
 
 import Home from './pages/home.vue'
+import Components from './pages/components.vue'
 import Started from './pages/started.vue'
 import Css from './pages/css.vue'
-import Strutured from './pages/strutured.vue'
+import Structured from './pages/structured.vue'
 import Extend from './pages/extend.vue'
 
 const routes = [
   { path: '/', component: Home },
   { path: '/started', component: Started },
+  { path: '/components', component: Components },
   { path: '/css', component: Css },
-  { path: '/strutured', component: Strutured },
+  { path: '/structured', component: Structured },
   { path: '/extend', component: Extend }
 ]
 
@@ -39,13 +41,19 @@ new Vue({
   data: {
     sections : []
   },
-  mounted () {
-    let sections = document.querySelectorAll('.bs-docs-section')
-    Array.prototype.forEach.call(sections, el => {
-      let id = el.id
-      let name = el.querySelector('.anchor', el).innerText
-      if (id && name) this.sections.push({el, id, name})
-    })
+  methods: {
+    makeSections () {
+      const sections = document.querySelectorAll('.bs-docs-section')
+      let newArr = [];
+
+      Array.prototype.forEach.call(sections, el => {
+        let id = el.id
+        let name = el.querySelector('.anchor', el).innerText
+        if (id && name) newArr.push({el, id, name})
+      });
+
+      return newArr
+    }
   },
   updated () {
     Prism.highlightAll();

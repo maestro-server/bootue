@@ -8,7 +8,7 @@
                class="img-reponsive" height="25"/>
         </a>
         <li>
-          <a href="https://github.com/wffranco/vue-strap" target="_blank">
+          <a href="https://github.com/maestro-server/bootue" target="_blank">
             Getting Started
           </a>
         </li>
@@ -24,13 +24,13 @@
         </dropdown>
 
         <li>
-          <a href="https://github.com/wffranco/vue-strap" target="_blank">
+          <a href="https://github.com/maestro-server/bootue" target="_blank">
             Bootue and Boostrap
           </a>
         </li>
 
         <li>
-          <a href="https://github.com/wffranco/vue-strap" target="_blank">
+          <a href="https://github.com/maestro-server/bootue" target="_blank">
             <svg height="16px" fill="#777" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1"
                  aria-hidden="true">
               <path
@@ -109,7 +109,7 @@
     },
     data () {
       return {
-        placement: 'top',
+        placement: 'static',
         type: 'default',
         sections: [
           {name: "First menu", id: "menu"},

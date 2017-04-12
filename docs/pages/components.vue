@@ -1,18 +1,20 @@
 <template>
   <div>
     <div id="wrapper">
-      <div class="bs-docs-header">
-        <div class="container">
-          <h1>Bootue</h1>
-          <p><a target="_blank" href="http://vuejs.org/">100% Bootstrap components</a> built with <a target="_blank" href="http://vuejs.org/">Vue 2</a>.</p>
-          <p>No boostrap.css, bootstrap.js, jQuery, or any 3rd party plugins required.</p>
-          <p>Really, its full Stand lone library.</p>
-        </div>
-      </div>
-      <div class="container bs-docs-container">
+      <div class="container bs-docs-container mt30">
         <div class="row">
           <div class="col-md-9">
-            <getting-started></getting-started>
+
+            <doc-section id="components" name="Components">
+              <div class="bs-callout bs-callout-success">
+                <h4>Super set bootstrap components</h4>
+                <p>
+                  This repository contains a set of native Vue.js components based on Bootstrap's markup and CSS.
+                  You can use all boostrap components (carrousel, modals, accordions and more), and using news elements, datapicker, select 2, dynamic progress bar and more.
+                </p>
+              </div>
+            </doc-section>
+
             <accordion-docs></accordion-docs>
             <affix-docs></affix-docs>
             <alert-docs></alert-docs>
@@ -24,6 +26,8 @@
             <dropdown-docs></dropdown-docs>
             <input-docs></input-docs>
             <modal-docs></modal-docs>
+
+            <navbar-docs></navbar-docs>
 
             <popover-docs></popover-docs>
             <progressbar-docs></progressbar-docs>
@@ -42,25 +46,13 @@
         </div>
       </div>
     </div>
-    <footer class="bs-docs-footer">
-      <div class="container">
-        <p>Designed and built by <a href="https://github.com/yuche/">yuche</a>.</p>
-        <p>Vue 2 version built by <a href="https://github.com/wffranco/">wffranco</a>.</p>
-        <p>
-          Using <a href="http://twitter.github.com/bootstrap" target="_blank">Twitter Bootstrap</a>
-          and the <a href="css/docs.css" target="_blank">Bootstrap's docs styles</a> designed and built by <a href="http://twitter.com/mdo" target="_blank">@mdo</a>
-          and <a href="http://twitter.com/fat" target="_blank">@fat</a>.
-        </p>
-        <p>
-          Code licensed under <a href="//github.com/mgcrea/angular-strap/blob/master/LICENSE.md" target="_blank">The MIT License</a>,
-          documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
-        </p>
-      </div>
-    </footer>
+
   </div>
 </template>
 
 <script>
+import docSection from '../example/utils/docSection.vue'
+
 import accordionDocs from '../example/accordionDocs.vue'
 import affixDocs from '../example/affixDocs.vue'
 import affixSidebar from '../affixSidebar.vue'
@@ -72,7 +64,6 @@ import checkboxDocs from '../example/checkboxDocs.vue'
 import datepickerDocs from '../example/datepickerDocs.vue'
 import dropdownDocs from '../example/dropdownDocs.vue'
 import formGroupDocs from '../example/formGroupDocs.vue'
-import gettingStarted from '../example/gettingStarted.vue'
 import inputDocs from '../example/inputDocs.vue'
 import modalDocs from '../example/modalDocs.vue'
 import navbarDocs from '../example/navbarDocs.vue'
@@ -97,6 +88,7 @@ import type from '../../src/components/bootue/typography/Type.vue'
 
 export default {
   components: {
+    docSection,
     accordionDocs,
     affixDocs,
     affixSidebar,
@@ -108,7 +100,6 @@ export default {
     datepickerDocs,
     dropdownDocs,
     formGroupDocs,
-    gettingStarted,
     inputDocs,
     modalDocs,
     navbarDocs,

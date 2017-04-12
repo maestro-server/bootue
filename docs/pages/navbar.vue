@@ -1,6 +1,6 @@
 <template>
 
-      <navbar>
+      <navbar placement="top">
         <li>
           <router-link to="/"  class="navbar-brand">
             <img src="/docs/assets/imgs/Bootue-hr.png"
@@ -39,7 +39,7 @@
         </li>
 
         <li>
-          <a href="https://github.com/wffranco/vue-strap" target="_blank">
+          <a href="https://github.com/maestro-server/bootue" target="_blank">
             <svg height="16px" fill="#777" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1"
                  aria-hidden="true">
               <path
@@ -57,3 +57,15 @@
 }
 
 </style>
+
+
+<script>
+export default {
+  data () {
+    return {
+      placement: 'top',
+      type: 'default'
+    }
+  }
+}
+</script>

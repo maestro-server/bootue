@@ -1,15 +1,16 @@
 <template>
-  <affix :offset="50" v-scroll="scrollSpy">
+  <affix :offset="70" v-scroll="scrollSpy">
     <ul class="nav bs-docs-sidenav" id="sidenav">
-      <li v-for="s in sections" :class="{active:active==s.id}"><a :href="'#' + s.id">{{ s.name }}</a></li>
+      <li v-for="s in sections" :class="{active:active==s.id}"><a @click="scrollMeTo(s.id)" class="handCursor">{{ s.name }}</a></li>
     </ul>
-    <a href="#" class="back-to-top">Back to top</a>
-    <a href="https://github.com/wffranco/vue-strap" class="back-to-top">GitHub</a>
   </affix>
 </template>
 
+
 <script>
 import Scroll from '../src/components/bootue/affix/_directives/Scroll.js'
+import AnimateScroll from './libs/animate';
+
 
 export default {
   directives: {
@@ -22,25 +23,28 @@ export default {
   },
   data () {
     return {
-      active: null
+      active: null,
+      sections: []
     }
   },
-  computed: {
-    sections () { return this.$root.sections }
-  },
+
   methods: {
     scrollSpy () {
       const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop
       for (let s of this.sections) {
-        // 420 = firstSection.getBoundingClientRect().top (when body.scrollTop = 0)
-        // = nav.height + header.height + firstSection.margin-top - 6 (for offset)
-        if (s.el.offsetTop + 420 <= scrollPosition+200) {
+        if (s.el.offsetTop - 30 <= scrollPosition) {
           this.active = s.id
         }
       }
+    },
+    scrollMeTo(refName) {
+      const element = document.querySelector(`#${refName}`)
+      const top = element.offsetTop -30
+      AnimateScroll(top, 0, 'easeInOutQuint')
     }
   },
   mounted () {
+    this.sections = this.$root.makeSections()
     this.scrollSpy()
   }
 }

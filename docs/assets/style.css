@@ -30,6 +30,10 @@ a {
 .bs-docs-nav {
     box-shadow: 0 3px 3px rgba(0,0,0,0.175);
 }
+.bs-docs-sidenav li  a {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+}
 
 .bs-docs-header p {
   font-weight: lighter;
@@ -309,6 +313,8 @@ h4 a:focus .anchor-icon {
 .bs-callout-info h4 {
     color: #5bc0de;
 }
+
+.handCursor {cursor: pointer;}
 
 .bg-white {background: #fff;}
 .blue {color: #00ADEF;}

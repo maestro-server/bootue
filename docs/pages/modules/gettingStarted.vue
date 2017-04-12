@@ -1,3 +1,4 @@
+<template>
 <div>
   <doc-section id="getting-started" name="Getting started">
     <div class="bs-callout bs-callout-success">
@@ -90,8 +91,8 @@
 </div>
 </template>
 <script>
-import docCode from './utils/docCode.js'
-import docSection from './utils/docSection.vue'
+import docCode from '../../example/utils/docCode.js'
+import docSection from '../../example/utils/docSection.vue'
 export default {
   components: {
     docCode,
