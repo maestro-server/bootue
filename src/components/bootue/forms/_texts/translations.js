@@ -1,5 +1,5 @@
 
-export default function translations (lang = 'en') {
+export default function translations () {
   let text = {
     daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
     limit: 'Limit reached ({{limit}} items max).',
@@ -10,5 +10,5 @@ export default function translations (lang = 'en') {
     required: 'Required',
     search: 'Search'
   }
-  return window.VueStrapLang ? window.VueStrapLang(lang) : text
+  return text
 }
