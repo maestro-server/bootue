@@ -2,16 +2,25 @@
   <div class="bg-docs-home">
     <div id="wrapper" class="call-header">
       <div class="bs-docs-header">
-        <div class="container">
-          <h1>Bootue</h1>
-          <p><a target="_blank" href="http://vuejs.org/">100% Bootstrap components</a> built with <a target="_blank" href="http://vuejs.org/">Vue 2</a>.</p>
-          <p>No boostrap.css, bootstrap.js, jQuery, or any 3rd party plugins required.</p>
-          <p>Really, its full Stand lone library.</p>
+        <div class="container text-center mt20">
+          <img src="../assets/imgs/Bootue-logo-white-hr.png" />
+
+          <p class="col-xs-12 text-center mt20"><a target="_blank" class="white" href="http://getbootstrap.com/">100% Bootstrap components</a> built with <a target="_blank" class="white" href="http://vuejs.org/">Vue 2</a>.</p>
+          <p class="col-xs-12 text-center mt10">No boostrap.css, bootstrap.js, jQuery, or any 3rd party plugins required.</p>
+          <p class="col-xs-12 text-center mt10">Really, its full Stand lone library.</p>
+
+          <p class="col-xs-12 text-center mt20">
+            <router-link to="/started"  class="btn btn-call btn-lg">
+              <h2 class="m0">Get Started</h2>
+            </router-link>
+          </p>
+
+
         </div>
       </div>
 
     </div>
-    <section class="col-xs-12 bg-white">
+    <section class="col-xs-12 bg-white mt20 mb20">
       <div class="container">
         <div class="row">
             <div class="col-xs-3 mt30 text-center">
@@ -41,12 +50,10 @@
   </div>
 </template>
 
-<script>
-</script>
 
 <style>
 .bg-docs-home {
-  background: linear-gradient(180deg, #00ADEF 10%, #2bd9ef 90%);
+  background: linear-gradient(180deg, #00ADEF 80%, #2bd9ef 100%);
 }
 
 .call-header {
