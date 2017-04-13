@@ -1,10 +1,11 @@
 <div class="form-group"
      :class="[showState]">
+
   <slot name="label">
     <label v-if="label" class="control-label" @click="focus">{{label}}</label>
   </slot>
 
-  <div :class="{ 'input-group': isGroup, 'positionRelative': !isGroup }">
+  <div :class="{ 'input-group': isGroup, 'relative': !isGroup }">
     <slot name="before"></slot>
     <div :is="type=='textarea'?type:'input'" class="form-control" ref="input"
               :cols="cols"
@@ -20,23 +21,15 @@
               @blur="emit" @focus="emit" @input="emit"
     ></div>
 
-    <template v-if="$slots.before||$slots.after">
-      <div v-if="clearButton && value" :class="{icon:icon}">
-        <span class="close" @click="value = ''">&times;</span>
-      </div>
-      <div v-if="icon" class="icon">
-        <span v-if="showIcon" :class="['form-control-feedback fa','fa-'+(showIcon?'check':'times')]"
-              aria-hidden="true"></span>
-      </div>
-      <slot name="after"></slot>
-    </template>
+    <div v-if="clearButton && value" :class="{icon:icon}">
+      <span class="close" @click="reset()">&times;</span>
+    </div>
+    <div v-if="icon" class="icon">
+      <span :class="['form-control-feedback fa','fa-'+(showIcon)]"
+            aria-hidden="true"></span>
+    </div>
 
-    <template v-else>
-      <span v-if="clearButton && val" class="close" @click="val = ''">&times;</span>
-           <span v-if="showIcon" :class="['form-control-feedback fa','fa-'+(showIcon?'check':'times')]"
-                 aria-hidden="true"></span>
-    </template>
-
+    <slot name="after"></slot>
   </div>
 
 

@@ -24,6 +24,7 @@
             <checkbox-docs></checkbox-docs>
             <datepicker-docs></datepicker-docs>
             <dropdown-docs></dropdown-docs>
+            <form-docs></form-docs>
             <input-docs></input-docs>
             <modal-docs></modal-docs>
 
@@ -64,6 +65,7 @@ import checkboxDocs from '../example/checkboxDocs.vue'
 import datepickerDocs from '../example/datepickerDocs.vue'
 import dropdownDocs from '../example/dropdownDocs.vue'
 import formGroupDocs from '../example/formGroupDocs.vue'
+import formDocs from '../example/formDocs.vue'
 import inputDocs from '../example/inputDocs.vue'
 import modalDocs from '../example/modalDocs.vue'
 import navbarDocs from '../example/navbarDocs.vue'
@@ -100,6 +102,7 @@ export default {
     datepickerDocs,
     dropdownDocs,
     formGroupDocs,
+    formDocs,
     inputDocs,
     modalDocs,
     navbarDocs,

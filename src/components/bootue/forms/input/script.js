@@ -50,12 +50,28 @@ export default {
       return this.help && (!this.showError || !this.hideHelp)
     },
     showIcon () {
+      let icc;
+      switch (this.state) {
+         case 'success':
+          icc = 'check'
+         break;
+         case 'error':
+          icc = 'times'
+         break;
+         case 'warning':
+          icc = 'exclamation'
+         break;
+      }
+      return icc;
     },
     title () {
       return this.errorText || this.help || ''
     },
     showState () {
       return this.state ? `has-${this.state}` : ''
+    },
+    labelFeedback () {
+      return this.$slots['label'] || this.label
     }
   },
   watch: {
@@ -82,7 +98,7 @@ export default {
       this.input.focus()
     },
     reset() {
-      this.value = ''
+      this.val = ''
     }
   },
   created () {
