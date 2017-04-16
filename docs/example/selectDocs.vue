@@ -114,31 +114,37 @@
         // or
         &lt;div class="btn-group btn-group-justified">&lt;select>...&lt;/select>&lt;/div>
       </doc-code>
-      <hr/>
-      <h4>Ajax data and parent dependency:</h4>
-      <p>Depend on <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">vue-resource</a>. Disabled if not present.</p>
-      <p>The second select has inheritance, is enabled when the first get some value and the ajax return values.</p>
-      <bs-select url="docs/data.json" options-label="text" v-model="ajax.value" clear-button @options="ajax.options = arguments[0]"></bs-select>
-      <bs-select url="docs/data.json" options-label="text" multiple :parent="ajax.value"></bs-select>
-      <doc-code>
-        &lt;bs-select url="docs/data.json" options-label="text" v-model="ajax.value" clear-button @options="ajax.options = arguments[0]">&lt;/bs-select>
-        &lt;bs-select url="docs/data.json" options-label="text" multiple :parent="ajax.value">&lt;/bs-select>
-      </doc-code>
-      <p>Ajax response:</p>
-      <pre v-html="ajax.options"></pre>
     </div>
-    <doc-table name="Other">
+    <doc-table name="Options">
+      <div>
+        <p>clear-button</p>
+        <p><code>Boolean</code></p>
+        <p>false</p>
+        <p>Include close button</p>
+      </div>
+      <div>
+        <p>disabled</p>
+        <p><code>Boolean</code></p>
+        <p>false</p>
+        <p>Disable this select</p>
+      </div>
+      <div>
+        <p>limit</p>
+        <p><code>Number</code></p>
+        <p>1024</p>
+        <p>Using only with multiple select, determine limit options to select.</p>
+      </div>
+      <div>
+        <p>multiple</p>
+        <p><code>Boolean</code></p>
+        <p>false</p>
+        <p>Enable a multiple select.</p>
+      </div>
       <div>
         <p>min-search</p>
         <p><code>Number</code></p>
         <p><code>0</code></p>
         <p>If defined, the searchbox is disabled if are less than the minimum value you set.</p>
-      </div>
-      <div>
-        <p>lang</p>
-        <p><code>String</code></p>
-        <p>Browser language</p>
-        <p><abbr title="ISO 639-1 code"><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">Language</a></abbr>. Default <code>en</code> if the translation doesn't exist.</p>
       </div>
       <div>
         <p>options-label</p>
@@ -161,8 +167,8 @@
       <div>
         <p>search-text</p>
         <p><code>String</code></p>
-        <p></p>
-        <p></p>
+        <p>Search</p>
+        <p>Text placeholder input search</p>
       </div>
     </doc-table>
     <doc-table type="Events">
