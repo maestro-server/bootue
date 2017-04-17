@@ -14,6 +14,8 @@ export default {
 
       return val
     }
+
+    return val
   },
   number: (val, alt = null) => {
     if (typeof val === 'number') {
@@ -25,23 +27,5 @@ export default {
     }
 
     return Number(val)
-  },
-  string: val => {
-    if (val === null) {
-      return ''
-    }
-
-    return val + ''
-  },
-  pattern: val => {
-    if (val instanceof Function || val instanceof RegExp) {
-      return val
-    }
-
-    if (typeof val === 'string') {
-      return new RegExp(val)
-    }
-
-    return null
   }
 }

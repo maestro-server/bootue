@@ -72,7 +72,7 @@ export default {
       return sel.join(', ')
     },
     showPlaceholder () {
-      return (this.values.length === 0 || !this.hasParent) ? this.placeholder : null
+      return this.placeholder || this.options[0][this.optionsLabel]
     },
     values () {
       const fallback = ~[null, undefined].indexOf(this.val) ? [] : [this.val]

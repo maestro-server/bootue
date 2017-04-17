@@ -16,7 +16,6 @@
               ></bs-input>
             </div>
             <div class="row">
-              <button-group type="primary" :buttons="false">
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                   <p>
                     <bs-checkbox v-model="check.label">Label</bs-Checkbox>
@@ -37,7 +36,6 @@
                     <bs-checkbox v-model="check.clearButton">Clear Button</bs-checkbox>
                   </p>
                 </div>
-              </button-group>
             </div>
 
           </div>
@@ -191,6 +189,7 @@
       &lt;/bs-input>
     </doc-code>
 
+
     <doc-table>
       <div>
         <p>value</p>
@@ -261,7 +260,89 @@
         <p><code>text</code></p>
         <p></p>
       </div>
+      <div>
+        <p>inline</p>
+        <p><code>Boolean</code></p>
+        <p><code>false</code></p>
+        <p>Enable inline input form</p>
+      </div>
+      <div>
+        <p>horizontal</p>
+        <p><code>Boolean</code></p>
+        <p><code>false</code></p>
+        <p>Enable horizontal input form</p>
+      </div>
+      <div>
+        <p>horizontalWrapper</p>
+        <p><code>String</code></p>
+        <p><code>col-sm-10</code></p>
+        <p>Class wrapper content - Only horizontal input form</p>
+      </div>
+      <div>
+        <p>horizontalLabelWrapper</p>
+        <p><code>String</code></p>
+        <p><code>col-sm-2</code></p>
+        <p>Class wrapper label - Only horizontal input form</p>
+      </div>
     </doc-table>
+
+    <div class="bs-example text-left">
+      <div class="row">
+        <h3 class="col-xs-12">Form Horizontal</h3>
+        <form class="form-horizontal col-xs-12 row">
+          <bs-input horizontal type="text" placeholder="Name" label="Name"></bs-input>
+          <bs-input horizontal type="email" placeholder="Email" label="Email address"></bs-input>
+
+          <div class="col-sm-offset-2 col-sm-10">
+            <bs-checkbox>Remember me</bs-checkbox>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Sign in</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+
+    <doc-code>
+      &lt;form class="form-horizontal col-xs-12 row">
+        &lt;bs-input horizontal type="text" placeholder="Name" label="Name">  &lt;/bs-input>
+        &lt;bs-input horizontal type="email" placeholder="Email" label="Email address">  &lt;/bs-input>
+    </doc-code>
+
+    <hr/>
+
+    <div class="bs-example text-left">
+      <div class="row">
+
+        <h3 class="col-xs-12">Form inline</h3>
+        <form class="form-inline col-xs-12">
+          <bs-input inline type="email" placeholder="Email">
+              <label slot="before" class="control-label">Email</label>
+          </bs-input>
+
+          <bs-input inline type="password" placeholder="Password">
+              <label slot="before" class="control-label">Password</label>
+          </bs-input>
+
+          <button type="submit" class="btn btn-default">Send invitation</button>
+        </form>
+      </div>
+    </div>
+
+    <doc-code>
+      &lt;form class="form-inline col-xs-12">
+        &lt;bs-input inline type="email" placeholder="Email">
+            &lt;label slot="before" v-if="label" class="control-label" @click="focus">Email&lt;/label>
+        &lt;/bs-input>
+
+        &lt;bs-input inline type="password" placeholder="Password">
+            &lt;label slot="before" v-if="label" class="control-label" @click="focus">Password&lt;/label>
+        &lt;/bs-input>
+    </doc-code>
 
   </doc-section>
 </template>

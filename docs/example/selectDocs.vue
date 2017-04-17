@@ -26,10 +26,11 @@
         </div>
       </div>
       <br/>
-      <button-group type="primary" :buttons="false">
+
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <p><bs-checkbox v-model="select.disabled">Disabled</bs-checkbox></p>
+            <bs-checkbox v-model="select.disabled">Disabled</bs-checkbox>
+
             <p><bs-checkbox v-model="select.placeholder">Placeholder</bs-checkbox></p>
             <p><bs-checkbox v-model="select.search">Search</bs-checkbox></p>
             <p><bs-checkbox v-model="select.clearButton">Clear Button</bs-checkbox></p>
@@ -43,7 +44,6 @@
             </p>
           </div>
         </div>
-      </button-group>
       <doc-code>
         &lt;form action="./#select" method="get">
           &lt;bs-select v-model="select.value" :options="select.options" options-value="val"
@@ -220,7 +220,7 @@ export default {
           {val: 6, label: 'Tiger'},
           {val: 7, label: 'Turtle'}
         ],
-        placeholder: false,
+        placeholder: true,
         required: false,
         search: true
       },

@@ -19,12 +19,12 @@
             <affix-docs></affix-docs>
             <alert-docs></alert-docs>
             <aside-docs></aside-docs>
+            <badgesDocs></badgesDocs>
             <button-group-docs></button-group-docs>
             <carousel-docs></carousel-docs>
             <checkbox-docs></checkbox-docs>
             <datepicker-docs></datepicker-docs>
             <dropdown-docs></dropdown-docs>
-            <form-docs></form-docs>
             <input-docs></input-docs>
             <input-file-docs></input-file-docs>
             <modal-docs></modal-docs>
@@ -41,6 +41,7 @@
             <toggle-button-docs></toggle-button-docs>
             <tooltip-docs></tooltip-docs>
             <typeahead-docs></typeahead-docs>
+            <well-docs></well-docs>
           </div>
           <div class="col-md-3">
             <affix-sidebar></affix-sidebar>
@@ -60,12 +61,12 @@ import affixDocs from '../example/affixDocs.vue'
 import affixSidebar from '../affixSidebar.vue'
 import alertDocs from '../example/alertDocs.vue'
 import asideDocs from '../example/asideDocs.vue'
+import badgesDocs from '../example/badgesDocs.vue'
 import buttonGroupDocs  from '../example/buttonGroupDocs.vue'
 import carouselDocs from '../example/carouselDocs.vue'
 import checkboxDocs from '../example/checkboxDocs.vue'
 import datepickerDocs from '../example/datepickerDocs.vue'
 import dropdownDocs from '../example/dropdownDocs.vue'
-import formDocs from '../example/formDocs.vue'
 import inputDocs from '../example/inputDocs.vue'
 import inputFileDocs from '../example/inputFileDocs.vue'
 
@@ -83,13 +84,7 @@ import toggleButtonDocs from '../example/toggleButtonDocs.vue'
 import tooltipDocs from '../example/tooltipDocs.vue'
 import typeaheadDocs from '../example/typeaheadDocs.vue'
 
-
-import core from '../../src/components/bootue/_core/Core.vue'
-import utilities from '../../src/components/bootue/utilities/Utilities.vue'
-
-import grid from '../../src/components/bootue/grid/Grid.vue'
-import type from '../../src/components/bootue/typography/Type.vue'
-
+import wellDocs from '../example/wellDocs.vue'
 
 
 export default {
@@ -100,12 +95,12 @@ export default {
     affixSidebar,
     alertDocs,
     asideDocs,
+    badgesDocs,
     buttonGroupDocs,
     carouselDocs,
     checkboxDocs,
     datepickerDocs,
     dropdownDocs,
-    formDocs,
     inputDocs,
     inputFileDocs,
     modalDocs,
@@ -119,7 +114,8 @@ export default {
     tabsDocs,
     toggleButtonDocs,
     tooltipDocs,
-    typeaheadDocs
+    typeaheadDocs,
+    wellDocs
   },
   computed: {
     local () { return location.hostname === 'localhost' }

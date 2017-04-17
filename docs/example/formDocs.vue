@@ -23,26 +23,10 @@
 
       <h3>Form Horizontal</h3>
       <form class="form-horizontal">
-        <div class="form-group">
-          <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> Remember me
-              </label>
-            </div>
-          </div>
+        <bs-input-horizontal type="email" placeholder="Email" label="Email address"></bs-input-horizontal>
+
+        <div class="col-sm-offset-2 col-sm-10">
+          <bs-checkbox>Remember me</bs-checkbox>
         </div>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
@@ -55,17 +39,9 @@
 
       <h3>Form inline</h3>
       <form class="form-inline">
-        <bs-input type="email" placeholder="Email" label="Email address" inline></bs-input>
-        <bs-input type="password" placeholder="Password" label="Password" inline></bs-input>
-
-        <div class="form-group">
-          <label for="exampleInputName2">Name</label>
-          <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail2">Email</label>
-          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
-        </div>
+        <bs-input-inline type="email" placeholder="Email" label="Email address"></bs-input-inline>
+        <bs-input-inline type="password" placeholder="Password" label="Password"></bs-input-inline>
+      
         <button type="submit" class="btn btn-default">Send invitation</button>
       </form>
 

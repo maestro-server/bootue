@@ -17,7 +17,11 @@ export default {
     readonly: {type: Boolean, default: false},
     rows: {type: Number, default: 3},
     type: {type: String, default: 'text'},
-    value: {default: null}
+    value: {default: null},
+    inline: {type: Boolean, default: false},
+    horizontal: {type: Boolean, default: false},
+    horizontalWrapper: {type: String, default: 'col-sm-10'},
+    horizontalLabelWrapper: {type: String, default: 'col-sm-2'}
   },
   data () {
     let val = this.value;
@@ -100,6 +104,21 @@ export default {
     },
     reset() {
       this.val = ''
+    },
+    classWrapper() {
+      if(this.isGroup) {
+        return "input-group"
+      }
+
+      if(this.horizontal) {
+        return this.horizontalWrapper
+      }
+
+      return "relative"
+    },
+    horizontalLabelClass() {
+      if(this.horizontal)
+        return this.horizontalLabelWrapper
     }
   },
   created () {

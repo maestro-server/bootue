@@ -1,5 +1,3 @@
-import '../Forms.vue'
-
 export default {
   props: {
     button: {type: Boolean, default: false},
@@ -8,7 +6,7 @@ export default {
     name: {type: String, default: null},
     readonly: {type: Boolean, default: false},
     trueValue: {default: true},
-    type: {type: String, default: null},
+    type: {type: String, default: "primary"},
     value: {default: false}
   },
   data () {
@@ -17,24 +15,22 @@ export default {
     }
   },
   computed: {
-    isButton () { return this.button || (this._inGroup && this.$parent.buttons) },
+    inGroup () { return this.$parent && this.$parent.btnGroup && !this.$parent._radioGroup },
+    isButton () { return this.button || (this.$parent && this.$parent.btnGroup && this.$parent.buttons) },
     isFalse () { return this.value === this.falseValue },
     isTrue () { return this.value === this.trueValue },
-    parentValue () { return this._ingroup && this.$parent.val },
+    parentValue () { return this.$parent.val },
     typeColor () { return (this.type || (this.$parent && this.$parent.type)) || 'default' }
   },
   watch: {
     checked (val) {
       let value = val ? this.trueValue : this.falseValue
       this.$emit('checked', val)
-      this.$emit('input', value)
-      this.eval()
+      this.$emit('input', value);
+      this.updateParent()
     },
-    parentValue (val) {
-      let checked = val === this.trueValue
-      if (this.checked !== checked) {
-        this.checked = checked
-      }
+    parentValue () {
+      this.updateFromParent();
     },
     value (val) {
       let checked = val === this.trueValue
@@ -44,29 +40,29 @@ export default {
     }
   },
   created () {
-    const parent = this.$parent
-    if (parent && parent._btnGroup && !parent._radioGroup) {
-      this._inGroup = true
+    if (this.inGroup) {
+      const parent = this.$parent
       parent._checkboxGroup = true
       if (!(parent.val instanceof Array)) { parent.val = [] }
-      this.eval()
     }
   },
   mounted () {
-    if (!this.$parent._checkboxGroup || typeof this.value === 'boolean') { return }
-    if (this.$parent.val.length) {
-      // this.checked = ~this.$parent.val.indexOf(this.value)
-      this.$emit('checked', ~this.$parent.val.indexOf(this.value))
-    } else if (this.checked) {
-      this.$parent.val.push(this.value)
-    }
+    this.updateFromParent();
   },
   methods: {
-    eval () {
-      if (this._inGroup) {
-        let value = this.checked ? this.isTrue : this.isFalse
-        let index = this.$parent.val.indexOf(value)
-        if (this.checked && !~index) this.$parent.val.push(value)
+    // called @ mounted(), or whenever $parent.val changes
+    // sync our state with the $parent.val
+    updateFromParent() {
+      if (this.inGroup) {
+        let index = this.$parent.val.indexOf(this.trueValue)
+        this.checked = ~index
+      }
+    },
+    // called when our checked state changes
+    updateParent() {
+      if (this.inGroup) {
+        let index = this.$parent.val.indexOf(this.trueValue)
+        if (this.checked && !~index) this.$parent.val.push(this.trueValue)
         if (!this.checked && ~index) this.$parent.val.splice(index, 1)
       }
     },
