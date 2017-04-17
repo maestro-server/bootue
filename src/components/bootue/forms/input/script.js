@@ -106,7 +106,7 @@ export default {
       this.val = ''
     },
     classWrapper() {
-      if(this.isGroup) {
+      if(this.isGroup && !this.inline) {
         return "input-group"
       }
 
