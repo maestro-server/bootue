@@ -97,7 +97,7 @@
 
             <doc-code language="markup">
               &lt;bs-input label="Input with slots" type="text" icon clear-button state="error">
-              &lt;span slot="before" class="input-group-addon">&lt;span class="fa fa-user">&lt;/span>/span>
+              &lt;span slot="before" class="input-group-addon">&lt;span class="fa fa-user">&lt;/span>&lt;/span>
               &lt;span slot="after" class="input-group-addon">&lt;span class="fa fa-question">&lt;/span>&lt;/span>
               &lt;/bs-input>
             </doc-code>
