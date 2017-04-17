@@ -1,27 +1,20 @@
 <template>
   <doc-section id="forms" name="Forms">
-    <p>You can use all types of forms with special components forms.</p>
+    <p>You can use all types of forms with special components input.</p>
     <div class="bs-example text-left">
 
       <h3>Form default</h3>
       <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        <bs-input type="email" placeholder="Email" label="Email address"></bs-input>
+        <bs-input type="password" placeholder="Password" label="Password"></bs-input>
+
+        <div class="row">
+        <bs-input-file class="col-xs-4" help="Example block-level help text here."></bs-input-file>
         </div>
+        <div class="col-xs-12 row"></div>
+
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputFile">File input</label>
-          <input type="file" id="exampleInputFile">
-          <p class="help-block">Example block-level help text here.</p>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> Check me out
-          </label>
+        <bs-checkbox>this is checkbox</bs-checkbox>
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
@@ -62,6 +55,9 @@
 
       <h3>Form inline</h3>
       <form class="form-inline">
+        <bs-input type="email" placeholder="Email" label="Email address" inline></bs-input>
+        <bs-input type="password" placeholder="Password" label="Password" inline></bs-input>
+
         <div class="form-group">
           <label for="exampleInputName2">Name</label>
           <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">

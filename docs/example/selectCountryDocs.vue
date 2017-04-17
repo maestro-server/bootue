@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <p>
-          <pre>Normal select data: {{select.country}}</pre>
+          <pre>Select data: {{select.country}}</pre>
           </p>
           <div class="row">
             <bs-select-country
@@ -98,8 +98,7 @@
     data () {
       return {
         select: {
-          clearButton: false,
-          closeOnSelect: false,
+          country: null,
           disabled: false,
           placeholder: false,
           required: false,

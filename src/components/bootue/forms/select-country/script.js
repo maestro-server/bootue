@@ -14,7 +14,7 @@ export default {
     required: {type: Boolean, default: null},
     disabled: {type: Boolean, default: false},
     search: {type: Boolean, default: true},
-    labelCountry: {type: String, default: "Country"},
+      labelCountry: {type: String, default: "Country"},
     labelState: {type: String, default: "State/Province"}
   },
 

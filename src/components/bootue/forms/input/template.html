@@ -6,7 +6,9 @@
   </slot>
 
   <div :class="{ 'input-group': isGroup, 'relative': !isGroup }">
+
     <slot name="before"></slot>
+
     <div :is="type=='textarea'?type:'input'" class="form-control" ref="input"
               :cols="cols"
               :disabled="disabled"

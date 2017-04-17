@@ -53,15 +53,15 @@ export default {
     showIcon () {
       let icc;
       switch (this.state) {
-         case 'success':
+        case 'success':
           icc = 'check'
-         break;
-         case 'error':
+          break;
+        case 'error':
           icc = 'times'
-         break;
-         case 'warning':
+          break;
+        case 'warning':
           icc = 'exclamation'
-         break;
+          break;
       }
       return icc;
     },
