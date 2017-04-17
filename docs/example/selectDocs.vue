@@ -195,20 +195,11 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import ButtonGroup from '../../src/components/bootue/buttons/buttongroup/ButtonGroup.vue'
-import bsCheckbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
-import bsSelect from '../../src/components/bootue/forms/select/Select.vue'
-import bsOption from '../../src/components/bootue/forms/option/Option.vue'
-
 export default {
   components: {
     docSection,
     docTable,
-    docCode,
-    ButtonGroup,
-    bsCheckbox,
-    bsSelect,
-    bsOption
+    docCode
   },
   data () {
     return {
@@ -232,10 +223,6 @@ export default {
         placeholder: false,
         required: false,
         search: true
-      },
-      ajax: {
-        options: [],
-        value:null
       },
       single: []
     }

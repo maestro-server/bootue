@@ -1,27 +1,31 @@
-<div>
+<div class="selectCountry">
   <div :class="baseclass">
     <div class="form-group">
-      <label>Country</label><br/>
-      <bsselect :options="options.country"
+      <label>{{labelCountry}}</label><br/>
+      <bs-select :options="options.country"
                 placeholder="Select your Country"
-                search
                 class="wd100"
                 v-model="vcountry"
                 @change="selectCountryChange"
-      ></bsselect>
+                 :disabled="disabled"
+                 :readonly="readonly"
+                 :search="search"
+      ></bs-select>
       </div>
   </div>
 
   <div :class="baseclass">
     <div class="form-group">
-      <label>State/Province</label><br/>
-      <bsselect :options="options.state"
+      <label>{{labelState}}</label><br/>
+      <bs-select :options="options.state"
                 placeholder="Select your state"
-                search
                 v-model="vstates"
                 class="wd100"
                 @change="selectStateChange"
-      ></bsselect>
+                 :disabled="disabled"
+                 :readonly="readonly"
+                 :search="search"
+      ></bs-select>
     </div>
   </div>
 </div>

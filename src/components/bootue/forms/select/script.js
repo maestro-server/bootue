@@ -18,11 +18,11 @@ export default {
     optionsLabel: {type: String, default: 'label'},
     optionsValue: {type: String, default: 'value'},
     parent: {default: true},
-    placeholder: {type: String, default: null},
+    placeholder: {type: String, default: "Nothing Selected"},
     readonly: {type: Boolean, default: null},
     required: {type: Boolean, default: null},
     search: {type: Boolean, default: false},
-    searchText: {type: String, default: null},
+    searchText: {type: String, default: 'Search'},
     value: null
   },
   data () {
@@ -72,7 +72,7 @@ export default {
       return sel.join(', ')
     },
     showPlaceholder () {
-      return (this.values.length === 0 || !this.hasParent) ? (this.placeholder || "Nothing Selected") : null
+      return (this.values.length === 0 || !this.hasParent) ? this.placeholder : null
     },
     values () {
       const fallback = ~[null, undefined].indexOf(this.val) ? [] : [this.val]

@@ -8,6 +8,7 @@ export default {
     datalist: {type: Array, default: null},
     disabled: {type: Boolean, default: false},
     help: {type: String, default: null},
+    error: {type: String, default: null},
     icon: {type: Boolean, default: false},
     label: {type: String, default: null},
     state: {type: String, default: null},
@@ -47,7 +48,7 @@ export default {
       return this.error
     },
     showHelp () {
-      return this.help && (!this.showError || !this.hideHelp)
+      return this.help && (!this.showError)
     },
     showIcon () {
       let icc;
@@ -65,7 +66,7 @@ export default {
       return icc;
     },
     title () {
-      return this.errorText || this.help || ''
+      return this.error || this.help || ''
     },
     showState () {
       return this.state ? `has-${this.state}` : ''

@@ -32,7 +32,7 @@ export default {
     scrollSpy () {
       const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop
       for (let s of this.sections) {
-        if (s.el.offsetTop - 30 <= scrollPosition) {
+        if (s.el.offsetTop - 35 <= scrollPosition) {
           this.active = s.id
         }
       }

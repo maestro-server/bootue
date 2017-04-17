@@ -1,5 +1,4 @@
 import bsSelect from '../select/Select.vue'
-import bsoption from '../option/Option.vue'
 import {country, states} from './countries'
 import finderK from './_utils/finderKeyByValue'
 import '../Forms.vue'
@@ -7,8 +6,16 @@ import '../Forms.vue'
 export default {
   props: {
     baseclass: {
-      type: String
-    }
+      type: String,
+      default: null
+    },
+    name: {type: String, default: null},
+    readonly: {type: Boolean, default: null},
+    required: {type: Boolean, default: null},
+    disabled: {type: Boolean, default: false},
+    search: {type: Boolean, default: true},
+    labelCountry: {type: String, default: "Country"},
+    labelState: {type: String, default: "State/Province"}
   },
 
   data () {
@@ -38,12 +45,7 @@ export default {
     }
   },
 
-  mounted () {
-
-  },
-
   components: {
-    bsSelect,
-    bsoption
+    bsSelect
   }
 }

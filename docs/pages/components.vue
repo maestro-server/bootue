@@ -26,6 +26,7 @@
             <dropdown-docs></dropdown-docs>
             <form-docs></form-docs>
             <input-docs></input-docs>
+            <input-file-docs></input-file-docs>
             <modal-docs></modal-docs>
 
             <navbar-docs></navbar-docs>
@@ -34,12 +35,12 @@
             <progressbar-docs></progressbar-docs>
             <radio-docs></radio-docs>
             <select-docs></select-docs>
+            <select-country-docs></select-country-docs>
             <spinner-docs></spinner-docs>
             <tabs-docs></tabs-docs>
             <toggle-button-docs></toggle-button-docs>
             <tooltip-docs></tooltip-docs>
             <typeahead-docs></typeahead-docs>
-            <!--<form-group-docs></form-group-docs>-->
           </div>
           <div class="col-md-3">
             <affix-sidebar></affix-sidebar>
@@ -64,15 +65,18 @@ import carouselDocs from '../example/carouselDocs.vue'
 import checkboxDocs from '../example/checkboxDocs.vue'
 import datepickerDocs from '../example/datepickerDocs.vue'
 import dropdownDocs from '../example/dropdownDocs.vue'
-import formGroupDocs from '../example/formGroupDocs.vue'
 import formDocs from '../example/formDocs.vue'
 import inputDocs from '../example/inputDocs.vue'
+import inputFileDocs from '../example/inputFileDocs.vue'
+
 import modalDocs from '../example/modalDocs.vue'
 import navbarDocs from '../example/navbarDocs.vue'
 import popoverDocs from '../example/popoverDocs.vue'
 import progressbarDocs from '../example/progressbarDocs.vue'
 import radioDocs from '../example/radioDocs.vue'
 import selectDocs from '../example/selectDocs.vue'
+import selectCountryDocs from '../example/selectCountryDocs.vue'
+
 import spinnerDocs from '../example/spinnerDocs.vue'
 import tabsDocs from '../example/tabsDocs.vue'
 import toggleButtonDocs from '../example/toggleButtonDocs.vue'
@@ -101,15 +105,16 @@ export default {
     checkboxDocs,
     datepickerDocs,
     dropdownDocs,
-    formGroupDocs,
     formDocs,
     inputDocs,
+    inputFileDocs,
     modalDocs,
     navbarDocs,
     popoverDocs,
     progressbarDocs,
     radioDocs,
     selectDocs,
+    selectCountryDocs,
     spinnerDocs,
     tabsDocs,
     toggleButtonDocs,

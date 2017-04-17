@@ -59,7 +59,7 @@
         <p>Button style.</p>
       </div>
     </doc-table>
-    <p>See <a href="#button-group">Button Group</a> for more options.</p>
+    <p>See <a @click="scrollMeTo('button-group')">Button Group</a> for more options.</p>
   </doc-section>
 </template>
 
@@ -68,13 +68,13 @@ import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
 import bsCheckbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
+import AnimateScroll from '../libs/animate'
 
 export default {
   components: {
     docSection,
     docTable,
-    docCode,
-    bsCheckbox
+    docCode
   },
   data () {
     return {
@@ -84,6 +84,13 @@ export default {
         three: false,
         four: false
       }
+    }
+  },
+  methods: {
+    scrollMeTo(refName) {
+      const element = document.querySelector(`#${refName}`)
+      const top = element.offsetTop -30
+      AnimateScroll(top, 0, 'easeInOutQuint')
     }
   }
 }
