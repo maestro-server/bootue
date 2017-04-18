@@ -1,5 +1,5 @@
 <template>
-  <affix :offset="70" v-scroll="scrollSpy">
+  <affix :offset="60" v-scroll="scrollSpy">
     <ul class="nav bs-docs-sidenav" id="sidenav">
       <li v-for="s in sections" :class="{active:active==s.id}"><a @click="scrollMeTo(s.id)" class="handCursor">{{ s.name }}</a></li>
     </ul>

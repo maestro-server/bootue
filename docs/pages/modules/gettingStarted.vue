@@ -4,76 +4,158 @@
       <div class="bs-callout bs-callout-success">
         <h4>About this project</h4>
         <p>
-          This repository contains a set of native Vue.js components based on Bootstrap's markup and CSS.
-          As a result no dependency on jQuery or Bootstrap's JavaScript is required.
-          The only required dependencies are:
+          The goal of project is provide a easy way to customize, incorporate and organize all elements of your's project.
+          For this we organize all elements into self contained components, splitting all variables and codes put into each folder, each component have yours variables, events, styles and more.
+          Bootue its group of elements components self contained, organized, with multiple function to incorporate and using in any SPA project.
         </p>
-        <ul>
-          <li><a href="http://vuejs.org/">Vue.js</a>
-            (required ^2.1.x, test with 2.1.6).
-          </li>
-          <li><a href="http://getbootstrap.com/">Bootstrap CSS</a>
-            (required 3.x.x, test with 3.3.6).
-            VueStrap doesn't depend on a very precise version of Bootstrap. Just pull the latest.
-          </li>
-        </ul>
+        <p>
+          This repository contains a set of native Vue.js components based on Bootstrap's markup and SCSS.
+          Dont need any 3rd library or include. We easy customize and using in any project, possibility to using
+          party of outhers frameworks together boostrap components, for example we can import grid's Bulma system and
+          use with boostrap components system.
+        </p>
       </div>
-      <h4>CommonJS</h4>
+      <h3 class="text-center">We organize and structure a new set of boostrap's element, <br/>and create more new elements.</h3>
+      <div class="bs-callout bs-callout-success">
+        <p>
+          We raised te concept web Components to 99%, all coponents is self contained, his have your own variables, scss, js and events.
+          Its make to easy create a new components or modify any existing.
+        </p>
+      </div>
+      <h3 class="text-center">Don`t need to import any css, js or fonts, bootue components its self contained</h3>
+      <div class="bs-callout bs-callout-success">
+        <p>
+          You can choose how components the project using, or integrate the components inside to project, its easy to customize
+          , create or perhaps  mixin with another frameworks parts.
+        </p>
+      </div>
+      <h4>Let`s started</h4>
       <doc-code language="javascript">
-        $ npm install vue-strap
+        $ npm install bootue
 
-        var alert = require('vue-strap/src/alert');
+        //index.js
+        import Bootue from 'bootue'
+        // this will import all components.
+        Vue.use(Bootue)
+
+
+        var alert = require('bootue/bootue/alert');
         // or
-        var alert = require('vue-strap').alert;
+        var alert = require('bootue/bootue').alert;
 
         new Vue({
-        components: {
-        alert: alert
-        }
+          components: {
+            alert: alert
+          }
         })
       </doc-code>
       <h4>ES6</h4>
       <doc-code language="javascript">
-        $ npm install vue-strap
+        $ npm install bootue
 
-        import alert from 'vue-strap/src/alert'
+        import alert from 'bootue/bootue/alert'
         // or
-        import { alert } from 'vue-strap'
+        import { alert } from 'bootue/bootue'
 
         new Vue({
-        components: {
-        alert
-        }
+          components: {
+            alert
+          }
         })
       </doc-code>
+      <hr/>
+      <h4>Import bootue system into your project</h4>
+      <p>We recommend to download all components files and import inside to project, remenber the goal is transfer all power
+        to select, customize and extends to any scss parts to project. In deep bootue is a boostrap splitting code, we have SCSS Components, Js Components and Hybrid Components.</p>
+        <doc-code language="markdown">
+          //strutucture folder to generic vue 2 project
+          - vuex
+          - components
+            - pages
+              - home
+              - contact
+            - bootue
+              - _core
+              - alerts
+              - grids
+              - typography
+            - utils
+        </doc-code>
+    </doc-section>
 
-      <h4>AMD</h4>
+    <doc-section id="im-folder" name="Important folders">
+      <p>Bootue have a one very important folder, its called <code>_core</code>, inside we have all shared .scss, and components.</p>
       <doc-code language="javascript">
-        $ bower install vue-strap
-
-        define(['vue-strap'], function(VueStrap) { var alert = VueStrap.alert; ... });
+        //minimal worked
+        - bootue
+          - _core
+            - _mixins // a lot of shared's mixins
+            - _variables
+              - _colors.scss // this its the most important file, all variable colors
+              - _assets_helpers.scss
+              - _forms.scss // size, height and width forms components
+              - _grid_component.scss
+              - _grid.scss // variable grid (using in all components)
+              - _screens.scss
+              - _states.scss // colors states, like error, warning, success and primary
+              - _typography.scss // typography
+              - _zindex.scss // utils
+            - components // a bunch of SCSSS Components
+              - print // print rules
+              - normalize
+              - component-animation
+              - responsive // responsive rules
+              - scaffolding // reset rules
       </doc-code>
-      <h4>Browser globals</h4>
-      <p>
-        The <code>dist</code> folder contains <code>vue-strap.js</code> and <code>vue-strap.min.js</code> with
-        all components exported in the <code>window.VueStrap</code> object. These bundles are also available on both the
-        Bower and NPM packages.
-      </p>
-      <doc-code language="markup">
-        &lt;v-select :options="options">&lt;/v-select>
+      <hr/>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h5 class="panel-title text-center">You maybe create a new components, your change anything, <br/>remember,
+          bootue goal its organize and make easy to change any part of boostrap.</h5>
+        </div>
 
-        &lt;script src="path/to/vue.js">&lt;/script>
-        &lt;script src="path/to/vue-strap.js">&lt;/script>
-        &lt;script>
-        new Vue({
-        components: {
-        vSelect: VueStrap.select
-        },
-        data: {
-        options: []
-        }
-        })
-        &lt;/script>
+        <div class="panel-body">
+          <p>Maybe anothers importants folders is</p>
+          <ul>
+            <li>grid</li>
+            <li>typograph</li>
+            <li>utilities</li>
+          </ul>
+          <p>Its a SCSS Components, theses guys have only scss.</p>
+
+          </div>
+        </div>
+      </doc-section>
+
+    <doc-section id="organization" name="Variables and organization">
+      <p>All global variables its inside <code>_core</code> folder, but each components have yours own variables, example:</p>
+      <h5>Badges Component</h5>
+      <doc-code>
+        //folder structured
+        - badges
+          - _variables
+            _variables.scss // all badges's variables
+          Badges.vue
+          style.scss // scss badges, import to boostrap
+          template.html // template html component
+      </doc-code>
+      <p>Look hers variables</p>
+      <doc-code language="css">
+        @import '../../_core/variables'; // base colors
+
+        $badge-color: #fff !default;
+        //** Linked badge text color on hover
+        $badge-link-hover-color: #fff !default;
+        $badge-bg: $gray-light !default;
+
+        //** Badge text color in active nav link
+        $badge-active-color: $link-color !default;
+        //** Badge background color in active nav link
+        $badge-active-bg: #fff !default;
+
+        $badge-font-weight: bold !default;
+        $badge-line-height: 1 !default;
+        $badge-border-radius: 10px !default;
       </doc-code>
 
     </doc-section>

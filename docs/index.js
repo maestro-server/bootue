@@ -6,7 +6,8 @@ import mcore from '../src/boot/mcore'
 require('./assets/docs.css')
 require('./assets/style.css')
 
-import navbar from './pages/navbar.vue'
+import navbar from './pages/modules/navbar.vue'
+import footerDocs from './pages/modules/footer.vue'
 
 import Home from './pages/home.vue'
 import Components from './pages/components.vue'
@@ -28,7 +29,6 @@ const router = new VueRouter({
   routes // short for routes: routes
 })
 
-Vue.use(require('vue-resource'))
 Vue.use(VueRouter)
 Vue.use(mcore)
 
@@ -36,7 +36,8 @@ new Vue({
   el: '#app',
   router,
   components: {
-    navbar
+    navbar,
+    footerDocs
   },
   data: {
     sections : []

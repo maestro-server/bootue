@@ -70,16 +70,12 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import carousel from '../../src/components/bootue/carousel/Carousel.vue'
-import slider from '../../src/components/bootue/slider/Slider.vue'
 
 export default {
   components: {
     docSection,
     docTable,
-    docCode,
-    carousel,
-    slider
+    docCode
   }
 }
 </script>
