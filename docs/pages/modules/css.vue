@@ -1,8 +1,8 @@
 <template>
   <div>
-    <doc-section id="getting-started" name="Getting started">
+    <doc-section id="boostrap-css" name="Bootstrap and CSS">
       <div class="bs-callout bs-callout-success">
-        <h4>About this project</h4>
+        <h4>Where is boostrap?</h4>
         <p>
           This repository contains a set of native Vue.js components based on Bootstrap's markup and CSS.
           As a result no dependency on jQuery or Bootstrap's JavaScript is required.

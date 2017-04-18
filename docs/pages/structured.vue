@@ -4,7 +4,7 @@
       <div class="container bs-docs-container mt30">
         <div class="row">
           <div class="col-md-9">
-            <getting-started></getting-started>
+            <structured></structured>
 
           </div>
           <div class="col-md-3">
@@ -19,12 +19,12 @@
 
 <script>
 import affixSidebar from '../affixSidebar.vue'
-import gettingStarted from './modules/gettingStarted.vue'
+import structured from './modules/structured.vue'
 
 export default {
   components: {
     affixSidebar,
-    gettingStarted
+    structured
   }
 }
 </script>
