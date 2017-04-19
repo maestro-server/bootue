@@ -72,8 +72,8 @@ export default {
       return sel.join(', ')
     },
     showPlaceholder () {
-      this.placeholder = this.placeholder || this.options[0][this.optionsLabel]
-      const fallback = (this.placeholder || this.text.notSelected)
+      const place = this.placeholder || this.options[0][this.optionsLabel]
+      const fallback = (place || this.text.notSelected)
       const int = this.values.length === 0 || !this.hasParent
 
       return int ? fallback : null
