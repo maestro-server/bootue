@@ -72,7 +72,11 @@ export default {
       return sel.join(', ')
     },
     showPlaceholder () {
-      return this.placeholder || this.options[0][this.optionsLabel]
+      this.placeholder = this.placeholder || this.options[0][this.optionsLabel]
+      const fallback = (this.placeholder || this.text.notSelected)
+      const int = this.values.length === 0 || !this.hasParent
+
+      return int ? fallback : null
     },
     values () {
       const fallback = ~[null, undefined].indexOf(this.val) ? [] : [this.val]
