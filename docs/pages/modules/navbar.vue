@@ -1,12 +1,12 @@
 <template>
 
       <navbar placement="top">
-        <li>
+        <a>
           <router-link to="/"  class="navbar-brand">
             <img src="/docs/assets/imgs/Bootue-hr.png"
                   height="25"/>
           </router-link>
-        </li>
+        </a>
 
         <li>
           <router-link to="/started">

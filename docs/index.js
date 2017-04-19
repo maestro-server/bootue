@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Prism from 'prismjs'
 import VueRouter from 'vue-router'
-import mcore from '../src/boot/mcore'
+import mcore from '../src/components'
 
 require('./assets/docs.css')
 require('./assets/style.css')

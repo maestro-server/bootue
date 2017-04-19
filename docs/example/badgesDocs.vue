@@ -1,5 +1,5 @@
 <template>
-  <doc-section id="button-group" name="Badges">
+  <doc-section id="badges" name="Badges">
     <div class="bs-example">
       <div class="col-xs-12 row">
         <a href="#">Inbox <badge>5</badge></a>

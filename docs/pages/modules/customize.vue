@@ -11,11 +11,6 @@
 
       </div>
 
-      <h4>Change colors</h4>
-
-      <h4>Typograph</h4>
-
-      <h4>New grid system</h4>
     </doc-section>
 
     <doc-section id="change-colors" name="Change colors">

@@ -1,4 +1,4 @@
-import Components from '../components/bootue/index'
+import Components from './bootue/index'
 
 function plugin (Vue) {
   if (plugin.installed) return

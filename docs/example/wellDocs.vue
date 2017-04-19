@@ -1,5 +1,5 @@
 <template>
-  <doc-section id="button-group" name="Wells">
+  <doc-section id="well" name="Wells">
     <div class="bs-example">
 
       <well>I am well</well>
