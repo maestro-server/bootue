@@ -47,7 +47,7 @@
             </tr>
             <tr>
               <td>grid</td>
-              <td>All grid's SCSS, using _core/_grid.scss and _grid_component.scss variables to mount a grid</td>
+              <td>All grid's SCSS, using _core/_grid.scss variables to mount a grid</td>
             </tr>
             <tr>
               <td>jumbotron</td>

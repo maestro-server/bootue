@@ -80,7 +80,6 @@
               <li><b>_colors</b> - All setup colors</li>
               <li><b>_forms</b> - Common input line height</li>
               <li><b>_grid</b> - Common height and glutters used by grid components</li>
-              <li><b>_grid_components</b> - Scaffolding grids system</li>
               <li><b>_screens</b> - Pixel numbers by determinde screens sizes (xs, sm, md, lg)</li>
               <li><b>_states</b> - Colors using in states components (error, warning, success)</li>
               <li><b>_typography</b> - Primary common typography (font-size, font-family)</li>

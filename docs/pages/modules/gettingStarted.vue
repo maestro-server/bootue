@@ -92,7 +92,6 @@
               - _colors.scss // this its the most important file, all variable colors
               - _assets_helpers.scss
               - _forms.scss // size, height and width forms components
-              - _grid_component.scss
               - _grid.scss // variable grid (using in all components)
               - _screens.scss
               - _states.scss // colors states, like error, warning, success and primary
