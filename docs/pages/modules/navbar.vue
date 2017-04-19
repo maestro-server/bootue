@@ -1,12 +1,12 @@
 <template>
 
       <navbar placement="top">
-        <a>
-          <router-link to="/"  class="navbar-brand">
-            <img src="/docs/assets/imgs/Bootue-hr.png"
-                  height="25"/>
-          </router-link>
-        </a>
+
+        <router-link to="/"  slot="brand"  class="navbar-brand">
+          <img src="/docs/assets/imgs/Bootue-hr.png"
+                height="25"/>
+        </router-link>
+
 
         <li>
           <router-link to="/started">
@@ -38,7 +38,7 @@
           </router-link>
         </li>
 
-        <li>
+        <li class="hidden-xs">
           <a href="https://github.com/maestro-server/bootue" target="_blank">
             <svg height="16px" fill="#777" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1"
                  aria-hidden="true">

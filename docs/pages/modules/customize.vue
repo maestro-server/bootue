@@ -7,8 +7,8 @@
           Bootue born for make easier to customize, mixin and aggregate basics elements in new projects. We will presents a pretty cool actions.
         </p>
         <p>
-          We recommend to follow the idea, create each component for make one thing (SOLID), dont matter if its a simple scss lines, each component have a make one thing.
-          Maximize the power of structured's boostrap, and use all variables.
+          We recommend to follow the idea, create each component to make one thing (SOLID), dont matter if its a simple scss lines, each component have a make one thing.
+          Maximize the power of structured's boostrap, and use all variables to make a deep customize accordly your needs.
         </p>
       </div>
 
@@ -16,8 +16,8 @@
 
     <doc-section id="change-colors" name="Change colors">
       <p>
-        Bootstrap have a fantastic structure system to customize variables, exist only one files to change all colors.</p>
-      <h5>The most important place is <code>_core/_variables/_colors.scss</code></h5>
+        Bootstrap have a fantastic structure system to customize variables, exist only one file to change all colors.</p>
+      <h5>The path is <code>_core/_variables/_colors.scss</code></h5>
 
       <doc-code language="css">
         // We have a basics colors, pehaps its a good place to put more news colors.
@@ -72,9 +72,18 @@
     <doc-section id="typograph" name="Typograph">
       <p>We create a component to deal with fonts, all fonts is there, at default is glyphicon and font awesome.</p>
       <well>
-        Its recomend, create a folder inside typograph component and place all files, after that, create style.scss with font-face commands.
+        It's recomend, create a folder inside typograph component and place all files, after that, create style.scss with font-face commands.
         After all using import sass command to bring a new font into project.
       </well>
+
+      <doc-code>
+        - typography
+          - fontawesome
+            - fontawesome.vue // Font Component
+            - style.scss // font-face commands
+            - fonts // font files
+              - font.ttf
+      </doc-code>
 
       <hr/>
 

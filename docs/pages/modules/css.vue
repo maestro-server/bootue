@@ -4,7 +4,7 @@
       <div class="bs-callout bs-callout-success">
         <h4>Where is boostrap?</h4>
         <p>
-          In everywhere, we split all scss code and organize with your bussiness. For example, alerts we move all variable use and _alerts.scss in one place and make single self contained component.
+          In everywhere, we split all scss code and organize with your's bussiness. For example, alerts component, we move all variables and all style (_alerts.scss) in one place and make single self contained component.
         </p>
         <p>
           Bootstrap is huge, and sometimes its only style rules, for this we create SCSS Components, components with only scss codes, for theses you dont need to instance, only import.

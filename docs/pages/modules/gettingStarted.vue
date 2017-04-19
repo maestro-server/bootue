@@ -4,32 +4,33 @@
       <div class="bs-callout bs-callout-success">
         <h4>About this project</h4>
         <p>
-          The goal of project is provide a easy way to customize, incorporate and organize all elements of your's project.
+          The goal of project is provide a easy way to organize, customize, and incorporate all elements of your's project.
           For this we organize all elements into self contained components, splitting all variables and codes put into each folder,
           each component have yours variables, events, styles and more.
-          Bootue its group of elements components self contained, organized, with multiple function to incorporate and using in any SPA project.
+          Bootue its group of elements components self contained, organized, with multiple featured to incorporate and using in any SPA project.
         </p>
         <p>
-          We easy control dependences and have oportunity to deep customize, bootue make simple way to modify boostrap variables, to possibility  perhaps to you using
-          party of outhers frameworks together with boostrap components, for example we can import grid's Bulma system and
-          use with boostrap components.
+          Bootue make simple way to extends and modify boostrap variables, effects and featured, her provide a possibility
+          to you using party of outhers frameworks together with boostrap components,
+          create a new one or using only elements that you need.
         </p>
       </div>
       <h3 class="text-center">We organize and structure a new set of boostrap's element, <br/>and create more new elements.
       </h3>
       <div class="bs-callout bs-callout-success">
         <p>
-          We raised te concept web Components to 99%, all coponents is self contained, his have your own variables, scss, js and events.
-          Its make to easy create a new components or modify any existing.
+          We raise the web components concept to 100%, all coponents are self contained, yours has its own variables, scss, js and events.
+          Bootue provides an easy path to create new components or modify in organized pattern way.
         </p>
       </div>
-      <h3 class="text-center">Don`t need to import any css, js or fonts, bootue components its self contained</h3>
+      <h3 class="text-center">Don't need to import any css, js or fonts, <br/>bootue components its self contained</h3>
       <div class="bs-callout bs-callout-success">
         <p>
-          You can choose how components the project using, or integrate the components inside to project, its easy to customize
-          , create or perhaps  mixin with another frameworks parts.
+          You can choose how components the project will use, or integrate the components inside to project, its easy to customize
+          , create or perhaps mixin with another frameworks parts. <router-link to="/extend">See more</router-link>
         </p>
       </div>
+      <hr/>
       <h4>Let`s started</h4>
       <doc-code language="javascript">
         $ npm install bootue
@@ -59,10 +60,12 @@
         })
       </doc-code>
       <hr/>
-      <h4>Import bootue system into your project</h4>
+      <h4>Import bootue system into your project (<span class="text-success">recomended</span>)</h4>
       <p>
-        We recommend to download all components files and import inside to project, remenber the goal is transfer all power
-        to select, customize and extends to any scss parts to project. In deep bootue is a boostrap splitting code, we have SCSS Components, Js Components and Hybrid Components.</p>
+        We recommend to download all components files and import inside to project, remember the goal is transfer all power
+        to select, customize and extends to any scss parts to project.
+        In deep, bootue is a reorganized boostrap splitting code, her have <code>SCSS Components</code>, <code>Js Components</code> and <code>Hybrid Components</code>.
+      </p>
       <doc-code language="markdown">
         //strutucture folder to generic vue 2 project
         - vuex
@@ -72,11 +75,30 @@
             - contact
           - bootue
             - _core
-            - alerts
             - grids
             - typography
             - utilities
+            - index.js // use to make import components easy
       </doc-code>
+
+      <p>We import bootue components aside page's project, the ideia its full integration scss rules into project.</p>
+
+      <hr/>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h5 class="panel-title text-center">Why should I care about this structure? Why not use NPM?</h5>
+        </div>
+
+        <div class="panel-body">
+          <p>When I began bootue, my problem is, I have a very custom layouts in any SPA project, but all the elements in its excence its the same. i would like exist a central repository with self  contanied elements, dont bother me with import scss bases, navigate and change 1000 lines in variables.scss, i like to get and put that element and works.</p>
+          <hr/>
+          <p>With that mind, the project intent to, split and organized all business logic's of bootstrap, possibility to choose and modify exacly parts i want, possibility to export the module for other projects using a top contained delivery, and possibility to using 100% component tree system modules</p>
+          <hr/>
+          <p>And updates? Come on, you execute a update your bootstrap frequently? Boostrap 3 update frequently?
+The risk exist, bootue needs to bug fix, him will update, for this situation you need to copy and paste parcially, yes its not a best situation, but in moment its acceptable.</p>
+        </div>
+      </div>
     </doc-section>
 
     <doc-section id="im-folder" name="Important folders">
@@ -115,9 +137,9 @@
         <div class="panel-body">
           <p>Maybe anothers importants folders is</p>
           <ul>
-            <li>grid</li>
-            <li>typograph</li>
-            <li>utilities</li>
+            <li><b>grid</b> - Grid system</li>
+            <li><b>typograph</b> - Font files</li>
+            <li><b>utilities</b> - Common scss utilities, like pull-left</li>
           </ul>
           <p>Its a SCSS Components, theses guys have only scss.</p>
 
