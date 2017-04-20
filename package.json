@@ -41,11 +41,12 @@
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0"
   },
+  "main": "src/index.js",
   "directories": {
-    "src": "src/components"
+    "src": "src/"
   },
   "files": [
-    "src/components"
+    "src/"
   ],
   "keywords": [
     "vue2",
