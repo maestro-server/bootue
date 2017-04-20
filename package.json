@@ -7,8 +7,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "dev-build": "cross-env NODE_ENV=development webpack --progress --hide-modules",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "lint": "eslint src/**",
-    "prepublish": "npm run build && cp ./package.json dist"
+    "lint": "eslint src/**"
   },
   "repository": {
     "type": "git",
@@ -44,9 +43,9 @@
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0"
   },
-  "files": [
-    "src/components"
-  ],
+  "directories": {
+    "src": "src/components"
+  },
   "keywords": [
     "vue2",
     "boostrap",
