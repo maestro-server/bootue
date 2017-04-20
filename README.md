@@ -1,5 +1,5 @@
 [![Code Climate](https://codeclimate.com/github/maestro-server/bootue/badges/gpa.svg)](https://codeclimate.com/github/maestro-server/bootue) [![Build Status](https://travis-ci.org/maestro-server/bootue.svg?branch=master)](https://travis-ci.org/maestro-server/bootue) [![Issue Count](https://codeclimate.com/github/maestro-server/bootue/badges/issue_count.svg)](https://codeclimate.com/github/maestro-server/bootue) [![david-dm.org](https://david-dm.org/maestro-server/bootue.svg)](https://david-dm.org/) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/336961c7b6d84424885355549300095f)](https://www.codacy.com/app/Signorini/bootue?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=maestro-server/bootue&amp;utm_campaign=Badge_Grade)
-# Bootue - Boostrap 3 + Vue = 100% Self Contained Components
+## Bootue - Boostrap 3 + Vue = 100% Self Contained Components
 - **100% Bootstrap components built with Vue 2.**
 - **No boostrap.css, bootstrap.js, jQuery, or any 3rd party plugins required.**
 - **Really, its full Stand Lone library.**
@@ -41,7 +41,7 @@ new Vue({
 })
 ```
 
-####Import bootue system into your project (recomended)
+#### Import bootue system into your project (recomended)
 We recommend to download all components files and import inside to project, remember the goal is transfer all power to select, customize and extends to any scss parts to project. In deep, bootue is a reorganized boostrap splitting code, her have **SCSS Components**, **Js Components** and **Hybrid Components.**
 
 ```markup
@@ -67,7 +67,7 @@ With that mind, the project intent to, split and organized all business logic's 
 
 And updates? Come on, you execute a update your bootstrap frequently? Boostrap 3 update frequently? The risk exist, bootue needs to bug fix, him will update, for this situation you need to copy and paste parcially, yes its not a best situation, but in moment its acceptable.
 
-### docs
+### Docs
 See the [documentation](https://github.io/maestro-server/bootue/) with live editable examples.
 
 ### Develop Local Setup
@@ -78,13 +78,8 @@ $ npm run dev
 
 // default portr is 8080
 ```
-
-### Como contribuir
-Para contribuir com o projeto, [clique aqui](https://github.com/thiagommedeiros/sptrans-promise/blob/master/CONTRIBUTING.md).
-
 ### License
 Bootue is licensed under [The MIT License](LICENSE).
-
 
 ### Autor
 
