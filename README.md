@@ -5,9 +5,9 @@
 - **Really, its full Stand Lone library.**
 
 ### About
-> The goal of project is provide a easy way to organize, customize, and incorporate all elements of your's project. For this we organize all elements into self contained components, splitting all variables and codes put into each folder, each component have yours variables, events, styles and more. Bootue its group of elements components self contained, organized, with multiple featured to incorporate and using in any SPA project.
+The goal of project is provide a easy way to organize, customize, and incorporate all elements of your's project. For this we organize all elements into self contained components, splitting all variables and codes put into each folder, each component have yours variables, events, styles and more. Bootue its group of elements components self contained, organized, with multiple featured to incorporate and using in any SPA project.
 
-> Bootue make simple way to extends and modify boostrap variables, effects and featured, her provide a possibility to you using party of outhers frameworks together with boostrap components, create a new one or using only elements that you need.
+Bootue make simple way to extends and modify boostrap variables, effects and featured, her provide a possibility to you using party of outhers frameworks together with boostrap components, create a new one or using only elements that you need.
 
 
 ### Build Setup
