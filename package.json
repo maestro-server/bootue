@@ -14,8 +14,11 @@
     "url": "https://github.com/maestro-server/bootue.git"
   },
   "dependencies": {
+    "node-sass": "^4.5.0",
+    "sass-loader": "^5.0.1",
     "vue": "^2.2.1",
-    "vue-resource": "^1.2.1",
+    "vue-loader": "^11.1.4",
+    "vue-router": "^2.4.0",
     "vue-template-compiler": "^2.2.1"
   },
   "devDependencies": {
@@ -34,18 +37,16 @@
     "eslint-plugin-standard": "^2.0.1",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.9.0",
-    "node-sass": "^4.5.0",
     "prismjs": "^1.6.0",
-    "sass-loader": "^5.0.1",
-    "url-loader": "^0.5.8",
-    "vue-loader": "^11.1.4",
-    "vue-router": "^2.4.0",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0"
   },
   "directories": {
     "src": "src/components"
   },
+  "files": [
+    "src/components"
+  ],
   "keywords": [
     "vue2",
     "boostrap",
