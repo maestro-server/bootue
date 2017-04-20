@@ -14,7 +14,7 @@
     "url": "https://github.com/maestro-server/bootue.git"
   },
   "dependencies": {
-    "vue": "^2.2.1",
+    "vue": "^2.2.1"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
