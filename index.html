@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>bootue</title>
-    <link rel="stylesheet" href="dist/build.css">
-  </head>
-  <body>
-    <div id="app"></div>
-    <script src="dist/guide-build.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootue - 100% components boostrap with Vue 2</title>
+  <!-- <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600|Source+Code+Pro' rel='stylesheet' type='text/css'> -->
+  <link rel="stylesheet" type="text/css" href="docs/assets/prism-coy.css">
+  <link rel="stylesheet" href="dist/build.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style type="text/css" media="screen">
+    .page-header { padding-top: 50px; }
+    code[class*="language"] {
+      max-height: calc(30em - 19px);
+      padding-top: 5px;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <navbar></navbar>
+  <router-view></router-view>
+
+  <footer-docs></footer-docs>
+</div>
+<!-- using cdn version here so it works under gh-pages -->
+<script src="/dist/docs-build.js"></script>
+</body>
 </html>

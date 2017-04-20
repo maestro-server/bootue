@@ -1,5 +1,5 @@
 <template>
-  <doc-section id="button-group" name="***Button Group">
+  <doc-section id="button-group" name="Button Group">
     <div class="bs-example">
       <h4>Checkbox</h4>
       <button-group v-model="checkboxValue">
@@ -14,24 +14,24 @@
       <h4>Radio</h4>
       <p>
         <button-group v-model="radioValue" type="primary">
-          <bs-radio true-value="left">Left</bs-radio>
-          <bs-radio true-value="middle">Middle</bs-radio>
-          <bs-radio true-value="right">Right</bs-radio>
+          <bs-radio selected-value="left">Left</bs-radio>
+          <bs-radio selected-value="middle">Middle</bs-radio>
+          <bs-radio selected-value="right">Right</bs-radio>
         </button-group>
       </p>
       <p>
         <button-group v-model="radioValue" type="success">
-          <bs-radio true-value="left">Left</bs-radio>
-          <bs-radio true-value="middle">Middle</bs-radio>
-          <bs-radio true-value="right">Right</bs-radio>
+          <bs-radio selected-value="left">Left</bs-radio>
+          <bs-radio selected-value="middle">Middle</bs-radio>
+          <bs-radio selected-value="right">Right</bs-radio>
         </button-group>
       </p>
       <p>
         <label>Not buttons:</label>
-        <button-group v-model="radioValue" type="info" buttons="false">
-          <bs-radio true-value="left">Left</bs-radio>
-          <bs-radio true-value="middle">Middle</bs-radio>
-          <bs-radio true-value="right">Right</bs-radio>
+        <button-group v-model="radioValue" type="info" :buttons="false">
+          <bs-radio selected-value="left">Left</bs-radio>
+          <bs-radio selected-value="middle">Middle</bs-radio>
+          <bs-radio selected-value="right">Right</bs-radio>
         </button-group>
       </p>
       <p>
@@ -40,22 +40,22 @@
     </div>
     <doc-code language="markup">
       &lt;button-group v-model="checkboxValue">
-        &lt;checkbox value="left">Left&lt;/checkbox>
-        &lt;checkbox value="middle">Middle&lt;/checkbox>
-        &lt;checkbox value="right">Right&lt;/checkbox>
+        &lt;checkbox true-value="left">Left&lt;/checkbox>
+        &lt;checkbox true-value="middle">Middle&lt;/checkbox>
+        &lt;checkbox true-value="right">Right&lt;/checkbox>
       &lt;/button-group>
 
       &lt;button-group v-model="radioValue" type="primary">
-        &lt;radio value="left">Left&lt;/radio>
-        &lt;radio value="middle">Middle&lt;/radio>
-        &lt;radio value="right">Right&lt;/radio>
+        &lt;radio selected-value="left">Left&lt;/radio>
+        &lt;radio selected-value="middle">Middle&lt;/radio>
+        &lt;radio selected-value="right">Right&lt;/radio>
       &lt;/button-group>
 
       Not Buttons:
       &lt;button-group v-model="radioValue" type="info" buttons="false">
-        &lt;radio value="left">Left&lt;/radio>
-        &lt;radio value="middle">Middle&lt;/radio>
-        &lt;radio value="right">Right&lt;/radio>
+        &lt;radio selected-value="left">Left&lt;/radio>
+        &lt;radio selected-value="middle">Middle&lt;/radio>
+        &lt;radio selected-value="right">Right&lt;/radio>
       &lt;/button-group>
     </doc-code>
 
@@ -77,6 +77,15 @@
         </p>
       </div>
       <div>
+        <p>disabled</p>
+        <p><code>Boolean</code></p>
+        <p><code>false</code></p>
+        <p>
+          <p>Can enable/disable group values.</p>
+          <p>Disable it if you need independent values but want to group color and/or style.</p>
+        </p>
+      </div>
+      <div>
         <p>type</p>
         <p><code>String</code>, one of <code>default</code>
         <code>primary</code>
@@ -95,18 +104,12 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import ButtonGroup from '../../src/components/bootue/buttons/buttongroup/ButtonGroup.vue'
-import bsCheckbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
-import bsRadio from '../../src/components/bootue/forms/radio/Radio.vue'
 
 export default {
   components: {
     docSection,
     docTable,
-    docCode,
-    ButtonGroup,
-    bsCheckbox,
-    bsRadio
+    docCode
   },
   data () {
     return {

@@ -114,7 +114,7 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  height: ($input-height-base - 1); // Make inputs at least the height of their button counterpart (base line-height + padding + border)
   padding: $padding-base-vertical $padding-base-horizontal;
   font-size: $font-size-base;
   line-height: $line-height-base;
@@ -537,6 +537,7 @@ input[type="checkbox"] {
     .has-feedback .form-control-feedback {
       top: 0;
     }
+
   }
 }
 // [converter] extracted as `@mixin form-inline` for libsass compatibility
@@ -562,7 +563,6 @@ input[type="checkbox"] {
   .checkbox-inline {
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: ($padding-base-vertical + 1); // Default padding plus a border
   }
   // Account for padding we're adding to ensure the alignment and of help text
   // and other content below items

@@ -6,7 +6,7 @@
        @keydown.space.stop.prevent="toggle"
        @keydown.enter.stop.prevent="toggle"
   >
-    <span class="btn-content" v-html="loading ? text.loading : showPlaceholder || selected"></span>
+    <span class="btn-content" v-html="loading ? 'Loading...' : showPlaceholder || selected"></span>
     <span v-if="clearButton&&values.length" class="close" @click="clear()">&times;</span>
   </div>
   <select ref="sel" v-model="val" :name="name" class="secret" :multiple="multiple" :required="required" :readonly="readonly" :disabled="disabled">
@@ -16,22 +16,22 @@
   <ul class="dropdown-menu">
     <template v-if="list.length">
       <li v-if="canSearch" class="bs-searchbox">
-        <input type="text" :placeholder="searchText||text.search" class="form-control" autocomplete="off" ref="search"
+        <input type="text" :placeholder="searchText" class="form-control" autocomplete="off" ref="search"
                v-model="searchValue"
                @keyup.esc="close"
         />
         <span v-show="searchValue" class="close" @click="clearSearch">&times;</span>
       </li>
-      <li v-if="required&&!clearButton"><a @mousedown.prevent="clear() && close()">{{ placeholder || text.notSelected }}</a></li>
+      <li v-if="required&&!clearButton"><a @mousedown.prevent="clear() && close()">{{ placeholder }}</a></li>
       <li v-for="option in filteredOptions" :id="option[optionsValue]">
         <a @mousedown.prevent="select(option[optionsValue])">
           <span v-html="option[optionsLabel]"></span>
-          <span class="glyphicon glyphicon-ok check-mark" v-show="isSelected(option[optionsValue])"></span>
+          <span class="fa fa-check check-mark" v-show="isSelected(option[optionsValue])"></span>
         </a>
       </li>
     </template>
     <slot></slot>
-    <transition v-if="notify && !closeOnSelect" name="fadein"><div class="notify in">{{limitText}}</div></transition>
+    <transition v-if="notify && !closeOnSelect" name="fadein"><div class="notify in">Limit reached ({{limit}} items max).</div></transition>
   </ul>
   <transition v-if="notify && closeOnSelect" name="fadein"><div class="notify out"><div>{{limitText}}</div></div></transition>
   <!-- <pre>Options: {{list}}</pre> -->

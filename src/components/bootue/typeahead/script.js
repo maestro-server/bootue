@@ -1,7 +1,7 @@
 import delayer from '../_core/_utils/delayer.js'
 import getJSON from './_utils/getJSON.js'
 
-let DELAY = 300
+const DELAY = 300
 
 export default {
   props: {

@@ -2,7 +2,7 @@ export default {
   props: {
     header: {type: String},
     isOpen: {type: Boolean, default: null},
-    type: {type: String, default : null}
+    type: {type: String, default: null}
   },
   data() {
     return {
@@ -10,13 +10,17 @@ export default {
     }
   },
   watch: {
-    isOpen( val ) {
+    isOpen(val) {
       this.open = val
     }
   },
   computed: {
-    inAccordion () { return this.$parent && this.$parent._isAccordion },
-    panelType () { return 'panel-' + (this.type || (this.$parent && this.$parent.type) || 'default') }
+    inAccordion () {
+      return this.$parent && this.$parent._isAccordion
+    },
+    panelType () {
+      return 'panel-' + (this.type || (this.$parent && this.$parent.type) || 'default')
+    }
   },
   methods: {
     toggle () {

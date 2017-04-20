@@ -3,9 +3,6 @@ import bsSelect from './select/Select.vue'
 import bsInput from './input/Input.vue'
 import './inputgroups/InputGroup.vue'
 
-import bsFormGroup from './formgroup/FormGroup.vue'
-import bsFormValidator from './formvalidator/FormValidator.vue'
-
 import bsCheckbox from './checkbox/Checkbox.vue'
 import bsDatepicker from './datepicker/Datepicker.vue'
 import bsRadio from './radio/Radio.vue'
@@ -18,8 +15,6 @@ export default {
   bsOption,
   bsCheckbox,
   bsDatepicker,
-  bsFormGroup,
-  bsFormValidator,
   bsInputFile,
   bsRadio,
   bsSelectCountry

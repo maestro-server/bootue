@@ -1,11 +1,5 @@
-
-import coerce from '../../_core/_utils/coerce.js'
-import delayer from '../../_core/_utils/delayer.js'
-import translations from '../_texts/translations.js'
-
 import '../Forms.vue'
 
-let DELAY = 300
 
 export default {
   props: {
@@ -13,102 +7,89 @@ export default {
     cols: {type: Number, default: null},
     datalist: {type: Array, default: null},
     disabled: {type: Boolean, default: false},
-    error: {type: String, default: null},
     help: {type: String, default: null},
-    hideHelp: {type: Boolean, default: true},
+    error: {type: String, default: null},
     icon: {type: Boolean, default: false},
     label: {type: String, default: null},
-    lang: {type: String, default: navigator.language},
-    mask: null,
-    maskDelay: {type: Number, default: 100},
-    match: {type: String, default: null},
-    max: {type: String, default: null},
-    maxlength: {type: Number, default: null},
-    min: {type: String, default: null},
-    minlength: {type: Number, default: 0},
+    state: {type: String, default: null},
     name: {type: String, default: null},
-    pattern: {default: null},
     placeholder: {type: String, default: null},
     readonly: {type: Boolean, default: false},
-    required: {type: Boolean, default: false},
     rows: {type: Number, default: 3},
-    step: {type: Number, default: null},
     type: {type: String, default: 'text'},
-    url: {type: String, default: null},
-    urlMap: {type: Function, default: null},
-    validationDelay: {type: Number, default: 250},
-    value: {default: null}
+    value: {default: null},
+    inline: {type: Boolean, default: false},
+    horizontal: {type: Boolean, default: false},
+    horizontalWrapper: {type: String, default: 'col-sm-10'},
+    horizontalLabelWrapper: {type: String, default: 'col-sm-2'}
   },
   data () {
-    let val = this.value
+    let val = this.value;
+
     return {
       options: this.datalist,
       val,
-      valid: null,
-      timeout: null,
       isGroup: false
     }
   },
   computed: {
-    canValidate () { return !this.disabled && !this.readonly && (this.required || this.regex || this.nativeValidate || this.match !== null) },
-    errorText () {
-      let value = this.value
-      let error = [this.error]
-      if (!value && this.required) error.push('(' + this.text.required.toLowerCase() + ')')
-      if (value && (value.length < this.minlength)) error.push('(' + this.text.minLength.toLowerCase() + ': ' + this.minlength + ')')
-      return error.join(' ')
-    },
     id_datalist () {
       if (this.type !== 'textarea' && this.datalist instanceof Array) {
         if (!this._id_datalist) {
-          if (!this.$root.id_datalist) { this.$root.id_datalist = 0 }
+          if (!this.$root.id_datalist) {
+            this.$root.id_datalist = 0
+          }
           this._id_datalist = 'input-datalist' + this.$root.id_datalist++
         }
         return this._id_datalist
       }
       return null
     },
-    input () { return this.$refs.input },
-    nativeValidate () { return (this.input || {}).checkValidity && (~['url', 'email'].indexOf(this.type.toLowerCase()) || this.min || this.max) },
-    regex () { return coerce.pattern(this.pattern) },
-    showError () { return this.error && this.valid === false },
-    showHelp () { return this.help && (!this.showError || !this.hideHelp) },
-    text () { return translations(this.lang) },
-    title () { return this.errorText || this.help || '' }
+    input () {
+      return this.$refs.input
+    },
+    showError () {
+      return this.error
+    },
+    showHelp () {
+      return this.help && (!this.showError)
+    },
+    showIcon () {
+      let icc;
+      switch (this.state) {
+        case 'success':
+          icc = 'check'
+          break;
+        case 'error':
+          icc = 'times'
+          break;
+        case 'warning':
+          icc = 'exclamation'
+          break;
+      }
+      return icc;
+    },
+    title () {
+      return this.error || this.help || ''
+    },
+    showState () {
+      return this.state ? `has-${this.state}` : ''
+    },
+    labelFeedback () {
+      return this.$slots['label'] || this.label
+    }
   },
   watch: {
     datalist (val, old) {
-      if (val !== old && val instanceof Array) { this.options = val }
+      if (val !== old && val instanceof Array) {
+        this.options = val
+      }
     },
-    match () { this.eval() },
     options (val, old) {
       if (val !== old) this.$emit('options', val)
     },
-    url () {
-      this._url()
-    },
-    val (val, old) {
+    val (val) {
       this.$emit('input', val)
-      if (val !== old) {
-        if (this.mask instanceof Function) {
-          val = this.mask(val || '')
-          if (this.val !== val) {
-            if (this._timeout.mask) clearTimeout(this._timeout.mask)
-            this._timeout.mask = setTimeout(() => {
-              this.val = val
-            }, isNaN(this.maskDelay) ? 0 : this.maskDelay)
-          }
-        }
-        this.eval()
-      }
-    },
-    valid (val) {
-      this.$emit('isvalid', val)
-      this.$emit(!val ? 'invalid' : 'valid')
-      if (this._parent) this._parent.validate()
-    },
-    value (val) {
-      if (this.val !== val) { this.val = val }
     }
   },
   methods: {
@@ -117,65 +98,31 @@ export default {
     },
     emit (e) {
       this.$emit(e.type, e.type == 'input' ? e.target.value : e)
-      if (e.type === 'blur' && this.canValidate) { this.valid = this.validate() }
     },
-    eval () {
-      if (this._timeout.eval) clearTimeout(this._timeout.eval)
-      if (!this.canValidate) {
-        this.valid = true
-      } else {
-        this._timeout.eval = setTimeout(() => {
-          this.valid = this.validate()
-          this._timeout.eval = null
-        }, this.validationDelay)
-      }
-    },
-    focus () { this.input.focus() },
-    validate () {
-      if (!this.canValidate) { return true }
-      let value = (this.val || '').trim()
-      if (!value) { return !this.required }
-      if (this.match !== null) { return this.match === value }
-      if (value.length < this.minlength) { return false }
-      if (this.nativeValidate && !this.input.checkValidity()) { return false }
-      if (this.regex) {
-        if (!(this.regex instanceof Function ? this.regex(this.value) : this.regex.test(this.value))) { return false }
-      }
-      return true
+    focus () {
+      this.input.focus()
     },
     reset() {
-      this.value = ''
-      this.valid = null
-      if (this._timeout.mask) clearTimeout(this._timeout.mask)
-      if (this._timeout.eval) clearTimeout(this._timeout.eval)
+      this.val = ''
+    },
+    classWrapper() {
+      if(this.isGroup && !this.inline) {
+        return "input-group"
+      }
+
+      if(this.horizontal) {
+        return this.horizontalWrapper
+      }
+
+      return "relative"
+    },
+    horizontalLabelClass() {
+      if(this.horizontal)
+        return this.horizontalLabelWrapper
     }
   },
   created () {
     this._input = true
-    this._timeout = {}
-    let parent = this.$parent
-
-    while (parent && !parent._formValidator) { parent = parent.$parent }
-    if (parent && parent._formValidator) {
-      parent.children.push(this)
-      this._parent = parent
-    }
-    this._url = delayer(function () {
-      if (!this.url || !this.$http || this._loading) { return }
-      this._loading = true
-      this.$http.get(this.url).then(response => {
-        let data = response.data instanceof Array ? response.data : []
-        try { data = JSON.parse(data) } catch (e) {
-          console.log(e)
-        }
-        if (this.urlMap) { data = data.map(this.urlMap) }
-        this.options = data
-        this.loading = false
-      }, () => {
-        this.loading = false
-      })
-    }, DELAY)
-    if (this.url) this._url()
   },
   mounted () {
     this.isGroup = typeof this.$slots.before === "object" || typeof this.$slots.after === "object"

@@ -26,7 +26,38 @@
         <p><code>0</code></p>
         <p>Pixels to offset from top of screen when calculating position of scroll.</p>
       </div>
+      <div>
+        <p>v-scroll</p>
+        <p><code>Directive</code></p>
+        <p><code>null</code></p>
+        <p>Function to call when user scroll page, very usefull to determine actives links, actions in middle navigation and etc.</p>
+      </div>
     </doc-table>
+
+    <h3>Example</h3>
+    This code is used in docs, we have scrollSpy function to watch how link is active.
+    <doc-code language="javascript">
+      &lt;affix :offset="70" v-scroll="scrollSpy">
+        &lt;ul class="nav bs-docs-sidenav" id="sidenav">
+          &lt;li v-for="s in sections" :class="{active:active==s.id}">&lt;a @click="scrollMeTo(s.id)" class="handCursor">{ s.name }&lt;/a>&lt;/li>
+        &lt;/ul>
+      &lt;/affix>
+
+      &lt;script>
+        methods: {
+          scrollSpy () {
+            const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop
+            for (let s of this.sections) {
+              if (s.el.offsetTop - 30 <= scrollPosition) {
+                this.active = s.id
+              }
+            }
+          }
+        }
+      &lt;/script>
+
+    </doc-code>
+
   </doc-section>
 </template>
 

@@ -1,4 +1,3 @@
-<template>
 <div>
   <doc-section id="getting-started" name="Getting started">
     <div class="bs-callout bs-callout-success">
@@ -74,61 +73,9 @@
         })
       &lt;/script>
     </doc-code>
-    <h2>Translations (optional):</h2>
-    <p>If you want to enable language support, you have to add:</p>
-    <doc-code language="markup">
-      &lt;script src="path/to/vue-strap-lang.js">&lt;/script>
-    </doc-code>
-    <h4>CommonJS</h4>
-    <doc-code language="javascript">
-      require('vue-strap/dist/vue-strap-lang.js')
-    </doc-code>
-    <p>If not included what you need, you can add your own, without editing the source code of vue-strap.</p>
-    <hr/>
-    <h2>Mobile detection (optional):</h2>
-    <p>If you need to enable/disable options if is a mobile device you can add:</p>
-    <doc-code language="markup">
-      &lt;script src="path/to/isMobileBrowser.js">&lt;/script>
-    </doc-code>
-    <h4>CommonJS</h4>
-    <doc-code language="javascript">
-      require('vue-strap/dist/isMobileBrowser.js')
-    </doc-code>
-    <p>Then in javascript you can check it just doing:</p>
-    <doc-code language="javascript">
-      if (navigator.isMobile) {
-        //do something if is mobile
-      }
-      if ('isMobile' in navigator) {
-        //do things only if the plugin was loaded
 
-        if (!navigator.isMobile) {
-          //do something if is not a mobile
-        }
-      }
-    </doc-code>
-    <p>Based on <a href="http://detectmobilebrowsers.com/">Detect Mobile Browsers</a>.</p>
   </doc-section>
-  <doc-section id="handle-events" name="Event Handling">
-    <p>The events return values as arguments, you have 2 ways to handle them:</p>
-    <doc-code>
-      &lt;!-- using expression -->
-      &lt;component @event="arg0 = arguments[0]">&lt;/component>
-      &lt;!-- using method -->
-      &lt;component @event="callable">&lt;/component>
-    </doc-code>
-    <doc-code language="javascript">
-      methods: {
-        callable: function (arg0, arg1, ...) {
-          // defined arguments
-          this.arg0 = arg0
-          // or global arguments array
-          this.arg0 = arguments[0]
-        }
-      }
-    </doc-code>
-    <p>The number of arguments depend on the event.</p>
-  </doc-section>
+
   <doc-section id="v-model" name="v-model">
     <p>According to the vue2 specifications, <code>twoWay</code> binding is not supported anymore, except for <code>v-model</code>.</p>
     <p>The <code>v-model</code> directive in a component always link to <code>value</code> attribute.</p>

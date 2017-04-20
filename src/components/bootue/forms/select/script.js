@@ -1,4 +1,3 @@
-import translations from '../_texts/translations.js'
 import '../Forms.vue'
 
 let timeout = {}
@@ -7,21 +6,23 @@ export default {
     clearButton: {type: Boolean, default: false},
     closeOnSelect: {type: Boolean, default: false},
     disabled: {type: Boolean, default: false},
-    lang: {type: String, default: navigator.language},
     limit: {type: Number, default: 1024},
     minSearch: {type: Number, default: 0},
     multiple: {type: Boolean, default: false},
     name: {type: String, default: null},
-    options: {type: Array, default () { return [] }},
+    options: {
+      type: Array, default () {
+        return []
+      }
+    },
     optionsLabel: {type: String, default: 'label'},
     optionsValue: {type: String, default: 'value'},
     parent: {default: true},
-    placeholder: {type: String, default: null},
+    placeholder: {type: String, default: "Nothing Selected"},
     readonly: {type: Boolean, default: null},
     required: {type: Boolean, default: null},
     search: {type: Boolean, default: false},
-    searchText: {type: String, default: null},
-    url: {type: String, default: null},
+    searchText: {type: String, default: 'Search'},
     value: null
   },
   data () {
@@ -31,37 +32,65 @@ export default {
       searchValue: null,
       show: false,
       notify: false,
-      val: null,
-      valid: null
+      val: null
     }
   },
   computed: {
-    canSearch () { return this.minSearch ? this.list.length >= this.minSearch : this.search },
-    classes () { return [{open: this.show, disabled: this.disabled}, this.class, this.isLi ? 'dropdown' : this.inInput ? 'input-group-btn' : 'btn-group'] },
+    canSearch () {
+      return this.minSearch ? this.list.length >= this.minSearch : this.search
+    },
+    classes () {
+      const groupBtn = this.inInput ? 'input-group-btn' : 'btn-group'
+      const classLi = this.isLi ? 'dropdown' : groupBtn
+      const options = {
+        open: this.show,
+        disabled: this.disabled
+      }
+      return [options, this.class, classLi]
+    },
     filteredOptions () {
       let search = (this.searchValue || '').toLowerCase()
       return !search ? this.list : this.list.filter(el => {
         return ~el[this.optionsLabel].toLowerCase().search(search)
       })
     },
-    hasParent () { return this.parent instanceof Array ? this.parent.length : this.parent },
-    inInput () { return this.$parent._input },
-    isLi () { return this.$parent._navbar || this.$parent.menu || this.$parent._tabset },
-    limitText () { return this.text.limit.replace('{{limit}}', this.limit) },
+    hasParent () {
+      return this.parent instanceof Array ? this.parent.length : this.parent
+    },
+    inInput () {
+      return this.$parent._input
+    },
+    isLi () {
+      return this.$parent._navbar || this.$parent.menu || this.$parent._tabset
+    },
     selected () {
-      if (this.list.length === 0) { return '' }
+      if (this.list.length === 0) {
+        return ''
+      }
       let sel = this.values.map(val => (this.list.find(o => o[this.optionsValue] === val) || {})[this.optionsLabel]).filter(val => val !== undefined)
       this.$emit('selected', sel)
       return sel.join(', ')
     },
-    showPlaceholder () { return (this.values.length === 0 || !this.hasParent) ? (this.placeholder || this.text.notSelected) : null },
-    text () { return translations(this.lang) },
-    values () { return this.val instanceof Array ? this.val : ~[null, undefined].indexOf(this.val) ? [] : [this.val] },
-    valOptions () { return this.list.map(el => el[this.optionsValue]) }
+    showPlaceholder () {
+      const place = this.placeholder || this.options[0][this.optionsLabel]
+      const fallback = (place || this.text.notSelected)
+      const int = this.values.length === 0 || !this.hasParent
+
+      return int ? fallback : null
+    },
+    values () {
+      const fallback = ~[null, undefined].indexOf(this.val) ? [] : [this.val]
+      return this.val instanceof Array ? this.val : fallback
+    },
+    valOptions () {
+      return this.list.map(el => el[this.optionsValue])
+    }
   },
   watch: {
     options (options) {
-      if (options instanceof Array) this.setOptions(options)
+      if (options instanceof Array) {
+        this.setOptions(options)
+      }
     },
     show (val) {
       if (val) {
@@ -69,19 +98,15 @@ export default {
       }
       this.eventClickOutside(val)
     },
-    url () {
-      this.urlChanged()
-    },
-    valid (val, old) {
-      this.$emit('isvalid', val)
-      this.$emit(!val ? 'invalid' : 'valid')
-      if (val !== old && this._parent) this._parent.validate()
-    },
     value (val, old) {
-      if (val !== old) { this.val = val }
+      if (val !== old) {
+        this.val = val
+      }
     },
     val (val, old) {
-      if (val === undefined) { this.val = val = null }
+      if (val === undefined) {
+        this.val = val = null
+      }
       if (val !== old) {
         this.$emit('change', val)
         this.$emit('input', val)
@@ -95,7 +120,6 @@ export default {
           this.notify = false
         }, 1500)
       }
-      this.valid = this.validate()
     }
   },
   methods: {
@@ -104,7 +128,9 @@ export default {
     },
     checkData () {
       if (this.multiple) {
-        if (this.limit < 1) { this.limit = 1 }
+        if (this.limit < 1) {
+          this.limit = 1
+        }
         if (!(this.val instanceof Array)) {
           this.val = (this.val === null || this.val === undefined) ? [] : [this.val]
         }
@@ -114,11 +140,15 @@ export default {
           this.val = this.val.slice(0, this.limit)
         }
       } else {
-        if (!~this.valOptions.indexOf(this.val)) { this.val = null }
+        if (!~this.valOptions.indexOf(this.val)) {
+          this.val = null
+        }
       }
     },
     clear () {
-      if (this.disabled || this.readonly) { return }
+      if (this.disabled || this.readonly) {
+        return
+      }
       this.val = this.val instanceof Array ? [] : null
       this.toggle()
     },
@@ -148,7 +178,9 @@ export default {
     },
     setOptions (options) {
       this.list = options.map(el => {
-        if (el instanceof Object) { return el }
+        if (el instanceof Object) {
+          return el
+        }
         let obj = {}
         obj[this.optionsLabel] = el
         obj[this.optionsValue] = el
@@ -160,30 +192,12 @@ export default {
       this.show = !this.show
       if (!this.show) this.$refs.btn.focus()
     },
-    urlChanged () {
-      if (!this.url || !this.$http) { return }
-      this.loading = true
-      this.$http.get(this.url).then(response => {
-        let data = response.data instanceof Array ? response.data : []
-        try { data = JSON.parse(data) } catch (e) {
-          console.log(e);
-        }
-        this.setOptions(data)
-        this.loading = false
-        this.checkData()
-      }, () => {
-        this.loading = false
-      })
-    },
-    validate () {
-      return !this.required ? true : this.val instanceof Array ? this.val.length > 0 : this.val !== null
-    },
     clickOutside (e) {
       if (!this.$el.contains(e.target))
-      this.close()
+        this.close()
     },
     eventClickOutside(val) {
-      if(val) {
+      if (val) {
         document.addEventListener('click', this.clickOutside, false)
         return
       }
@@ -195,18 +209,13 @@ export default {
     this.setOptions(this.options)
     this.val = this.value
     this._select = true
-    if (this.val === undefined || !this.parent) { this.val = null }
+    if (this.val === undefined || !this.parent) {
+      this.val = null
+    }
     if (!this.multiple && this.val instanceof Array) {
       this.val = this.val[0]
     }
     this.checkData()
-    if (this.url) this.urlChanged()
-    let parent = this.$parent
-    while (parent && !parent._formValidator) { parent = parent.$parent }
-    if (parent && parent._formValidator) {
-      parent.children.push(this)
-      this._parent = parent
-    }
   },
   mounted () {
     if (this._parent) this._parent.children.push(this)

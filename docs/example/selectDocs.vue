@@ -26,10 +26,11 @@
         </div>
       </div>
       <br/>
-      <button-group type="primary" :buttons="false">
+
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <p><bs-checkbox v-model="select.disabled">Disabled</bs-checkbox></p>
+            <bs-checkbox v-model="select.disabled">Disabled</bs-checkbox>
+
             <p><bs-checkbox v-model="select.placeholder">Placeholder</bs-checkbox></p>
             <p><bs-checkbox v-model="select.search">Search</bs-checkbox></p>
             <p><bs-checkbox v-model="select.clearButton">Clear Button</bs-checkbox></p>
@@ -43,7 +44,6 @@
             </p>
           </div>
         </div>
-      </button-group>
       <doc-code>
         &lt;form action="./#select" method="get">
           &lt;bs-select v-model="select.value" :options="select.options" options-value="val"
@@ -114,31 +114,37 @@
         // or
         &lt;div class="btn-group btn-group-justified">&lt;select>...&lt;/select>&lt;/div>
       </doc-code>
-      <hr/>
-      <h4>Ajax data and parent dependency:</h4>
-      <p>Depend on <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">vue-resource</a>. Disabled if not present.</p>
-      <p>The second select has inheritance, is enabled when the first get some value and the ajax return values.</p>
-      <bs-select url="docs/data.json" options-label="text" v-model="ajax.value" clear-button @options="ajax.options = arguments[0]"></bs-select>
-      <bs-select url="docs/data.json" options-label="text" multiple :parent="ajax.value"></bs-select>
-      <doc-code>
-        &lt;bs-select url="docs/data.json" options-label="text" v-model="ajax.value" clear-button @options="ajax.options = arguments[0]">&lt;/bs-select>
-        &lt;bs-select url="docs/data.json" options-label="text" multiple :parent="ajax.value">&lt;/bs-select>
-      </doc-code>
-      <p>Ajax response:</p>
-      <pre v-html="ajax.options"></pre>
     </div>
-    <doc-table name="Other">
+    <doc-table name="Options">
+      <div>
+        <p>clear-button</p>
+        <p><code>Boolean</code></p>
+        <p>false</p>
+        <p>Include close button</p>
+      </div>
+      <div>
+        <p>disabled</p>
+        <p><code>Boolean</code></p>
+        <p>false</p>
+        <p>Disable this select</p>
+      </div>
+      <div>
+        <p>limit</p>
+        <p><code>Number</code></p>
+        <p>1024</p>
+        <p>Using only with multiple select, determine limit options to select.</p>
+      </div>
+      <div>
+        <p>multiple</p>
+        <p><code>Boolean</code></p>
+        <p>false</p>
+        <p>Enable a multiple select.</p>
+      </div>
       <div>
         <p>min-search</p>
         <p><code>Number</code></p>
         <p><code>0</code></p>
         <p>If defined, the searchbox is disabled if are less than the minimum value you set.</p>
-      </div>
-      <div>
-        <p>lang</p>
-        <p><code>String</code></p>
-        <p>Browser language</p>
-        <p><abbr title="ISO 639-1 code"><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">Language</a></abbr>. Default <code>en</code> if the translation doesn't exist.</p>
       </div>
       <div>
         <p>options-label</p>
@@ -161,8 +167,8 @@
       <div>
         <p>search-text</p>
         <p><code>String</code></p>
-        <p></p>
-        <p></p>
+        <p>Search</p>
+        <p>Text placeholder input search</p>
       </div>
     </doc-table>
     <doc-table type="Events">
@@ -189,20 +195,11 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import ButtonGroup from '../../src/components/bootue/buttons/buttongroup/ButtonGroup.vue'
-import bsCheckbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
-import bsSelect from '../../src/components/bootue/forms/select/Select.vue'
-import bsOption from '../../src/components/bootue/forms/option/Option.vue'
-
 export default {
   components: {
     docSection,
     docTable,
-    docCode,
-    ButtonGroup,
-    bsCheckbox,
-    bsSelect,
-    bsOption
+    docCode
   },
   data () {
     return {
@@ -223,13 +220,9 @@ export default {
           {val: 6, label: 'Tiger'},
           {val: 7, label: 'Turtle'}
         ],
-        placeholder: false,
+        placeholder: true,
         required: false,
         search: true
-      },
-      ajax: {
-        options: [],
-        value:null
       },
       single: []
     }

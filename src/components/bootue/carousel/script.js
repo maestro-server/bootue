@@ -53,10 +53,9 @@ export default {
       Array.prototype.map.call(this.sliders, (el) => {
         obj.target.removeEventListener('transitionend', this.finishTransion, false)
         el.className = 'item'
+        this.selected.classList.add('active')
+        this.isAnimating = false
       })
-
-      this.selected.classList.add('active')
-      this.isAnimating = false
     },
     getElementClassItem () {
       return this.$el.querySelectorAll('.item')

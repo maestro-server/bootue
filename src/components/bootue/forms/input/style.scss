@@ -18,9 +18,12 @@ label~.close {
   display: block;
   width: 34px;
   height: 34px;
-  line-height: 34px;
+  line-height: 30px;
   text-align: center;
 }
 .has-feedback .close {
   right: 20px;
+}
+.relative {
+  position: relative;
 }
