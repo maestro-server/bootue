@@ -8,7 +8,7 @@
 
 
 <script>
-import Scroll from '../src/components/bootue/affix/_directives/Scroll.js'
+import Scroll from '../src/bootue/affix/_directives/Scroll.js'
 import AnimateScroll from './libs/animate';
 
 

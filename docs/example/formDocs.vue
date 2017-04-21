@@ -41,7 +41,7 @@
       <form class="form-inline">
         <bs-input-inline type="email" placeholder="Email" label="Email address"></bs-input-inline>
         <bs-input-inline type="password" placeholder="Password" label="Password"></bs-input-inline>
-      
+
         <button type="submit" class="btn btn-default">Send invitation</button>
       </form>
 
@@ -53,10 +53,10 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import bsInput from '../../src/components/bootue/forms/input/Input.vue'
-import ButtonGroup from '../../src/components/bootue/buttons/buttongroup/ButtonGroup.vue'
-import bsCheckbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
-import Dropdown from '../../src/components/bootue/dropdown/Dropdown.vue'
+import bsInput from '../../src/bootue/forms/input/Input.vue'
+import ButtonGroup from '../../src/bootue/buttons/buttongroup/ButtonGroup.vue'
+import bsCheckbox from '../../src/bootue/forms/checkbox/Checkbox.vue'
+import Dropdown from '../../src/bootue/dropdown/Dropdown.vue'
 
 export default {
   components: {

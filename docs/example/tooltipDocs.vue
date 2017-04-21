@@ -17,7 +17,7 @@
       <tooltip effect="scale" content="Lorem ipsum dolor sit amet" placement="bottom" trigger="focus">
         <bs-input type="text" placeholder="Focus"></bs-input>
       </tooltip>
-      
+
     </div>
 
     <doc-code language="markup">
@@ -64,16 +64,12 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import bsInput from '../../src/components/bootue/forms/input/Input.vue'
-import tooltip from '../../src/components/bootue/tooltip/Tooltip.vue'
 
 export default {
   components: {
     docSection,
     docTable,
-    docCode,
-    bsInput,
-    tooltip
+    docCode
   },
   data () {
     return {

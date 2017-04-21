@@ -100,11 +100,11 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import bsFormValidator from '../../src/components/bootue/forms/formvalidator/FormValidator.vue'
-import bsInput from '../../src/components/bootue/forms/input/Input.vue'
-import tab from '../../src/components/bootue/tab/Tab.vue'
-import tabs from '../../src/components/bootue/tabs/Tabs.vue'
-import vSelect from '../../src/components/bootue/forms/select/Select.vue'
+import bsFormValidator from '../../src/bootue/forms/formvalidator/FormValidator.vue'
+import bsInput from '../../src/bootue/forms/input/Input.vue'
+import tab from '../../src/bootue/tab/Tab.vue'
+import tabs from '../../src/bootue/tabs/Tabs.vue'
+import vSelect from '../../src/bootue/forms/select/Select.vue'
 
 export default {
   components: {

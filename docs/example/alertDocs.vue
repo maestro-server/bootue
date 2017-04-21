@@ -104,7 +104,7 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import alert from '../../src/components/bootue/alert/Alert.vue'
+import alert from '../../src/bootue/alert/Alert.vue'
 
 export default {
   components: {

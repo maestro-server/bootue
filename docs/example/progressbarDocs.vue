@@ -92,7 +92,7 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import progressbar from '../../src/components/bootue/progressbar/Progressbar.vue'
+import progressbar from '../../src/bootue/progressbar/Progressbar.vue'
 
 export default {
   components: {

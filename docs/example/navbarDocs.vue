@@ -92,10 +92,10 @@
   import docSection from './utils/docSection.vue'
   import docTable from './utils/docTable.js'
   import docCode from './utils/docCode.js'
-  import Dropdown from '../../src/components/bootue/dropdown/Dropdown.vue'
-  import Navbar from '../../src/components/bootue/navbar/Navbar.vue'
-  import Tooltip from '../../src/components/bootue/tooltip/Tooltip.vue'
-  import vSelect from '../../src/components/bootue/forms/select/Select.vue'
+  import Dropdown from '../../src/bootue/dropdown/Dropdown.vue'
+  import Navbar from '../../src/bootue/navbar/Navbar.vue'
+  import Tooltip from '../../src/bootue/tooltip/Tooltip.vue'
+  import vSelect from '../../src/bootue/forms/select/Select.vue'
 
   export default {
     components: {
