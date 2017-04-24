@@ -31,36 +31,120 @@
         </p>
       </div>
       <hr/>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h5 class="panel-title text-center">Requirements</h5>
+        </div>
+
+        <div class="panel-body">
+          <ul>
+            <li>Vue-Cli - (browserify or webpack)</li>
+            <li>Node - Sass (vue-loader-sass)</li>
+            <li>Setup webpack to make url-loader for fonts (font-awesome)</li>
+          </ul>
+        </div>
+      </div>
+      <hr/>
       <h4>Let`s started</h4>
+      <p>First all bootue is build using vue-cli system, you need to install and setup a <a href="https://github.com/vuejs-templates/browserify-simple" target="_blank">vueify (browserify)</a> or <a
+        href="https://github.com/vuejs/vue-loader" target="_blank">vue-loader(webpack)</a> env, <a
+        href="https://github.com/vuejs/vue-cli" target="_blank">Install Vue Cli</a>, you maybe use webpack or browserfy.</p>
+
+      <hr/>
+
+      <p>Make sure to install sass pre-compiled environment (in all cli installation he ask you if you like to setup sass <code>(default is NO)</code>, write YES, and be happy)</p>
+      <img src="../../assets/imgs/usesass.png" class="img-responsive-center"/>
+
+      <hr/>
+      <h4>ES6 - Babel</h4>
       <doc-code language="javascript">
         $ npm install bootue
 
         import Bootue from 'bootue'
-        Vue.use(Bootue) // import all components globally
-
-        // >>> or
-        var alert = require('bootue/bootue/alert');
-        var alert = require('bootue/bootue').alert;
-
-        new Vue({
-          components: {
-            alert: alert
-          }
-        })
+        Vue.use(Bootue) // import all components
       </doc-code>
-      <h4>ES6</h4>
+      or
       <doc-code language="javascript">
-        import alert from 'bootue/bootue/alert'
-        import { alert } from 'bootue/bootue'
+        import alert from 'bootue/src/bootue/alert'
 
+        Vue.component('alert', alert)
+
+        // or
         new Vue({
           components: {
             alert
           }
         })
       </doc-code>
+      or
+      <doc-code language="javascript">
+        $ npm install bootue
+
+        // >>> or
+        var alert = require('bootue/src/alert');
+        var alert = require('bootue/src/bootue').alert;
+
+        new Vue({
+          components: {
+            alert: alert
+          }
+        })
+
+
+        // After babel 6, yoou need iteract with default property.
+        var alert = require('bootue/src/bootue/alert').default;
+      </doc-code>
       <hr/>
-      <h4>Import bootue system into your project (<span class="text-success">recomended</span>)</h4>
+
+      <p>Some components using font-awesome icons (font-awesome is optional), if you like to use this font, you have to setup webpack to correctly load.</p>
+
+      <p>If you using easy installation (Vue.use), you need to configure url-loader in webpack. (Because webpack will try to use load font files)</p>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <p>WebPack 2.X</p>
+          <doc-code language="javascript">
+            $ npm install url-loader
+          </doc-code>
+          <doc-code language="javascript">
+            {
+              module:
+              {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                loader: 'url-loader', // you need to install this loader
+                query: {
+                  limit: 10000,
+                  name: 'fonts/[name].[ext]'
+                }
+              }
+            }
+          </doc-code>
+        </div>
+        <div class="col-sm-6">
+          <p>WebPack 1.X</p>
+          <doc-code language="javascript">
+            module: {
+              loaders: [
+                {
+                  test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                  // Limiting the size of the woff fonts breaks font-awesome ONLY for the extract text plugin
+                  // loader: "url?limit=10000"
+                  loader: "url"
+                },
+                {
+                  test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+                  loader: 'file'
+                },
+              ]
+            },
+          </doc-code>
+        </div>
+      </div>
+
+      <hr>
+
+      <h3>Import bootue system into your project (<span class="text-success">recomended</span>)</h3>
       <p>
         We recommend to download all components files and import inside to project, remember the goal is transfer all power
         to select, customize and extends to any scss parts to project.
