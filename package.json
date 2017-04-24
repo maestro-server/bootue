@@ -47,7 +47,8 @@
     "bin": "./src"
   },
   "files": [
-    "src/"
+    "src/",
+    "index.js"
   ],
   "keywords": [
     "vue2",

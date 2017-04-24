@@ -51,8 +51,15 @@
         href="https://github.com/vuejs/vue-loader" target="_blank">vue-loader(webpack)</a> env, <a
         href="https://github.com/vuejs/vue-cli" target="_blank">Install Vue Cli</a>, you maybe use webpack or browserfy.</p>
 
+      <doc-code language="bash">
+        $ npm install -g vue-cli
+        $ vue init webpack-simple demo // bootue works with webpack or browserify
+        $ vue init browserify demo
+      </doc-code>
+
       <hr/>
 
+      <b>Webpack env</b>
       <p>Make sure to install sass pre-compiled environment (in all cli installation he ask you if you like to setup sass <code>(default is NO)</code>, write YES, and be happy)</p>
       <img src="../../assets/imgs/usesass.png" class="img-responsive-center"/>
 
@@ -96,14 +103,14 @@
         var alert = require('bootue/src/alert').default;
       </doc-code>
       <hr/>
-
+      <h4>Webpack Env - Font Awesome</h4>
       <p>Some components using font-awesome icons (font-awesome is optional), if you like to use this font, you have to setup webpack to correctly load.</p>
 
-      <p>If you using easy installation (Vue.use), you need to configure url-loader in webpack. (Because webpack will try to use load font files)</p>
+      <p>If you using easy installation (Vue.use), <b>you need to configure url-loader in webpack</b>. (Because webpack will try to use load font files)</p>
 
       <div class="row">
         <div class="col-sm-6">
-          <p>WebPack 2.X</p>
+          <b>WebPack 2.X</b>
           <doc-code language="javascript">
             $ npm install url-loader
           </doc-code>
@@ -122,7 +129,7 @@
           </doc-code>
         </div>
         <div class="col-sm-6">
-          <p>WebPack 1.X</p>
+          <b>WebPack 1.X</b>
           <doc-code language="javascript">
             module: {
               loaders: [
