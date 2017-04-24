@@ -134,7 +134,7 @@ With that mind, the project intent to, split and organized all business logic's 
 And updates? Come on, you execute a update your bootstrap frequently? Boostrap 3 update frequently? The risk exist, bootue needs to bug fix, him will update, for this situation you need to copy and paste parcially, yes its not a best situation, but in moment its acceptable.
 
 ### Docs
-See the [documentation](https://github.io/maestro-server/bootue/) with live editable examples.
+See the [documentation](https://maestro-server.github.io/bootue/) with live editable examples.
 
 ### Develop Local Setup
 ```javascript
