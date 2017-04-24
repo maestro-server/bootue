@@ -61,7 +61,7 @@
 
       <b>Webpack env</b>
       <p>Make sure to install sass pre-compiled environment (in all cli installation he ask you if you like to setup sass <code>(default is NO)</code>, write YES, and be happy)</p>
-      <img src="../../assets/imgs/usesass.png" class="img-responsive-center"/>
+      <img src="dist/imgs/usesass.png" class="img-responsive-center"/>
 
       <hr/>
       <h4>ES6 - Babel</h4>

@@ -3,8 +3,8 @@ import Prism from 'prismjs'
 import VueRouter from 'vue-router'
 import mcore from '../index.js'
 
-require('./assets/docs.css')
-require('./assets/style.css')
+require('./resource/docs.css')
+require('./resource/style.css')
 
 import navbar from './pages/modules/navbar.vue'
 import footerDocs from './pages/modules/footer.vue'
