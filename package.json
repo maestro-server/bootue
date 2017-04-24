@@ -14,7 +14,8 @@
     "url": "https://github.com/maestro-server/bootue.git"
   },
   "dependencies": {
-    "vue": "^2.2.1"
+    "vue": "^2.2.1",
+    "node-sass": "^4.5.0"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -33,7 +34,6 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.9.0",
     "prismjs": "^1.6.0",
-    "node-sass": "^4.5.0",
     "sass-loader": "^5.0.1",
     "vue-loader": "^11.1.4",
     "vue-router": "^2.4.0",
@@ -42,7 +42,7 @@
     "webpack-dev-server": "^2.2.0"
   },
   "bin": "src/index.js",
-  "main": "src/index.js",
+  "main": "./index.js",
   "directories": {
     "bin": "./src"
   },
