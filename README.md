@@ -32,6 +32,7 @@ Make sure to install sass pre-compiled environment (in all cli installation he a
 $ npm install bootue
 
 import Bootue from 'bootue'
+
 Vue.use(Bootue) // import all components
 ```
 or
@@ -41,6 +42,7 @@ import alert from 'bootue/src/alert'
 Vue.component('alert', alert)
 
 // or
+
 new Vue({
   components: {
     alert
@@ -51,7 +53,6 @@ or
 ```javascript
 $ npm install bootue
 
-// >>> or
 var alert = require('bootue/src/alert');
 var alert = require('bootue/src').alert;
 
@@ -106,7 +107,7 @@ module: {
 },
 ```
 
-#### Import bootue system into your project (recomended)
+### Import bootue system into your project (recomended)
 We recommend to download all components files and import inside to project, remember the goal is transfer all power to select, customize and extends to any scss parts to project. In deep, bootue is a reorganized boostrap splitting code, her have **SCSS Components**, **Js Components** and **Hybrid Components.**
 
 ```markup
