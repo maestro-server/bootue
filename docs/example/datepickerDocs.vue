@@ -60,7 +60,7 @@
       <div>
         <p>icons-font</p>
         <p><code>String</code></p>
-        <p><code>glyphicon</code></p>
+        <p><code>fa</code></p>
         <p>The icon font used for arrows. Can be 'glyphicon' or 'fa' (Font Awesome)</p>
       </div>
     </doc-table>
@@ -78,20 +78,12 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import bsCheckbox from '../../src/components/bootue/forms/checkbox/Checkbox.vue'
-import bsDatepicker from '../../src/components/bootue/forms/datepicker/Datepicker.vue'
-import bsSelect from '../../src/components/bootue/forms/select/Select.vue'
-import bsOption from '../../src/components/bootue/forms/option/Option.vue'
 
 export default {
   components: {
     docSection,
     docTable,
-    docCode,
-    bsCheckbox,
-    bsDatepicker,
-    bsSelect,
-    bsOption
+    docCode
   },
   data () {
     return {

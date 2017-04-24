@@ -42,11 +42,11 @@
 
       <div class="form-group">
         <label>Placement</label>
-        <v-select v-model="placement" clear-button :options="['top','bottom','static']"></v-select>
+        <bs-select v-model="placement" clear-button :options="['top','bottom','static']"></bs-select>
       </div>
       <div class="form-group">
         <label>Type</label>
-        <v-select v-model="type" :options="['default','inverse']"></v-select>
+        <bs-select v-model="type" :options="['default','inverse']"></bs-select>
       </div>
     </div>
     <doc-code language="markup">
@@ -92,20 +92,12 @@
   import docSection from './utils/docSection.vue'
   import docTable from './utils/docTable.js'
   import docCode from './utils/docCode.js'
-  import Dropdown from '../../src/components/bootue/dropdown/Dropdown.vue'
-  import Navbar from '../../src/components/bootue/navbar/Navbar.vue'
-  import Tooltip from '../../src/components/bootue/tooltip/Tooltip.vue'
-  import vSelect from '../../src/components/bootue/forms/select/Select.vue'
 
   export default {
     components: {
       docSection,
       docTable,
-      docCode,
-      Dropdown,
-      Navbar,
-      Tooltip,
-      vSelect
+      docCode
     },
     data () {
       return {

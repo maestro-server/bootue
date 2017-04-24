@@ -76,16 +76,12 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import popover from '../../src/components/bootue/popover/Popover.vue'
-import bsInput from '../../src/components/bootue/forms/input/Input.vue'
 
 export default {
   components: {
     docSection,
     docTable,
-    docCode,
-    bsInput,
-    popover
+    docCode
   },
   data () {
     return {

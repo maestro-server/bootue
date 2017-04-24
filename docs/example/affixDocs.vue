@@ -65,14 +65,12 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import tooltip from '../../src/components/bootue/tooltip/Tooltip.vue'
 
 export default {
   components: {
     docSection,
     docTable,
-    docCode,
-    tooltip
+    docCode
   }
 }
 </script>
