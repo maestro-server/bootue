@@ -78,20 +78,12 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import bsCheckbox from '../../src/bootue/forms/checkbox/Checkbox.vue'
-import bsDatepicker from '../../src/bootue/forms/datepicker/Datepicker.vue'
-import bsSelect from '../../src/bootue/forms/select/Select.vue'
-import bsOption from '../../src/bootue/forms/option/Option.vue'
 
 export default {
   components: {
     docSection,
     docTable,
-    docCode,
-    bsCheckbox,
-    bsDatepicker,
-    bsSelect,
-    bsOption
+    docCode
   },
   data () {
     return {

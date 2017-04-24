@@ -87,16 +87,12 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import bsInput from '../../src/bootue/forms/input/Input.vue'
-import ToggleButton from '../../src/bootue/togglebutton/ToggleButton.vue'
 
 export default {
   components: {
     docSection,
     docTable,
-    docCode,
-    bsInput,
-    ToggleButton
+    docCode
   },
   data () {
     return {

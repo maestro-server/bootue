@@ -203,14 +203,12 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import modal from '../../src/bootue/modal/Modal.vue'
 
 export default {
   components: {
     docSection,
     docTable,
-    docCode,
-    modal
+    docCode
   },
   data () {
     return {

@@ -53,20 +53,12 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import bsInput from '../../src/bootue/forms/input/Input.vue'
-import ButtonGroup from '../../src/bootue/buttons/buttongroup/ButtonGroup.vue'
-import bsCheckbox from '../../src/bootue/forms/checkbox/Checkbox.vue'
-import Dropdown from '../../src/bootue/dropdown/Dropdown.vue'
 
 export default {
   components: {
     docSection,
     docTable,
-    docCode,
-    bsInput,
-    ButtonGroup,
-    bsCheckbox,
-    Dropdown
+    docCode
   },
   data () {
     return {

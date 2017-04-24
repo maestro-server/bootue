@@ -130,14 +130,12 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import dropdown from '../../src/bootue/dropdown/Dropdown.vue'
 
 export default {
   components: {
     docSection,
     docTable,
-    docCode,
-    dropdown
+    docCode
   }
 }
 </script>

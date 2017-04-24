@@ -58,7 +58,7 @@
       Bower and NPM packages.
     </p>
     <doc-code language="markup">
-      &lt;v-select :options="options">&lt;/v-select>
+      &lt;bs-select :options="options">&lt;/bs-select>
 
       &lt;script src="path/to/vue.js">&lt;/script>
       &lt;script src="path/to/vue-strap.js">&lt;/script>

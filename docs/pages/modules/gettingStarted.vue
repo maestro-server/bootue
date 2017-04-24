@@ -66,7 +66,7 @@
       </doc-code>
       or
       <doc-code language="javascript">
-        import alert from 'bootue/src/bootue/alert'
+        import alert from 'bootue/src/alert'
 
         Vue.component('alert', alert)
 
@@ -83,7 +83,7 @@
 
         // >>> or
         var alert = require('bootue/src/alert');
-        var alert = require('bootue/src/bootue').alert;
+        var alert = require('bootue/src').alert;
 
         new Vue({
           components: {
@@ -93,7 +93,7 @@
 
 
         // After babel 6, yoou need iteract with default property.
-        var alert = require('bootue/src/bootue/alert').default;
+        var alert = require('bootue/src/alert').default;
       </doc-code>
       <hr/>
 

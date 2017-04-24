@@ -49,7 +49,7 @@
                 <bs-form-validator v-model="valid.direction">
                   <div class="form-validator">
                     <label class="control-label">Continent</label>
-                    <v-select required justified :options="['America','Europe']" clear-button></v-select>
+                    <bs-select required justified :options="['America','Europe']" clear-button></bs-select>
                   </div>
                   <bs-input label="City" type="text" required></bs-input>
                 </bs-form-validator>
@@ -75,7 +75,7 @@
                 &lt;form-validator @isvalid="valid.direction = arguments[0]">
                   &lt;div class="form-validator">
                     &lt;label class="control-label">Continent&lt;/label>
-                    &lt;v-select required justified :options="['America','Europe']" clear-button>&lt;/v-select>
+                    &lt;bs-select required justified :options="['America','Europe']" clear-button>&lt;/bs-select>
                   &lt;/div>
                   &lt;bs-input label="City" type="text" required>&lt;/bs-input>
                 &lt;/form-validator>
@@ -100,22 +100,12 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import bsFormValidator from '../../src/bootue/forms/formvalidator/FormValidator.vue'
-import bsInput from '../../src/bootue/forms/input/Input.vue'
-import tab from '../../src/bootue/tab/Tab.vue'
-import tabs from '../../src/bootue/tabs/Tabs.vue'
-import vSelect from '../../src/bootue/forms/select/Select.vue'
 
 export default {
   components: {
     docSection,
     docTable,
-    docCode,
-    bsFormValidator,
-    bsInput,
-    tab,
-    tabs,
-    vSelect
+    docCode
   },
   data () {
     let valid = {}; ['all', 'direction', 'user'].forEach(el => { valid[el] = null })

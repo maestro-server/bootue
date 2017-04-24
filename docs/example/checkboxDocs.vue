@@ -67,7 +67,6 @@
 import docSection from './utils/docSection.vue'
 import docTable from './utils/docTable.js'
 import docCode from './utils/docCode.js'
-import bsCheckbox from '../../src/bootue/forms/checkbox/Checkbox.vue'
 import AnimateScroll from '../libs/animate'
 
 export default {
