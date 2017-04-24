@@ -1,8 +1,18 @@
 {
-    "parser": "babel-eslint",
+    "root": true,
+    "parser": 'babel-eslint',
     "parserOptions": {
-        "ecmaVersion": 6
+      "sourceType": 'module'
     },
+    "env": {
+      "browser": true,
+      "node": true,
+      "mocha": true
+    },
+    "plugins": [
+      "html"
+    ],
+    "extends": "eslint:recommended",
     "rules": {
         "linebreak-style": [
             2,
@@ -39,13 +49,6 @@
         "arrow-parens": 0,
         "generator-star-spacing": 0,
         "no-console": 0
-    },
-    "env": {
-        "node": true,
-        "mocha": true
-    },
-    "plugins": [
-      "html"
-    ],
-    "extends": "eslint:recommended"
+    }
+
 }

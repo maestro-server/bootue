@@ -60,7 +60,7 @@
       <div>
         <p>icons-font</p>
         <p><code>String</code></p>
-        <p><code>glyphicon</code></p>
+        <p><code>fa</code></p>
         <p>The icon font used for arrows. Can be 'glyphicon' or 'fa' (Font Awesome)</p>
       </div>
     </doc-table>

@@ -10,7 +10,7 @@ export default {
     clearButton: {type: Boolean, default: false},
     lang: {type: String, default: navigator.language},
     placeholder: {type: String},
-    iconsFont: {type: String, default: 'glyphicon'}
+    iconsFont: {type: String, default: 'fa'}
   },
   data () {
     return {
@@ -169,9 +169,9 @@ export default {
     },
     parse (str) {
       if (str === undefined || str === null) { str = this.val }
-      let date = str.length === 10 && (this.format === 'dd-MM-yyyy' || this.format === 'dd/MM/yyyy') ?
-        new Date(str.substring(6, 10), str.substring(3, 5)-1, str.substring(0, 2)) :
-        new Date(str)
+      let date = str.length === 10 && (this.format === 'dd-MM-yyyy' || this.format === 'dd/MM/yyyy')
+        ? new Date(str.substring(6, 10), str.substring(3, 5) - 1, str.substring(0, 2))
+        : new Date(str)
       return isNaN(date.getFullYear()) ? new Date() : date
     },
     getDayCount (year, month) {
@@ -215,7 +215,7 @@ export default {
           if (this.disabledDaysArray.indexOf(date.getDay()) > -1) {
             sclass = 'datepicker-item-disable'
           }
-          this.dateRange.push({text: dayText, date, sclass })
+          this.dateRange.push({ text: dayText, date, sclass })
         }
       }
 
@@ -225,7 +225,7 @@ export default {
         if (this.disabledDaysArray.indexOf(date.getDay()) > -1) {
           sclass = 'datepicker-item-disable'
         }
-        if (i == time.day && date.getFullYear() == time.year && date.getMonth() == time.month){
+        if (i === time.day && date.getFullYear() === time.year && date.getMonth() === time.month) {
           sclass = 'datepicker-dateRange-item-active'
         }
         this.dateRange.push({text: i, date, sclass})
@@ -250,10 +250,11 @@ export default {
     this.$emit('child-created', this)
     this.currDate = this.parse(this.val) || this.parse(new Date())
     this._blur = e => {
-      if (!this.$el.contains(e.target))
+      if (!this.$el.contains(e.target)) {
         this.close()
+      }
     }
-    window.addEventListener('click', this._blur);
+    window.addEventListener('click', this._blur)
   },
   beforeDestroy () {
     window.removeEventListener('click', this._blur)

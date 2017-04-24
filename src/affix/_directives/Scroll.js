@@ -8,7 +8,7 @@ const events = ['resize', 'scroll']
 function unbind (el) {
   events.forEach(function (e) { window.removeEventListener(e, el[HANDLER], false) })
   document.removeEventListener('load', el[HANDLER], false)
-  delete el[HANDLER];
+  delete el[HANDLER]
 }
 
 function bind (el, binding) {
