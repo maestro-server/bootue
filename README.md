@@ -10,6 +10,21 @@ The goal of project is provide a easy way to organize, customize, and incorporat
 
 Bootue make simple way to extends and modify boostrap variables, effects and featured, her provide a possibility to you using party of outhers frameworks together with boostrap components, create a new one or using only elements that you need.
 
+ * Vue-Cli - (browserify or webpack)
+ * Node - Sass (vue-loader-sass)
+ * Setup webpack to make url-loader for fonts (font-awesome)
+
+### Let's started
+First all bootue is build using vue-cli system, you need to install and setup a vueify (browserify) or vue-loader(webpack) env, Install Vue Cli, you maybe use webpack or browserfy.
+
+```javascript
+$ npm install -g vue-cli
+$ vue init webpack-simple demo // bootue works with webpack or browserify
+$ vue init browserify demo
+```
+
+**Webpack env**
+Make sure to install sass pre-compiled environment (in all cli installation he ask you if you like to setup sass (default is NO), write YES, and be happy)
 
 ### Build Setup
 
@@ -17,29 +32,78 @@ Bootue make simple way to extends and modify boostrap variables, effects and fea
 $ npm install bootue
 
 import Bootue from 'bootue'
-Vue.use(Bootue) // import all components globally
+Vue.use(Bootue) // import all components
+```
+or
+```javascript
+import alert from 'bootue/src/alert'
+
+Vue.component('alert', alert)
+
+// or
+new Vue({
+  components: {
+    alert
+  }
+})
+```
+or
+```javascript
+$ npm install bootue
 
 // >>> or
-var alert = require('bootue/bootue/alert');
-var alert = require('bootue/bootue').alert;
+var alert = require('bootue/src/alert');
+var alert = require('bootue/src').alert;
 
 new Vue({
   components: {
     alert: alert
   }
 })
+
+
+// After babel 6, yoou need iteract with default property.
+var alert = require('bootue/src/alert').default;
 ```
 
-#### ES6
-```javascript
-import alert from 'bootue/bootue/alert'
-import { alert } from 'bootue/bootue'
+### Webpack Env - Font Awesome
 
-new Vue({
-  components: {
-    alert
+Some components using font-awesome icons (font-awesome is optional), if you like to use this font, you have to setup webpack to correctly load.
+
+If you using easy installation (Vue.use), you need to configure url-loader in webpack. (Because webpack will try to use load font files)
+
+**WebPack 2.X**
+```javascript
+$ npm install url-loader
+
+{
+  module:
+  {
+    test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+    loader: 'url-loader', // you need to install this loader
+    query: {
+      limit: 10000,
+      name: 'fonts/[name].[ext]'
+    }
   }
-})
+}
+```
+**WebPack 1.X**
+```javascript
+module: {
+  loaders: [
+    {
+      test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      // Limiting the size of the woff fonts breaks font-awesome ONLY for the extract text plugin
+      // loader: "url?limit=10000"
+      loader: "url"
+    },
+    {
+      test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+      loader: 'file'
+    },
+  ]
+},
 ```
 
 #### Import bootue system into your project (recomended)
