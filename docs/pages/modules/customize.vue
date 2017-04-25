@@ -323,6 +323,8 @@
       <br/>
       <p>See the screenshot</p>
       <img src="dist/imgs/bulma_grid.png" class="img-responsive"/>
+      <br/>
+      <well>Ohh, a great flex box grid system with all boostrap components, maybe we create bootue + bulma, or bootue components with foundation grid + materialize bubble effects. Go and code new cool components and send me pull request.</well>
 
     </doc-section>
   </div>
