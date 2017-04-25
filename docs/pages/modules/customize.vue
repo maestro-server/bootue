@@ -219,6 +219,113 @@
     </doc-section>
 
     <doc-section id="bulma-system" name="Using Bulma's Grid System">
+      <p>One primary pivot Bootue is have a efficient modular system. (Bootue is idea), for now i like to show how we using Bulma grid together Bootstrap Grid.</p>
+      <a class="btn btn-primary" href="https://github.com/maestro-server/bootue-example-grid-bulma" target="_blank">Let me show the final code</a>
+      <hr/>
+      <h4>First setup new project</h4>
+      <doc-code>
+        $ npm install -g vue-cli
+        $ vue init webpack-simple demo
+
+        $ cd demo
+        $ npm install
+        $ npm run dev
+      </doc-code>
+
+      <p>For now i like to import simple bootue components. A import _core, alerts and grid components, my project look like:</p>
+      <doc-code>
+        - src
+          - App.vue
+          - main.js
+
+          - bootue // import only components i want
+            - src
+              - _core
+              - alert
+              - grid
+              - grid_bulma // create a new folder, this is my new future grid component
+            index.js
+      </doc-code>
+      <hr/>
+      <h4>Setup my new Bootue system</h4>
+      <doc-code language="javascript">
+        // src/main.js
+
+        import Bootue from './bootue';
+        Vue.use(Bootue);
+      </doc-code>
+      <doc-code language="javascript">
+        // src/bootue/src/index.js
+
+        import './_core/Core.vue'
+
+        import './grid/Grid.vue'
+        import './grid_bulma/Grid.vue' // my new future grid component
+
+        import alert from './alert/Alert.vue'
+
+        let components = {
+          alert
+        }
+
+        export default components
+      </doc-code>
+      <hr/>
+      <h4>Create new grid component</h4>
+      <p><a href="http://bulma.io/" target="_blank">Download bulma code</a>, we have sass folder separately, and all modules components, one of this components is a grid folder. We using this folder to create a new bootue components.</p>
+      <p>Grid folder have a little bunch of variables and mixins dependencies, for this we create _variables and _mixins folder and organize with your context.</p>
+      <doc-code>
+        - grid_bulma
+          - mixins
+            _mixins.js // /sass/utilities/initial-variables.sass
+          - _variables
+            _variables.js // sass/utilities/mixins.sass
+
+          columns.sass // sass/grid
+          Grid.vue
+          tiles.sass // sass/grid
+          style.sass // rename, _all.sass
+      </doc-code>
+      <p>We organize the bulma grid files with pattern bootue components</p>
+      <hr/>
+      <h4>Lets use tags bulma grid with bootstrap components</h4>
+      <doc-code language="html">
+        // App.vue
+          &lt;div class="container">
+            &lt;div class="columns">
+              &lt;div class="column">
+                &lt;alert type="success">
+                  &lt;strong>column&lt;/strong>
+                  &lt;p>You successfully read this important alert message.&lt;/p>
+                &lt;/alert>
+              &lt;/div>
+              &lt;div class="column">
+                &lt;alert type="warning">
+                  &lt;strong>column&lt;/strong>
+                  &lt;p>You successfully read this important alert message.&lt;/p>
+                &lt;/alert>
+              &lt;/div>
+              &lt;div class="column">
+                &lt;alert type="success">
+                  &lt;strong>column&lt;/strong>
+                  &lt;p>You successfully read this important alert message.&lt;/p>
+                &lt;/alert>
+              &lt;/div>
+              &lt;div class="column">
+                &lt;alert type="warning">
+                  &lt;strong>column&lt;/strong>
+                  &lt;p>You successfully read this important alert message.&lt;/p>
+                &lt;/alert>
+              &lt;/div>
+            &lt;/div>
+        &lt;/div>
+      </doc-code>
+      <br/>
+      <p>See the screenshot</p>
+      <img src="dist/imgs/bulma_grid.png" class="img-responsive"/>
+      <br/>
+      <well>Ohh, a great flex box grid system with all boostrap components, maybe we create bootue + bulma, or bootue components with foundation grid + materialize bubble effects. Go and code new cool components and send me pull request.</well>
+
     </doc-section>
   </div>
 </template>

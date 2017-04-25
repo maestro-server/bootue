@@ -4,7 +4,7 @@
 
       <navbar :placement="placement" :type="type">
         <a href="/" title="Home" slot="brand" class="navbar-brand">
-          <img src="/docs/assets/imgs/Bootue-logo.png"
+          <img src="dist/imgs/Bootue-logo.png"
                class="img-reponsive" height="25"/>
         </a>
         <li>

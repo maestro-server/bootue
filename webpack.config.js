@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: 'dist/',
     filename: '[name]-build.js'
   },
   module: {
@@ -25,7 +25,8 @@ module.exports = {
             'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
             'scss': ExtractTextPlugin.extract({
               use: ['css-loader', 'sass-loader'],
-              fallback: 'vue-style-loader' // <- this is a dep of vue-loader, so no need to explicitly install if using npm3
+              fallback: 'vue-style-loader',
+              publicPath: './'
             })
           }
           // other vue-loader options go here
@@ -37,7 +38,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
         loader: 'file-loader',
         options: {
           name: 'imgs/[name].[ext]?[hash]'

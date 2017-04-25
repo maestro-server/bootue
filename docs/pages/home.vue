@@ -4,7 +4,7 @@
       <div class="bs-docs-header">
         <div class="container text-center">
           <div class="visible-xs mt40"></div>
-          <img src="../assets/imgs/Bootue-logo-white-hr.png" class="img-responsive-center"/>
+          <img src="dist/imgs/Bootue-logo-white-hr.png" class="img-responsive-center"/>
 
           <p class="col-xs-12 text-center mt20"><a target="_blank" class="white" href="http://getbootstrap.com/">100% Bootstrap components</a> built with <a target="_blank" class="white" href="http://vuejs.org/">Vue 2</a>.</p>
           <p class="col-xs-12 text-center mt10">No boostrap.css, bootstrap.js, jQuery, or any 3rd party plugins required.</p>
