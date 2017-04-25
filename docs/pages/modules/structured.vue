@@ -135,6 +135,7 @@
               <li>buttons</li>
               <li>close</li>
               <li>dropdown</li>
+              <li>typography (icon prop)</li>
               <li>_Core/variables</li>
               <li>_Core/mixins</li>
             </ul>
