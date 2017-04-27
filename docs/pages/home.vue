@@ -27,7 +27,7 @@
             <div class="col-sm-3 mt30 text-center">
               <i class="fa fa-github-alt fa-4x" aria-hidden="true"></i>
               <h3 class="blue">Free</h3>
-              <h4 class="gray">Open Source Project - MIT</h4>
+              <h4 class="gray">Ola - Open Source Project - MIT</h4>
             </div>
             <div class="col-sm-3 mt30 text-center">
               <i class="fa fa-cube fa-4x" aria-hidden="true"></i>
