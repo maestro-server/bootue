@@ -1,3 +1,4 @@
+
 export default {
   props: {
     indicators: {
@@ -18,7 +19,6 @@ export default {
       indicator_list: [],
       index: 0,
       isAnimating: false,
-      sliders: [],
       selected: null
     }
   },
@@ -35,46 +35,40 @@ export default {
     },
     slide (direction, next, prev) {
       if (!this.$el) { return }
-      this.sliders = this.$el.querySelectorAll('.item')
 
-      if (!this.sliders.length) { return }
-      this.selected = this.sliders[next] || this.sliders[0]
+      const $slider = this.$el.querySelectorAll('.item')
 
-      let cDirection = direction === 'left' ? 'next' : 'prev'
+      if (!$slider.length) { return }
+      this.selected = $slider[next] || $slider[0]
+      const cDirection = direction === 'left' ? 'next' : 'prev'
       this.selected.classList.add(cDirection)
 
       // request property that requires layout to force a layout
-      this.selected.classList.add(direction)
-      this.sliders[prev].classList.add(direction)
+      this.selected.clientHeight
 
-      this.sliders[prev].addEventListener('transitionend', this.finishTransion, false)
+      this.selected.classList.add(direction)
+      $slider[prev].classList.add(direction)
+
+      $slider[prev].addEventListener('transitionend', this.finishTransion, false)
     },
     finishTransion (obj) {
-      Array.prototype.map.call(this.sliders, (el) => {
-        obj.target.removeEventListener('transitionend', this.finishTransion, false)
-        el.className = 'item'
-        this.selected.classList.add('active')
-        this.isAnimating = false
-      })
-    },
-    getElementClassItem () {
-      return this.$el.querySelectorAll('.item')
+      obj.target.removeEventListener('transitionend', this.finishTransion, false)
+
+      this.selected.className = 'item'
+      obj.target.className = 'item'
+
+      this.selected.classList.add('active')
+      this.isAnimating = false
     },
     next () {
       if (!this.$el || this.isAnimating) { return false }
       this.isAnimating = true
-
-      this.index + 1 < this.getElementClassItem().length
-      ? this.index += 1
-      : this.index = 0
+      this.index + 1 < this.getElementClassItem().length ? this.index += 1 : this.index = 0
     },
     prev () {
       if (!this.$el || this.isAnimating) { return false }
       this.isAnimating = true
-      this.index === 0
-
-      ? this.index = this.getElementClassItem().length - 1
-      : this.index -= 1
+      this.index === 0 ? this.index = this.getElementClassItem().length - 1 : this.index -= 1
     },
     toggleInterval (val) {
       if (val === undefined) { val = this._intervalID }
@@ -85,15 +79,16 @@ export default {
       if(val && this.interval > 0) {
         this._intervalID = setInterval(this.next, this.interval)
       }
+    },
+    getElementClassItem () {
+      return this.$el.querySelectorAll('.item')
     }
   },
   mounted () {
     this.toggleInterval(true)
 
-
     this.$el.addEventListener('mouseenter', () => this.toggleInterval(false), false)
     this.$el.addEventListener('mouseleave', () => this.toggleInterval(true), false)
-
   },
   beforeDestroy () {
     this.toggleInterval(false)
