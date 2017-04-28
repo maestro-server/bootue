@@ -1,4 +1,3 @@
-
 export default {
   props: {
     indicators: {
@@ -72,11 +71,11 @@ export default {
     },
     toggleInterval (val) {
       if (val === undefined) { val = this._intervalID }
-      if(this._intervalID) {
+      if (this._intervalID) {
         clearInterval(this._intervalID)
         delete this._intervalID
       }
-      if(val && this.interval > 0) {
+      if (val && this.interval > 0) {
         this._intervalID = setInterval(this.next, this.interval)
       }
     },

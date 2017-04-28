@@ -1,6 +1,5 @@
 import '../Forms.vue'
 
-
 export default {
   props: {
     clearButton: {type: Boolean, default: false},
@@ -24,7 +23,7 @@ export default {
     horizontalLabelWrapper: {type: String, default: 'col-sm-2'}
   },
   data () {
-    let val = this.value;
+    let val = this.value
 
     return {
       options: this.datalist,
@@ -55,19 +54,19 @@ export default {
       return this.help && (!this.showError)
     },
     showIcon () {
-      let icc;
+      let icc
       switch (this.state) {
         case 'success':
           icc = 'check'
-          break;
+          break
         case 'error':
           icc = 'times'
-          break;
+          break
         case 'warning':
           icc = 'exclamation'
-          break;
+          break
       }
-      return icc;
+      return icc
     },
     title () {
       return this.error || this.help || ''
@@ -97,35 +96,36 @@ export default {
       return ~['', null, undefined].indexOf(value) || value instanceof Function ? null : value
     },
     emit (e) {
-      this.$emit(e.type, e.type == 'input' ? e.target.value : e)
+      this.$emit(e.type, e.type === 'input' ? e.target.value : e)
     },
     focus () {
       this.input.focus()
     },
-    reset() {
+    reset () {
       this.val = ''
     },
-    classWrapper() {
-      if(this.isGroup && !this.inline) {
-        return "input-group"
+    classWrapper () {
+      if (this.isGroup && !this.inline) {
+        return 'input-group'
       }
 
-      if(this.horizontal) {
+      if (this.horizontal) {
         return this.horizontalWrapper
       }
 
-      return "relative"
+      return 'relative'
     },
-    horizontalLabelClass() {
-      if(this.horizontal)
+    horizontalLabelClass () {
+      if (this.horizontal) {
         return this.horizontalLabelWrapper
+      }
     }
   },
   created () {
     this._input = true
   },
   mounted () {
-    this.isGroup = typeof this.$slots.before === "object" || typeof this.$slots.after === "object"
+    this.isGroup = typeof this.$slots.before === 'object' || typeof this.$slots.after === 'object'
   },
   beforeDestroy () {
     if (this._parent) {
