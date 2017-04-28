@@ -32,7 +32,7 @@ export default {
       this.updateFromParent()
     },
     value (val) {
-      if (this.selectedValue == val) {
+      if (this.selectedValue === val) {
         this.check = val
       } else {
         this.check = false
@@ -47,16 +47,16 @@ export default {
     }
   },
   methods: {
-    updateFromParent() {
+    updateFromParent () {
       if (this.inGroup) {
-        if (this.selectedValue == this.$parent.val) {
+        if (this.selectedValue === this.$parent.val) {
           this.check = this.selectedValue
         } else {
           this.check = false
         }
       }
     },
-    updateParent() {
+    updateParent () {
       if (this.inGroup) {
         if (this.selectedValue === this.check) {
           this.$parent.val = this.selectedValue

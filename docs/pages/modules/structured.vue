@@ -32,7 +32,7 @@
 
     </doc-section>
 
-    <doc-section id="core-comp" name="Deeping at _Code Component">
+    <doc-section id="core-comp" name="Deeping at _Core Component">
       <p><code>_Core</code> component have all shared files, you maybe use to change any configuration pivot. Let's look deeping.</p>
 
       <table class="table table-striped table-bordered">

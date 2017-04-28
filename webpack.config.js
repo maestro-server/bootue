@@ -1,10 +1,10 @@
 const path = require('path')
 const webpack = require('webpack')
-const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
-      docs: "./docs/index.js"
+    docs: './docs/index.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -18,10 +18,6 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
-            // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-            // the "scss" and "sass" values for the lang attribute to the right configs here.
-            // other preprocessors should work out of the box, no loader config like this necessary.
-            //'scss': 'vue-style-loader!css-loader!sass-loader',
             'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
             'scss': ExtractTextPlugin.extract({
               use: ['css-loader', 'sass-loader'],
@@ -46,7 +42,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: "vue-style-loader!css-loader?root=./docs/"
+        loader: 'vue-style-loader!css-loader?root=./docs/'
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
@@ -59,7 +55,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("build.css")
+    new ExtractTextPlugin('build.css')
   ],
   resolve: {
     alias: {

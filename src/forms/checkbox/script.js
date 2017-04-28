@@ -52,14 +52,14 @@ export default {
   methods: {
     // called @ mounted(), or whenever $parent.val changes
     // sync our state with the $parent.val
-    updateFromParent() {
+    updateFromParent () {
       if (this.inGroup) {
         let index = this.$parent.val.indexOf(this.trueValue)
         this.checked = ~index
       }
     },
     // called when our checked state changes
-    updateParent() {
+    updateParent () {
       if (this.inGroup) {
         let index = this.$parent.val.indexOf(this.trueValue)
         if (this.checked && !~index) this.$parent.val.push(this.trueValue)

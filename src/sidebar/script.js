@@ -33,7 +33,7 @@ export default {
             body.removeChild(this._backdrop)
             this._backdrop = null
           } catch (e) {
-            console.log(e);
+            console.log(e)
           }
         }, false)
         this._backdrop.className = 'aside-backdrop'
@@ -48,10 +48,10 @@ export default {
       }
     },
     trigger_close () {
-      this.$emit( 'close' )
+      this.$emit('close')
     },
-    trigger_open() {
-      this.$emit( 'open' )
+    trigger_open () {
+      this.$emit('open')
     }
   },
   mounted () {

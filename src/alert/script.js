@@ -1,14 +1,13 @@
 import coerce from '../_core/_utils/coerce.js'
 import delayer from '../_core/_utils/delayer.js'
 
-let DURATION = 0
 export default {
   props: {
     dismissable: {type: Boolean, default: false},
-    duration: {default: DURATION},
+    duration: {default: 0},
     placement: {type: String},
     type: {type: String},
-    value: {type: Boolean, default: true },
+    value: {type: Boolean, default: true},
     width: {type: String}
   },
   data () {
@@ -17,7 +16,7 @@ export default {
     }
   },
   computed: {
-    durationNum () { return coerce.number(this.duration, DURATION) }
+    durationNum () { return coerce.number(this.duration) }
   },
   watch: {
     val (val) {

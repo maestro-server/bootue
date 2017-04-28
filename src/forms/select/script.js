@@ -10,15 +10,11 @@ export default {
     minSearch: {type: Number, default: 0},
     multiple: {type: Boolean, default: false},
     name: {type: String, default: null},
-    options: {
-      type: Array, default () {
-        return []
-      }
-    },
+    options: {type: Array, default: () => []},
     optionsLabel: {type: String, default: 'label'},
     optionsValue: {type: String, default: 'value'},
     parent: {default: true},
-    placeholder: {type: String, default: "Nothing Selected"},
+    placeholder: {type: String, default: 'Nothing Selected'},
     readonly: {type: Boolean, default: null},
     required: {type: Boolean, default: null},
     search: {type: Boolean, default: false},
@@ -193,10 +189,11 @@ export default {
       if (!this.show) this.$refs.btn.focus()
     },
     clickOutside (e) {
-      if (!this.$el.contains(e.target))
+      if (!this.$el.contains(e.target)) {
         this.close()
+      }
     },
-    eventClickOutside(val) {
+    eventClickOutside (val) {
       if (val) {
         document.addEventListener('click', this.clickOutside, false)
         return

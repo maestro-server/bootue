@@ -1,13 +1,13 @@
 {
   "name": "bootue",
   "description": "Bootstrap + Vue 2 = 100% Components",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "author": "Felipe Signorini <felipeklerk@yahoo.com.br>",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "dev-build": "cross-env NODE_ENV=development webpack --progress --hide-modules",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "lint": "eslint src/**"
+    "lint": "eslint --ext .js,.vue src"
   },
   "repository": {
     "type": "git",

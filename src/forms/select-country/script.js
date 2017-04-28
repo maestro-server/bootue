@@ -1,5 +1,5 @@
 import bsSelect from '../select/Select.vue'
-import {country, states} from './countries'
+import { country, states } from './countries'
 import finderK from './_utils/finderKeyByValue'
 import '../Forms.vue'
 
@@ -14,8 +14,8 @@ export default {
     required: {type: Boolean, default: null},
     disabled: {type: Boolean, default: false},
     search: {type: Boolean, default: true},
-      labelCountry: {type: String, default: "Country"},
-    labelState: {type: String, default: "State/Province"}
+    labelCountry: {type: String, default: 'Country'},
+    labelState: {type: String, default: 'State/Province'}
   },
 
   data () {
@@ -34,7 +34,7 @@ export default {
       let key = finderK(country, index)
       this.vstates = null
 
-      this.options.state = states[key+1].split("|")
+      this.options.state = states[key + 1].split('|')
 
       this.$emit('input', {country: index})
     },

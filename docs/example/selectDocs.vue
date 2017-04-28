@@ -115,7 +115,7 @@
         &lt;div class="btn-group btn-group-justified">&lt;select>...&lt;/select>&lt;/div>
       </doc-code>
     </div>
-    <doc-table name="Options">
+    <doc-table>
       <div>
         <p>clear-button</p>
         <p><code>Boolean</code></p>
