@@ -10,14 +10,14 @@ export default {
     disabled: {type: Boolean, default: false},
     help: {type: String, default: null},
     error: {type: String, default: null},
-    multiple:  {type: Boolean, default: false},
+    multiple: {type: Boolean, default: false},
     state: {type: String, default: null},
     icon: {type: Boolean, default: false}
   },
 
   data () {
     return {
-      val:null,
+      val: null,
       image: '',
       text: null
     }
@@ -62,8 +62,9 @@ export default {
     },
     changeUploadImage (e) {
       let files = e.target.files || e.dataTransfer.files;
-      if (!files.length)
+      if (!files.length) {
         return;
+      }
 
       this.val = files
       this.text = files[0].name

@@ -3,7 +3,7 @@ export default {
     size: {type: String}
   },
   computed: {
-    sizeClass() {
+    sizeClass () {
       return `well-${this.size}`
     }
   }

@@ -34,7 +34,7 @@ export default {
       if (val === old) { return }
       const el = this.$el
       const body = document.body
-      if (val) {//starting
+      if (val) {
         if (this.val) {
           el.querySelector('.modal-content').focus()
           el.style.display = 'block'
@@ -46,7 +46,7 @@ export default {
         } else {
           el.classList.remove('in')
         }
-      } else {//ending
+      } else {
         this.$emit(this.val ? 'opened' : 'closed')
         if (!this.val) {
           el.style.display = 'none'
@@ -64,10 +64,10 @@ export default {
     }
   },
   methods: {
-    action (val,p) {
+    action (val, p) {
       if (val === null) { return }
       if (val && this.callback instanceof Function) this.callback()
-      this.$emit(val ? 'ok' : 'cancel',p)
+      this.$emit(val ? 'ok' : 'cancel', p)
       this.val = val || false
     }
   },

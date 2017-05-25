@@ -12,7 +12,7 @@
     "plugins": [
       "html"
     ],
-    "extends": "eslint:recommended",
+    "extends": "standard",
     "rules": {
         "linebreak-style": [
             2,

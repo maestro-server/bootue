@@ -24,9 +24,6 @@ export default {
     submenu () { return this.$parent && (this.$parent.menu || this.$parent.submenu) },
     makeClasses () { return this.isLi ? this.classLi : this.classBtn }
   },
-
-
-//['btn btn-' + type,buttonSize,'dropdown-toggle']
   watch: {
     show (val) {
       this.$emit('input', val)
@@ -44,11 +41,12 @@ export default {
       this.show = false
     },
     clickOutside (e) {
-      if (!this.$el.contains(e.target))
-      this.hiddeMe()
+      if (!this.$el.contains(e.target)) {
+        this.hiddeMe()
+      }
     },
-    eventClickOutside(val) {
-      if(val) {
+    eventClickOutside (val) {
+      if (val) {
         document.addEventListener('click', this.clickOutside, false)
         return
       }
@@ -70,7 +68,6 @@ export default {
     Array.prototype.map.call(links, (el) => {
       el.removeEventListener('click', this.hiddeMe, false)
     })
-
 
   }
 }

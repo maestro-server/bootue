@@ -4,13 +4,13 @@ export default {
     isOpen: {type: Boolean, default: null},
     type: {type: String, default: null}
   },
-  data() {
+  data () {
     return {
       open: this.isOpen
     }
   },
   watch: {
-    isOpen(val) {
+    isOpen (val) {
       this.open = val
     }
   },
@@ -34,7 +34,7 @@ export default {
       let endWidth = getComputedStyle(el).height
       el.style.height = '0px'
       el.offsetHeight // force repaint
-      el.style.height = endWidth;
+      el.style.height = endWidth
     },
     afterEnter (el) {
       el.style.height = 'auto'
@@ -43,7 +43,7 @@ export default {
       el.style.height = getComputedStyle(el).height
       el.offsetHeight // force repaint
       el.style.height = '0px'
-    },
+    }
   },
   created () {
     if (this.isOpen === null) {
