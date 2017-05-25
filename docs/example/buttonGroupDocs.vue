@@ -40,22 +40,22 @@
     </div>
     <doc-code language="markup">
       &lt;button-group v-model="checkboxValue">
-        &lt;checkbox true-value="left">Left&lt;/checkbox>
-        &lt;checkbox true-value="middle">Middle&lt;/checkbox>
-        &lt;checkbox true-value="right">Right&lt;/checkbox>
+        &lt;bs-checkbox true-value="left">Left&lt;/bs-checkbox>
+        &lt;bs-checkbox true-value="middle">Middle&lt;/bs-checkbox>
+        &lt;bs-checkbox true-value="right">Right&lt;/bs-checkbox>
       &lt;/button-group>
 
       &lt;button-group v-model="radioValue" type="primary">
-        &lt;radio selected-value="left">Left&lt;/radio>
-        &lt;radio selected-value="middle">Middle&lt;/radio>
-        &lt;radio selected-value="right">Right&lt;/radio>
+        &lt;bs-radio selected-value="left">Left&lt;/bs-radio>
+        &lt;bs-radio selected-value="middle">Middle&lt;/bs-radio>
+        &lt;bs-radio selected-value="right">Right&lt;/bs-radio>
       &lt;/button-group>
 
       Not Buttons:
       &lt;button-group v-model="radioValue" type="info" buttons="false">
-        &lt;radio selected-value="left">Left&lt;/radio>
-        &lt;radio selected-value="middle">Middle&lt;/radio>
-        &lt;radio selected-value="right">Right&lt;/radio>
+        &lt;bs-radio selected-value="left">Left&lt;/bs-1qaradio>
+        &lt;bs-radio selected-value="middle">Middle&lt;/bs-radio>
+        &lt;bs-radio selected-value="right">Right&lt;/bs-radio>
       &lt;/button-group>
     </doc-code>
 

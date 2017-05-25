@@ -30,7 +30,7 @@
             <modal-docs></modal-docs>
 
             <navbar-docs></navbar-docs>
-
+            <pagination-docs></pagination-docs>
             <popover-docs></popover-docs>
             <progressbar-docs></progressbar-docs>
             <radio-docs></radio-docs>
@@ -72,6 +72,8 @@ import inputFileDocs from '../example/inputFileDocs.vue'
 
 import modalDocs from '../example/modalDocs.vue'
 import navbarDocs from '../example/navbarDocs.vue'
+
+import paginationDocs from '../example/paginationDocs.vue'
 import popoverDocs from '../example/popoverDocs.vue'
 import progressbarDocs from '../example/progressbarDocs.vue'
 import radioDocs from '../example/radioDocs.vue'
@@ -105,6 +107,7 @@ export default {
     inputFileDocs,
     modalDocs,
     navbarDocs,
+    paginationDocs,
     popoverDocs,
     progressbarDocs,
     radioDocs,
