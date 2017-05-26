@@ -64,7 +64,7 @@
       <img src="dist/imgs/usesass.png" class="img-responsive-center"/>
 
       <br/>
-      <p>Or install and config SASS dependencies.</p>
+      <p>Or install and config SASS dependencies. <br/><code>(Normally this step is only need if you using vue-cli wwebpack, and not have installed sass env.)</code></p>
       <doc-code language="javascript">
         $ npm install node-sass
         $ npm install sass-loader
