@@ -2,6 +2,7 @@
   <footer class="bs-docs-footer mt40 col-xs-12">
     <div class="container">
       <p>Bootue: New project version built by <a href="https://github.com/maestro-server/bootue">Felipe Signorini</a>.</p>
+      <a href="https://github.com/maestro-server/bootue/blob/master/changelog.md">Change Log - 0.1.15</a>
       <hr/>
       <p>Designed and built by <a href="https://github.com/yuche/">yuche</a>.</p>
       <p>Vue 2 version built by <a href="https://github.com/wffranco/">wffranco</a>.</p>

@@ -27,6 +27,7 @@
             <dropdown-docs></dropdown-docs>
             <input-docs></input-docs>
             <input-file-docs></input-file-docs>
+            <label-docs></label-docs>
             <modal-docs></modal-docs>
 
             <navbar-docs></navbar-docs>
@@ -70,6 +71,7 @@ import dropdownDocs from '../example/dropdownDocs.vue'
 import inputDocs from '../example/inputDocs.vue'
 import inputFileDocs from '../example/inputFileDocs.vue'
 
+import labelDocs from '../example/labelDocs.vue'
 import modalDocs from '../example/modalDocs.vue'
 import navbarDocs from '../example/navbarDocs.vue'
 
@@ -105,6 +107,7 @@ export default {
     dropdownDocs,
     inputDocs,
     inputFileDocs,
+    labelDocs,
     modalDocs,
     navbarDocs,
     paginationDocs,

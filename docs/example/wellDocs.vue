@@ -16,7 +16,7 @@
     <doc-table>
       <div>
         <p>size</p>
-        <p><code>String (sm / md / md)</code></p>
+        <p><code>String (sm / md / lg)</code></p>
         <p>null</p>
         <p>Size well.</p>
       </div>

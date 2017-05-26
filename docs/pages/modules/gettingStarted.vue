@@ -63,7 +63,15 @@
       <p>Make sure to install sass pre-compiled environment (in all cli installation he ask you if you like to setup sass <code>(default is NO)</code>, write YES, and be happy)</p>
       <img src="dist/imgs/usesass.png" class="img-responsive-center"/>
 
+      <br/>
+      <p>Or install and config SASS dependencies.</p>
+      <doc-code language="javascript">
+        $ npm install node-sass
+        $ npm install sass-loader
+      </doc-code>
+
       <hr/>
+
       <h4>ES6 - Babel</h4>
       <doc-code language="javascript">
         $ npm install bootue

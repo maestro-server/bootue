@@ -1,5 +1,5 @@
 <nav v-if="total_pages > 1">
-  <ul class="pagination" :class="sizeClass">
+  <ul class="pagination" :class="sizeClass()">
     <li v-if="!only_number">
       <a href="#" aria-label="Previous" @click.prevent="changePage(1)">
         <span aria-hidden="true">&laquo;</span>
