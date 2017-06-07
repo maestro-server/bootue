@@ -18,7 +18,6 @@
             <accordion-docs></accordion-docs>
             <affix-docs></affix-docs>
             <alert-docs></alert-docs>
-            <aside-docs></aside-docs>
             <badgesDocs></badgesDocs>
             <carousel-docs></carousel-docs>
             <dropdown-docs></dropdown-docs>
@@ -53,7 +52,6 @@ import accordionDocs from '../example/accordionDocs.vue'
 import affixDocs from '../example/affixDocs.vue'
 import affixSidebar from '../affixSidebar.vue'
 import alertDocs from '../example/alertDocs.vue'
-import asideDocs from '../example/asideDocs.vue'
 import badgesDocs from '../example/badgesDocs.vue'
 import carouselDocs from '../example/carouselDocs.vue'
 import dropdownDocs from '../example/dropdownDocs.vue'
@@ -80,7 +78,6 @@ export default {
     affixDocs,
     affixSidebar,
     alertDocs,
-    asideDocs,
     badgesDocs,
     carouselDocs,
     dropdownDocs,

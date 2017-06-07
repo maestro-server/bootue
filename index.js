@@ -1,20 +1,23 @@
 import Components from './src/index'
 import Addons from './addons/index'
 
+function callerComp (Vue, Comps, enable = false) {
+  for (let key in Comps) {
+    if (key.indexOf(enable) || !enable) {
+      Vue.component(key, Comps[key])
+    }
+  }
+}
+
 function plugin (Vue, options = {}) {
   if (plugin.installed) return
 
   const enable = options.hasOwnProperty("addons") ? options.addons : []
 
-  for (let key in Addons) {
-    if (key.indexOf(enable)) {
-      Vue.component(key, Addons[key])
-    }
-  }
-
-  for (let key in Components) {
-    Vue.component(key, Components[key])
-  }
+  callerComp(Vue, Components)
+  callerComp(Vue, Addons, enable)
 }
+
+
 
 export default plugin
