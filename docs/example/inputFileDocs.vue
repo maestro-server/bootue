@@ -42,7 +42,7 @@
 
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <h5>How files is selected</h5>
-            <well v-for="f in file">{{f.name}}</well>
+            <well v-for="f in file" :key="f.name">{{f.name}}</well>
           </div>
 
         </div>
@@ -157,7 +157,7 @@
           error: true,
           hideHelp: true,
           icon: true,
-          label: null,
+          label:  "",
           readonly: false,
           disabled: false,
           multiple: false

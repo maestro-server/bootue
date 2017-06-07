@@ -15,7 +15,8 @@ export default {
     disabled: {type: Boolean, default: false},
     search: {type: Boolean, default: true},
     labelCountry: {type: String, default: 'Country'},
-    labelState: {type: String, default: 'State/Province'}
+    labelState: {type: String, default: 'State/Province'},
+    value: {type: Object}
   },
 
   data () {
@@ -25,14 +26,28 @@ export default {
         state: []
       },
       vcountry: null,
-      vstates: null
+      vstates: null,
+      flagStart: false
+    }
+  },
+
+  watch: {
+    value(val) {
+      if(val.country) {
+        this.vcountry = val.country
+      }
+
+      if(val.state) {
+        this.vstates = val.state
+      }
     }
   },
 
   methods: {
     selectCountryChange (index) {
       let key = finderK(country, index)
-      this.vstates = null
+
+      this.flagStart ? this.vstates = null : this.flagStart = true
 
       this.options.state = states[key + 1].split('|')
 

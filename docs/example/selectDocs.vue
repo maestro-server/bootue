@@ -85,35 +85,7 @@
           &lt;bs-option value="grape">Grape&lt;/bs-option>
         &lt;/bs-select>
       </doc-code>
-      <hr/>
-      <h4>Use button-group (component or <a href="http://getbootstrap.com/components/#btn-groups-justified">bootstrap element</a>) if you want to justify.</h4>
-      <button-group justified>
-        <bs-select multiple clear-button>
-          <bs-option value="apple">Apple</bs-option>
-          <bs-option value="banana">Banana</bs-option>
-          <bs-option value="cherry">Cherry</bs-option>
-          <bs-option value="cranberry">Cranberry</bs-option>
-          <bs-option value="grape">Grape</bs-option>
-          <bs-option value="orange">Orange</bs-option>
-          <bs-option value="passionfruit">Passionfruit</bs-option>
-          <bs-option value="pineapple">Pineapple</bs-option>
-          <bs-option value="strawberry">Strawberry</bs-option>
-          <bs-option value="a">Apple</bs-option>
-          <bs-option value="b">Banana</bs-option>
-          <bs-option value="c">Cherry</bs-option>
-          <bs-option value="c">Cranberry</bs-option>
-          <bs-option value="g">Grape</bs-option>
-          <bs-option value="o">Orange</bs-option>
-          <bs-option value="p">Passionfruit</bs-option>
-          <bs-option value="p">Pineapple</bs-option>
-          <bs-option value="s">Strawberry</bs-option>
-        </bs-select>
-      </button-group>
-      <doc-code>
-        &lt;button-group justified>&lt;select>...&lt;/select>&lt;/button-group>
-        // or
-        &lt;div class="btn-group btn-group-justified">&lt;select>...&lt;/select>&lt;/div>
-      </doc-code>
+      
     </div>
     <doc-table>
       <div>

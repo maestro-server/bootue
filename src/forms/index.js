@@ -1,3 +1,5 @@
+import bsForms from './Forms.vue'
+
 import bsOption from './option/Option.vue'
 import bsSelect from './select/Select.vue'
 import bsInput from './input/Input.vue'
@@ -10,6 +12,7 @@ import bsInputFile from './inputfile/InputFile.vue'
 import bsSelectCountry from './select-country/Select-Country.vue'
 
 export default {
+  bsForms,
   bsInput,
   bsSelect,
   bsOption,

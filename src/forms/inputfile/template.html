@@ -1,9 +1,11 @@
 <div class="form-group"
 :class="[showState]">
-  <div class="infile">
-    <slot name="label">
-      <label v-if="label" class="control-label">{{label}}</label>
-    </slot>
+<div class="infile">
+  <slot name="label">
+    <label v-if="label" class="control-label" :class="labelClass()">{{label}}</label>
+  </slot>
+
+  <div :class="wrapperClass()">
 
     <div class="btn-group form-control">
 
@@ -13,18 +15,12 @@
       :multiple="multiple"
       @change="changeUploadImage"
       class="input-file" />
-
       <button
       type="button"
       :disabled="disabled"
-      class="btn btn-default btn-base">{{ textButton }}</button>
+      class="btn btn-default btn-base btn-overflow">{{ textButton }}</button>
 
-      <div v-if="icon" class="icon fileicon">
-        <span :class="['form-control-feedback fa','fa-'+(showIcon)]"
-              aria-hidden="true"></span>
-      </div>
-
-      <a class="btn btn-default" @click="removeFile()" v-if="clearButton" :disabled="disabled">
+      <a class="btn btn-default btn-close" @click="removeFile()" v-if="clearButton" :disabled="disabled">
         <span class="fa fa-close"></span>
       </a>
 
@@ -33,4 +29,6 @@
 
   <div v-if="showHelp" class="help-block relative">{{help}}</div>
   <div v-if="showError" class="help-block with-errors relative">{{error}}</div>
+</div>
+
 </div>
