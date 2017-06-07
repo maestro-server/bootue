@@ -1,4 +1,4 @@
-import getScrollBarWidth from '../_core/_utils/getScrollBarWidth.js'
+import getScrollBarWidth from '../../src/_core/_utils/getScrollBarWidth.js'
 
 export default {
   props: {

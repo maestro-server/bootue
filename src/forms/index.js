@@ -9,7 +9,6 @@ import bsCheckbox from './checkbox/Checkbox.vue'
 import bsDatepicker from './datepicker/Datepicker.vue'
 import bsRadio from './radio/Radio.vue'
 import bsInputFile from './inputfile/InputFile.vue'
-import bsSelectCountry from './select-country/Select-Country.vue'
 
 export default {
   bsForms,
@@ -19,6 +18,5 @@ export default {
   bsCheckbox,
   bsDatepicker,
   bsInputFile,
-  bsRadio,
-  bsSelectCountry
+  bsRadio
 }

@@ -1,7 +1,7 @@
-import bsSelect from '../select/Select.vue'
+import bsSelect from '../../src/forms/select/Select.vue'
 import { country, states } from './countries'
 import finderK from './_utils/finderKeyByValue'
-import '../Forms.vue'
+import '../../src/forms/Forms.vue'
 
 export default {
   props: {
@@ -32,12 +32,12 @@ export default {
   },
 
   watch: {
-    value(val) {
-      if(val.country) {
+    value (val) {
+      if (val.country) {
         this.vcountry = val.country
       }
 
-      if(val.state) {
+      if (val.state) {
         this.vstates = val.state
       }
     }

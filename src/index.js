@@ -12,7 +12,6 @@ import bsCode from './code/Code.vue'
 import bsLabel from './label/Label.vue'
 import dropdown from './dropdown/Dropdown.vue'
 import './grid/Grid.vue'
-import './jumbotron/Jumbotron.vue'
 import lists from './lists/Lists.vue'
 import './media/Media.vue'
 import modal from './modal/Modal.vue'
@@ -21,7 +20,6 @@ import pagination from './pagination/Pagination.vue'
 import panel from './panel/Panel.vue'
 import popover from './popover/Popover.vue'
 import progressbar from './progressbar/Progressbar.vue'
-import sidebar from './sidebar/Sidebar.vue'
 import slider from './slider/Slider.vue'
 import spinner from './spinner/Spinner.vue'
 import tab from './tab/Tab.vue'
@@ -56,7 +54,6 @@ let components = {
   panel,
   popover,
   progressbar,
-  sidebar,
   slider,
   spinner,
   tab,
