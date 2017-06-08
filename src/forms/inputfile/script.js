@@ -22,6 +22,7 @@ export default {
       val: null,
       image: '',
       text: null,
+      inState: this.state,
       constants: {
         SUCCESS: {name: 'success', icon: 'check'},
         WARNING: {name: 'warning', icon: 'exclamation'},
@@ -39,6 +40,9 @@ export default {
   },
 
   methods: {
+    setState (val) {
+      this.inState = val ? this.constants.ERROR.name : this.constants.SUCCESS.name
+    },
     removeFile () {
       this.text = this.val = null
     },
@@ -74,8 +78,17 @@ export default {
   },
 
   watch: {
+    error (val) {
+      this.setState(val)
+    },
     val (val) {
       this.$emit('input', val)
+    }
+  },
+
+  mounted () {
+    if(this.error) {
+      this.setState(this.error)
     }
   }
 }

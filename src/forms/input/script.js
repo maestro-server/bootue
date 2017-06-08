@@ -22,7 +22,7 @@ export default {
   },
   data () {
     return {
-      inState: null,
+      inState: this.state,
       inFormType: this.formType,
       constants: {
         SUCCESS: {name: 'success', icon: 'check'},
@@ -99,7 +99,7 @@ export default {
 
     this.inFormType = group ? 'group' : this.formType
 
-    if (this.error) {
+    if(this.error) {
       this.setState(this.error)
     }
   },

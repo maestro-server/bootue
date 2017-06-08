@@ -100,7 +100,7 @@ export default {
   },
   watch: {
     error (val) {
-      this.inState=val ? this.constants.ERROR : this.constants.SUCCESS
+      this.setState(val)
     },
     options (options) {
       if (options instanceof Array) {
@@ -138,6 +138,9 @@ export default {
     }
   },
   methods: {
+    setState (val) {
+      this.inState = val ? this.constants.ERROR.name : this.constants.SUCCESS.name
+    },
     close () {
       this.show = false
     },
@@ -257,6 +260,10 @@ export default {
     this.setOptions(this.options)
     this.val = this.value
     this.checkData()
+
+    if(this.error) {
+      this.setState(this.error)
+    }
   },
   beforeDestroy () {
     if (this._parent) {
