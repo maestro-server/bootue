@@ -16,9 +16,9 @@
   "dependencies": {
     "node-sass": "^4.5.0",
     "sass-loader": "^5.0.1",
+    "url-loader": "^0.5.8",
     "vue": "^2.2.1",
-    "vue-loader": "^11.1.4",
-    "vue-router": "^2.4.0"
+    "vue-loader": "^11.1.4"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -37,7 +37,7 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.9.0",
     "prismjs": "^1.6.0",
-    "url-loader": "^0.5.8",
+    "vue-router": "^2.4.0",
     "vue-template-compiler": "^2.2.1",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0"
@@ -49,6 +49,7 @@
   },
   "files": [
     "src/",
+    "addons/",
     "index.js"
   ],
   "keywords": [
