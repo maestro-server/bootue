@@ -50,7 +50,7 @@
         &lt;p>You successfully read this important alert message.&lt;/p>
       &lt;/alert>
 
-      &lt;alert v-models="showTop" placement="top" duration="3000" type="danger" width="400px" dismissable>
+      &lt;alert v-model="showTop" placement="top" duration="3000" type="danger" width="400px" dismissable>
         &lt;span class="icon-info-circled alert-icon-float-left">&lt;/span>
         &lt;strong>Heads up!&lt;/strong>
         &lt;p>This alert needs your attention.&lt;/p>

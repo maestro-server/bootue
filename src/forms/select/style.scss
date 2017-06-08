@@ -1,3 +1,11 @@
+form:not(.form-inline) {
+  .selected {
+    .btn-group {
+      width:100%;
+    }
+  }
+}
+
 .form-control.dropdown-toggle {
   height: auto;
   padding-right: 24px;
@@ -52,8 +60,8 @@
 }
 
 .form-control.dropdown-toggle > .close {
-  margin-left: 5px;
-  line-height: 20px;
+  right: 15px;
+  line-height: 35px;
 }
 
 .notify.out {
@@ -92,6 +100,6 @@
   margin-bottom: -4px;
 }
 
-.btn-group-justified .dropdown-menu {
+.btn-group-justified .dropdown-menu, .dropdown-menu li:not(.bs-searchbox) {
   width: 100%;
 }

@@ -1,7 +1,11 @@
 <template>
   <doc-section id="selectcountry" name="Select Country">
+    <bs-label>
+      Id Name: bsSelectCountry
+    </bs-label>
+    <hr/>
     <p>Sintax sugar to create two select, one is country and second is states.</p>
-    <div class="bs-example">
+    <form class="bs-example">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <p>
@@ -19,21 +23,19 @@
         </div>
 
         <div class="col-xs-12">
-          <button-group type="primary" :buttons="false">
             <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <p>
                   <bs-checkbox v-model="select.disabled">Disabled</bs-checkbox>
                 </p>
                 <p>
-                  <bs-checkbox v-model="select.required">requeried</bs-checkbox>
+                  <bs-checkbox v-model="select.required">Required</bs-checkbox>
                 </p>
                 <p>
                   <bs-checkbox v-model="select.search">Search</bs-checkbox>
                 </p>
               </div>
             </div>
-          </button-group>
         </div>
         <hr/>
         <div class="col-xs-12">
@@ -80,7 +82,7 @@
           </doc-table>
         </div>
       </div>
-    </div>
+    </form>
   </doc-section>
 </template>
 

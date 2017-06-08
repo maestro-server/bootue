@@ -17,10 +17,10 @@
       </p>
     </div>
     <doc-code language="markup">
-      &lt;checkbox v-model="checkboxValue.one" true-value="1">One&lt;/checkbox>
-      &lt;checkbox v-model="checkboxValue.two" true-value="two" type="primary">Two&lt;/checkbox>
-      &lt;checkbox v-model="checkboxValue.three" :true-value="2+1" type="info">Three&lt;/checkbox>
-      &lt;checkbox button v-model="checkboxValue.four" type="danger">Four&lt;/checkbox>
+      &lt;bs-checkbox v-model="checkboxValue.one" true-value="1">One&lt;/bs-checkbox>
+      &lt;bs-checkbox v-model="checkboxValue.two" true-value="two" type="primary">Two&lt;/bs-checkbox>
+      &lt;bs-checkbox v-model="checkboxValue.three" :true-value="2+1" type="info">Three&lt;/bs-checkbox>
+      &lt;bs-checkbox button v-model="checkboxValue.four" type="danger">Four&lt;/bs-checkbox>
     </doc-code>
     <doc-table>
       <div>

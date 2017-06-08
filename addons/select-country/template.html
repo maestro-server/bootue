@@ -1,0 +1,27 @@
+<div class="selectCountry">
+  <div :class="baseclass">
+      <bs-select
+          :label="labelCountry"
+          :options="options.country"
+          placeholder="Select your Country"
+          v-model="vcountry"
+          @change="selectCountryChange"
+           :disabled="disabled"
+           :readonly="readonly"
+           :search="search"
+      ></bs-select>
+  </div>
+
+  <div :class="baseclass">
+      <bs-select
+        :label="labelState"
+        :options="options.state"
+        placeholder="Select your state"
+        v-model="vstates"
+        @change="selectStateChange"
+         :disabled="disabled"
+         :readonly="readonly"
+         :search="search"
+      ></bs-select>
+  </div>
+</div>

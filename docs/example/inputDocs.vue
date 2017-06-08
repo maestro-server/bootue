@@ -51,7 +51,7 @@
 
             <bs-input
               name="match"
-              help="Type = Error"
+              error="Type = Error"
               :icon="check.icon"
               state="error"
             >
@@ -59,7 +59,7 @@
 
             <bs-input
               name="match"
-              help="Type = Warning"
+              error="Type = Warning"
               :icon="check.icon"
               state="warning"
             >
@@ -128,32 +128,34 @@
         <pre> Test event on textarea: {{event}}</pre>
 
         <hr/>
-        <p>You using error prop to sow error mensagens, best using with state error.</p>
+        <p>You using error prop to show error mensagens, the state automactly change to value 'error'.</p>
 
-        <bs-input state="error" error="Example error text"></bs-input>
+        <bs-input error="Example error text" icon></bs-input>
       </form>
     </div>
 
     <doc-code>
-      &lt;bs-input v-model="input"
-      label="Username"
-      help="Only allows lowercase letters and numbers."
-      placeholder="Username can't start with a number."
-      disabled
-      readonly
-      icon
-      state="success"
+      //textarea
+      &lt;bs-input
+          name="textarea"
+          label="Textarea"
+          type="textarea"
+          :icon="check.icon"
+          :enter-submit="check.enterSubmit"
+          @focus="event = 'focused'"
+          @blur="event = 'blured'"
       >&lt;/bs-input>
-      &lt;bs-input label="Textarea" type="textarea"
-      @focus="event = 'focused'"
-      @blur="event = 'blured'"
-      >&lt;/bs-input>
+
+      //input with error
+      &lt;bs-input
+        error="Example error text"
+        icon>
+      &lt;/bs-input>
     </doc-code>
 
     <h2>Input groups:</h2>
     <p>More details in <a href="http://getbootstrap.com/components/#input-groups">bootstrap input groups</a>.</p>
-    <bs-input label="With dropdown and button" type="text">
-
+    <bs-input label="With dropdown and button" type="text" v-model="inputGroup">
       <dropdown slot="before" text="dropdown">
         <li><a href="#">option</a></li>
       </dropdown>
@@ -173,19 +175,13 @@
       &lt;/bs-input>
     </doc-code>
     <bs-input label="With icon and text" type="number" placeholder="Insert how much cost your house">
-      <span slot="before" class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
+      <span slot="before" class="input-group-addon"><span class="fa fa-home"></span></span>
       <span slot="after" class="input-group-addon">$</span>
     </bs-input>
     <doc-code>
       &lt;bs-input label="With icon and text" type="number" placeholder="Insert how much cost your house">
       &lt;span slot="before" class="input-group-addon">&lt;span class="glyphicon glyphicon-home">&lt;/span>&lt;/span>
       &lt;span slot="after" class="input-group-addon">$&lt;/span>
-      &lt;/bs-input>
-    </doc-code>
-    <bs-input label="With datalist (new on html5)" type="text" placeholder="Insert a fruit"
-              :datalist="fruits"></bs-input>
-    <doc-code>
-      &lt;bs-input label="With datalist" type="text" placeholder="Insert a fruit" :datalist="fruits">
       &lt;/bs-input>
     </doc-code>
 
@@ -207,16 +203,7 @@
         <p>error</p>
         <p><code>String</code></p>
         <p><code>null</code></p>
-        <p>Error text notification</p>
-      </div>
-      <div>
-        <p>datalist</p>
-        <p><code>Array</code></p>
-        <p><code>null</code></p>
-        <p>
-          A list of predefined values that you can select. Work closer to an autocomplete. The items must be <code>String</code>
-          values.
-        </p>
+        <p>Error text notification, if exist prop state is set to 'error'</p>
       </div>
       <div>
         <p>disabled</p>
@@ -258,19 +245,13 @@
         <p>type</p>
         <p><code>String</code></p>
         <p><code>text</code></p>
-        <p></p>
+        <p>Style input, maybe text, textarea, email, password and more</p>
       </div>
       <div>
-        <p>inline</p>
-        <p><code>Boolean</code></p>
-        <p><code>false</code></p>
+        <p>form-type</p>
+        <p><code>String (<code>inline</code>|<code>horizontal</code>)</code></p>
+        <p><code>null</code></p>
         <p>Enable inline input form</p>
-      </div>
-      <div>
-        <p>horizontal</p>
-        <p><code>Boolean</code></p>
-        <p><code>false</code></p>
-        <p>Enable horizontal input form</p>
       </div>
       <div>
         <p>horizontalWrapper</p>
@@ -288,16 +269,16 @@
 
     <div class="bs-example text-left">
       <div class="row">
-        <h3 class="col-xs-12">Form Horizontal</h3>
+        <h3 class="col-sm-12">Form Horizontal</h3>
         <form class="form-horizontal col-xs-12 row">
-          <bs-input horizontal type="text" placeholder="Name" label="Name"></bs-input>
-          <bs-input horizontal type="email" placeholder="Email" label="Email address"></bs-input>
+          <bs-input form-type="horizontal" type="text" placeholder="Name" label="Name"></bs-input>
+          <bs-input form-type="horizontal" type="email" placeholder="Email" label="Email address"></bs-input>
 
-          <div class="col-sm-offset-2 col-sm-10">
+          <div class="col-sm-offset-3 col-sm-9">
             <bs-checkbox>Remember me</bs-checkbox>
           </div>
           <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
+            <div class="col-sm-offset-3 col-sm-9">
               <button type="submit" class="btn btn-default">Sign in</button>
             </div>
           </div>
@@ -309,8 +290,8 @@
 
     <doc-code>
       &lt;form class="form-horizontal col-xs-12 row">
-        &lt;bs-input horizontal type="text" placeholder="Name" label="Name">  &lt;/bs-input>
-        &lt;bs-input horizontal type="email" placeholder="Email" label="Email address">  &lt;/bs-input>
+        &lt;bs-input form-type="horizontal" type="text" placeholder="Name" label="Name">  &lt;/bs-input>
+        &lt;bs-input form-type="horizontal" type="email" placeholder="Email" label="Email address">  &lt;/bs-input>
     </doc-code>
 
     <hr/>
@@ -320,13 +301,9 @@
 
         <h3 class="col-xs-12">Form inline</h3>
         <form class="form-inline col-xs-12">
-          <bs-input inline type="email" placeholder="Email">
-              <label slot="before" class="control-label">Email</label>
-          </bs-input>
+          <bs-input label="Email" form-type="inline" type="email" placeholder="Email"></bs-input>
 
-          <bs-input inline type="password" placeholder="Password">
-              <label slot="before" class="control-label">Password</label>
-          </bs-input>
+          <bs-input form-type="inline" type="password" placeholder="Password" label="Password"></bs-input>
 
           <button type="submit" class="btn btn-default">Send invitation</button>
         </form>
@@ -360,6 +337,7 @@
     },
     data () {
       return {
+        inputGroup: null,
         check: {
           clearButton: true,
           error: true,

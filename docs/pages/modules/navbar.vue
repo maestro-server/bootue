@@ -20,6 +20,18 @@
         </li>
 
         <li>
+          <router-link to="/forms-components">
+           Forms
+          </router-link>
+        </li>
+
+        <li>
+          <router-link to="/addons">
+           Addons
+          </router-link>
+        </li>
+
+        <li>
           <router-link to="/css">
            CSS
           </router-link>

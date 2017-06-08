@@ -6,8 +6,12 @@ export default {
     clearButton: {type: Boolean, default: false},
     closeOnSelect: {type: Boolean, default: false},
     disabled: {type: Boolean, default: false},
+    label: {type: String, default: null},
     limit: {type: Number, default: 1024},
+    help: {type: String, default: null},
+    error: {type: String, default: null},
     minSearch: {type: Number, default: 0},
+    state: {type: String, default: null},
     multiple: {type: Boolean, default: false},
     name: {type: String, default: null},
     options: {type: Array, default: () => []},
@@ -19,19 +23,31 @@ export default {
     required: {type: Boolean, default: null},
     search: {type: Boolean, default: false},
     searchText: {type: String, default: 'Search'},
-    value: null
+    value: null,
+    formType: {type: String, default: null},
+    horizontalWrapper: {type: String, default: 'col-sm-9'},
+    horizontalLabelWrapper: {type: String, default: 'col-sm-3'}
   },
   data () {
     return {
       list: [],
       loading: null,
       searchValue: null,
+      inState: this.state,
       show: false,
       notify: false,
-      val: null
+      val: null,
+      constants: {
+        SUCCESS: {name: 'success', icon: 'check'},
+        WARNING: {name: 'warning', icon: 'exclamation'},
+        ERROR: {name: 'error', icon: 'times'}
+      }
     }
   },
   computed: {
+    showError () {return this.error},
+    showHelp () {return this.help && (!this.showError)},
+    showState () {return this.inState ? `has-${this.inState}` : ''},
     canSearch () {
       return this.minSearch ? this.list.length >= this.minSearch : this.search
     },
@@ -83,6 +99,9 @@ export default {
     }
   },
   watch: {
+    error (val) {
+      this.setState(val)
+    },
     options (options) {
       if (options instanceof Array) {
         this.setOptions(options)
@@ -119,6 +138,9 @@ export default {
     }
   },
   methods: {
+    setState (val) {
+      this.inState = val ? this.constants.ERROR.name : this.constants.SUCCESS.name
+    },
     close () {
       this.show = false
     },
@@ -200,6 +222,25 @@ export default {
       }
 
       document.removeEventListener('click', this.clickOutside, false)
+    },
+    wrapperClass () {
+      let wClass
+
+      switch (this.formType) {
+        case 'inline':
+          wClass = 'relative inline'
+        break;
+        case 'horizontal':
+          wClass = this.horizontalWrapper
+        break;
+        default:
+          wClass = 'relative'
+      }
+
+      return wClass
+    },
+    labelClass () {
+      return this.formType == "horizontal" ? this.horizontalLabelWrapper : null;
     }
   },
   created () {
@@ -219,6 +260,10 @@ export default {
     this.setOptions(this.options)
     this.val = this.value
     this.checkData()
+
+    if(this.error) {
+      this.setState(this.error)
+    }
   },
   beforeDestroy () {
     if (this._parent) {

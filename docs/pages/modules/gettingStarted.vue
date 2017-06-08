@@ -63,7 +63,15 @@
       <p>Make sure to install sass pre-compiled environment (in all cli installation he ask you if you like to setup sass <code>(default is NO)</code>, write YES, and be happy)</p>
       <img src="dist/imgs/usesass.png" class="img-responsive-center"/>
 
+      <br/>
+      <p>Or install and config SASS dependencies. <br/><code>(Normally this step is only need if you using vue-cli webpack, and not have installed sass env.)</code></p>
+      <doc-code language="javascript">
+        $ npm install node-sass
+        $ npm install sass-loader
+      </doc-code>
+
       <hr/>
+
       <h4>ES6 - Babel</h4>
       <doc-code language="javascript">
         $ npm install bootue
@@ -102,6 +110,17 @@
         // After babel 6, yoou need iteract with default property.
         var alert = require('bootue/src/alert').default;
       </doc-code>
+      <hr/>
+      <h4>Addons</h4>
+      <p>if you like to use new addons components you maybe call with option 'addons'</p>
+      <doc-code language="javascript">
+        import Bootue from 'Bootue'
+        Vue.use(Bootue, {addons: ['Sidebar', 'bsSelectCountry']})
+
+        // enable two components, sidebar and select country form.
+      </doc-code>
+      <p>See the complete list of addons components <router-link to="/addons">here</router-link>.</p>
+
       <hr/>
       <h4>Webpack Env - Font Awesome</h4>
       <p>Some components using font-awesome icons (font-awesome is optional), if you like to use this font, you have to setup webpack to correctly load.</p>

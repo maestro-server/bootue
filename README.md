@@ -1,5 +1,7 @@
 [![Code Climate](https://codeclimate.com/github/maestro-server/bootue/badges/gpa.svg)](https://codeclimate.com/github/maestro-server/bootue) [![Build Status](https://travis-ci.org/maestro-server/bootue.svg?branch=master)](https://travis-ci.org/maestro-server/bootue) [![Issue Count](https://codeclimate.com/github/maestro-server/bootue/badges/issue_count.svg)](https://codeclimate.com/github/maestro-server/bootue) [![david-dm.org](https://david-dm.org/maestro-server/bootue.svg)](https://david-dm.org/) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/336961c7b6d84424885355549300095f)](https://www.codacy.com/app/Signorini/bootue?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=maestro-server/bootue&amp;utm_campaign=Badge_Grade)
 
+# Bootue não é compativel com as versões vue-loader 12.xx, utilize a versão 11.3.4, estamos trabalhando para este suporte
+
 ## Bootue - Boostrap 3 + Vue = 100% Self Contained Components
 - **100% Bootstrap components built with Vue 2.**
 - **No boostrap.css, bootstrap.js, jQuery, or any 3rd party plugins required.**

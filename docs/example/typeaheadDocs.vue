@@ -35,7 +35,7 @@
       &lt;typeahead
         placeholder="Address, async via maps.googleapis.com"
         async-key="results"
-        src="https://maps.googleapis.com/maps/api/geocode/json?address="
+        async="https://maps.googleapis.com/maps/api/geocode/json?address="
         :template="asyncTemplate"
         :on-hit="googleCallback"
       >&lt;/typeahead>
@@ -44,7 +44,7 @@
       &lt;typeahead
         placeholder="Github users, async via api.github.com"
         async-key="items"
-        src="https://api.github.com/search/users?q="
+        async="https://api.github.com/search/users?q="
         :template="githubTemplate"
         :on-hit="githubCallback"
       >&lt;/typeahead>
