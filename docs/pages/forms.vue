@@ -21,7 +21,6 @@
             <input-file-docs></input-file-docs>
             <radio-docs></radio-docs>
             <select-docs></select-docs>
-            <select-country-docs></select-country-docs>
 
             <toggle-button-docs></toggle-button-docs>
             <typeahead-docs></typeahead-docs>
@@ -49,7 +48,6 @@ import inputFileDocs from '../example/inputFileDocs.vue'
 
 import radioDocs from '../example/radioDocs.vue'
 import selectDocs from '../example/selectDocs.vue'
-import selectCountryDocs from '../example/selectCountryDocs.vue'
 
 import toggleButtonDocs from '../example/toggleButtonDocs.vue'
 import typeaheadDocs from '../example/typeaheadDocs.vue'
@@ -69,7 +67,6 @@ export default {
     inputFileDocs,
     radioDocs,
     selectDocs,
-    selectCountryDocs,
     toggleButtonDocs,
     typeaheadDocs
   },
