@@ -1,5 +1,9 @@
 <template>
   <doc-section id="selectcountry" name="Select Country">
+    <bs-label>
+      Id Name: bsSelectCountry
+    </bs-label>
+    <hr/>
     <p>Sintax sugar to create two select, one is country and second is states.</p>
     <form class="bs-example">
       <div class="row">

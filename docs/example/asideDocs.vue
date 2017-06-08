@@ -1,5 +1,10 @@
 <template>
   <doc-section id="aside" name="Aside">
+    <bs-label>
+      Id Name: Sidebar
+    </bs-label>
+    <hr/>
+
     <div class="bs-example">
       <button class="btn btn-danger btn-lg" @click="showLeft = true">Show Aside on left</button>
       <button class="btn btn-success btn-lg" @click="showRight = true">Show Aside on right</button>
@@ -36,6 +41,8 @@
           <button type="button" class="btn btn-default" @click="showRight=false">Close</button>
         </div>
       </sidebar>
+
+
     </div>
     <doc-code language="markup">
       &lt;sidebar v-model="showRight" placement="right" header="Title" width="350">

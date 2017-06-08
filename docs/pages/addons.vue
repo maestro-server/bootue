@@ -10,7 +10,12 @@
                 <h4>Enhancement your project with new components</h4>
                 <p>
                   This components is not enable by default.
+                  If you like to enable pass id name inside array in option addons.
                 </p>
+                <doc-code language="javascript">
+                  import Bootue from 'Bootue'
+                  Vue.use(Bootue, {addons: ['Sidebar', 'bsSelectCountry']})
+                </doc-code>
               </div>
             </doc-section>
 
@@ -30,6 +35,7 @@
 
 <script>
 import docSection from '../example/utils/docSection.vue'
+import docCode from '../example/utils/docCode.js'
 import asideDocs from '../example/asideDocs.vue'
 import selectCountryDocs from '../example/selectCountryDocs.vue'
 
@@ -39,6 +45,7 @@ import affixSidebar from '../affixSidebar.vue'
 export default {
   components: {
     docSection,
+    docCode,
     affixDocs,
     affixSidebar,
     asideDocs,
