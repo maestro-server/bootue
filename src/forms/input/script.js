@@ -22,7 +22,7 @@ export default {
   },
   data () {
     return {
-      inState: this.state,
+      inState: null,
       inFormType: this.formType,
       constants: {
         SUCCESS: {name: 'success', icon: 'check'},
@@ -41,16 +41,16 @@ export default {
     showIcon () { return this.inState ? this.constants[this.inState.toUpperCase()].icon : null }
   },
   watch: {
-    error: this.setState,
+    error (val) {
+      this.setState(val)
+    },
     value (val) {
       this.bindChanges(val)
     }
   },
   methods: {
     setState (val) {
-      if (val !== null) {
-        this.inState = val ? this.constants.ERROR.name : this.constants.SUCCESS.name
-      }
+      this.inState = val ? this.constants.ERROR.name : this.constants.SUCCESS.name
     },
     attr (value) {
       return ~['', null, undefined].indexOf(value) || value instanceof Function ? null : value
@@ -98,7 +98,10 @@ export default {
     const group = typeof this.$slots.before === 'object' || typeof this.$slots.after === 'object'
 
     this.inFormType = group ? 'group' : this.formType
-    this.setState(this.error)
+
+    if (this.error) {
+      this.setState(this.error)
+    }
   },
   beforeDestroy () {
     if (this._parent) {
