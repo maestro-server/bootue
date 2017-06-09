@@ -3,10 +3,6 @@
     <div class="bs-example">
 
       <navbar :placement="placement" :type="type">
-        <a href="/" title="Home" slot="brand" class="navbar-brand">
-          <img src="dist/imgs/Bootue-logo.png"
-               class="img-reponsive" height="25"/>
-        </a>
         <li>
           <a href="https://github.com/maestro-server/bootue" target="_blank">
             Getting Started
