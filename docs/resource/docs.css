@@ -44,6 +44,19 @@ body {
   position: relative; /* For scrollspy */
 }
 
+.inline{
+  display: inline;
+}
+
+.logotipo {
+  width: 240px;
+}
+
+.logonav {
+  height: 40px;
+  margin: -10px 0 0 10px;
+}
+
 /* Keep code small in tables on account of limited space */
 .table code {
   font-size: 13px;

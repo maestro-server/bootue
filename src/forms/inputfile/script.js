@@ -5,7 +5,7 @@ export default {
   props: {
     clearButton: {type: Boolean, default: true},
     name: {type: String},
-    placeholder: {type: String, default: "Select your profile"},
+    placeholder: {type: String, default: 'Select your profile'},
     label: {type: String, default: null},
     disabled: {type: Boolean, default: false},
     help: {type: String, default: null},
@@ -32,11 +32,11 @@ export default {
   },
 
   computed: {
-    textButton () {return this.text || this.placeholder},
-    input () {return this.$refs.input},
-    showError () {return this.error},
-    showHelp () {return this.help && (!this.showError)},
-    showState () {return this.inState ? `has-${this.inState}` : ''}
+    textButton () { return this.text || this.placeholder },
+    input () { return this.$refs.input },
+    showError () { return this.error },
+    showHelp () { return this.help && (!this.showError) },
+    showState () { return this.inState ? `has-${this.inState}` : '' }
   },
 
   methods: {
@@ -47,9 +47,9 @@ export default {
       this.text = this.val = null
     },
     changeUploadImage (e) {
-      let files = e.target.files || e.dataTransfer.files;
+      let files = e.target.files || e.dataTransfer.files
       if (!files.length) {
-        return;
+        return
       }
 
       this.val = files
@@ -62,10 +62,10 @@ export default {
       switch (this.formType) {
         case 'inline':
           wClass = 'relative inline'
-        break;
+          break
         case 'horizontal':
           wClass = this.horizontalWrapper
-        break;
+          break
         default:
           wClass = 'relative'
       }
@@ -73,7 +73,7 @@ export default {
       return wClass
     },
     labelClass () {
-      return this.formType == "horizontal" ? this.horizontalLabelWrapper : null;
+      return this.formType === 'horizontal' ? this.horizontalLabelWrapper : null
     }
   },
 
@@ -87,7 +87,7 @@ export default {
   },
 
   mounted () {
-    if(this.error) {
+    if (this.error) {
       this.setState(this.error)
     }
   }

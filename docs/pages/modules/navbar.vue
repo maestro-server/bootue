@@ -3,7 +3,7 @@
       <navbar placement="top">
 
         <router-link to="/" slot="brand" class="navbar-brand">
-          <img src="dist/imgs/Bootue-hr.png" height="25"/>
+          <img src="dist/imgs/Bootue-hr.svg" class="logonav"/>
         </router-link>
 
 
