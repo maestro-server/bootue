@@ -2,7 +2,7 @@
 
 # Bootue não é compativel com as versões vue-loader 12.xx, utilize a versão 11.3.4, estamos trabalhando para este suporte
 <p align="center">
-[<img src="https://maestro-server.github.io/bootue/dist/imgs/Bootue-hr.svg" width="200">]
+<img src="https://maestro-server.github.io/bootue/dist/imgs/Bootue-hr.svg" width="200">
 </p>
 
 ## Bootue - Boostrap 3 + Vue = 100% Self Contained Components
