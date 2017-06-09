@@ -77,13 +77,13 @@ export default {
       switch (this.inFormType) {
         case 'group':
           wClass = 'input-group'
-          break;
+          break
         case 'inline':
           wClass = 'relative inline'
-          break;
+          break
         case 'horizontal':
           wClass = this.horizontalWrapper
-          break;
+          break
         default:
           wClass = 'relative'
       }
@@ -91,7 +91,7 @@ export default {
       return wClass
     },
     labelClass () {
-      return this.inFormType === "horizontal" ? this.horizontalLabelWrapper : null;
+      return this.inFormType === 'horizontal' ? this.horizontalLabelWrapper : null
     }
   },
   mounted () {
@@ -99,7 +99,7 @@ export default {
 
     this.inFormType = group ? 'group' : this.formType
 
-    if(this.error) {
+    if (this.error) {
       this.setState(this.error)
     }
   },

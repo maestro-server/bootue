@@ -45,9 +45,9 @@ export default {
     }
   },
   computed: {
-    showError () {return this.error},
-    showHelp () {return this.help && (!this.showError)},
-    showState () {return this.inState ? `has-${this.inState}` : ''},
+    showError () { return this.error },
+    showHelp () { return this.help && (!this.showError) },
+    showState () { return this.inState ? `has-${this.inState}` : '' },
     canSearch () {
       return this.minSearch ? this.list.length >= this.minSearch : this.search
     },
@@ -229,10 +229,10 @@ export default {
       switch (this.formType) {
         case 'inline':
           wClass = 'relative inline'
-        break;
+          break
         case 'horizontal':
           wClass = this.horizontalWrapper
-        break;
+          break
         default:
           wClass = 'relative'
       }
@@ -240,7 +240,7 @@ export default {
       return wClass
     },
     labelClass () {
-      return this.formType == "horizontal" ? this.horizontalLabelWrapper : null;
+      return this.formType === 'horizontal' ? this.horizontalLabelWrapper : null
     }
   },
   created () {
@@ -261,7 +261,7 @@ export default {
     this.val = this.value
     this.checkData()
 
-    if(this.error) {
+    if (this.error) {
       this.setState(this.error)
     }
   },
