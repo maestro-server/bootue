@@ -8,44 +8,64 @@
   <div :class="wrapperClass()">
     <slot name="before"></slot>
 
-    <div ref="select" :class="classes">
-      <div ref="btn" class="form-control dropdown-toggle" tabindex="1" :disabled="disabled || !hasParent" :readonly="readonly"
-           @blur="canSearch ? null : close()"
-           @click="toggle()"
-           @keydown.esc.stop.prevent="close"
-           @keydown.space.stop.prevent="toggle"
-           @keydown.enter.stop.prevent="toggle"
-      >
-        <span class="btn-content" v-html="loading ? 'Loading...' : showPlaceholder || selected"></span>
-        <span v-if="clearButton&&values.length" class="close" @click="clear()">&times;</span>
+    <div :dir="dir" class="dropdown v-select" :class="dropdownClasses">
+      <div ref="toggle" @mousedown.prevent="toggleDropdown"
+           :class="['dropdown-toggle', 'clearfix', {'disabled': disabled}, {'dropdown-single': !multiple}]">
+
+      <span class="selected-tag" v-for="option in valueAsArray" v-bind:key="option.index">
+        <slot name="selected-option" v-bind="option">
+          {{ getOptionLabel(option) }}
+        </slot>
+        <button v-if="multiple" @click="deselect(option)" type="button" class="vclose" aria-label="Remove option">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </span>
+
+        <input
+          ref="search"
+          v-model="search"
+          @keydown.delete="maybeDeleteValue"
+          @keyup.esc="onEscape"
+          @keydown.up.prevent="typeAheadUp"
+          @keydown.down.prevent="typeAheadDown"
+          @keydown.enter.prevent="typeAheadSelect"
+          @blur="onSearchBlur"
+          @focus="onSearchFocus"
+          type="search"
+          :class="[{'disabled': disabled}, 'form-control']"
+          :placeholder="searchPlaceholder"
+          :readonly="!searchable"
+          :style="{ width: isValueEmpty ? '100%' : 'auto' }"
+          :id="inputId"
+          aria-label="Search for option"
+        >
+
+        <i v-if="!noDrop" ref="openIndicator" role="presentation"
+           :class="[{'disabled': disabled}, 'open-indicator']"></i>
+
+        <slot name="spinner">
+          <div class="spinner" v-show="mutableLoading">Loading...</div>
+        </slot>
       </div>
-      <select ref="sel" v-model="val" :name="name" class="secret" :multiple="multiple" :required="required" :readonly="readonly" :disabled="disabled">
-        <option v-if="required" value=""></option>
-        <option v-for="option in list" :value="option[optionsValue]">{{ option[optionsLabel] }}</option>
-      </select>
-      <ul class="dropdown-menu">
-        <template v-if="list.length">
-          <li v-if="canSearch" class="bs-searchbox">
-            <input type="text" :placeholder="searchText" class="form-control" autocomplete="off" ref="search"
-                   v-model="searchValue"
-                   @keyup.esc="close"
-            />
-            <span v-show="searchValue" class="close" @click="clearSearch">&times;</span>
-          </li>
-          <li v-if="required&&!clearButton"><a @mousedown.prevent="clear() && close()">{{ placeholder }}</a></li>
-          <li v-for="option in filteredOptions" :id="option[optionsValue]">
-            <a @mousedown.prevent="select(option[optionsValue])">
-              <span v-html="option[optionsLabel]"></span>
-              <span class="fa fa-check check-mark" v-show="isSelected(option[optionsValue])"></span>
+
+      <transition :name="transition">
+        <ul ref="dropdownMenu" v-if="dropdownOpen" class="dropdown-menu" :style="{ 'max-height': maxHeight }">
+          <li v-for="(option, index) in filteredOptions" v-bind:key="index"
+              :class="{ active: isOptionSelected(option), highlight: index === typeAheadPointer }"
+              @mouseover="typeAheadPointer = index">
+            <a @mousedown.prevent="select(option)">
+              <slot name="option" v-bind="option">
+                {{ getOptionLabel(option) }}
+              </slot>
             </a>
           </li>
-        </template>
-        <slot></slot>
-        <transition v-if="notify && !closeOnSelect" name="fadein"><div class="notify in">Limit reached ({{limit}} items max).</div></transition>
-      </ul>
-      <transition v-if="notify && closeOnSelect" name="fadein"><div class="notify out"><div>{{limitText}}</div></div></transition>
-      <!-- <pre>Options: {{list}}</pre> -->
+          <li v-if="!filteredOptions.length" class="no-options">
+            <slot name="no-options">Sorry, no matching options.</slot>
+          </li>
+        </ul>
+      </transition>
     </div>
+
 
     <slot name="after"></slot>
 

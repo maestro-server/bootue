@@ -1,6 +1,5 @@
 [![Code Climate](https://codeclimate.com/github/maestro-server/bootue/badges/gpa.svg)](https://codeclimate.com/github/maestro-server/bootue) [![Build Status](https://travis-ci.org/maestro-server/bootue.svg?branch=master)](https://travis-ci.org/maestro-server/bootue) [![Issue Count](https://codeclimate.com/github/maestro-server/bootue/badges/issue_count.svg)](https://codeclimate.com/github/maestro-server/bootue) [![david-dm.org](https://david-dm.org/maestro-server/bootue.svg)](https://david-dm.org/) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/336961c7b6d84424885355549300095f)](https://www.codacy.com/app/Signorini/bootue?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=maestro-server/bootue&amp;utm_campaign=Badge_Grade)
 
-# Bootue is not compatible with vue-loader 12.xx or higher, please use 11.3.4 or less, working in progress, thanks
 <p align="center">
 <img src="https://maestro-server.github.io/bootue/dist/imgs/Bootue-hr.svg?v1.1" width="200">
 </p>
@@ -10,6 +9,7 @@
 - **No boostrap.css, bootstrap.js, jQuery, or any 3rd party plugins required.**
 - **Really, its full Stand Lone library.**
 
+
 ### About
 The goal of project is provide a easy way to organize, customize, and incorporate all elements of your's project. For this we organize all elements into self contained components, splitting all variables and codes put into each folder, each component have yours variables, events, styles and more. Bootue its group of elements components self contained, organized, with multiple featured to incorporate and using in any SPA project.
 
@@ -18,6 +18,10 @@ Bootue make simple way to extends and modify boostrap variables, effects and fea
  * Vue-Cli - (browserify or webpack)
  * Node - Sass (vue-loader-sass)
  * Setup webpack to make url-loader for fonts (font-awesome)
+
+ **
+ EDIT: After some feedbacks, we decide to use bootue only for Maestro Server, in outhers words, all support and new features will be create if ought to be a necessity in Maestro Servers goals
+ **
 
 ### Let's started
 First all bootue is build using vue-cli system, you need to install and setup a vueify (browserify) or vue-loader(webpack) env, Install Vue Cli, you maybe use webpack or browserfy.
@@ -112,8 +116,8 @@ module: {
 },
 ```
 
-### Import bootue system into your project (recomended)
-We recommend to download all components files and import inside to project, remember the goal is transfer all power to select, customize and extends to any scss parts to project. In deep, bootue is a reorganized boostrap splitting code, her have **SCSS Components**, **Js Components** and **Hybrid Components.**
+### Import bootue system into your project
+If you prefer, maybe to import all components files and import inside to project, remember the goal is transfer all power to select, customize and extends to any scss parts to project. In deep, bootue is a reorganized boostrap splitting code, her have **SCSS Components**, **Js Components** and **Hybrid Components.**
 
 ```markup
 //strutucture folder to generic vue 2 project
@@ -124,9 +128,9 @@ We recommend to download all components files and import inside to project, reme
     - contact
   - bootue
     - _core
+      - typography // all scss components need to be inside _code folder
+      - utilities
     - grids
-    - typography
-    - utilities
     - index.js // use to make import components easy
 ```
 We import bootue components aside page's project, the ideia its full integration scss rules into project.

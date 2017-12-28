@@ -1,0 +1,30 @@
+
+@import '../../_core/variables'; // base colors
+
+//== Alerts
+//
+//## Define alert colors, border radius, and padding.
+
+$displayer-padding: 15px !default;
+$displayer-border-radius: $border-radius-base !default;
+$displayer-link-font-weight: bold !default;
+
+$displayer-success-bg: $brand-success !default;
+$displayer-success-text: $state-success-text !default;
+$displayer-success-border: $state-success-border !default;
+
+$displayer-info-bg: $brand-info !default;
+$displayer-info-text: $state-info-text !default;
+$displayer-info-border: $state-info-border !default;
+
+$displayer-warning-bg: $brand-warning !default;
+$displayer-warning-text: $state-warning-text !default;
+$displayer-warning-border: $state-warning-border !default;
+
+$displayer-danger-bg: $brand-danger !default;
+$displayer-danger-text: $state-danger-text !default;
+$displayer-danger-border: $state-danger-border !default;
+
+$displayer-primary-bg: $brand-primary !default;
+$displayer-primary-text: $state-danger-text !default;
+$displayer-primary-border: $state-danger-border !default;

@@ -12,7 +12,6 @@ import footerDocs from './pages/modules/footer.vue'
 import Home from './pages/home.vue'
 import Components from './pages/components.vue'
 import Forms from './pages/forms.vue'
-import Addons from './pages/addons.vue'
 import Started from './pages/started.vue'
 import Css from './pages/css.vue'
 import Structured from './pages/structured.vue'
@@ -23,7 +22,6 @@ const routes = [
   { path: '/started', component: Started },
   { path: '/components', component: Components },
   { path: '/forms-components', component: Forms },
-  { path: '/addons', component: Addons },
   { path: '/css', component: Css },
   { path: '/structured', component: Structured },
   { path: '/extend', component: Extend }

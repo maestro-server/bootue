@@ -9,10 +9,13 @@
               <img src="dist/imgs/bird-white.svg" class="img-responsive-center logotipo"/>
           </div>
 
-
-          <p class="col-xs-12 text-center mt20"><a target="_blank" class="white" href="http://getbootstrap.com/">100% Bootstrap components</a> built with <a target="_blank" class="white" href="http://vuejs.org/">Vue 2</a>.</p>
+          <p class="col-xs-12 text-center mt20">
+            <a target="_blank" class="white" href="http://getbootstrap.com/">100% Bootstrap components</a> built with <a target="_blank" class="white" href="http://vuejs.org/">Vue 2</a>.</p>
           <p class="col-xs-12 text-center mt10">No boostrap.css, bootstrap.js, jQuery, or any 3rd party plugins required.</p>
-          <p class="col-xs-12 text-center mt10">Really, its full Stand Lone library.</p>
+          <p class="col-xs-12 text-center mt10">Really, its full StandLone library.</p>
+
+          <p class="col-xs-12 text-center mt10"><b>We decide to put this project in production only for Maestro Server,
+            it's a big project for orchestration servers envs.</b></p>
 
           <p class="col-xs-12 text-center mt20">
             <router-link to="/started"  class="btn btn-call btn-lg">

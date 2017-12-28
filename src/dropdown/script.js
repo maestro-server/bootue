@@ -17,7 +17,7 @@ export default {
 
   computed: {
     buttonSize () { return ~['lg', 'sm', 'xs'].indexOf(this.size) ? 'btn-' + this.size : '' },
-    inInput () { return this.$parent.inFormType },
+    inInput () { return this.$parent._input },
     isLi () { return this.$parent._isTabs || this.$parent._navbar || this.$parent.menu },
     menu () { return !this.$parent || this.$parent.navbar },
     slots () { return this._slotContents },

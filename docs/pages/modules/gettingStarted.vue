@@ -14,6 +14,9 @@
           to you using party of outhers frameworks together with boostrap components,
           create a new one or using only elements that you need.
         </p>
+        <p class="alert-danger alert">
+          EDIT: After some feedbacks, we decide to use bootue only for Maestro Server, in outhers words, all support and new features will be create if ought to be a necessity in Maestro Servers goals
+        </p>
       </div>
       <h3 class="text-center">We organize and structure a new set of boostrap's element, <br/>and create more new elements.
       </h3>
@@ -207,6 +210,11 @@
           <hr/>
           <p>And updates? Come on, you execute a update your bootstrap frequently? Boostrap 3 update frequently?
 The risk exist, bootue needs to bug fix, him will update, for this situation you need to copy and paste parcially, yes its not a best situation, but in moment its acceptable.</p>
+
+          <div class="well">
+            <code>After several tests and using bootue em some production envs, i decide to change the strategy, is better to use bootue behide npm, DONT need to import inside of project.</code>
+          </div>
+
         </div>
       </div>
     </doc-section>

@@ -39,11 +39,11 @@ export default {
         if (options.fixed) { this.fixed = options.fixed }
       }
       // block scrolling when spinner is on
-      this._body.style.overflowY = 'hidden'
+      // this._body.style.overflowY = 'hidden'
       // activate spinner
       this._started = new Date()
       this.active = true
-      this.locked = true
+
       this._unlock()
     }
   },
@@ -74,6 +74,5 @@ export default {
       delete this.$root._globalSpinner
     }
     clearTimeout(this._spinnerAnimation)
-    this._body.style.overflowY = this._bodyOverflow
   }
 }

@@ -122,6 +122,14 @@
         <p>A callback function when you hit on an item. Must return the value to asign to the input after selecting.</p>
       </div>
       <div>
+        <p>on-search</p>
+        <p><code>Function</code></p>
+        <p><code>function(url, val, key){ return url }</code></p>
+        <p>A callback function using before send url, normally used for dynamic format.</p>
+      </div>
+
+      onSearch
+      <div>
         <p>type</p>
         <p><code>String</code></p>
         <p><code>text</code></p>

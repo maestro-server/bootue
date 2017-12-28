@@ -32,8 +32,12 @@
 
             <spinner-docs></spinner-docs>
             <tabs-docs></tabs-docs>
+            <table-docs></table-docs>
             <tooltip-docs></tooltip-docs>
             <well-docs></well-docs>
+
+            <aside-docs></aside-docs>
+            <select-country-docs></select-country-docs>
           </div>
           <div class="col-md-3">
             <affix-sidebar></affix-sidebar>
@@ -67,8 +71,12 @@ import spinnerDocs from '../example/spinnerDocs.vue'
 import tabsDocs from '../example/tabsDocs.vue'
 import tooltipDocs from '../example/tooltipDocs.vue'
 
-
 import wellDocs from '../example/wellDocs.vue'
+
+import asideDocs from '../example/asideDocs.vue'
+import selectCountryDocs from '../example/selectCountryDocs.vue'
+
+import tableDocs from '../example/tableDocs.vue'
 
 
 export default {
@@ -89,8 +97,11 @@ export default {
     progressbarDocs,
     spinnerDocs,
     tabsDocs,
+    tableDocs,
     tooltipDocs,
-    wellDocs
+    wellDocs,
+    asideDocs,
+    selectCountryDocs
   },
   computed: {
     local () { return location.hostname === 'localhost' }

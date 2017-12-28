@@ -18,6 +18,9 @@
       <p>
         Bootstrap have a fantastic structure system to customize variables, exist only one file to change all colors.</p>
       <h5>The path is <code>_core/_variables/_colors.scss</code></h5>
+      <p class="alert-danger">
+        Because of hot loader Vue (version 12.xx) all SCSS components need to be inside _core
+      </p>
 
       <doc-code language="css">
         // We have a basics colors, pehaps its a good place to put more news colors.

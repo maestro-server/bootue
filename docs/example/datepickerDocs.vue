@@ -5,9 +5,6 @@
         <pre>Selected date is: {{dateString}}</pre>
       </p>
       <bs-datepicker ref="dp" v-model="date" :disabled-days-of-week="disabled" :format="format" :clear-button="clear" :placeholder="placeholder" width="370px"></bs-datepicker>
-      <h4>Disabled days of week</h4>
-
-      <bs-select multiple v-model="disabled" :options="[0,1,2,3,4,5,6]"></bs-select>
 
       <h4>Format</h4>
       <bs-select v-model="format" :options="formats"></bs-select>

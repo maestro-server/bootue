@@ -1,5 +1,4 @@
 import Components from './src/index'
-import Addons from './addons/index'
 
 function callerComp (Vue, Comps, enable = false) {
   for (let key in Comps) {
@@ -9,15 +8,9 @@ function callerComp (Vue, Comps, enable = false) {
   }
 }
 
-function plugin (Vue, options = {}) {
+function plugin (Vue) {
   if (plugin.installed) return
-
-  const enable = options.hasOwnProperty("addons") ? options.addons : []
-
   callerComp(Vue, Components)
-  callerComp(Vue, Addons, enable)
 }
-
-
 
 export default plugin

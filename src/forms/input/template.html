@@ -36,6 +36,8 @@
 
     <div v-if="showHelp" class="help-block relative" @click="focus">{{help}}</div>
     <div v-if="showError" class="help-block with-errors relative" @click="focus">{{error}}</div>
+
+    <slot name="dropper"></slot>
   </div>
 
 </div>

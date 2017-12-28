@@ -14,6 +14,7 @@
     ],
     "extends": "standard",
     "rules": {
+        "curly": 0,
         "linebreak-style": [
             2,
             "unix"
@@ -31,7 +32,7 @@
         "no-undef": 0, // disallow use of undeclared variables unless mentioned in a /*global */ block
         "no-undef-init": 2, // disallow use of undefined when initializing variables
         "no-unused-vars": ["error", { "vars": "local", "args": "after-used" }], // disallow declaration of variables that are not used in the code
-        "no-use-before-define": 2, // disallow use of variables before they are defined
+        "no-use-before-define": 0, // disallow use of variables before they are defined
         "complexity": 0, // specify the maximum cyclomatic complexity allowed in a program (off by default)
 
         "no-var": 2, // require let or const instead of var (off by default)
@@ -48,7 +49,10 @@
         "padded-blocks": 0,
         "arrow-parens": 0,
         "generator-star-spacing": 0,
-        "no-console": 0
+        "no-console": 0,
+        "no-return-assign": 0,
+        "no-extra-bind": 0,
+        "no-useless-escape": 0
     }
 
 }
