@@ -37,7 +37,6 @@ import './typography/font-awesome/FontAwesome.vue'
 import './typography/font-maestro/FontMaestro.vue'
 import well from './wells/Wells.vue'
 
-import SpreadTables from './tables/'
 import SpreadButtons from './buttons/'
 import SpreadForms from './forms/'
 
@@ -70,6 +69,6 @@ let components = {
   well
 }
 
-components = Object.assign(components, SpreadButtons, SpreadForms, SpreadTables)
+components = Object.assign(components, SpreadButtons, SpreadForms)
 
 export default components
