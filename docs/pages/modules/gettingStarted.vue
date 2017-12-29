@@ -114,17 +114,6 @@
         var alert = require('bootue/src/alert').default;
       </doc-code>
       <hr/>
-      <h4>Addons</h4>
-      <p>if you like to use new addons components you maybe call with option 'addons'</p>
-      <doc-code language="javascript">
-        import Bootue from 'Bootue'
-        Vue.use(Bootue, {addons: ['Sidebar', 'bsSelectCountry']})
-
-        // enable two components, sidebar and select country form.
-      </doc-code>
-      <p>See the complete list of addons components <router-link to="/addons">here</router-link>.</p>
-
-      <hr/>
       <h4>Webpack Env - Font Awesome</h4>
       <p>Some components using font-awesome icons (font-awesome is optional), if you like to use this font, you have to setup webpack to correctly load.</p>
 
