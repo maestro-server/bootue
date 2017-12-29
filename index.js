@@ -1,4 +1,5 @@
 import Components from './src/index'
+import {ServerTable, ClientTable} from 'maestro-vue-tables-2'
 
 function callerComp (Vue, Comps, enable = false) {
   for (let key in Comps) {
@@ -6,6 +7,9 @@ function callerComp (Vue, Comps, enable = false) {
       Vue.component(key, Comps[key])
     }
   }
+
+  Vue.use(ServerTable, {})
+  Vue.use(ClientTable, {})
 }
 
 function plugin (Vue) {
