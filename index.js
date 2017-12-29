@@ -1,11 +1,9 @@
 import Components from './src/index'
-import {ServerTable, ClientTable} from 'maestro-vue-tables-2'
+import { ServerTable, ClientTable } from 'maestro-vue-tables-2'
 
-function callerComp (Vue, Comps, enable = false) {
+function callerComp (Vue, Comps) {
   for (let key in Comps) {
-    if (key.indexOf(enable) || !enable) {
-      Vue.component(key, Comps[key])
-    }
+    Vue.component(key, Comps[key])
   }
 
   Vue.use(ServerTable, {})
