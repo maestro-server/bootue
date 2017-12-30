@@ -32,7 +32,7 @@ const router = new VueRouter({
 })
 
 Vue.use(VueRouter)
-Vue.use(Bootue, {addons: ['Sidebar', 'bsSelectCountry']})
+Vue.use(Bootue)
 
 new Vue({
   el: '#app',

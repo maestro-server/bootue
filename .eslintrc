@@ -52,7 +52,8 @@
         "no-console": 0,
         "no-return-assign": 0,
         "no-extra-bind": 0,
-        "no-useless-escape": 0
+        "no-useless-escape": 0,
+        "no-unused-expressions": 0
     }
 
 }

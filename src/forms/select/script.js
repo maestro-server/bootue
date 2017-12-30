@@ -361,7 +361,7 @@ export default {
       if (this.multiple) {
         let ref = -1
         this.mutableValue.forEach((val) => {
-          if (val === option || typeof val === 'object' && val[this.optionsLabel] === option[this.optionsLabel]) {
+          if (val === option || (typeof val === 'object' && val[this.optionsLabel]) === option[this.optionsLabel]) {
             ref = val
           }
         })

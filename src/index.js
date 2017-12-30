@@ -1,4 +1,4 @@
-import './_core/Core.vue'
+import bootue from './_core/Bootue.vue'
 import './utilities/Utilities.vue'
 
 import accordion from './accordion/Accordion.vue'
@@ -41,6 +41,7 @@ import SpreadButtons from './buttons/'
 import SpreadForms from './forms/'
 
 let components = {
+  bootue,
   accordion,
   affix,
   alert,
