@@ -118,7 +118,7 @@
     },
     data () {
       return {
-        url: 'http://localhost:8080/table.json',
+        url: '//localhost:8080/table.json',
         columns: ['color', 'value'],
         options: {
           filterable: ['color', 'value'],
