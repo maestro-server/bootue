@@ -11,7 +11,8 @@ export default {
     small: {type: Boolean, default: false},
     title: {type: String, default: ''},
     value: {type: Boolean, required: true},
-    width: {default: null}
+    width: {default: null},
+    subModal: {type: Boolean, default: false}
   },
   data () {
     return {
@@ -51,7 +52,9 @@ export default {
         if (!this.val) {
           el.style.display = 'none'
           body.style.paddingRight = null
-          body.classList.remove('modal-open')
+          if (!this.subModal) {
+            body.classList.remove('modal-open')
+          }
         }
       }
     },

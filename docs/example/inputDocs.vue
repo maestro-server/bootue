@@ -248,6 +248,12 @@
         <p>Style input, maybe text, textarea, email, password and more</p>
       </div>
       <div>
+        <p>Sub-modal</p>
+        <p><code>Boolean</code></p>
+        <p><code>false</code></p>
+        <p>Put the modal inside another modal</p>
+      </div>
+      <div>
         <p>form-type</p>
         <p><code>String (<code>inline</code>|<code>horizontal</code>)</code></p>
         <p><code>null</code></p>

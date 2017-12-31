@@ -49,7 +49,7 @@
                 <bs-form-validator v-model="valid.direction">
                   <div class="form-validator">
                     <label class="control-label">Continent</label>
-                    <bs-select required justified :options="['America','Europe']" clear-button></bs-select>
+                    <bs-select :options="['America','Europe']" clear-button></bs-select>
                   </div>
                   <bs-input label="City" type="text" required></bs-input>
                 </bs-form-validator>
@@ -75,7 +75,7 @@
                 &lt;form-validator @isvalid="valid.direction = arguments[0]">
                   &lt;div class="form-validator">
                     &lt;label class="control-label">Continent&lt;/label>
-                    &lt;bs-select required justified :options="['America','Europe']" clear-button>&lt;/bs-select>
+                    &lt;bs-select required :options="['America','Europe']" clear-button>&lt;/bs-select>
                   &lt;/div>
                   &lt;bs-input label="City" type="text" required>&lt;/bs-input>
                 &lt;/form-validator>

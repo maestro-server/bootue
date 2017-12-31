@@ -1,12 +1,12 @@
 <template>
   <doc-section id="select" name="Select">
-    <p>Based in a <a target="_blank" href="https://silviomoreto.github.io/bootstrap-select/">bootstrap-select</a> implementation.</p>
+    <p>Based in a <a target="_blank" href="http://sagalbot.github.io/vue-select/">sagalbot vue-select</a> implementation.</p>
     <div class="bs-example">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <p><pre>Normal select data: {{select.normal}}</pre></p>
           <form action="./#select" method="get">
-            <bs-select :options="select.options" options-value="val" v-model="select.normal" name="animal" :search="select.search"
+            <bs-select :options="select.options" v-model="select.normal" name="animal" :search="select.search"
               :required="select.required" :clear-button="select.clearButton" :disabled="select.disabled"
               :placeholder="select.placeholder?'Using placeholder':null"
             ></bs-select>
@@ -16,8 +16,8 @@
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <p><pre>Multiple select data : {{select.multiple.join(',')}}</pre></p>
           <form action="./#select" method="get">
-            <bs-select :options="select.options" options-value="val" v-model="select.multiple" name="animals[]" :search="select.search"
-              multiple :required="select.required" :clear-button="select.clearButton"
+            <bs-select :options="select.options" v-model="select.multiple" name="animals[]" :search="select.search"
+              multiple
               :placeholder="select.placeholder?'Using placeholder':null"
               :close-on-select="select.closeOnSelect" :limit="select.limit?3:1024" :disabled="select.disabled"
             ></bs-select>
@@ -46,10 +46,10 @@
         </div>
       <doc-code>
         &lt;form action="./#select" method="get">
-          &lt;bs-select v-model="select.value" :options="select.options" options-value="val"
+          &lt;bs-select v-model="select.value" :options="select.options"
             multiple name="animals[]" limit="3"
             placeholder="Using placeholder"
-            search justified required disabled
+            search required disabled
             clear-button close-on-select
           >&lt;/bs-select>
           &lt;button type="submit" class="btn btn-default">Submit form&lt;/button>
@@ -57,35 +57,17 @@
       </doc-code>
       <doc-code language="javascript">
         options: [
-          {val: 0, label: 'Cat'},
-          {val: 1, label: 'Cow'},
-          {val: 2, label: 'Dog'},
-          {val: 3, label: 'Elephant'},
-          {val: 4, label: 'Fish'},
-          {val: 5, label: 'Lion'},
-          {val: 6, label: 'Tiger'},
-          {val: 7, label: 'Turtle'}
+          {value: "Cat", cpm: 'va1'},
+          {value: "Cow", cpm: 'va2'},
+          {value: "Dog", cpm: 'va3'},
+          {value: "Elephant", cpm: 'va4'},
+          {value: "Fish", cpm: 'va5'},
+          {value: "Lion", cpm: 'va6'},
+          {value: "Tiger", cpm: 'va7'},
+          {value: "Turtle", cpm: 'va8'}
         ]
       </doc-code>
-      <h4>Select with option component:</h4>
-      <p><pre>Selected data : {{single}}</pre></p>
-      <bs-select v-model="single">
-        <bs-option value="apple">Apple</bs-option>
-        <bs-option value="banana">Banana</bs-option>
-        <bs-option value="cherry">Cherry</bs-option>
-        <bs-option value="orange">Orange</bs-option>
-        <bs-option value="grape">Grape</bs-option>
-      </bs-select>
-      <doc-code>
-        &lt;bs-select>
-          &lt;bs-option value="apple">Apple&lt;/bs-option>
-          &lt;bs-option value="banana">Banana&lt;/bs-option>
-          &lt;bs-option value="cherry">Cherry&lt;/bs-option>
-          &lt;bs-option value="orange">Orange&lt;/bs-option>
-          &lt;bs-option value="grape">Grape&lt;/bs-option>
-        &lt;/bs-select>
-      </doc-code>
-      
+
     </div>
     <doc-table>
       <div>
@@ -117,18 +99,6 @@
         <p><code>Number</code></p>
         <p><code>0</code></p>
         <p>If defined, the searchbox is disabled if are less than the minimum value you set.</p>
-      </div>
-      <div>
-        <p>options-label</p>
-        <p><code>String</code></p>
-        <p><code>label</code></p>
-        <p>Define the value in the data used as label.</p>
-      </div>
-      <div>
-        <p>options-value</p>
-        <p><code>String</code></p>
-        <p><code>value</code></p>
-        <p>Define the value in the data used as value.</p>
       </div>
       <div>
         <p>placeholder</p>
@@ -176,6 +146,7 @@ export default {
   data () {
     return {
       select: {
+        normal: false,
         clearButton: false,
         closeOnSelect: false,
         disabled: false,
@@ -183,14 +154,14 @@ export default {
         limit: false,
         multiple: [],
         options: [
-          {val: 0, label: 'Cat'},
-          {val: 1, label: 'Cow'},
-          {val: 2, label: 'Dog'},
-          {val: 3, label: 'Elephant'},
-          {val: 4, label: 'Fish'},
-          {val: 5, label: 'Lion'},
-          {val: 6, label: 'Tiger'},
-          {val: 7, label: 'Turtle'}
+          {value: "Cat", cpm: 'va1'},
+          {value: "Cow", cpm: 'va2'},
+          {value: "Dog", cpm: 'va3'},
+          {value: "Elephant", cpm: 'va4'},
+          {value: "Fish", cpm: 'va5'},
+          {value: "Lion", cpm: 'va6'},
+          {value: "Tiger", cpm: 'va7'},
+          {value: "Turtle", cpm: 'va8'}
         ],
         placeholder: true,
         required: false,

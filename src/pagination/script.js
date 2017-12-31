@@ -27,10 +27,6 @@ export default {
     changePage (n) {
       this.$emit('changePage', n)
       this.curr = n
-    },
-
-    sizeClass () {
-      return `pagination-${this.size}`
     }
   }
 }

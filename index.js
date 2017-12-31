@@ -1,23 +1,18 @@
 import Components from './src/index'
-import Addons from './addons/index'
+import { ServerTable, ClientTable } from 'maestro-vue-tables-2'
 
-function callerComp (Vue, Comps, enable = false) {
+function callerComp (Vue, Comps) {
   for (let key in Comps) {
-    if (key.indexOf(enable) || !enable) {
-      Vue.component(key, Comps[key])
-    }
+    Vue.component(key, Comps[key])
   }
+
+  Vue.use(ServerTable, {})
+  Vue.use(ClientTable, {})
 }
 
-function plugin (Vue, options = {}) {
+function plugin (Vue) {
   if (plugin.installed) return
-
-  const enable = options.hasOwnProperty("addons") ? options.addons : []
-
   callerComp(Vue, Components)
-  callerComp(Vue, Addons, enable)
 }
-
-
 
 export default plugin

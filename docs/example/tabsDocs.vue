@@ -2,7 +2,7 @@
   <doc-section id="tabs" name="Tabs">
     <div class="bs-example">
       <p>Style: <bs-select v-model="navStyle" :options="['tabs','pills','stacked']"></bs-select></p>
-      <p v-if="navStyle!='stacked'">Justified: <bs-select v-model="justified" :options="[true,false]"></bs-select></p>
+      <p v-if="navStyle!='stacked'">Justified: <bs-select v-model="justified" :options="['true','false']"></bs-select></p>
       <!-- <bs-checkbox v-model="justified">Justified</bs-checkbox> -->
       <tabs :nav-style="navStyle" :justified="justified">
         <tab header="zero">

@@ -50,7 +50,16 @@ export default {
   },
   methods: {
     setState (val) {
-      this.inState = val ? this.constants.ERROR.name : this.constants.SUCCESS.name
+      this.inState = this.logicState(val) || false;
+    },
+    logicState (val) {
+      if (val) {
+        return this.constants.ERROR.name
+      }
+
+      if (!val && this.value) {
+        return this.constants.SUCCESS.name
+      }
     },
     attr (value) {
       return ~['', null, undefined].indexOf(value) || value instanceof Function ? null : value
@@ -77,13 +86,13 @@ export default {
       switch (this.inFormType) {
         case 'group':
           wClass = 'input-group'
-          break
+          break;
         case 'inline':
           wClass = 'relative inline'
-          break
+          break;
         case 'horizontal':
           wClass = this.horizontalWrapper
-          break
+          break;
         default:
           wClass = 'relative'
       }
@@ -91,7 +100,7 @@ export default {
       return wClass
     },
     labelClass () {
-      return this.inFormType === 'horizontal' ? this.horizontalLabelWrapper : null
+      return this.inFormType === "horizontal" ? this.horizontalLabelWrapper : null;
     }
   },
   mounted () {

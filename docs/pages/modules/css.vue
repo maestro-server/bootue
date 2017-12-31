@@ -10,17 +10,21 @@
           Bootstrap is huge, and sometimes its only style rules, for this we create SCSS Components, components with only scss codes, for theses you dont need to instance, only import.
         </p>
         <code>You can use all power of boostrap, and create new rules in organized way.</code>
+
+        <hr>
+
+        <div class="well">
+          <code>Because of hot loader Vue (version 12.xx) all SCSS components need to be inside _core, and imported manually.</code>
+        </div>
+
         <hr/>
 
         <doc-code language="JavaScript">
-          import './bootue/bootue/tables.vue';
-          // or
-          require('bootue/bootue/tables');
-          // this code import all table's styles
+          import './bootue/_core/components/Tables.scss';
 
-          import './bootue/bootue/grid.vue';
-          import './bootue/bootue/utilities.vue';
-          import './bootue/bootue/list.vue';
+          import './bootue/_core/components/grid/Grid.scss';
+          import './bootue/_core/components/utilities/Utilities.scss';
+          import './bootue/_core/components/list/List.scss';
         </doc-code>
 
 

@@ -1,0 +1,34 @@
+<div>
+  <bs-input
+    :label="label"
+    :form-type="formType"
+    :horizontalWrapper="horizontalWrapper"
+    :horizontalLabelWrapper="horizontalLabelWrapper"
+    autocomplete="off"
+    v-model="val"
+    :placeholder="placeholder"
+    :type.once="type"
+    @blur="showDropdown = false"
+    @keydown.down="down"
+    @keydown.enter="hit"
+    @keydown.esc="reset"
+    @keydown.up="up"
+  >
+
+    <template slot="dropper">
+      <div style="position: relative" :class="{open:showDropdown}">
+        <ul class="dropdown-menu" ref="dropdown" style="position: absolute ">
+          <li v-for="(item, i) in items" :class="{active: isActive(i)}">
+            <a @mousedown.prevent="hit" @mousemove="setActive(i)">
+              <component :is="templateComp" :item="item"></component>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </template>
+
+  </bs-input>
+
+
+
+</div>

@@ -49,6 +49,13 @@ export default {
     },
     disabledDaysArray () {
       return this.disabledDaysOfWeek.map(d => parseInt(d, 10))
+    },
+    setupRange () {
+      return {
+        year: this.currDate.getFullYear(),
+        month: this.currDate.getMonth(),
+        day: this.currDate.getDate()
+      }
     }
   },
   methods: {
@@ -186,12 +193,7 @@ export default {
     getDateRange () {
       this.dateRange = []
       this.decadeRange = []
-      const time = {
-        year: this.currDate.getFullYear(),
-        month: this.currDate.getMonth(),
-        day: this.currDate.getDate()
-      }
-      const yearStr = time.year.toString()
+      const yearStr = this.setupRange.year.toString()
       const firstYearOfDecade = (yearStr.substring(0, yearStr.length - 1) + 0) - 1
       for (let i = 0; i < 12; i++) {
         this.decadeRange.push({
@@ -199,17 +201,39 @@ export default {
         })
       }
 
-      const currMonthFirstDay = new Date(time.year, time.month, 1)
+      this.rangeMajor1()
+      this.mountCalendar()
+      this.rangeLength42()
+    },
+    firstDay () {
+      const currMonthFirstDay = new Date(this.setupRange.year, this.setupRange.month, 1)
       let firstDayWeek = currMonthFirstDay.getDay() + 1
       if (firstDayWeek === 0) {
         firstDayWeek = 7
       }
-      const dayCount = this.getDayCount(time.year, time.month)
-      if (firstDayWeek > 1) {
-        const preMonth = this.getYearMonth(time.year, time.month - 1)
+      return firstDayWeek
+    },
+    mountCalendar () {
+      const dayCount = this.getDayCount(this.setupRange.year, this.setupRange.month)
+
+      for (let i = 1; i <= dayCount; i++) {
+        const date = new Date(this.setupRange.year, this.setupRange.month, i)
+        let sclass = ''
+        if (this.disabledDaysArray.indexOf(date.getDay()) > -1) {
+          sclass = 'datepicker-item-disable'
+        }
+        if (i === this.setupRange.day && date.getFullYear() === this.setupRange.year && date.getMonth() === this.setupRange.month) {
+          sclass = 'datepicker-dateRange-item-active'
+        }
+        this.dateRange.push({text: i, date, sclass})
+      }
+    },
+    rangeMajor1 () {
+      if (this.firstDay() > 1) {
+        const preMonth = this.getYearMonth(this.setupRange.year, this.setupRange.month - 1)
         const prevMonthDayCount = this.getDayCount(preMonth.year, preMonth.month)
-        for (let i = 1; i < firstDayWeek; i++) {
-          const dayText = prevMonthDayCount - firstDayWeek + i + 1
+        for (let i = 1; i < this.firstDay(); i++) {
+          const dayText = prevMonthDayCount - this.firstDay() + i + 1
           const date = new Date(preMonth.year, preMonth.month, dayText)
           let sclass = 'datepicker-item-gray'
           if (this.disabledDaysArray.indexOf(date.getDay()) > -1) {
@@ -218,22 +242,11 @@ export default {
           this.dateRange.push({ text: dayText, date, sclass })
         }
       }
-
-      for (let i = 1; i <= dayCount; i++) {
-        const date = new Date(time.year, time.month, i)
-        let sclass = ''
-        if (this.disabledDaysArray.indexOf(date.getDay()) > -1) {
-          sclass = 'datepicker-item-disable'
-        }
-        if (i === time.day && date.getFullYear() === time.year && date.getMonth() === time.month) {
-          sclass = 'datepicker-dateRange-item-active'
-        }
-        this.dateRange.push({text: i, date, sclass})
-      }
-
+    },
+    rangeLength42 () {
       if (this.dateRange.length < 42) {
         const nextMonthNeed = 42 - this.dateRange.length
-        const nextMonth = this.getYearMonth(time.year, time.month + 1)
+        const nextMonth = this.getYearMonth(this.setupRange.year, this.setupRange.month + 1)
 
         for (let i = 1; i <= nextMonthNeed; i++) {
           const date = new Date(nextMonth.year, nextMonth.month, i)

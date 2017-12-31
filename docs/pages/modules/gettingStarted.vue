@@ -14,6 +14,9 @@
           to you using party of outhers frameworks together with boostrap components,
           create a new one or using only elements that you need.
         </p>
+        <p class="alert-danger alert">
+          EDIT: After some feedbacks, we decide to use bootue only for Maestro Server, in outhers words, all support and new features will be create if ought to be a necessity in Maestro Servers goals
+        </p>
       </div>
       <h3 class="text-center">We organize and structure a new set of boostrap's element, <br/>and create more new elements.
       </h3>
@@ -111,17 +114,6 @@
         var alert = require('bootue/src/alert').default;
       </doc-code>
       <hr/>
-      <h4>Addons</h4>
-      <p>if you like to use new addons components you maybe call with option 'addons'</p>
-      <doc-code language="javascript">
-        import Bootue from 'Bootue'
-        Vue.use(Bootue, {addons: ['Sidebar', 'bsSelectCountry']})
-
-        // enable two components, sidebar and select country form.
-      </doc-code>
-      <p>See the complete list of addons components <router-link to="/addons">here</router-link>.</p>
-
-      <hr/>
       <h4>Webpack Env - Font Awesome</h4>
       <p>Some components using font-awesome icons (font-awesome is optional), if you like to use this font, you have to setup webpack to correctly load.</p>
 
@@ -170,9 +162,9 @@
 
       <hr>
 
-      <h3>Import bootue system into your project (<span class="text-success">recomended</span>)</h3>
+      <h3>Import bootue system into your project (<span class="text-warning">carefull</span>)</h3>
       <p>
-        We recommend to download all components files and import inside to project, remember the goal is transfer all power
+        You maybe get and download all components files and import inside in project, the goal is transfer all power
         to select, customize and extends to any scss parts to project.
         In deep, bootue is a reorganized boostrap splitting code, her have <code>SCSS Components</code>, <code>Js Components</code> and <code>Hybrid Components</code>.
       </p>
@@ -193,22 +185,19 @@
 
       <p>We import bootue components aside page's project, the ideia its full integration scss rules into project.</p>
 
-      <hr/>
+    </doc-section>
 
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h5 class="panel-title text-center">Why should I care about this structure? Why not use NPM?</h5>
-        </div>
+    <doc-section id="boots" name="Root component">
+      <p>Bootue needs a bootstrap, you need call only once bootue component.</p>
+      <doc-code>
+        &lt;body>
+          &lt;bootue>
+            ... all my site
+          &lt;/bootue>
+        &lt;/body>
+      </doc-code>
+      <p>Bootue component have only unique goal, load all scss components.</p>
 
-        <div class="panel-body">
-          <p>When I began bootue, my problem is, I have a very custom layouts in any SPA project, but all the elements in its excence its the same. i would like exist a central repository with self  contanied elements, dont bother me with import scss bases, navigate and change 1000 lines in variables.scss, i like to get and put that element and works.</p>
-          <hr/>
-          <p>With that mind, the project intent to, split and organized all business logic's of bootstrap, possibility to choose and modify exacly parts i want, possibility to export the module for other projects using a top contained delivery, and possibility to using 100% component tree system modules</p>
-          <hr/>
-          <p>And updates? Come on, you execute a update your bootstrap frequently? Boostrap 3 update frequently?
-The risk exist, bootue needs to bug fix, him will update, for this situation you need to copy and paste parcially, yes its not a best situation, but in moment its acceptable.</p>
-        </div>
-      </div>
     </doc-section>
 
     <doc-section id="im-folder" name="Important folders">
