@@ -128,6 +128,7 @@
               - radio
               - select
               - select-country
+              - typeahead
             </doc-code>
           </td>
           <td>

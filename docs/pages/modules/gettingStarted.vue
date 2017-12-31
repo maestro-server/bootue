@@ -162,9 +162,9 @@
 
       <hr>
 
-      <h3>Import bootue system into your project (<span class="text-success">recomended</span>)</h3>
+      <h3>Import bootue system into your project (<span class="text-warning">carefull</span>)</h3>
       <p>
-        We recommend to download all components files and import inside to project, remember the goal is transfer all power
+        You maybe get and download all components files and import inside in project, the goal is transfer all power
         to select, customize and extends to any scss parts to project.
         In deep, bootue is a reorganized boostrap splitting code, her have <code>SCSS Components</code>, <code>Js Components</code> and <code>Hybrid Components</code>.
       </p>
@@ -185,27 +185,19 @@
 
       <p>We import bootue components aside page's project, the ideia its full integration scss rules into project.</p>
 
-      <hr/>
+    </doc-section>
 
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h5 class="panel-title text-center">Why should I care about this structure? Why not use NPM?</h5>
-        </div>
+    <doc-section id="boots" name="Root component">
+      <p>Bootue needs a bootstrap, you need call only once bootue component.</p>
+      <doc-code>
+        &lt;body>
+          &lt;bootue>
+            ... all my site
+          &lt;/bootue>
+        &lt;/body>
+      </doc-code>
+      <p>Bootue component have only unique goal, load all scss components.</p>
 
-        <div class="panel-body">
-          <p>When I began bootue, my problem is, I have a very custom layouts in any SPA project, but all the elements in its excence its the same. i would like exist a central repository with self  contanied elements, dont bother me with import scss bases, navigate and change 1000 lines in variables.scss, i like to get and put that element and works.</p>
-          <hr/>
-          <p>With that mind, the project intent to, split and organized all business logic's of bootstrap, possibility to choose and modify exacly parts i want, possibility to export the module for other projects using a top contained delivery, and possibility to using 100% component tree system modules</p>
-          <hr/>
-          <p>And updates? Come on, you execute a update your bootstrap frequently? Boostrap 3 update frequently?
-The risk exist, bootue needs to bug fix, him will update, for this situation you need to copy and paste parcially, yes its not a best situation, but in moment its acceptable.</p>
-
-          <div class="well">
-            <code>After several tests and using bootue em some production envs, i decide to change the strategy, is better to use bootue behide npm, DONT need to import inside of project.</code>
-          </div>
-
-        </div>
-      </div>
     </doc-section>
 
     <doc-section id="im-folder" name="Important folders">

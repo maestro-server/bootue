@@ -20,14 +20,11 @@
         <hr/>
 
         <doc-code language="JavaScript">
-          import './bootue/bootue/tables.vue';
-          // or
-          require('bootue/bootue/tables');
-          // this code import all table's styles
+          import './bootue/_core/components/Tables.scss';
 
-          import './bootue/bootue/grid.vue';
-          import './bootue/bootue/utilities.vue';
-          import './bootue/bootue/list.vue';
+          import './bootue/_core/components/grid/Grid.scss';
+          import './bootue/_core/components/utilities/Utilities.scss';
+          import './bootue/_core/components/list/List.scss';
         </doc-code>
 
 
