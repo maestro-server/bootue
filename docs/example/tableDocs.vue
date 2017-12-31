@@ -118,7 +118,7 @@
     },
     data () {
       return {
-        url: '//table.json',
+        url: 'https://maestro-server.github.io/bootue/table.json',
         columns: ['color', 'value'],
         options: {
           filterable: ['color', 'value'],
