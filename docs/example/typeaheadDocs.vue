@@ -104,6 +104,12 @@
         <p>The max number of suggestions to be displayed.</p>
       </div>
       <div>
+        <p>headers</p>
+        <p><code>Array of Objects</code></p>
+        <p><code>[{key: (String), value: (String)}]</code></p>
+        <p>Apply headers.</p>
+      </div>
+      <div>
         <p>match-case</p>
         <p><code>Boolean</code></p>
         <p><code>false</code></p>
