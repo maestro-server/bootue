@@ -1,4 +1,3 @@
-import '../Forms.vue'
 
 export default {
   props: {value: null},

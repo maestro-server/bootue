@@ -5,6 +5,7 @@ import affix from './affix/Affix.vue'
 import alert from './alert/Alert.vue'
 import badge from './badges/Badges.vue'
 import breadcrumps from './breadcrumps/Breadcrumps.vue'
+import buttonGroups from './buttongroup/ButtonGroup.vue'
 import carousel from './carousel/Carousel.vue'
 import bsLabel from './label/Label.vue'
 import displayer from './displayer/Displayer.vue'
@@ -26,7 +27,6 @@ import toggleButton from './togglebutton/ToggleButton.vue'
 import tooltip from './tooltip/Tooltip.vue'
 import well from './wells/Wells.vue'
 
-import SpreadButtons from './buttons/'
 import SpreadForms from './forms/'
 
 let components = {
@@ -37,6 +37,7 @@ let components = {
   badge,
   breadcrumps,
   bsLabel,
+  buttonGroups,
   carousel,
   displayer,
   dropdown,
@@ -58,6 +59,6 @@ let components = {
   well
 }
 
-components = Object.assign(components, SpreadButtons, SpreadForms)
+components = Object.assign(components, SpreadForms)
 
 export default components

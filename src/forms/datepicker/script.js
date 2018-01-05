@@ -1,5 +1,4 @@
 import translations from '../_texts/translations.js'
-import '../Forms.vue'
 
 export default {
   props: {

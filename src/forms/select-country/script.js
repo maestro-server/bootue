@@ -1,7 +1,6 @@
 import bsSelect from '../select/Select.vue'
 import { country, states } from './countries'
 import finderK from './_utils/finderKeyByValue'
-import '../Forms.vue'
 
 export default {
   props: {
