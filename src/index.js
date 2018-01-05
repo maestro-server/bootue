@@ -5,7 +5,7 @@ import affix from './affix/Affix.vue'
 import alert from './alert/Alert.vue'
 import badge from './badges/Badges.vue'
 import breadcrumps from './breadcrumps/Breadcrumps.vue'
-import buttonGroups from './buttongroup/ButtonGroup.vue'
+import buttonGroup from './buttongroup/ButtonGroup.vue'
 import carousel from './carousel/Carousel.vue'
 import bsLabel from './label/Label.vue'
 import displayer from './displayer/Displayer.vue'
@@ -37,7 +37,7 @@ let components = {
   badge,
   breadcrumps,
   bsLabel,
-  buttonGroups,
+  buttonGroup,
   carousel,
   displayer,
   dropdown,
