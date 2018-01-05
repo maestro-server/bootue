@@ -10,7 +10,7 @@ import carousel from './carousel/Carousel.vue'
 import bsLabel from './label/Label.vue'
 import displayer from './displayer/Displayer.vue'
 import dropdown from './dropdown/Dropdown.vue'
-import lists from './lists/Lists.vue'
+import bsLists from './lists/Lists.vue'
 import modal from './modal/Modal.vue'
 import navbar from './navbar/Navbar.vue'
 import pagination from './pagination/Pagination.vue'
@@ -37,11 +37,11 @@ let components = {
   badge,
   breadcrumps,
   bsLabel,
+  bsLists,
   buttonGroup,
   carousel,
   displayer,
   dropdown,
-  lists,
   modal,
   navbar,
   pagination,
