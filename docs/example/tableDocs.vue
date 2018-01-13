@@ -122,6 +122,7 @@
         columns: ['color', 'value'],
         options: {
           filterable: ['color', 'value'],
+          perPage:5,
           headings: {
             color: 'Color name',
             value: 'RGB'
