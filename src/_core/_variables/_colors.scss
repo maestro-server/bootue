@@ -7,6 +7,7 @@ $white: #fff;
 $purple: #92278f;
 $dark-purple: #250c49;
 $orange: #e17a29;
+$blue: #1a4866;
 
 $gray-darker: lighten($gray-base, 13.5%) !default; // #222
 $gray-dark: lighten($gray-base, 20%) !default; // #333
@@ -17,9 +18,9 @@ $gray-lighter: lighten($gray-base, 93.5%) !default; // #eee
 $gray-lighter2: lighten($gray-base, 92%) !default; // #eee
 
 
-$brand-primary: darken($purple, 6.0%) !default; // #92278f
-$brand-secondary: darken($purple, 10.5%) !default; // #92278f
-$brand-primary-darker: darken($purple, 20.5%) !default; // #92278f
+$brand-primary: darken($blue, 6.0%) !default; // #92278f
+$brand-secondary: darken($blue, 10.5%) !default; // #92278f
+$brand-primary-darker: darken($blue, 20.5%) !default; // #92278f
 
 $brand-success: #5cb85c !default;
 $brand-info: #716980 !default;
