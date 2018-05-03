@@ -1,7 +1,7 @@
 {
   "name": "bootue",
   "description": "Bootstrap + Vue 2 = 100% Components",
-  "version": "0.2.5",
+  "version": "0.4.0",
   "author": "Felipe Signorini <felipeklerk@yahoo.com.br>",
   "license": "MIT",
   "private": false,
@@ -17,9 +17,11 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "izitoast": "^1.3.0",
     "maestro-vue-tables-2": "^0.1.13",
     "prismjs": "^1.9.0",
-    "vue": "^2.5.11"
+    "vue": "^2.5.11",
+    "vue-notifications": "^0.9.0"
   },
   "browserslist": [
     "> 1%",

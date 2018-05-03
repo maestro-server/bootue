@@ -34,6 +34,7 @@
             <tabs-docs></tabs-docs>
             <table-docs></table-docs>
             <tooltip-docs></tooltip-docs>
+            <toast-docs></toast-docs>
             <well-docs></well-docs>
 
             <aside-docs></aside-docs>
@@ -70,6 +71,7 @@ import progressbarDocs from '../example/progressbarDocs.vue'
 import spinnerDocs from '../example/spinnerDocs.vue'
 import tabsDocs from '../example/tabsDocs.vue'
 import tooltipDocs from '../example/tooltipDocs.vue'
+import toastDocs from '../example/toastDocs'
 
 import wellDocs from '../example/wellDocs.vue'
 
@@ -99,6 +101,7 @@ export default {
     tabsDocs,
     tableDocs,
     tooltipDocs,
+    toastDocs,
     wellDocs,
     asideDocs,
     selectCountryDocs

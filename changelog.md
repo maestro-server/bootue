@@ -1,5 +1,12 @@
 ## Change Logs
 
+0.4.0
+* Include Vue notifications + izitoast
+* Bugfix - tooltip offset
+
+0.3.0
+* Include maestro table vue 2
+
 0.1.16 - RC2
 * Change Logo
 * New Addons featured

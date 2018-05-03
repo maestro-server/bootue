@@ -25,6 +25,7 @@ import tabGroup from './tabgroup/TabGroup.vue'
 import tabs from './tabs/Tabs.vue'
 import toggleButton from './togglebutton/ToggleButton.vue'
 import tooltip from './tooltip/Tooltip.vue'
+import toast from './toast/Toast'
 import well from './wells/Wells.vue'
 
 import SpreadForms from './forms/'
@@ -56,6 +57,7 @@ let components = {
   tabs,
   toggleButton,
   tooltip,
+  toast,
   well
 }
 
