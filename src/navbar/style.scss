@@ -52,6 +52,10 @@
     &:focus {
       background-color: $nav-link-hover-bg;
       border-color: $link-color;
+
+      @include themify($themes) {
+        border-color: themed('link-color');
+      }
     }
   }
 
@@ -137,6 +141,10 @@
       &:focus {
         color: $nav-pills-active-link-hover-color;
         background-color: $nav-pills-active-link-hover-bg;
+
+        @include themify($themes) {
+          background-color: themed('brand-primary');
+        }
       }
     }
   }

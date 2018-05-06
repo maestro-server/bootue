@@ -52,4 +52,8 @@
 
 .displayer-primary {
   @include displayer-variant($displayer-primary-bg, $displayer-primary-border, $displayer-primary-text);
+
+  @include themify($themes) {
+    @include displayer-variant(themed('brand-primary'), $displayer-primary-border, $displayer-primary-text);
+  }
 }

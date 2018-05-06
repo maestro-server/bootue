@@ -10,16 +10,18 @@
 .clearfix {
   @include clearfix;
 }
+
 .center-block {
   @include center-block;
 }
+
 .pull-right {
   float: right !important;
 }
+
 .pull-left {
   float: left !important;
 }
-
 
 // Toggling content
 // -------------------------
@@ -28,16 +30,18 @@
 .hide {
   display: none !important;
 }
+
 .show {
   display: block !important;
 }
+
 .invisible {
   visibility: hidden;
 }
+
 .text-hide {
   @include text-hide;
 }
-
 
 // Hide from screenreaders and browsers
 //
@@ -50,22 +54,51 @@
 // For maestro
 // -------------------------
 
-.pl0 {padding-left: 0;}
+.pl0 {
+  padding-left: 0;
+}
 
-.white {color: $white;}
-.primary {color: $brand-primary}
-.danger {color: $brand-danger}
-.success {color: $brand-success}
-.info {color: $brand-info}
+.white {
+  color: $white;
+}
 
+.primary {
+  color: $brand-primary;
 
-.bg-purple {background: $bg-purple;}
-.bg-white {background: $white;}
-.bg-gray-lighter {background: $gray-lighter;}
+  @include themify($themes) {
+    color: themed('brand-primary');
+  }
+}
 
+.danger {
+  color: $brand-danger
+}
+
+.success {
+  color: $brand-success
+}
+
+.info {
+  color: $brand-info
+}
+
+.bg-main {
+  background: $bg-main;
+  @include themify($themes) {
+    background: themed('brand-primary');
+  }
+}
+
+.bg-white {
+  background: $white;
+}
+
+.bg-gray-lighter {
+  background: $gray-lighter;
+}
 
 .vertical-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100%; /* Fallback for browsers do NOT support vh unit */
   min-height: 100vh; /* These two lines are counted as one :-)       */
 
   display: flex;
@@ -80,10 +113,12 @@
   min-width: 78px;
 }
 
-.positionRelative {position: relative;}
+.positionRelative {
+  position: relative;
+}
 
 .card-box {
-  border: 1px solid $purple;
+  border: 1px solid $main-color;
   border-radius: $border-radius-base;
 
   box-sizing: border-box;
@@ -98,6 +133,14 @@
   height: 25px;
 }
 
-.ft15 {font-size:15px;}
-.w18 {width: 18px;}
-.VueTables__list-filter .form-group {margin:0;}
+.ft15 {
+  font-size: 15px;
+}
+
+.w18 {
+  width: 18px;
+}
+
+.VueTables__list-filter .form-group {
+  margin: 0;
+}

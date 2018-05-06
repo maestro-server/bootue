@@ -43,6 +43,8 @@
   color: $progress-bar-color;
   text-align: center;
   background-color: $progress-bar-bg;
+
+
   @include box-shadow(inset 0 -1px 0 rgba(0,0,0,.15));
   @include transition(width .6s ease);
 }
@@ -70,6 +72,12 @@
 
 // Variations
 // -------------------------
+.progress-bar-primary {
+  @include themify($themes) {
+    @include progress-bar-variant(themed('brand-primary'));
+  }
+}
+
 
 .progress-bar-success {
   @include progress-bar-variant($progress-bar-success-bg);

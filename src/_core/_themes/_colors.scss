@@ -1,0 +1,52 @@
+
+$blue: #1a4866;
+$gold: #e6bb24;
+$orange: #FF9728;
+$wine: #810711;
+$dark: #4b4b4b;
+$green: #1d8034;
+
+$themes: (
+  blue: (
+    brand-primary: $blue,
+    brand-secondary: darken($blue, 10.5%),
+    brand-primary-darker: darken($blue, 20.5%),
+    link-color: $blue,
+    link-hover-color: darken($blue, 15%)
+  ),
+  gold: (
+    brand-primary: $gold,
+    brand-secondary: darken($gold, 10.5%),
+    brand-primary-darker: darken($gold, 20.5%),
+    link-color: $gold,
+    link-hover-color: darken($gold, 15%)
+  ),
+  orange: (
+    brand-primary: $orange,
+    brand-secondary: darken($orange, 10.5%),
+    brand-primary-darker: darken($orange, 20.5%),
+    link-color: $orange,
+    link-hover-color: darken($orange, 15%)
+  ),
+  wine: (
+    brand-primary: $wine,
+    brand-secondary: darken($wine, 10.5%),
+    brand-primary-darker: darken($wine, 20.5%),
+    link-color: $wine,
+    link-hover-color: darken($wine, 15%)
+  ),
+  dark: (
+    brand-primary: $dark,
+    brand-secondary: darken($dark, 10.5%),
+    brand-primary-darker: darken($dark, 20.5%),
+    link-color: $dark,
+    link-hover-color: darken($dark, 15%)
+  ),
+  green: (
+    brand-primary: $green,
+    brand-secondary: darken($green, 10.5%),
+    brand-primary-darker: darken($green, 20.5%),
+    link-color: $green,
+    link-hover-color: darken($green, 15%)
+  )
+);

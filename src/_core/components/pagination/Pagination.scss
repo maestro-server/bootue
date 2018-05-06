@@ -23,6 +23,10 @@
       background-color: $pagination-bg;
       border: 1px solid $pagination-border;
       margin-left: -1px;
+
+      @include themify($themes) {
+        color: themed('brand-primary');
+      }
     }
     &:first-child {
       > a,
@@ -47,6 +51,10 @@
       color: $pagination-hover-color;
       background-color: $pagination-hover-bg;
       border-color: $pagination-hover-border;
+
+      @include themify($themes) {
+        color: themed('brand-primary');
+      }
     }
   }
 
@@ -60,6 +68,12 @@
       background-color: $pagination-active-bg;
       border-color: $pagination-active-border;
       cursor: default;
+
+      @include themify($themes) {
+        color: $pagination-active-color;
+        background-color: themed('brand-primary');
+        border-color: themed('brand-primary-darker');
+      }
     }
   }
 

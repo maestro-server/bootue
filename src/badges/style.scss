@@ -2,6 +2,7 @@
 // Badges
 // --------------------------------------------------
 @import "./_variables/variables";
+@import '../_core/_mixins/themed';
 
 // Base class
 .badge {
@@ -42,6 +43,10 @@
   .nav-pills > .active > a > & {
     color: $badge-active-color;
     background-color: $badge-active-bg;
+
+    @include themify($themes) {
+      color: themed('brand-primary');
+    }
   }
 
   .list-group-item > & {

@@ -1,5 +1,8 @@
 ## Change Logs
 
+0.5.0
+* NEW - Theme Feature
+
 0.4.0
 * Include Vue notifications + izitoast
 * Bugfix - tooltip offset

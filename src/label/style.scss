@@ -49,6 +49,10 @@ a.label {
 
 .label-primary {
   @include label-variant($label-primary-bg);
+
+  @include themify($themes) {
+    @include label-variant(themed('brand-primary'));
+  }
 }
 
 .label-success {
