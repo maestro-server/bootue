@@ -36,6 +36,10 @@ a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
   border-color: $link-color;
+
+  @include themify($themes) {
+    border-color: themed('link-color');
+  }
 }
 
 

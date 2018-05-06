@@ -1,4 +1,6 @@
-// Alerts
+// Displayer
+
+@import '../../_core/mixins';
 
 @mixin displayer-variant($background, $border, $text-color) {
   background-color: $background;

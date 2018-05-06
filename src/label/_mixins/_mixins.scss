@@ -1,5 +1,7 @@
 // Label
 
+@import '../../_core/mixins';
+
 @mixin label-variant($color) {
   background-color: $color;
 

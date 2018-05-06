@@ -93,6 +93,11 @@ button.list-group-item {
     background-color: $list-group-active-bg;
     border-color: $list-group-active-border;
 
+    @include themify($themes) {
+      background-color: themed('brand-primary');
+      border-color: themed('brand-primary');
+    }
+
     // Force color to inherit for custom content
     .list-group-item-heading,
     .list-group-item-heading > small,

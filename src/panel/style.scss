@@ -257,6 +257,10 @@
 
 .panel-primary {
   @include panel-variant($panel-primary-border, $panel-primary-text, $panel-primary-heading-bg, $panel-primary-border);
+
+  @include themify($themes) {
+    @include panel-variant(themed('brand-primary'), $panel-primary-text, themed('brand-primary'), themed('brand-primary'));
+  }
 }
 
 .panel-success {

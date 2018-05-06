@@ -71,6 +71,9 @@ a.btn {
 }
 .btn-primary {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+  @include themify($themes) {
+    @include button-variant($btn-primary-color, themed('brand-primary'), themed('brand-primary-darker'));
+  }
 }
 // Success appears as green
 .btn-success {
@@ -99,6 +102,10 @@ a.btn {
   font-weight: normal;
   border-radius: 0;
 
+  @include themify($themes) {
+    color: themed('link-color');
+  }
+
   &,
   &:active,
   &.active,
@@ -118,6 +125,10 @@ a.btn {
     color: $link-hover-color;
     text-decoration: $link-hover-decoration;
     background-color: transparent;
+
+    @include themify($themes) {
+      color: themed('link-hover-color');
+    }
   }
   &[disabled],
   fieldset[disabled] & {

@@ -50,10 +50,18 @@ a {
   color: $link-color;
   text-decoration: none;
 
+  @include themify($themes) {
+    color: themed('link-color');
+  }
+
   &:hover,
   &:focus {
     color: $link-hover-color;
     text-decoration: $link-hover-decoration;
+
+    @include themify($themes) {
+      color: themed('link-hover-color');
+    }
   }
 
   &:focus {
