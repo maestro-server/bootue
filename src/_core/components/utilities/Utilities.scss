@@ -84,6 +84,9 @@
 
 .bg-main {
   background: $bg-main;
+  @include themify($themes) {
+    background: themed('brand-primary');
+  }
 }
 
 .bg-white {
