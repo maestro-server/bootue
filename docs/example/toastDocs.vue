@@ -14,7 +14,7 @@
       </button>
 
       <button class="btn btn-danger"
-              @click="showToast('error', 'Title example', 'Mensagem example')">
+              @click="showToast('danger', 'Title example', 'Mensagem example')">
         Click to toggle toast danger
       </button>
 

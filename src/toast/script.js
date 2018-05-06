@@ -25,7 +25,7 @@ export default {
       type: 'warning'
     },
 
-    showErrorMsg: {
+    showDangerMsg: {
       type: 'error'
     }
   }
