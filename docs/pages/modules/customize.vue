@@ -16,59 +16,142 @@
 
     <doc-section id="change-colors" name="Change colors">
       <p>
-        Bootstrap have a fantastic structure system to customize variables, exist only one file to change all colors.</p>
-      <h5>The path is <code>_core/_variables/_colors.scss</code></h5>
+        Bootstrap have a theme system, only need to wrapper with theme-{color}.</p>
+      <h5>The path is <code>_core/_themes/_colors.scss</code></h5>
       <p class="alert-danger">
         Because of hot loader Vue (version 12.xx) all SCSS components need to be inside _core
       </p>
 
       <doc-code language="css">
-        // We have a basics colors, pehaps its a good place to put more news colors.
-        $gray-base: #000 !default;
-        $white: #fff;
-        $purple: #92278f;
-        $dark-purple: #250c49;
-        $orange: #e17a29;
+        $themes: (
+          blue: (
+            brand-primary: $blue,
+            brand-secondary: darken($blue, 10.5%),
+            brand-primary-darker: darken($blue, 20.5%),
+            link-color: $blue,
+            link-hover-color: darken($blue, 15%)
+          ),
+          gold: (
+            brand-primary: $gold,
+            brand-secondary: darken($gold, 10.5%),
+            brand-primary-darker: darken($gold, 20.5%),
+            link-color: $gold,
+            link-hover-color: darken($gold, 15%)
+          ),
+          orange: (
+            brand-primary: $orange,
+            brand-secondary: darken($orange, 10.5%),
+            brand-primary-darker: darken($orange, 20.5%),
+            link-color: $orange,
+            link-hover-color: darken($orange, 15%)
+          ),
+          wine: (
+            brand-primary: $wine,
+            brand-secondary: darken($wine, 10.5%),
+            brand-primary-darker: darken($wine, 20.5%),
+            link-color: $wine,
+            link-hover-color: darken($wine, 15%)
+          ),
+          dark: (
+            brand-primary: $dark,
+            brand-secondary: darken($dark, 10.5%),
+            brand-primary-darker: darken($dark, 20.5%),
+            link-color: $dark,
+            link-hover-color: darken($dark, 15%)
+          ),
+          green: (
+            brand-primary: $green,
+            brand-secondary: darken($green, 10.5%),
+            brand-primary-darker: darken($green, 20.5%),
+            link-color: $green,
+            link-hover-color: darken($green, 15%)
+          )
+        );
+      </doc-code>
 
-        // all hovers its created based in default colors
-        $gray-darker: lighten($gray-base, 13.5%) !default; // #222
-        $gray-dark: lighten($gray-base, 20%) !default; // #333
-        $gray: lighten($gray-base, 33.5%) !default; // #555
-        $gray-light: lighten($gray-base, 46.7%) !default; // #777
-        $gray-lighter: lighten($gray-base, 93.5%) !default; // #eee
-
-        // let's create primary color
-        $brand-primary: darken($purple, 6.5%) !default; // #92278f
-        $brand-secondary: darken($purple, 6.5%) !default; // #92278f
-
-        // let's create states colors - this colors its used at _states.scss
-        $brand-success: #5cb85c !default;
-        $brand-info: #5bc0de !default;
-        $brand-warning: #f0ad4e !default;
-        $brand-danger: #d9534f !default;
-
-        // bg colors
-        $bg-purple: $purple;
-
-
-        //** Background color for `body`.
-        $body-bg: #fff !default;
-        $text-color: $gray-dark !default;
-
-        //** Global textual link color.
-        $link-color: $brand-primary !default;
-        //** Link hover color set via `darken()` function.
-        $link-hover-color: darken($link-color, 15%) !default;
-        //** Link hover decoration.
-        $link-hover-decoration: underline !default;
-
-        //** Horizontal line color.
-        $hr-border: $gray-lighter !default;
-        //** Text muted color
-        $text-muted: $gray-light !default;
+      To use, simple wrapper any element witch theme-{color}
+      <doc-code language="css">
+        &lt;div class="theme-blue">
+          &lt;a class="btn btn-primary">My Button&lt;/a>
+        &lt;/div>
       </doc-code>
 
       <p>Simple and easier.</p>
+
+      <table class="table table-striped table-bordered">
+        <tbody>
+        <tr>
+          <td>Theme Maestro</td>
+          <td><code>default</code></td>
+          <td>
+            <button class="btn btn-primary">My Button</button>
+          </td>
+          <td>
+            <a href="#">Link</a>
+          </td>
+        </tr>
+          <tr class="theme-blue">
+            <td>Theme Blue</td>
+            <td><code>theme-blue</code></td>
+              <td class="theme-blue">
+                <button class="btn btn-primary">My Button</button>
+              </td>
+            <td>
+              <a href="#">Link</a>
+            </td>
+          </tr>
+          <tr class="theme-gold">
+            <td>Theme Gold</td>
+            <td><code>theme-blue</code></td>
+            <td>
+              <button class="btn btn-primary">My Button</button>
+            </td>
+            <td>
+              <a href="#">Link</a>
+            </td>
+          </tr>
+          <tr class="theme-green">
+            <td>Theme Green</td>
+            <td><code>theme-green</code></td>
+            <td>
+              <button class="btn btn-primary">My Button</button>
+            </td>
+            <td>
+              <a href="#">Link</a>
+            </td>
+          </tr>
+          <tr class="theme-dark">
+            <td>Theme Black</td>
+            <td><code>theme-dark</code></td>
+            <td>
+              <button class="btn btn-primary">My Button</button>
+            </td>
+            <td>
+              <a href="#">Link</a>
+            </td>
+          </tr>
+          <tr class="theme-wine">
+            <td>Theme Wine</td>
+            <td><code>theme-wine</code></td>
+            <td>
+              <button class="btn btn-primary">My Button</button>
+            </td>
+            <td>
+              <a href="#">Link</a>
+            </td>
+          </tr>
+          <tr class="theme-orange">
+            <td>Theme Orange</td>
+            <td><code>theme-Orange</code></td>
+            <td>
+              <button class="btn btn-primary">My Button</button>
+            </td>
+            <td>
+              <a href="#">Link</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
     </doc-section>
 
@@ -335,6 +418,7 @@
 <script>
   import docCode from '../../example/utils/docCode.js'
   import docSection from '../../example/utils/docSection.vue'
+
   export default {
     components: {
       docCode,
