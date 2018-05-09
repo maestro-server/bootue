@@ -20,7 +20,7 @@ export default {
   methods: {
     beforeEnter () {
       this.position()
-      setTimeout(() => this.position(), 30)
+      setTimeout(() => this.position(), 5)
     },
     position () {
       let popover = this.$refs.popover
