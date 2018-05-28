@@ -17,7 +17,8 @@ export default {
   data () {
     return {
       transition: false,
-      val: null
+      val: null,
+      sem: true
     }
   },
   computed: {
@@ -68,10 +69,15 @@ export default {
   },
   methods: {
     action (val, p) {
-      if (val === null) { return }
-      if (val && this.callback instanceof Function) this.callback()
-      this.$emit(val ? 'ok' : 'cancel', p)
-      this.val = val || false
+      if (this.sem) {
+        this.sem = false
+        if (val === null) { return }
+        if (val && this.callback instanceof Function) this.callback()
+        this.$emit(val ? 'ok' : 'cancel', p)
+        this.val = val || false
+
+        setTimeout(() => this.sem = true, 900)
+      }
     }
   },
   mounted () {
