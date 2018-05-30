@@ -70,8 +70,8 @@ export default {
   methods: {
     action (val, p) {
       if (this.sem) {
-        this.sem = false
         if (val === null) { return }
+        this.sem = false
         if (val && this.callback instanceof Function) this.callback()
         this.$emit(val ? 'ok' : 'cancel', p)
         this.val = val || false
