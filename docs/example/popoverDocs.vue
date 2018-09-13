@@ -68,6 +68,11 @@
         <p></p>
         <p>How to position the popover.</p>
       </div>
+      <div>
+        <p>@toggle</p>
+        <p><code>Function</code></p>
+        <p>Event, state change.</p>
+      </div>
     </doc-table>
   </doc-section>
 </template>

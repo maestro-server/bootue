@@ -56,6 +56,7 @@ export default {
       if (e && this.trigger === 'contextmenu') e.preventDefault()
       this.show = !this.show
       if (this.show) this.beforeEnter()
+      this.$emit('toggle', this.show, this.$refs)
     }
   },
   mounted () {
