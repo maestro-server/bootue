@@ -1,3 +1,6 @@
+@import "../_variables/variables";
+@import "../_mixins/mixins";
+
 label.checkbox {
   position: relative;
   padding-left: 18px;
@@ -37,6 +40,11 @@ label.checkbox > input:focus ~ .icon {
 label.checkbox.active > .icon {
   background-size: 1rem 1rem;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNyIgaGVpZ2h0PSI3Ij48cGF0aCBmaWxsPSIjZmZmIiBkPSJtNS43MywwLjUybC0zLjEyNDIyLDMuMzQxNjFsLTEuMzM4OTUsLTEuNDMyMTJsLTEuMjQ5NjksMS4zMzY2NWwyLjU4ODYzLDIuNzY4NzZsNC4zNzM5LC00LjY3ODI2bC0xLjI0OTY5LC0xLjMzNjY1bDAsMGwwLjAwMDAyLDAuMDAwMDF6Ii8+PC9zdmc+);
+
+  background-color: $brand-primary;
+  @include themify($themes) {
+    background-color: themed('brand-primary');
+  }
 }
 label.checkbox.active .btn-default { filter: brightness(75%); }
 

@@ -92,6 +92,10 @@
     text-decoration: none;
     outline: 0;
     background-color: $dropdown-link-active-bg;
+
+    @include themify($themes) {
+      background-color: themed('brand-primary');
+    }
   }
 }
 

@@ -2,6 +2,6 @@
   <input v-if="name" type="hidden" :name="name" :value="checked?trueValue:falseValue" />
   <span v-if="!isButton" class="icon dropdown-toggle" :class="[checked?'btn-'+typeColor:'',{bg:typeColor==='default'}]"></span>
   <span v-if="!isButton&&checked&&typeColor==='default'" class="icon"></span>
-  
+
   <slot></slot>
 </a>

@@ -20,7 +20,7 @@ export default {
   methods: {
     beforeEnter () {
       this.position()
-      setTimeout(() => this.position(), 30)
+      setTimeout(() => this.position(), 5)
     },
     position () {
       let popover = this.$refs.popover
@@ -56,6 +56,7 @@ export default {
       if (e && this.trigger === 'contextmenu') e.preventDefault()
       this.show = !this.show
       if (this.show) this.beforeEnter()
+      this.$emit('toggle', this.show, this.$refs)
     }
   },
   mounted () {
