@@ -20,7 +20,7 @@
     "izitoast": "^1.4.0",
     "maestro-vue-tables-2": "^0.1.14",
     "prismjs": "^1.16.0",
-    "vue": "^2.6.10",
+    "vue": "^2.6.11",
     "vue-notifications": "^0.9.0"
   },
   "browserslist": [
@@ -60,7 +60,7 @@
     "url-loader": "^1.1.2",
     "vue-loader": "^15.7.0",
     "vue-router": "^3.0.2",
-    "vue-template-compiler": "^2.6.10",
+    "vue-template-compiler": "^2.6.11",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
