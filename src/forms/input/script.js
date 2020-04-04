@@ -10,6 +10,7 @@ export default {
     label: {type: String, default: null},
     state: {type: String, default: null},
     name: {type: String, default: null},
+    autocomplete: {type: String, default: null},
     placeholder: {type: String, default: null},
     readonly: {type: Boolean, default: false},
     rows: {type: Number, default: 3},
