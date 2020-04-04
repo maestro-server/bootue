@@ -1,7 +1,7 @@
 {
   "name": "bootue",
   "description": "Bootstrap + Vue 2 = 100% Components",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "author": "Felipe Signorini <felipeklerk@yahoo.com.br>",
   "license": "MIT",
   "private": false,
