@@ -16,7 +16,7 @@
     "url": "https://github.com/maestro-server/bootue.git"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "izitoast": "^1.4.0",
     "maestro-vue-tables-2": "^0.1.14",
     "prismjs": "^1.16.0",
